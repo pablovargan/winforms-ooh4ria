@@ -20,15 +20,23 @@ namespace LimpiezasPalmeralForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            InitializeDB.CreateDB.Create("PalmeralGenNHibernate", "nhibernateUser", "nhibernatePass");
-            var cfg = new Configuration();
-            cfg.Configure();
-            cfg.AddAssembly(typeof(ProductoEN).Assembly);
-            new SchemaExport(cfg).Execute(true, true, false);
-            InitializeDB.CreateDB.InitializeData();
-
-            Application.Run(new Form1());
+            try
+            {
+                InitializeDB.CreateDB.Create("PalmeralGenNHibernate", "nhibernateUser", "nhibernatePass");
+                var cfg = new Configuration();
+                cfg.Configure();
+                cfg.AddAssembly(typeof(ProductoEN).Assembly);
+                new SchemaExport(cfg).Execute(true, true, false);
+                InitializeDB.CreateDB.InitializeData();
+            }
+            catch(Exception e)
+            {
+                System.Console.WriteLine (e.Message.ToString () + '\n' + e.StackTrace);
+            }
+            finally
+            {
+                Application.Run(new Form1());
+            }
         }
     }
 }
