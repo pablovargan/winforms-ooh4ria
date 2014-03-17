@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="ProveedorEN" table="[Proveedor]">
+						<id name="Id" column="[id]"/>
+					<property name="Nombre" type="string"> 
+						<column name="[nombre]"  not-null="true"/>
+					</property>
+					<property name="Telefono" type="string"> 
+						<column name="[telefono]"  not-null="true"/>
+					</property>
+					<property name="Direccion" type="string"> 
+						<column name="[direccion]"  not-null="true"/>
+					</property>
+					<property name="Localidad" type="string"> 
+						<column name="[localidad]"  not-null="true"/>
+					</property>
+					<property name="Provincia" type="string"> 
+						<column name="[provincia]"  not-null="true"/>
+					</property>
+					<property name="CodigoPostal" type="string"> 
+						<column name="[codigoPostal]"  not-null="true"/>
+					</property>
+					<property name="Email" type="string"> 
+						<column name="[email]"  not-null="true"/>
+					</property>
+					<property name="Pais" type="string"> 
+						<column name="[pais]"  not-null="true"/>
+					</property>
+					<property name="Descripcion" type="string"> 
+						<column name="[descripcion]"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		  			
+						<bag name="Pedido" >
+							<key>
+								<column name="[FK_id_proveedor]"/>
+					      	</key>
+							<one-to-many class="PalmeralGenNHibernate.EN.Default_.PedidoEN"/>
+					    </bag>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="ProveedorENReadAllHQL">from ProveedorEN</query>
+		</hibernate-mapping>
+	

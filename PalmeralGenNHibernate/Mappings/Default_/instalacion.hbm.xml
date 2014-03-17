@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="InstalacionEN" table="[Instalacion]">
+						<id name="Id" column="[id]"/>
+					<property name="Nombre" type="string"> 
+						<column name="[nombre]"  not-null="true"/>
+					</property>
+					<property name="Descripcion" type="string"> 
+						<column name="[descripcion]"  not-null="true"/>
+					</property>
+					<property name="Localidad" type="string"> 
+						<column name="[localidad]"  not-null="true"/>
+					</property>
+					<property name="Provincia" type="string"> 
+						<column name="[provincia]"  not-null="true"/>
+					</property>
+					<property name="Pais" type="string"> 
+						<column name="[pais]"  not-null="true"/>
+					</property>
+					<property name="Direccion" type="string"> 
+						<column name="[direccion]"  not-null="true"/>
+					</property>
+					<property name="CodigoPostal" type="string"> 
+						<column name="[codigoPostal]"  not-null="true"/>
+					</property>
+					<property name="Telefono" type="string"> 
+						<column name="[telefono]"  not-null="true"/>
+					</property>
+					<property name="MetrosCuadrados" type="float"> 
+						<column name="[metrosCuadrados]"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		  			
+						<many-to-one name="Cliente" class="PalmeralGenNHibernate.EN.Default_.ClienteEN" >	
+								<column name="[FK_nif_cliente]"/>
+						</many-to-one>
+											 					
+			
+		  			
+						<bag name="Jornadas" >
+							<key>
+								<column name="[FK_id_instalacion]"/>
+					      	</key>
+							<one-to-many class="PalmeralGenNHibernate.EN.Default_.JornadaFechaEN"/>
+					    </bag>
+					
+			
+		  			
+						<bag name="Facturas" >
+							<key>
+								<column name="[FK_id_instalacion]"/>
+					      	</key>
+							<one-to-many class="PalmeralGenNHibernate.EN.Default_.FacturaEN"/>
+					    </bag>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="InstalacionENReadAllHQL">from InstalacionEN</query>
+		  <query name="InstalacionENbuscarInstalacionesClienteHQL"><![CDATA[FROM InstalacionEN AS ins WHERE ins.p_cliente = :p_cliente]]></query>
+		</hibernate-mapping>
+	

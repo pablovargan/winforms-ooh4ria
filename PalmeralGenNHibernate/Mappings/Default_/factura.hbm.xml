@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="FacturaEN" table="[Factura]">
+						<id name="Id" column="[id]"/>
+					<property name="Horas" type="float"> 
+						<column name="[horas]"  not-null="true"/>
+					</property>
+					<property name="PrecioHora" type="float"> 
+						<column name="[precioHora]"  not-null="true"/>
+					</property>
+					<property name="Fecha" type="date"> 
+						<column name="[fecha]"  not-null="true"/>
+					</property>
+					<property name="Total" type="float"> 
+						<column name="[total]"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+		  			
+						<many-to-one name="Instalacion" class="PalmeralGenNHibernate.EN.Default_.InstalacionEN" >	
+								<column name="[FK_id_instalacion]"/>
+						</many-to-one>
+											 					
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="FacturaENReadAllHQL">from FacturaEN</query>
+		  <query name="FacturaENobtenerFacturasInstalacionHQL"><![CDATA[FROM FacturaEN AS fac WHERE fac.p_instalacion = :p_instalacion]]></query>
+		  <query name="FacturaENobtenerPorAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE year(fac.fecha) = :p_anyo]]></query>
+		  <query name="FacturaENobtenerPorMesAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE month(fac.fecha) = :p_mes AND year(fac.fecha) = :p_anyo]]></query>
+		</hibernate-mapping>
+	

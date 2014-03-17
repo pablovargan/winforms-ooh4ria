@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="PedidoEN" table="[Pedido]">
+						<id name="Id" column="[id]"/>
+					<property name="Fecha" type="date"> 
+						<column name="[fecha]"  not-null="true"/>
+					</property>
+					<property name="Estado" > 
+						<column name="[estado]"  not-null="true"/>
+					</property>
+					<property name="TipoPago" > 
+						<column name="[tipoPago]"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+		  			
+						<bag name="Lineas" cascade="delete">
+							<key>
+								<column name="[FK_id_pedido]"/>
+					      	</key>
+							<one-to-many class="PalmeralGenNHibernate.EN.Default_.LineaPedidoEN"/>
+					    </bag>
+					
+			
+		  			
+						<many-to-one name="Proveedor" class="PalmeralGenNHibernate.EN.Default_.ProveedorEN" >	
+								<column name="[FK_id_proveedor]"/>
+						</many-to-one>
+											 					
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="PedidoENReadAllHQL">from PedidoEN</query>
+		  <query name="PedidoENbuscarPedidoPorAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE year(ped.fecha) = :p_anyo]]></query>
+		  <query name="PedidoENbuscarPedidoPorMesAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE month(ped.fecha) = :p_mes AND year(ped.fecha) = :p_anyo]]></query>
+		  <query name="PedidoENbuscarPedidoPorProveedorHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.p_proveedor = :p_proveedor]]></query>
+		  <query name="PedidoENbuscarPorEstadoHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.estado = :p_estado]]></query>
+		  <query name="PedidoENbuscarPorTipoPagoHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.tipoPago  = :p_tipoPago]]></query>
+		</hibernate-mapping>
+	

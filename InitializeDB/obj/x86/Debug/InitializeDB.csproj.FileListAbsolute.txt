@@ -1,0 +1,22 @@
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.exe.config
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\hibernate.cfg.xml
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.exe
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.pdb
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\Iesi.Collections.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\LinFu.DynamicProxy.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\log4net.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\NHibernate.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\nunit.core.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\nunit.framework.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\PalmeralGenNHibernate.dll
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\PalmeralGenNHibernate.pdb
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.exe
+C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.pdb
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasParmeral\InitializeDB\bin\Debug\InitializeDB.exe.config
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasParmeral\InitializeDB\obj\x86\Debug\InitializeDB.exe
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasParmeral\InitializeDB\obj\x86\Debug\InitializeDB.pdb

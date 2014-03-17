@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="ProductoEN" table="[Producto]">
+						<id name="Id" column="[id]"/>
+					<property name="Nombre" type="string"> 
+						<column name="[nombre]"  not-null="true"/>
+					</property>
+					<property name="Descripcion" type="string"> 
+						<column name="[descripcion]"  not-null="true"/>
+					</property>
+					<property name="Stock" type="integer"> 
+						<column name="[stock]"  not-null="true"/>
+					</property>
+					<property name="Foto" type="string"> 
+						<column name="[foto]"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+		  			
+						<bag name="Linea" >
+							<key>
+								<column name="[FK_id_productos]"/>
+					      	</key>
+							<one-to-many class="PalmeralGenNHibernate.EN.Default_.LineaPedidoEN"/>
+					    </bag>
+					
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="ProductoENReadAllHQL">from ProductoEN</query>
+		  <query name="ProductoENbuscarPorNombreHQL"><![CDATA[FROM ProductoEN AS prod WHERE prod.nombre = :p_nombre]]></query>
+		  <query name="ProductoENbuscarPorStockHQL"><![CDATA[FROM ProductoEN AS prod WHERE prod.stock <= :p_stock]]></query>
+		</hibernate-mapping>
+	

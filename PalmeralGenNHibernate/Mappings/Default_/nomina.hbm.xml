@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="NominaEN" table="[Nomina]">
+						<id name="Id" column="[id]"/>
+					<property name="ParteFija" type="float"> 
+						<column name="[parteFija]"  not-null="true"/>
+					</property>
+					<property name="ParteVariable" type="float"> 
+						<column name="[parteVariable]"  not-null="true"/>
+					</property>
+					<property name="Horas" type="float"> 
+						<column name="[horas]"  not-null="true"/>
+					</property>
+					<property name="Total" type="float"> 
+						<column name="[total]"  not-null="true"/>
+					</property>
+					<property name="Fecha" type="date"> 
+						<column name="[fecha]"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+			
+		  			
+						<many-to-one name="Trabajador" class="PalmeralGenNHibernate.EN.Default_.TrabajadorEN" >	
+								<column name="[FK_nif_trabajador]"/>
+						</many-to-one>
+											 					
+					
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="NominaENReadAllHQL">from NominaEN</query>
+		  <query name="NominaENobtenerTodasNominasTrabajadorHQL"><![CDATA[FROM NominaEN AS nom WHERE nom.p_trabajador = :p_trabajador]]></query>
+		  <query name="NominaENbuscarPorParteFijaHQL"><![CDATA[FROM NominaEN AS nom WHERE nom.parteFija = :p_parteFija]]></query>
+		  <query name="NominaENbuscarPorAnyoHQL"><![CDATA[FROM NominaEN AS nom WHERE year(nom.fecha) = :p_anyo]]></query>
+		  <query name="NominaENbuscarPorMesAnyoHQL"><![CDATA[FROM NominaEN AS nom WHERE month(nom.fecha) = :p_mes AND year(nom.fecha) = :p_anyo]]></query>
+		</hibernate-mapping>
+	

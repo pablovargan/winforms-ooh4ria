@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="LineaPedidoEN" table="[LineaPedido]">
+				  	
+						<id name="Id" column="[id]" type="integer">
+							<generator class="identity"/>
+						</id>
+					<property name="Cantidad" type="integer"> 
+						<column name="[cantidad]"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+						<many-to-one name="Productos" class="PalmeralGenNHibernate.EN.Default_.ProductoEN" >	
+								<column name="[FK_id_productos]"/>
+						</many-to-one>
+											 					
+			
+		  			
+						<many-to-one name="Pedido" class="PalmeralGenNHibernate.EN.Default_.PedidoEN" >	
+								<column name="[FK_id_pedido]"/>
+						</many-to-one>
+											 					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="LineaPedidoENReadAllHQL">from LineaPedidoEN</query>
+		</hibernate-mapping>
+	

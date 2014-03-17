@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="TrabajadorEN" table="[Trabajador]">
+						<id name="Nif" column="[nif]"/>
+					<property name="Nombre" type="string"> 
+						<column name="[nombre]"  not-null="true"/>
+					</property>
+					<property name="Apellidos" type="string"> 
+						<column name="[apellidos]"  not-null="true"/>
+					</property>
+					<property name="Direccion" type="string"> 
+						<column name="[direccion]"  not-null="true"/>
+					</property>
+					<property name="Telefono" type="string"> 
+						<column name="[telefono]"  not-null="true"/>
+					</property>
+					<property name="CodigoPostal" type="string"> 
+						<column name="[codigoPostal]"  not-null="true"/>
+					</property>
+					<property name="Pais" type="string"> 
+						<column name="[pais]"  not-null="true"/>
+					</property>
+					<property name="Localidad" type="string"> 
+						<column name="[localidad]"  not-null="true"/>
+					</property>
+					<property name="Provincia" type="string"> 
+						<column name="[provincia]"  not-null="true"/>
+					</property>
+					<property name="Tipo" > 
+						<column name="[tipo]"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		  			
+						<bag name="Nominas" >
+							<key>
+								<column name="[FK_nif_trabajador]"/>
+					      	</key>
+							<one-to-many class="PalmeralGenNHibernate.EN.Default_.NominaEN"/>
+					    </bag>
+					
+			
+		  			
+						<bag name="Jornadas" table="[TrabajadorJornada]" inverse="true" >
+							<key>
+									<column name="[FK_nif_trabajadores]"/>
+							</key>
+      						<many-to-many class="PalmeralGenNHibernate.EN.Default_.JornadaFechaEN">
+									<column name="[FK_id_jornadas]"/>
+      						</many-to-many>
+    					</bag>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="TrabajadorENReadAllHQL">from TrabajadorEN</query>
+		  <query name="TrabajadorENbuscarPorLocalidadHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.localidad = :p_localidad]]></query>
+		  <query name="TrabajadorENbuscarPorProvinciaHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.provincia = :p_provincia]]></query>
+		  <query name="TrabajadorENbuscarPorTipoHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.tipo = :p_tipoEmpleo]]></query>
+		</hibernate-mapping>
+	

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+		<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		  <PropertyGroup>
+		    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		    <ProductVersion>8.0.30703</ProductVersion>
+		    <SchemaVersion>2.0</SchemaVersion>
+		    <ProjectGuid>{66C66636-FD6A-4A3F-A7C5-FE88BBA117AF}</ProjectGuid>
+		    <OutputType>Library</OutputType>
+		    <AppDesignerFolder>Properties</AppDesignerFolder>
+		    <RootNamespace>PalmeralGenNHibernate</RootNamespace>
+		    <AssemblyName>PalmeralGenNHibernate</AssemblyName>
+		    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+		    <FileAlignment>512</FileAlignment>
+		    <PublishUrl>publish\</PublishUrl>
+		    <Install>true</Install>
+		    <InstallFrom>Disk</InstallFrom>
+		    <UpdateEnabled>false</UpdateEnabled>
+		    <UpdateMode>Foreground</UpdateMode>
+		    <UpdateInterval>7</UpdateInterval>
+		    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+		    <UpdatePeriodically>false</UpdatePeriodically>
+		    <UpdateRequired>false</UpdateRequired>
+		    <MapFileExtensions>true</MapFileExtensions>
+		    <ApplicationRevision>0</ApplicationRevision>
+		    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+		    <IsWebBootstrapper>false</IsWebBootstrapper>
+		    <UseApplicationTrust>false</UseApplicationTrust>
+		    <BootstrapperEnabled>true</BootstrapperEnabled>
+		  </PropertyGroup>
+		  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		    <DebugSymbols>true</DebugSymbols>
+		    <DebugType>full</DebugType>
+		    <Optimize>false</Optimize>
+		    <OutputPath>bin\Debug\</OutputPath>
+		    <DefineConstants>DEBUG;TRACE</DefineConstants>
+		    <ErrorReport>prompt</ErrorReport>
+		    <WarningLevel>4</WarningLevel>
+		  </PropertyGroup>
+		  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		    <DebugType>pdbonly</DebugType>
+		    <Optimize>true</Optimize>
+		    <OutputPath>bin\Release\</OutputPath>
+		    <DefineConstants>TRACE</DefineConstants>
+		    <ErrorReport>prompt</ErrorReport>
+		    <WarningLevel>4</WarningLevel>
+		  </PropertyGroup>
+		<ItemGroup>
+		    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>AppLib\Castle.DynamicProxy2.dll</HintPath>
+		    </Reference>
+		    <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>AppLib\LinFu.DynamicProxy.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>AppLib\NHibernate.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>AppLib\NHibernate.ByteCode.Castle.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate.ByteCode.LinFu, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>AppLib\NHibernate.ByteCode.LinFu.dll</HintPath>
+		    </Reference>
+		    <Reference Include="System" />
+		    <Reference Include="System.Core">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+		    <Reference Include="System.Transactions" />
+		    <Reference Include="System.Xml.Linq">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    <Reference Include="System.Data.DataSetExtensions">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    <Reference Include="System.Data" />
+		    <Reference Include="System.Xml" />
+		</ItemGroup>
+		<ItemGroup>
+		    <Content Include="AppLib\Antlr3.Runtime.dll" />
+		    <Content Include="AppLib\Castle.DynamicProxy2.dll" />
+		    <Content Include="AppLib\Iesi.Collections.dll" />
+		    <Content Include="AppLib\LinFu.DynamicProxy.dll" />
+		    <Content Include="AppLib\log4net.dll" />
+		    <Content Include="AppLib\NHibernate.ByteCode.Castle.dll" />
+		    <Content Include="AppLib\NHibernate.ByteCode.LinFu.dll" />
+		    <Content Include="AppLib\NHibernate.dll" />
+		    <Content Include="AppLib\nunit.core.dll" />
+		    <Content Include="AppLib\nunit.framework.dll" />
+  		</ItemGroup>
+		<ItemGroup>
+			<Compile Include="Utils\Util.cs" />
+		    <Compile Include="NHibernateHelper.cs" />
+		    <Compile Include="Exceptions\ModelException.cs"/>
+		    <Compile Include="Exceptions\DataLayerException.cs"/>
+		    
+	
+	<Compile Include="CAD\BasicCAD.cs"/>
+	
+	<Compile Include="EN\Default_\ProductoEN.cs" />
+	<Compile Include="CEN\Default_\ProductoCEN.cs" />
+	<Compile Include="CAD\Default_\IProductoCAD.cs" />
+	<Compile Include="CAD\Default_\ProductoCAD.cs" />
+	<Compile Include="EN\Default_\LineaPedidoEN.cs" />
+	<Compile Include="CEN\Default_\LineaPedidoCEN.cs" />
+	<Compile Include="CAD\Default_\ILineaPedidoCAD.cs" />
+	<Compile Include="CAD\Default_\LineaPedidoCAD.cs" />
+	<Compile Include="EN\Default_\PedidoEN.cs" />
+	<Compile Include="CEN\Default_\PedidoCEN.cs" />
+	<Compile Include="CAD\Default_\IPedidoCAD.cs" />
+	<Compile Include="CAD\Default_\PedidoCAD.cs" />
+	<Compile Include="EN\Default_\ProveedorEN.cs" />
+	<Compile Include="CEN\Default_\ProveedorCEN.cs" />
+	<Compile Include="CAD\Default_\IProveedorCAD.cs" />
+	<Compile Include="CAD\Default_\ProveedorCAD.cs" />
+	<Compile Include="EN\Default_\TrabajadorEN.cs" />
+	<Compile Include="CEN\Default_\TrabajadorCEN.cs" />
+	<Compile Include="CAD\Default_\ITrabajadorCAD.cs" />
+	<Compile Include="CAD\Default_\TrabajadorCAD.cs" />
+	<Compile Include="EN\Default_\NominaEN.cs" />
+	<Compile Include="CEN\Default_\NominaCEN.cs" />
+	<Compile Include="CAD\Default_\INominaCAD.cs" />
+	<Compile Include="CAD\Default_\NominaCAD.cs" />
+	<Compile Include="EN\Default_\ClienteEN.cs" />
+	<Compile Include="CEN\Default_\ClienteCEN.cs" />
+	<Compile Include="CAD\Default_\IClienteCAD.cs" />
+	<Compile Include="CAD\Default_\ClienteCAD.cs" />
+	<Compile Include="EN\Default_\InstalacionEN.cs" />
+	<Compile Include="CEN\Default_\InstalacionCEN.cs" />
+	<Compile Include="CAD\Default_\IInstalacionCAD.cs" />
+	<Compile Include="CAD\Default_\InstalacionCAD.cs" />
+	<Compile Include="EN\Default_\JornadaFechaEN.cs" />
+	<Compile Include="CEN\Default_\JornadaFechaCEN.cs" />
+	<Compile Include="CAD\Default_\IJornadaFechaCAD.cs" />
+	<Compile Include="CAD\Default_\JornadaFechaCAD.cs" />
+	<Compile Include="EN\Default_\FacturaEN.cs" />
+	<Compile Include="CEN\Default_\FacturaCEN.cs" />
+	<Compile Include="CAD\Default_\IFacturaCAD.cs" />
+	<Compile Include="CAD\Default_\FacturaCAD.cs" />
+	<Compile Include="Enumerated\Default_\EstadoPedidoEnum.cs" />
+	<Compile Include="Enumerated\Default_\TipoPagoEnum.cs" />
+	<Compile Include="Enumerated\Default_\TipoEmpleoEnum.cs" />
+	
+	
+
+		    
+	
+
+		    <Compile Include="Properties\AssemblyInfo.cs" />
+		    <Compile Include="Properties\Settings.Designer.cs">
+		      <AutoGen>True</AutoGen>
+		      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+		      <DependentUpon>Settings.settings</DependentUpon>
+		    </Compile>
+		  </ItemGroup>
+		  <ItemGroup>
+		  
+	<EmbeddedResource Include="Mappings\Default_\producto.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\lineapedido.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\pedido.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\proveedor.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\trabajador.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\nomina.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\cliente.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\instalacion.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\jornadafecha.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\factura.hbm.xml" />
+	
+	
+
+		  </ItemGroup>
+		  <ItemGroup>
+		    <Content Include="hibernate.cfg.xml">
+		      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		    </Content>
+		  </ItemGroup>
+		  <ItemGroup>
+		    <None Include="app.config" />
+		    <None Include="Properties\Settings.settings">
+		      <Generator>SettingsSingleFileGenerator</Generator>
+		      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		    </None>
+		        <None Include="Resources\xsd\nhibernate-configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\xsd\nhibernate-mapping.xsd">
+      <SubType>Designer</SubType>
+    </None>
+		  </ItemGroup>
+		  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+		  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+		       Other similar extension points exist, see Microsoft.Common.targets.
+		  <Target Name="BeforeBuild">
+		  </Target>
+		  <Target Name="AfterBuild">
+		  </Target>
+		  -->
+		</Project>

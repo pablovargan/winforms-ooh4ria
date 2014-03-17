@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="JornadaFechaEN" table="[JornadaFecha]">
+				  	
+						<id name="Id" column="[id]" type="integer">
+							<generator class="identity"/>
+						</id>
+					<property name="Fecha" type="date"> 
+						<column name="[fecha]"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+						<bag name="Trabajadores" table="[TrabajadorJornada]"  >
+							<key>
+									<column name="[FK_id_jornadas]"/>
+							</key>
+      						<many-to-many class="PalmeralGenNHibernate.EN.Default_.TrabajadorEN">
+									<column name="[FK_nif_trabajadores]"/>
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<many-to-one name="Instalacion" class="PalmeralGenNHibernate.EN.Default_.InstalacionEN" >	
+								<column name="[FK_id_instalacion]"/>
+						</many-to-one>
+											 					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="JornadaFechaENReadAllHQL">from JornadaFechaEN</query>
+		</hibernate-mapping>
+	
