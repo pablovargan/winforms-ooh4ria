@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NHibernate">
+      <HintPath>..\PalmeralGenNHibernate\AppLib\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -52,6 +55,20 @@
   <ItemGroup>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InitializeDB\InitializeDB.csproj">
+      <Project>{707dad7f-5632-4ad7-860e-73a181c52ee2}</Project>
+      <Name>InitializeDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LimpiezasPalmeralForms\LimpiezasPalmeralForms.csproj">
+      <Project>{c9c95670-de26-4851-9edd-36e6aa51bd65}</Project>
+      <Name>LimpiezasPalmeralForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PalmeralGenNHibernate\PalmeralGenNHibernate.csproj">
+      <Project>{66c66636-fd6a-4a3f-a7c5-fe88bba117af}</Project>
+      <Name>PalmeralGenNHibernate</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
