@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LimpiezasPalmeralForms
 {
-    public partial class Form1 : Form
+    public partial class PantallaTrabajador : Form
     {
-        public Form1()
+        public PantallaTrabajador()
         {
             InitializeComponent();
         }

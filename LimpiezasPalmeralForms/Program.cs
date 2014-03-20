@@ -35,7 +35,7 @@ namespace LimpiezasPalmeralForms
             }
             finally
             {
-                Application.Run(new Form1());
+                Application.Run(new PantallaPrincipal());
             }
         }
     }
