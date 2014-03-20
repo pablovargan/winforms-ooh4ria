@@ -1,0 +1,9 @@
+/InitializeDB/bin/Debug/*
+/InitializeDB/obj/*
+/LimpiezasPalmeralForms/bin/*
+/LimpiezasPalmeralForms/obj/*
+/LimpiezasPalmeralTest/bin/*
+/LimpiezasPalmeralTest/obj/*
+/PalmeralGenNHibernate/bin/*
+/PalmeralGenNHibernate/obj/*
+PalmeralGenNHibernate.v12.suo
