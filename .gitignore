@@ -1,11 +1,7 @@
 /InitializeDB/bin/Debug/*
-/InitializeDB/obj/*
 /InitializeDB/Program.cs
 /InitializeDB/CreateDB.cs
 /LimpiezasPalmeralForms/bin/*
-/LimpiezasPalmeralForms/obj/*
 /LimpiezasPalmeralTest/bin/*
-/LimpiezasPalmeralTest/obj/*
 /PalmeralGenNHibernate/bin/*
-/PalmeralGenNHibernate/obj/*
 PalmeralGenNHibernate.v12.suo
