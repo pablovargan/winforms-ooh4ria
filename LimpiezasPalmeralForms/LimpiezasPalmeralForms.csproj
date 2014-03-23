@@ -47,14 +47,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="PantallaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PantallaCliente.Designer.cs">
+      <DependentUpon>PantallaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaInstalacion.Designer.cs">
+      <DependentUpon>PantallaInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaPrincipal.Designer.cs">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaProducto.Designer.cs">
+      <DependentUpon>PantallaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaProveedor.Designer.cs">
+      <DependentUpon>PantallaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaTrabajador.Designer.cs">
+      <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaProveedor.resx">
+      <DependentUpon>PantallaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
