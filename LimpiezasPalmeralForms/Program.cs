@@ -18,25 +18,38 @@ namespace LimpiezasPalmeralForms
         [STAThread]
         public static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            try
+            bool activo;
+            System.Threading.Mutex m = new System.Threading.Mutex(true, "LimpiezasPalmeralForms", out activo);
+
+            if (!activo)
             {
-                InitializeDB.CreateDB.Create("PalmeralGenNHibernate", "nhibernateUser", "nhibernatePass");
-                var cfg = new Configuration();
-                cfg.Configure();
-                cfg.AddAssembly(typeof(ProductoEN).Assembly);
-                new SchemaExport(cfg).Execute(true, true, false);
-                InitializeDB.CreateDB.InitializeData();
+                MessageBox.Show("Ya se ha iniciado la aplicación");
+                Application.Exit();
             }
-            catch(Exception e)
+            else
             {
-                System.Console.WriteLine (e.Message.ToString () + '\n' + e.StackTrace);
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                try
+                {
+                    InitializeDB.CreateDB.Create("PalmeralGenNHibernate", "nhibernateUser", "nhibernatePass");
+                    var cfg = new Configuration();
+                    cfg.Configure();
+                    cfg.AddAssembly(typeof(ProductoEN).Assembly);
+                    new SchemaExport(cfg).Execute(true, true, false);
+                    InitializeDB.CreateDB.InitializeData();
+                }
+                catch (Exception e)
+                {
+                    System.Console.WriteLine(e.Message.ToString() + '\n' + e.StackTrace);
+                }
+                finally
+                {
+                    Application.Run(new PantallaPrincipal());
+                }
             }
-            finally
-            {
-                Application.Run(new PantallaPrincipal());
-            }
+            // Se libera la exclusión mutua
+            m.ReleaseMutex();
         }
     }
 }

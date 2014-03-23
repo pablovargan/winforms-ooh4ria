@@ -47,11 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="PantallaCliente.cs" />
+    <Compile Include="PantallaCliente.Designer.cs">
+      <DependentUpon>PantallaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PantallaInstalacion.cs" />
+    <Compile Include="PantallaInstalacion.Designer.cs">
+      <DependentUpon>PantallaInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaPrincipal.cs" />
+    <Compile Include="PantallaPrincipal.Designer.cs">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaProducto.cs" />
+    <Compile Include="PantallaProducto.Designer.cs">
+      <DependentUpon>PantallaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaProveedor.cs" />
+    <Compile Include="PantallaProveedor.Designer.cs">
+      <DependentUpon>PantallaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaTrabajador.cs" />
+    <Compile Include="PantallaTrabajador.Designer.cs">
+      <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
