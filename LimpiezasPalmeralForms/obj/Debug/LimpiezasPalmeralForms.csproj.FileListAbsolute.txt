@@ -18,3 +18,6 @@ C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasParmeral\Limpiezas
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.exe
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.pdb
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.exe
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.pdb
