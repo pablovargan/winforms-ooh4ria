@@ -20,36 +20,31 @@ namespace LimpiezasPalmeralForms
 
         private void cliente_Click(object sender, EventArgs e)
         {
-            PantallaCliente cli = new PantallaCliente();
-            cli.MdiParent = this;
+            PantallaCliente cli = new PantallaCliente() { MdiParent = this };
             cli.Show();
         }
 
         private void instalacion_Click(object sender, EventArgs e)
         {
-            PantallaInstalacion inst = new PantallaInstalacion();
-            inst.MdiParent = this;
+            PantallaInstalacion inst = new PantallaInstalacion() { MdiParent = this };
             inst.Show();
         }
 
         private void producto_Click(object sender, EventArgs e)
         {
-            PantallaProducto prod = new PantallaProducto();
-            prod.MdiParent = this;
+            PantallaProducto prod = new PantallaProducto() { MdiParent = this };
             prod.Show();
         }
 
         private void proveedor_Click(object sender, EventArgs e)
         {
-            PantallaProveedor prov = new PantallaProveedor();
-            prov.MdiParent = this;
+            PantallaProveedor prov = new PantallaProveedor() { MdiParent = this };
             prov.Show();
         }
 
         private void trabajador_Click(object sender, EventArgs e)
         {
-            PantallaTrabajador trab = new PantallaTrabajador();
-            trab.MdiParent = this;
+            PantallaTrabajador trab = new PantallaTrabajador() { MdiParent = this };
             trab.Show();
         }
     }
