@@ -113,6 +113,9 @@ public static void InitializeData ()
                  * //Define Album
                  * //PalmeralGenNHibernate.CEN.Mediaplayer.AlbumCEN albumCEN = new PalmeralGenNHibernate.CEN.Mediaplayer.AlbumCEN();
                  * //albumCEN.New_("Album 1", "This is a Album 1", artists, musicTracks);*/
+            ProveedorCEN _prov = new ProveedorCEN();
+            _prov.Crear("1", "A", "b", "c", "34", "er", "098", "aa@a.com", "aa", "joasda");
+            IList<ProveedorEN> lista = _prov.ObtenerTodos(0, 0);
                 /*PROTECTED REGION END*/
         }
         catch (Exception ex)

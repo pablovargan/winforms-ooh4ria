@@ -47,32 +47,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PantallaCliente.cs" />
+    <Compile Include="PalmeralGenNHibernateDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PalmeralGenNHibernateDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaCliente.Designer.cs">
       <DependentUpon>PantallaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaInstalacion.cs" />
+    <Compile Include="PantallaInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaInstalacion.Designer.cs">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaPrincipal.cs" />
+    <Compile Include="PantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaProducto.cs" />
+    <Compile Include="PantallaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaProducto.Designer.cs">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaProveedor.cs" />
+    <Compile Include="PantallaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaProveedor.Designer.cs">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaTrabajador.cs" />
+    <Compile Include="PantallaTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PantallaProveedor.resx">
+      <DependentUpon>PantallaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,6 +102,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="PalmeralGenNHibernate.CEN.Default_.ProveedorCEN.datasource" />
+    <None Include="PalmeralGenNHibernateDataSet.xsc">
+      <DependentUpon>PalmeralGenNHibernateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PalmeralGenNHibernateDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PalmeralGenNHibernateDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PalmeralGenNHibernateDataSet.xss">
+      <DependentUpon>PalmeralGenNHibernateDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
