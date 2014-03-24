@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,32 +48,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PantallaCliente.cs" />
+    <Compile Include="PantallaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaCliente.Designer.cs">
       <DependentUpon>PantallaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaInstalacion.cs" />
+    <Compile Include="PantallaInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaInstalacion.Designer.cs">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaPrincipal.cs" />
+    <Compile Include="PantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaProducto.cs" />
+    <Compile Include="PantallaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaProducto.Designer.cs">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaProveedor.cs" />
+    <Compile Include="PantallaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaProveedor.Designer.cs">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaTrabajador.cs" />
+    <Compile Include="PantallaTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PantallaCliente.resx">
+      <DependentUpon>PantallaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaProveedor.resx">
+      <DependentUpon>PantallaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
