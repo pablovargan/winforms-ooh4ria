@@ -32,7 +32,7 @@
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instalaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             this.clienteToolStripMenuItem,
             this.instalaciónToolStripMenuItem,
             this.productoToolStripMenuItem,
-            this.abrirToolStripMenuItem,
+            this.proveedorToolStripMenuItem,
             this.trabajadorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -73,17 +73,17 @@
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.producto_Click);
             // 
-            // abrirToolStripMenuItem
+            // proveedorToolStripMenuItem
             // 
-            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.abrirToolStripMenuItem.Text = "Proveedor";
-            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.proveedor_Click);
+            this.proveedorToolStripMenuItem.Name = "proveedorToolStripMenuItem";
+            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.proveedorToolStripMenuItem.Text = "Proveedor";
+            this.proveedorToolStripMenuItem.Click += new System.EventHandler(this.proveedor_Click);
             // 
             // trabajadorToolStripMenuItem
             // 
             this.trabajadorToolStripMenuItem.Name = "trabajadorToolStripMenuItem";
-            this.trabajadorToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.trabajadorToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.trabajadorToolStripMenuItem.Text = "Trabajador";
             this.trabajadorToolStripMenuItem.Click += new System.EventHandler(this.trabajador_Click);
             // 
@@ -108,7 +108,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trabajadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
