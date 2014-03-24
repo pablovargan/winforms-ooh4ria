@@ -113,12 +113,6 @@ public static void InitializeData ()
                  * //Define Album
                  * //PalmeralGenNHibernate.CEN.Mediaplayer.AlbumCEN albumCEN = new PalmeralGenNHibernate.CEN.Mediaplayer.AlbumCEN();
                  * //albumCEN.New_("Album 1", "This is a Album 1", artists, musicTracks);*/
-<<<<<<< HEAD
-            ProveedorCEN _prov = new ProveedorCEN();
-            _prov.Crear("1", "A", "b", "c", "34", "er", "098", "aa@a.com", "aa", "joasda");
-            IList<ProveedorEN> lista = _prov.ObtenerTodos(0, 0);
-                /*PROTECTED REGION END*/
-=======
 
                 ClienteCEN clienteCEN = new ClienteCEN ();
                 clienteCEN.Crear ("11111111A", "Juan", "Cliente 1", "pepe@gmail.com", "Aspe", "Alicante", "Espa�a", "Calle de Pepe", "03680", "123456789");
@@ -142,7 +136,6 @@ public static void InitializeData ()
                 PedidoCEN pedido = new PedidoCEN();
                 pedido.Crear(pedidos[0].Id, pedidos[0].Fecha, pedidos[0].Estado, pedidos[0].TipoPago, pedidos[0].Lineas, pedidos[0].Proveedor.Id);
             /*PROTECTED REGION END*/
->>>>>>> 50dd5a75e9e23414218bd6ac9ef234e6e51568f0
         }
         catch (Exception ex)
         {

@@ -48,14 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="PalmeralGenNHibernateDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PalmeralGenNHibernateDataSet.xsd</DependentUpon>
-    </Compile>
-=======
->>>>>>> 50dd5a75e9e23414218bd6ac9ef234e6e51568f0
     <Compile Include="PantallaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,15 +86,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-=======
-    <EmbeddedResource Include="PantallaCliente.resx">
-      <DependentUpon>PantallaCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PantallaPrincipal.resx">
-      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
->>>>>>> 50dd5a75e9e23414218bd6ac9ef234e6e51568f0
     <EmbeddedResource Include="PantallaProveedor.resx">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </EmbeddedResource>

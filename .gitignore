@@ -6,3 +6,8 @@
 /PalmeralGenNHibernate/bin/*
 PalmeralGenNHibernate.v12.suo
 /LimpiezasPalmeralForms/obj/Debug/*.txt
+/LimpiezasPalmeralForms/LimpiezasPalmeralForms.csproj
+/InitializeDB/obj/*
+/LimpiezasPalmeralForms/obj/Debug/*
+/PalmeralGenNHibernate/obj/Debug/*
+/LimpiezasPalmeralTest/obj/Debug/*

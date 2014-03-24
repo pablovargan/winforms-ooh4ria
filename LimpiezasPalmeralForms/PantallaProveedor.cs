@@ -27,14 +27,14 @@ namespace LimpiezasPalmeralForms
 
         private void PantallaProveedor_Load(object sender, EventArgs e)
         {
-            if(_proveedor != null)
-                proveedorBindingSource.DataSource = _proveedor.ObtenerTodos(0,0);
+            //if(_proveedor != null)
+            //    proveedorBindingSource.DataSource = _proveedor.ObtenerTodos(0,0);
         }
 
         private void altaProveedor_click(object sender, EventArgs e)
         {
-            _proveedor.Crear(dniBox.Text, nombreBox.Text, telefonoBox.Text, direccionBox.Text, localidadBox.Text, provinciaBox.Text,
-                codigoPostalBox.Text, emailBox.Text, paisBox.Text, descripcionBox.Text);
+            //_proveedor.Crear(dniBox.Text, nombreBox.Text, telefonoBox.Text, direccionBox.Text, localidadBox.Text, provinciaBox.Text,
+            //    codigoPostalBox.Text, emailBox.Text, paisBox.Text, descripcionBox.Text);
         }
 
 

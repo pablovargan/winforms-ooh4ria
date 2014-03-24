@@ -42,14 +42,11 @@
             this.direccionBox = new System.Windows.Forms.TextBox();
             this.proveedoresGB = new System.Windows.Forms.GroupBox();
             this.proveedorCENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.palmeralGenNHibernateDataSet = new LimpiezasPalmeralForms.PalmeralGenNHibernateDataSet();
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proveedorTableAdapter = new LimpiezasPalmeralForms.PalmeralGenNHibernateDataSetTableAdapters.ProveedorTableAdapter();
             this.proveedorGridView = new System.Windows.Forms.DataGridView();
             this.proveedorCENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.proveedoresGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorCENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.palmeralGenNHibernateDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorCENBindingSource1)).BeginInit();
@@ -149,20 +146,6 @@
             // 
             this.proveedorCENBindingSource.DataSource = typeof(PalmeralGenNHibernate.CEN.Default_.ProveedorCEN);
             // 
-            // palmeralGenNHibernateDataSet
-            // 
-            this.palmeralGenNHibernateDataSet.DataSetName = "PalmeralGenNHibernateDataSet";
-            this.palmeralGenNHibernateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // proveedorBindingSource
-            // 
-            this.proveedorBindingSource.DataMember = "Proveedor";
-            this.proveedorBindingSource.DataSource = this.palmeralGenNHibernateDataSet;
-            // 
-            // proveedorTableAdapter
-            // 
-            this.proveedorTableAdapter.ClearBeforeFill = true;
-            // 
             // proveedorGridView
             // 
             this.proveedorGridView.AllowUserToOrderColumns = true;
@@ -200,7 +183,6 @@
             this.Text = "PantallaProveedores";
             this.proveedoresGB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.proveedorCENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.palmeralGenNHibernateDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorCENBindingSource1)).EndInit();
@@ -223,9 +205,7 @@
         private System.Windows.Forms.TextBox descripcionBox;
         private System.Windows.Forms.TextBox direccionBox;
         private System.Windows.Forms.GroupBox proveedoresGB;
-        private PalmeralGenNHibernateDataSet palmeralGenNHibernateDataSet;
         private System.Windows.Forms.BindingSource proveedorBindingSource;
-        private PalmeralGenNHibernateDataSetTableAdapters.ProveedorTableAdapter proveedorTableAdapter;
         private System.Windows.Forms.BindingSource proveedorCENBindingSource;
         private System.Windows.Forms.DataGridView proveedorGridView;
         private System.Windows.Forms.BindingSource proveedorCENBindingSource1;
