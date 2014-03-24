@@ -10,6 +10,8 @@ PedidoEN ReadOIDDefault (string id);
 
 string Crear (PedidoEN pedido);
 
+string New_ (PedidoEN pedido);
+
 void Editar (PedidoEN pedido);
 
 

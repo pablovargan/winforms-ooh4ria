@@ -172,7 +172,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Produc
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM ProductoEN self where FROM ProductoEN AS prod WHERE prod.nombre = :p_nombre";
+                //String sql = @"FROM ProductoEN self where FROM ProductoEN AS prod WHERE prod.Nombre = :p_nombre";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("ProductoENbuscarPorNombreHQL");
                 query.SetParameter ("p_nombre", p_nombre);
@@ -202,7 +202,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Produc
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM ProductoEN self where FROM ProductoEN AS prod WHERE prod.stock <= :p_stock";
+                //String sql = @"FROM ProductoEN self where FROM ProductoEN AS prod WHERE prod.Stock <= :p_stock";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("ProductoENbuscarPorStockHQL");
                 query.SetParameter ("p_stock", p_stock);

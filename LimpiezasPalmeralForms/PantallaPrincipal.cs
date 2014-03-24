@@ -17,9 +17,20 @@ namespace LimpiezasPalmeralForms
             InitializeComponent();
         }
 
+        public void colorearMenu()
+        {
+            clienteToolStripMenuItem.ForeColor = Color.Black;
+            instalaciónToolStripMenuItem.ForeColor = Color.Black;
+            productoToolStripMenuItem.ForeColor = Color.Black;
+            proveedorToolStripMenuItem.ForeColor = Color.Black;
+            trabajadorToolStripMenuItem.ForeColor = Color.Black;
+        }
+
 
         private void cliente_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            clienteToolStripMenuItem.ForeColor = Color.Blue;
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaCliente)
@@ -37,6 +48,8 @@ namespace LimpiezasPalmeralForms
 
         private void instalacion_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            instalaciónToolStripMenuItem.ForeColor = Color.Blue;
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaInstalacion)
@@ -54,6 +67,9 @@ namespace LimpiezasPalmeralForms
 
         private void producto_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            productoToolStripMenuItem.ForeColor = Color.Blue;
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaProducto)
@@ -70,6 +86,8 @@ namespace LimpiezasPalmeralForms
 
         private void proveedor_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            proveedorToolStripMenuItem.ForeColor = Color.Blue;
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaProveedor)
@@ -87,6 +105,9 @@ namespace LimpiezasPalmeralForms
 
         private void trabajador_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            trabajadorToolStripMenuItem.ForeColor = Color.Blue;
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaTrabajador)
