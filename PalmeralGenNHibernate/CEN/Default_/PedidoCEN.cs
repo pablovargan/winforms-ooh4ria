@@ -32,7 +32,7 @@ public IPedidoCAD get_IPedidoCAD ()
         return this._IPedidoCAD;
 }
 
-public string Crear (string p_id, Nullable<DateTime> p_fecha, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum p_estado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum p_tipoPago, string p_proveedor)
+public string Crear (string p_id, Nullable<DateTime> p_fecha, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum p_estado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum p_tipoPago, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> p_lineas, string p_proveedor)
 {
         PedidoEN pedidoEN = null;
         string oid;
@@ -47,6 +47,8 @@ public string Crear (string p_id, Nullable<DateTime> p_fecha, PalmeralGenNHibern
 
         pedidoEN.TipoPago = p_tipoPago;
 
+        pedidoEN.Lineas = p_lineas;
+
 
         if (p_proveedor != null) {
                 pedidoEN.Proveedor = new PalmeralGenNHibernate.EN.Default_.ProveedorEN ();
@@ -56,6 +58,35 @@ public string Crear (string p_id, Nullable<DateTime> p_fecha, PalmeralGenNHibern
         //Call to PedidoCAD
 
         oid = _IPedidoCAD.Crear (pedidoEN);
+        return oid;
+}
+
+public string New_ (string p_id, Nullable<DateTime> p_fecha, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum p_estado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum p_tipoPago, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> p_lineas, string p_proveedor)
+{
+        PedidoEN pedidoEN = null;
+        string oid;
+
+        //Initialized PedidoEN
+        pedidoEN = new PedidoEN ();
+        pedidoEN.Id = p_id;
+
+        pedidoEN.Fecha = p_fecha;
+
+        pedidoEN.Estado = p_estado;
+
+        pedidoEN.TipoPago = p_tipoPago;
+
+        pedidoEN.Lineas = p_lineas;
+
+
+        if (p_proveedor != null) {
+                pedidoEN.Proveedor = new PalmeralGenNHibernate.EN.Default_.ProveedorEN ();
+                pedidoEN.Proveedor.Id = p_proveedor;
+        }
+
+        //Call to PedidoCAD
+
+        oid = _IPedidoCAD.New_ (pedidoEN);
         return oid;
 }
 

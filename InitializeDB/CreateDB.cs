@@ -113,7 +113,29 @@ public static void InitializeData ()
                  * //Define Album
                  * //PalmeralGenNHibernate.CEN.Mediaplayer.AlbumCEN albumCEN = new PalmeralGenNHibernate.CEN.Mediaplayer.AlbumCEN();
                  * //albumCEN.New_("Album 1", "This is a Album 1", artists, musicTracks);*/
-                /*PROTECTED REGION END*/
+
+                ClienteCEN clienteCEN = new ClienteCEN ();
+                clienteCEN.Crear ("11111111A", "Juan", "Cliente 1", "pepe@gmail.com", "Aspe", "Alicante", "Espa�a", "Calle de Pepe", "03680", "123456789");
+
+                ProductoCEN productoCEN = new ProductoCEN ();
+                productoCEN.Crear ("1", "lejia", "Limpialo todo", 5, "foto.com");
+                productoCEN.Crear ("2", "lejia", "Limpialo todo", 5, "foto.com");
+                ProveedorCEN proveedorCEN = new ProveedorCEN ();
+                proveedorCEN.Crear ("1", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "Espa�a", "oooo que chulo");
+
+                TrabajadorCEN trabajadorCEN = new TrabajadorCEN ();
+                trabajadorCEN.Crear ("11111111A", "Trabajador 1", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "Espa�a", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+
+                IList<LineaPedidoEN> lineas = new List<LineaPedidoEN>();
+                lineas.Add (new LineaPedidoEN (1, 5, productoCEN.get_IProductoCAD ().ReadOIDDefault ("1"), null));
+                lineas.Add (new LineaPedidoEN (2, 4, productoCEN.get_IProductoCAD ().ReadOIDDefault ("2"), null));
+
+                IList<PedidoEN> pedidos = new List<PedidoEN>();
+                pedidos.Add(new PedidoEN("1", DateTime.Today, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum.Enviado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum.Contado,lineas,proveedorCEN.get_IProveedorCAD().ReadOIDDefault("1")));
+
+                PedidoCEN pedido = new PedidoCEN();
+                pedido.Crear(pedidos[0].Id, pedidos[0].Fecha, pedidos[0].Estado, pedidos[0].TipoPago, pedidos[0].Lineas, pedidos[0].Proveedor.Id);
+            /*PROTECTED REGION END*/
         }
         catch (Exception ex)
         {

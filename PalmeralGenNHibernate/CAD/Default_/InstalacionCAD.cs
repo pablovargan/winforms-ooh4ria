@@ -162,7 +162,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Instal
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM InstalacionEN self where FROM InstalacionEN AS ins WHERE ins.p_cliente = :p_cliente";
+                //String sql = @"FROM InstalacionEN self where FROM InstalacionEN AS ins WHERE ins.Cliente = :p_cliente";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("InstalacionENbuscarInstalacionesClienteHQL");
                 query.SetParameter ("p_cliente", p_cliente);

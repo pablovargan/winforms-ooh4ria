@@ -214,7 +214,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Trabaj
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM TrabajadorEN self where FROM TrabajadorEN AS trab WHERE trab.localidad = :p_localidad";
+                //String sql = @"FROM TrabajadorEN self where FROM TrabajadorEN AS trab WHERE trab.Localidad = :p_localidad";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("TrabajadorENbuscarPorLocalidadHQL");
                 query.SetParameter ("p_localidad", p_localidad);
@@ -244,7 +244,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Trabaj
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM TrabajadorEN self where FROM TrabajadorEN AS trab WHERE trab.provincia = :p_provincia";
+                //String sql = @"FROM TrabajadorEN self where FROM TrabajadorEN AS trab WHERE trab.Provincia = :p_provincia";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("TrabajadorENbuscarPorProvinciaHQL");
                 query.SetParameter ("p_provincia", p_provincia);
@@ -274,7 +274,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Trabaj
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM TrabajadorEN self where FROM TrabajadorEN AS trab WHERE trab.tipo = :p_tipoEmpleo";
+                //String sql = @"FROM TrabajadorEN self where FROM TrabajadorEN AS trab WHERE trab.Tipo = :p_tipoEmpleo";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("TrabajadorENbuscarPorTipoHQL");
                 query.SetParameter ("p_tipoEmpleo", p_tipoEmpleo);
