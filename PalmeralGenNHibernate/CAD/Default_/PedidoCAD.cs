@@ -56,6 +56,49 @@ public string Crear (PedidoEN pedido)
         try
         {
                 SessionInitializeTransaction ();
+                if (pedido.Lineas != null) {
+                        foreach (PalmeralGenNHibernate.EN.Default_.LineaPedidoEN item in pedido.Lineas) {
+                                item.Pedido = pedido;
+                                session.Save (item);
+                        }
+                }
+                if (pedido.Proveedor != null) {
+                        pedido.Proveedor = (PalmeralGenNHibernate.EN.Default_.ProveedorEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.ProveedorEN), pedido.Proveedor.Id);
+
+                        pedido.Proveedor.Pedido.Add (pedido);
+                }
+
+                session.Save (pedido);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in PedidoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return pedido.Id;
+}
+
+public string New_ (PedidoEN pedido)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                if (pedido.Lineas != null) {
+                        foreach (PalmeralGenNHibernate.EN.Default_.LineaPedidoEN item in pedido.Lineas) {
+                                item.Pedido = pedido;
+                                session.Save (item);
+                        }
+                }
                 if (pedido.Proveedor != null) {
                         pedido.Proveedor = (PalmeralGenNHibernate.EN.Default_.ProveedorEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.ProveedorEN), pedido.Proveedor.Id);
 
@@ -174,7 +217,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Pedido
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE year(ped.fecha) = :p_anyo";
+                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE year(ped.Fecha) = :p_anyo";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("PedidoENbuscarPedidoPorAnyoHQL");
                 query.SetParameter ("p_anyo", p_anyo);
@@ -204,7 +247,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Pedido
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE month(ped.fecha) = :p_mes AND year(ped.fecha) = :p_anyo";
+                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE month(ped.Fecha) = :p_mes AND year(ped.Fecha) = :p_anyo";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("PedidoENbuscarPedidoPorMesAnyoHQL");
                 query.SetParameter ("p_mes", p_mes);
@@ -235,7 +278,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Pedido
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE ped.p_proveedor = :p_proveedor";
+                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE ped.Proveedor = :p_proveedor";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("PedidoENbuscarPedidoPorProveedorHQL");
                 query.SetParameter ("p_proveedor", p_proveedor);
@@ -292,7 +335,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Pedido
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE ped.estado = :p_estado";
+                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE ped.Estado = :p_estado";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("PedidoENbuscarPorEstadoHQL");
                 query.SetParameter ("p_estado", p_estado);
@@ -322,7 +365,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Pedido
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE ped.tipoPago  = :p_tipoPago";
+                //String sql = @"FROM PedidoEN self where FROM PedidoEN AS ped WHERE ped.TipoPago  = :p_tipoPago";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("PedidoENbuscarPorTipoPagoHQL");
                 query.SetParameter ("p_tipoPago", p_tipoPago);

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\hibernate.cfg.xml
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe
@@ -32,3 +33,42 @@ C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\Limpieza
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csprojResolveAssemblyReference.cache
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Properties.Resources.resources
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csproj.GenerateResource.Cache
+=======
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csprojResolveAssemblyReference.cache
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.PantallaProveedor.resources
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Properties.Resources.resources
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csproj.GenerateResource.Cache
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.exe
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.pdb
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\hibernate.cfg.xml
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.pdb
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\InitializeDB.exe
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\NHibernate.dll
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\PalmeralGenNHibernate.dll
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\Iesi.Collections.dll
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\log4net.dll
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\InitializeDB.pdb
+C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\PalmeralGenNHibernate.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.exe
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\hibernate.cfg.xml
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\InitializeDB.exe
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\NHibernate.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\PalmeralGenNHibernate.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\Iesi.Collections.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\Antlr3.Runtime.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\log4net.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\InitializeDB.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\PalmeralGenNHibernate.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csprojResolveAssemblyReference.cache
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.PantallaProveedor.resources
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Properties.Resources.resources
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.PantallaTrabajador.resources
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csproj.GenerateResource.Cache
+>>>>>>> 78d1c7a2aabe6791c24c209b4831992284612a02

@@ -42,10 +42,10 @@
 		  </class>
 		  
 		  <query name="PedidoENReadAllHQL">from PedidoEN</query>
-		  <query name="PedidoENbuscarPedidoPorAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE year(ped.fecha) = :p_anyo]]></query>
-		  <query name="PedidoENbuscarPedidoPorMesAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE month(ped.fecha) = :p_mes AND year(ped.fecha) = :p_anyo]]></query>
-		  <query name="PedidoENbuscarPedidoPorProveedorHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.p_proveedor = :p_proveedor]]></query>
-		  <query name="PedidoENbuscarPorEstadoHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.estado = :p_estado]]></query>
-		  <query name="PedidoENbuscarPorTipoPagoHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.tipoPago  = :p_tipoPago]]></query>
+		  <query name="PedidoENbuscarPedidoPorAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE year(ped.Fecha) = :p_anyo]]></query>
+		  <query name="PedidoENbuscarPedidoPorMesAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE month(ped.Fecha) = :p_mes AND year(ped.Fecha) = :p_anyo]]></query>
+		  <query name="PedidoENbuscarPedidoPorProveedorHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.Proveedor = :p_proveedor]]></query>
+		  <query name="PedidoENbuscarPorEstadoHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.Estado = :p_estado]]></query>
+		  <query name="PedidoENbuscarPorTipoPagoHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.TipoPago  = :p_tipoPago]]></query>
 		</hibernate-mapping>
 	

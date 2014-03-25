@@ -37,8 +37,8 @@
 		  </class>
 		  
 		  <query name="FacturaENReadAllHQL">from FacturaEN</query>
-		  <query name="FacturaENobtenerFacturasInstalacionHQL"><![CDATA[FROM FacturaEN AS fac WHERE fac.p_instalacion = :p_instalacion]]></query>
-		  <query name="FacturaENobtenerPorAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE year(fac.fecha) = :p_anyo]]></query>
-		  <query name="FacturaENobtenerPorMesAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE month(fac.fecha) = :p_mes AND year(fac.fecha) = :p_anyo]]></query>
+		  <query name="FacturaENobtenerFacturasInstalacionHQL"><![CDATA[FROM FacturaEN AS fac WHERE fac.Instalacion = :p_instalacion]]></query>
+		  <query name="FacturaENobtenerPorAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE year(fac.Fecha) = :p_anyo]]></query>
+		  <query name="FacturaENobtenerPorMesAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE month(fac.Fecha) = :p_mes AND year(fac.Fecha) = :p_anyo]]></query>
 		</hibernate-mapping>
 	

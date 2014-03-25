@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LimpiezasPalmeralForms
 {
-    public partial class PantallaCliente : Form
+    public partial class PantallaInicial : Form
     {
-        public PantallaCliente()
+        public PantallaInicial()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

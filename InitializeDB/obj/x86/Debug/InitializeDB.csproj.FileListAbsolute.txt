@@ -1,27 +1,43 @@
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.exe.config
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\hibernate.cfg.xml
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.exe
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.pdb
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\Antlr3.Runtime.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\Castle.DynamicProxy2.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\Iesi.Collections.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\LinFu.DynamicProxy.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\log4net.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\NHibernate.ByteCode.Castle.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\NHibernate.ByteCode.LinFu.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\NHibernate.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\nunit.core.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\nunit.framework.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\PalmeralGenNHibernate.dll
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\bin\Debug\PalmeralGenNHibernate.pdb
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.exe
-C:\Users\Pablo\Dropbox\Prac-UA\DSS\Prácticas\Proyecto Grupo\dss\LimpiezasElPalmeralV2\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.pdb
-C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasParmeral\InitializeDB\bin\Debug\InitializeDB.exe.config
-C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasParmeral\InitializeDB\obj\x86\Debug\InitializeDB.exe
-C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasParmeral\InitializeDB\obj\x86\Debug\InitializeDB.pdb
-C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\InitializeDB\bin\Debug\hibernate.cfg.xml
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.exe.config
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\hibernate.cfg.xml
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.exe
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\InitializeDB.pdb
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\Antlr3.Runtime.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\Castle.DynamicProxy2.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\Iesi.Collections.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\LinFu.DynamicProxy.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\log4net.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\NHibernate.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\nunit.core.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\nunit.framework.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\PalmeralGenNHibernate.dll
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\bin\Debug\PalmeralGenNHibernate.pdb
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.exe
+C:\versionesOOH4RIA\ooh4riaKepler\workspace\PalmeralGen\InitializeDB\obj\x86\Debug\InitializeDB.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\InitializeDB.exe.config
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.exe
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\hibernate.cfg.xml
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\InitializeDB.exe
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\InitializeDB.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\Antlr3.Runtime.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\Iesi.Collections.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\LinFu.DynamicProxy.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\log4net.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\NHibernate.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\nunit.core.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\nunit.framework.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\PalmeralGenNHibernate.dll
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\PalmeralGenNHibernate.pdb
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\InitializeDB\bin\Debug\InitializeDB.exe.config
+<<<<<<< HEAD
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\InitializeDB\bin\Debug\InitializeDB.exe
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\InitializeDB\bin\Debug\InitializeDB.pdb
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\InitializeDB\bin\Debug\Antlr3.Runtime.dll
@@ -77,3 +93,5 @@ C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\Initiali
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\PalmeralGenNHibernate.dll
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\PalmeralGenNHibernate.pdb
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
+=======
+>>>>>>> 78d1c7a2aabe6791c24c209b4831992284612a02

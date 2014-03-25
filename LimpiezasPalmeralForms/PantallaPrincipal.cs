@@ -15,11 +15,27 @@ namespace LimpiezasPalmeralForms
         public PantallaPrincipal()
         {
             InitializeComponent();
+            inicioToolStripMenuItem.ForeColor = Color.Blue;
+            PantallaInicial ini = new PantallaInicial() { MdiParent = this };
+            ini.Show();
+            ini.WindowState = FormWindowState.Maximized;
+        }
+
+        public void colorearMenu()
+        {
+            inicioToolStripMenuItem.ForeColor = Color.Black;
+            clienteToolStripMenuItem.ForeColor = Color.Black;
+            instalaciónToolStripMenuItem.ForeColor = Color.Black;
+            productoToolStripMenuItem.ForeColor = Color.Black;
+            proveedorToolStripMenuItem.ForeColor = Color.Black;
+            trabajadorToolStripMenuItem.ForeColor = Color.Black;
         }
 
 
         private void cliente_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            clienteToolStripMenuItem.ForeColor = Color.Blue;
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaCliente)
@@ -37,6 +53,8 @@ namespace LimpiezasPalmeralForms
 
         private void instalacion_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            instalaciónToolStripMenuItem.ForeColor = Color.Blue;
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaInstalacion)
@@ -54,6 +72,9 @@ namespace LimpiezasPalmeralForms
 
         private void producto_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            productoToolStripMenuItem.ForeColor = Color.Blue;
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaProducto)
@@ -70,6 +91,8 @@ namespace LimpiezasPalmeralForms
 
         private void proveedor_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            proveedorToolStripMenuItem.ForeColor = Color.Blue;
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaProveedor)
@@ -87,6 +110,9 @@ namespace LimpiezasPalmeralForms
 
         private void trabajador_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            trabajadorToolStripMenuItem.ForeColor = Color.Blue;
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaTrabajador)
@@ -101,6 +127,26 @@ namespace LimpiezasPalmeralForms
             trab.Show();
             trab.WindowState = FormWindowState.Maximized;
 
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorearMenu();
+            inicioToolStripMenuItem.ForeColor = Color.Blue;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is PantallaInicial)
+                {
+                    form.Activate();
+                    form.WindowState = FormWindowState.Maximized;
+                    return;
+                }
+            }
+
+            PantallaInicial ini = new PantallaInicial() { MdiParent = this };
+            ini.Show();
+            ini.WindowState = FormWindowState.Maximized;
         }
     }
 }
