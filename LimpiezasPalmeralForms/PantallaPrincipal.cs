@@ -15,10 +15,15 @@ namespace LimpiezasPalmeralForms
         public PantallaPrincipal()
         {
             InitializeComponent();
+            inicioToolStripMenuItem.ForeColor = Color.Blue;
+            PantallaInicial ini = new PantallaInicial() { MdiParent = this };
+            ini.Show();
+            ini.WindowState = FormWindowState.Maximized;
         }
 
         public void colorearMenu()
         {
+            inicioToolStripMenuItem.ForeColor = Color.Black;
             clienteToolStripMenuItem.ForeColor = Color.Black;
             instalaciónToolStripMenuItem.ForeColor = Color.Black;
             productoToolStripMenuItem.ForeColor = Color.Black;
@@ -110,7 +115,7 @@ namespace LimpiezasPalmeralForms
 
             foreach (Form form in Application.OpenForms)
             {
-                if (form is CrearTrabajador)
+                if (form is PantallaTrabajador)
                 {
                     form.Activate();
                     form.WindowState = FormWindowState.Maximized;
@@ -122,6 +127,26 @@ namespace LimpiezasPalmeralForms
             trab.Show();
             trab.WindowState = FormWindowState.Maximized;
 
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorearMenu();
+            inicioToolStripMenuItem.ForeColor = Color.Blue;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is PantallaInicial)
+                {
+                    form.Activate();
+                    form.WindowState = FormWindowState.Maximized;
+                    return;
+                }
+            }
+
+            PantallaInicial ini = new PantallaInicial() { MdiParent = this };
+            ini.Show();
+            ini.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -34,12 +34,14 @@
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inicioToolStripMenuItem,
             this.clienteToolStripMenuItem,
             this.instalaciónToolStripMenuItem,
             this.productoToolStripMenuItem,
@@ -83,9 +85,16 @@
             // trabajadorToolStripMenuItem
             // 
             this.trabajadorToolStripMenuItem.Name = "trabajadorToolStripMenuItem";
-            this.trabajadorToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.trabajadorToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.trabajadorToolStripMenuItem.Text = "Trabajador";
             this.trabajadorToolStripMenuItem.Click += new System.EventHandler(this.trabajador_Click);
+            // 
+            // inicioToolStripMenuItem
+            // 
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // PantallaPrincipal
             // 
@@ -95,7 +104,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PantallaPrincipal";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -113,6 +122,7 @@
         private System.Windows.Forms.ToolStripMenuItem trabajadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instalaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
 
     }
 }

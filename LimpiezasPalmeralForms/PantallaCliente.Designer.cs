@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
-            this.groupBoxClientesAcciones = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonClienteBuscar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonClienteDarAlta = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonClienteBuscar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBoxClientesAcciones = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonClienteDarAlta = new System.Windows.Forms.Button();
             this.groupBoxClientes.SuspendLayout();
-            this.groupBoxClientesAcciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBoxClientesAcciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxClientes
@@ -53,6 +53,30 @@
             this.groupBoxClientes.TabStop = false;
             this.groupBoxClientes.Text = "Clientes";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(468, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // buttonClienteBuscar
+            // 
+            this.buttonClienteBuscar.Location = new System.Drawing.Point(481, 17);
+            this.buttonClienteBuscar.Name = "buttonClienteBuscar";
+            this.buttonClienteBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonClienteBuscar.TabIndex = 1;
+            this.buttonClienteBuscar.Text = "Buscar";
+            this.buttonClienteBuscar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 45);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(549, 302);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // groupBoxClientesAcciones
             // 
             this.groupBoxClientesAcciones.Controls.Add(this.button2);
@@ -65,29 +89,23 @@
             this.groupBoxClientesAcciones.TabStop = false;
             this.groupBoxClientesAcciones.Text = "Acciones";
             // 
-            // dataGridView1
+            // button2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(549, 302);
-            this.dataGridView1.TabIndex = 0;
+            this.button2.Location = new System.Drawing.Point(6, 77);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Dar de Alta";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // buttonClienteBuscar
+            // button1
             // 
-            this.buttonClienteBuscar.Location = new System.Drawing.Point(481, 17);
-            this.buttonClienteBuscar.Name = "buttonClienteBuscar";
-            this.buttonClienteBuscar.Size = new System.Drawing.Size(75, 23);
-            this.buttonClienteBuscar.TabIndex = 1;
-            this.buttonClienteBuscar.Text = "Buscar";
-            this.buttonClienteBuscar.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(468, 20);
-            this.textBox1.TabIndex = 2;
+            this.button1.Location = new System.Drawing.Point(6, 48);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Dar de Alta";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // buttonClienteDarAlta
             // 
@@ -99,37 +117,22 @@
             this.buttonClienteDarAlta.UseVisualStyleBackColor = true;
             this.buttonClienteDarAlta.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Dar de Alta";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 77);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Dar de Alta";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // PantallaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 378);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBoxClientesAcciones);
             this.Controls.Add(this.groupBoxClientes);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PantallaCliente";
             this.Text = "PantallaCliente";
             this.groupBoxClientes.ResumeLayout(false);
             this.groupBoxClientes.PerformLayout();
-            this.groupBoxClientesAcciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBoxClientesAcciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
