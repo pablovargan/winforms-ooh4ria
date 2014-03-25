@@ -54,6 +54,12 @@
     <Compile Include="PantallaCliente.Designer.cs">
       <DependentUpon>PantallaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="PantallaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaInicial.Designer.cs">
+      <DependentUpon>PantallaInicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="PantallaInstalacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,15 @@
     <Compile Include="PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PantallaCliente.resx">
+      <DependentUpon>PantallaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaInicial.resx">
+      <DependentUpon>PantallaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaProveedor.resx">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </EmbeddedResource>
