@@ -57,9 +57,12 @@
             // 
             this.Mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Mostrar.Location = new System.Drawing.Point(6, 45);
+            this.Mostrar.MultiSelect = false;
             this.Mostrar.Name = "Mostrar";
+            this.Mostrar.ReadOnly = true;
             this.Mostrar.Size = new System.Drawing.Size(558, 298);
             this.Mostrar.TabIndex = 2;
+            this.Mostrar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Mostrar_CellClick);
             // 
             // Buscar
             // 
@@ -92,6 +95,7 @@
             // 
             // Modificar
             // 
+            this.Modificar.Enabled = false;
             this.Modificar.Location = new System.Drawing.Point(6, 126);
             this.Modificar.Name = "Modificar";
             this.Modificar.Size = new System.Drawing.Size(103, 23);
@@ -102,6 +106,7 @@
             // 
             // Eliminar
             // 
+            this.Eliminar.Enabled = false;
             this.Eliminar.Location = new System.Drawing.Point(6, 85);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(103, 23);

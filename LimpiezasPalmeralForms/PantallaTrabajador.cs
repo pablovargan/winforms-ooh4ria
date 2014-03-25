@@ -17,10 +17,12 @@ namespace LimpiezasPalmeralForms
         public PantallaTrabajador()
         {
             InitializeComponent();
-            Grid_Load();
+            this.Load += new EventHandler(Grid_Load);
+            this.GotFocus += new EventHandler(Grid_Load);
+            Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
         }
 
-        private void Grid_Load()
+        private void Grid_Load(object sender, EventArgs e)
         {
             TrabajadorCEN trabajador = new TrabajadorCEN();
             IList<TrabajadorEN> lista;
@@ -41,12 +43,25 @@ namespace LimpiezasPalmeralForms
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            //trabajador=Mostrar.SelectedRows;
 
         }
 
         private void Modificar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Mostrar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Eliminar.Enabled = true;
+            Modificar.Enabled = true;
+        }
+        private void Desactivar_Botones(object sender, EventArgs e)
+        {
+            Eliminar.Enabled = false;
+            Modificar.Enabled = false;
         }
     }
 }

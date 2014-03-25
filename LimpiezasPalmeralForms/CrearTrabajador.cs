@@ -35,14 +35,16 @@ namespace LimpiezasPalmeralForms
                     {
                         trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
                             CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Cooperativista);
+                        MessageBox.Show("Trabajador creado correctamente");
                     }
                     else
                     {
                         trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
                             CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Empleado);
+                        MessageBox.Show("Trabajador creado correctamente");
                     }
                     //alert Creado correctamente
-                    MessageBox.Show("Trabajador creado correctamente");
+                    this.Close();
                 }
                 catch (Exception exp)
                 {
