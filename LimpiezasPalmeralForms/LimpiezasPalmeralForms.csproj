@@ -92,6 +92,9 @@
     <Compile Include="PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CrearTrabajador.resx">
+      <DependentUpon>CrearTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaProveedor.resx">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </EmbeddedResource>

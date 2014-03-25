@@ -25,33 +25,32 @@ namespace LimpiezasPalmeralForms
             //Crear trabajador
             TrabajadorCEN trabajador = new TrabajadorCEN();
 
-            String nif, nom, ape, dir, lo, pro, pa, tel, c;
-            nif = NIF.Text;
-            nom = Nombre.Text;
-            ape = Apellidos.Text;
-            dir = Direccion.Text;
-            lo = Localidad.Text;
-            c = CP.Text;
-            pro = Provincia.Text;
-            pa = Pais.Text;
-            tel = Telefono.Text;
-            try
+            if(NIF.Text.Length!=0 && Nombre.Text.Length!=0 && Apellidos.Text.Length!=0 && Direccion.Text.Length!=0 &&
+                Telefono.Text.Length!=0 && CP.Text.Length!=0 && Pais.Text.Length!=0 && Localidad.Text.Length!=0 &&
+                Provincia.Text.Length != 0 && Tipo.Text.Length != 0)
             {
-                //if (Tipo.SelectedItem.ToString().Equals("Cooperativista"))
-                //{
-                    trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Cooperativista);
-                //}
-                //else
-                //{
-                //    trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Empleado);
-                //}
-                TrabajadorEN t=trabajador.ObtenerTrabajador(nif);
-                prueba.Text = t.Nif;
+                try
+                {
+                    if (Tipo.SelectedItem.ToString().Equals("Cooperativista"))
+                    {
+                        trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Cooperativista);
+                    }
+                    else
+                    {
+                        trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Empleado);
+                    }
+                }
+                catch (Exception exp)
+                {
+                    throw exp;
+                }
+
             }
-            catch (Exception exp)
+            else
             {
-                throw exp;
             }
+
+           
 
         }
     }
