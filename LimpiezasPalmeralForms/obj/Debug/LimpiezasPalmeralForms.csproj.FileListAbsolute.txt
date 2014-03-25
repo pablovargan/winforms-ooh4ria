@@ -35,3 +35,4 @@ C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Properties.Resources.resources
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.PantallaTrabajador.resources
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csproj.GenerateResource.Cache
+C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.CrearTrabajador.resources

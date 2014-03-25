@@ -33,11 +33,13 @@ namespace LimpiezasPalmeralForms
                 {
                     if (Tipo.SelectedItem.ToString().Equals("Cooperativista"))
                     {
-                        trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Cooperativista);
+                        trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
+                            CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Cooperativista);
                     }
                     else
                     {
-                        trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Empleado);
+                        trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
+                            CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Empleado);
                     }
                 }
                 catch (Exception exp)
