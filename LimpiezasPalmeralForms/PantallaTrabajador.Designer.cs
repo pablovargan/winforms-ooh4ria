@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Mostrar = new System.Windows.Forms.DataGridView();
             this.Buscar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -37,13 +37,13 @@
             this.Eliminar = new System.Windows.Forms.Button();
             this.Crear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mostrar)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.Mostrar);
             this.groupBox1.Controls.Add(this.Buscar);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -53,13 +53,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajadores";
             // 
-            // dataGridView1
+            // Mostrar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(558, 298);
-            this.dataGridView1.TabIndex = 2;
+            this.Mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Mostrar.Location = new System.Drawing.Point(6, 45);
+            this.Mostrar.MultiSelect = false;
+            this.Mostrar.Name = "Mostrar";
+            this.Mostrar.ReadOnly = true;
+            this.Mostrar.Size = new System.Drawing.Size(558, 298);
+            this.Mostrar.TabIndex = 2;
+            this.Mostrar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Mostrar_CellClick);
             // 
             // Buscar
             // 
@@ -92,6 +95,7 @@
             // 
             // Modificar
             // 
+            this.Modificar.Enabled = false;
             this.Modificar.Location = new System.Drawing.Point(6, 126);
             this.Modificar.Name = "Modificar";
             this.Modificar.Size = new System.Drawing.Size(103, 23);
@@ -102,6 +106,7 @@
             // 
             // Eliminar
             // 
+            this.Eliminar.Enabled = false;
             this.Eliminar.Location = new System.Drawing.Point(6, 85);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(103, 23);
@@ -120,18 +125,19 @@
             this.Crear.UseVisualStyleBackColor = true;
             this.Crear.Click += new System.EventHandler(this.Crear_Click);
             // 
-            // TrabajdorPrincipal
+            // PantallaTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 373);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "TrabajdorPrincipal";
+            this.Name = "PantallaTrabajador";
             this.Text = "TrabajdorPrincipal";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mostrar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -142,7 +148,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Buscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Mostrar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Crear;
         private System.Windows.Forms.Button Eliminar;

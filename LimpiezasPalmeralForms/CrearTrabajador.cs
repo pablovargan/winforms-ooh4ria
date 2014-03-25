@@ -20,39 +20,49 @@ namespace LimpiezasPalmeralForms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Crear_Click(object sender, EventArgs e)
         {
             //Crear trabajador
             TrabajadorCEN trabajador = new TrabajadorCEN();
 
-            String nif, nom, ape, dir, lo, pro, pa, tel, c;
-            nif = NIF.Text;
-            nom = Nombre.Text;
-            ape = Apellidos.Text;
-            dir = Direccion.Text;
-            lo = Localidad.Text;
-            c = CP.Text;
-            pro = Provincia.Text;
-            pa = Pais.Text;
-            tel = Telefono.Text;
-            try
+            if (NIF.Text.Length != 0 && Nombre.Text.Length != 0 && Apellidos.Text.Length != 0 && Direccion.Text.Length != 0 &&
+                Telefono.Text.Length != 0 && CP.Text.Length != 0 && Pais.Text.Length != 0 && Localidad.Text.Length != 0 &&
+                Provincia.Text.Length != 0 && Tipo.Text.Length != 0)
             {
-                //if (Tipo.SelectedItem.ToString().Equals("Cooperativista"))
-                //{
-                    trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Cooperativista);
-                //}
-                //else
-                //{
-                //    trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Empleado);
-                //}
-                TrabajadorEN t=trabajador.ObtenerTrabajador(nif);
-                prueba.Text = t.Nif;
+                try
+                {
+                    if (Tipo.SelectedItem.ToString().Equals("Cooperativista"))
+                    {
+                        trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
+                            CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Cooperativista);
+                        MessageBox.Show("Trabajador creado correctamente");
+                    }
+                    else
+                    {
+                        trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
+                            CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Empleado);
+                        MessageBox.Show("Trabajador creado correctamente");
+                    }
+                    //alert Creado correctamente
+                    this.Close();
+                }
+                catch (Exception exp)
+                {
+                    throw exp;
+                }
             }
-            catch (Exception exp)
+            else
             {
-                throw exp;
+                //alert hay campos sin rellenar
+                MessageBox.Show("Existen campos vacios");
             }
+        
+        }
 
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            //cerrar ventana
+            this.Close();
         }
     }
 }
