@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PalmeralGenNHibernate.CEN.Default_;
+using PalmeralGenNHibernate.EN.Default_;
 
 namespace LimpiezasPalmeralForms
 {
@@ -15,11 +17,19 @@ namespace LimpiezasPalmeralForms
         public PantallaTrabajador()
         {
             InitializeComponent();
+            Grid_Load();
+        }
+
+        private void Grid_Load()
+        {
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            IList<TrabajadorEN> lista;
+            lista=trabajador.ObtenerTodos(0, 0);
+            Mostrar.DataSource = lista;
         }
 
         private void Buscar_Click(object sender, EventArgs e)
         {
-            //al pulsar buscar
 
         }
 
