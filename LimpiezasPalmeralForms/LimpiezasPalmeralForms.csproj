@@ -98,19 +98,8 @@
     <Compile Include="PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="CrearTrabajador.resx">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="PantallaCliente.resx">
-      <DependentUpon>PantallaCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PantallaInicial.resx">
-      <DependentUpon>PantallaInicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PantallaPrincipal.resx">
-      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
->>>>>>> 399b9948d9256c85ff7fd29cdd94bbf8495465ef
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaProveedor.resx">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
