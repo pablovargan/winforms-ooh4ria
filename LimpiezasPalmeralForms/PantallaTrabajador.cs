@@ -19,6 +19,7 @@ namespace LimpiezasPalmeralForms
 
         private void Buscar_Click(object sender, EventArgs e)
         {
+            //al pulsar buscar
 
         }
 
