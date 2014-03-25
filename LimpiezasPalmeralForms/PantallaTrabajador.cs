@@ -16,5 +16,26 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
         }
+
+        private void Buscar_Click(object sender, EventArgs e)
+        {
+            //al pulsar buscar
+
+        }
+
+        private void Crear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Modificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

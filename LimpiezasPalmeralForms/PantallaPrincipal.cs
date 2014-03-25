@@ -110,7 +110,7 @@ namespace LimpiezasPalmeralForms
 
             foreach (Form form in Application.OpenForms)
             {
-                if (form is PantallaTrabajador)
+                if (form is CrearTrabajador)
                 {
                     form.Activate();
                     form.WindowState = FormWindowState.Maximized;
