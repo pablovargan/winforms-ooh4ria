@@ -42,3 +42,17 @@ C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\PalmeralGenNHibernate\obj\Debug\PalmeralGenNHibernate.csprojResolveAssemblyReference.cache
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\PalmeralGenNHibernate\obj\Debug\PalmeralGenNHibernate.dll
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\PalmeralGenNHibernate\obj\Debug\PalmeralGenNHibernate.pdb
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\hibernate.cfg.xml
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\PalmeralGenNHibernate.dll.config
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\PalmeralGenNHibernate.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\PalmeralGenNHibernate.pdb
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\LinFu.DynamicProxy.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\NHibernate.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\Iesi.Collections.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\Antlr3.Runtime.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\bin\Debug\log4net.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\obj\Debug\PalmeralGenNHibernate.dll
+C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\PalmeralGenNHibernate\obj\Debug\PalmeralGenNHibernate.pdb
