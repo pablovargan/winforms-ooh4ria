@@ -120,7 +120,7 @@
             "Empleado"});
             this.Tipo.Location = new System.Drawing.Point(94, 258);
             this.Tipo.Name = "Tipo";
-            this.Tipo.Size = new System.Drawing.Size(133, 43);
+            this.Tipo.Size = new System.Drawing.Size(133, 30);
             this.Tipo.TabIndex = 39;
             // 
             // Telefono

@@ -18,8 +18,8 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
             this.Load += new EventHandler(Grid_Load);
-            this.GotFocus += new EventHandler(Grid_Load);
             Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
+            Buscador.EnabledChanged += new EventHandler(Buscar_Trabajadores);
         }
 
         private void Grid_Load(object sender, EventArgs e)
@@ -28,23 +28,50 @@ namespace LimpiezasPalmeralForms
             IList<TrabajadorEN> lista;
             lista=trabajador.ObtenerTodos(0, 0);
             Mostrar.DataSource = lista;
+            Mostrar.ClearSelection();
         }
 
         private void Buscar_Click(object sender, EventArgs e)
         {
+            //Mostrar.ClearSelection();
+            //Buscador.TabStopChanged += new EventHandler(Buscar_Trabajadores);
+        }
+
+        private void Buscar_Trabajadores(object sender, EventArgs e)
+        {
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            IList<TrabajadorEN> lista;
+            if (Premisa.Text.Equals("Provincia"))
+            { 
+                lista=trabajador.BuscarPorProvincia(Buscador.Text);
+                Mostrar.DataSource = lista;
+            }
+            else if (Premisa.Text.Equals("Localidad"))
+            {
+                lista = trabajador.BuscarPorLocalidad(Buscador.Text);
+                Mostrar.DataSource = lista;
+            }
+            else
+            {
+                
+            }
+            Mostrar.ClearSelection();
 
         }
 
         private void Crear_Click(object sender, EventArgs e)
         {
             CrearTrabajador pantalla_trabajador = new CrearTrabajador();
+            pantalla_trabajador.Owner = this;
+            pantalla_trabajador.Deactivate += new EventHandler(Grid_Load);
             pantalla_trabajador.Show();
         }
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            TrabajadorCEN trabajador = new TrabajadorCEN();
-            //trabajador=Mostrar.SelectedRows;
+            //TrabajadorEN trabajador = new TrabajadorEN();
+
+            //trabajador=(TrabajadorEN) Mostrar.SelectedRows;
 
         }
 
