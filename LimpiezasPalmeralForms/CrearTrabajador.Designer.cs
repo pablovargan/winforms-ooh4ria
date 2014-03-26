@@ -51,6 +51,7 @@
             this.Nombre = new System.Windows.Forms.TextBox();
             this.NIF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.Tipo);
             this.groupBox1.Controls.Add(this.Telefono);
@@ -267,6 +269,18 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "NIF";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Cooperativista",
+            "Empleado"});
+            this.comboBox1.Location = new System.Drawing.Point(255, 258);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 41;
+            this.comboBox1.Text = "Selecciona uno...";
+            // 
             // CrearTrabajador
             // 
             this.ClientSize = new System.Drawing.Size(605, 386);
@@ -305,5 +319,6 @@
         private System.Windows.Forms.TextBox Nombre;
         private System.Windows.Forms.TextBox NIF;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

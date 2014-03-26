@@ -18,8 +18,10 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
             this.Load += new EventHandler(Grid_Load);
-            Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
-            Buscador.EnabledChanged += new EventHandler(Buscar_Trabajadores);
+            this.Load += new EventHandler(Grid_Load);
+           // Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
+            Buscador.KeyUp += new KeyEventHandler(Buscar_Trabajadores);
+            Eliminar.Click += new EventHandler(Grid_Load);
         }
 
         private void Grid_Load(object sender, EventArgs e)
@@ -28,19 +30,18 @@ namespace LimpiezasPalmeralForms
             IList<TrabajadorEN> lista;
             lista=trabajador.ObtenerTodos(0, 0);
             Mostrar.DataSource = lista;
-            Mostrar.ClearSelection();
-        }
 
-        private void Buscar_Click(object sender, EventArgs e)
-        {
-            //Mostrar.ClearSelection();
-            //Buscador.TabStopChanged += new EventHandler(Buscar_Trabajadores);
         }
 
         private void Buscar_Trabajadores(object sender, EventArgs e)
         {
             TrabajadorCEN trabajador = new TrabajadorCEN();
             IList<TrabajadorEN> lista;
+            if (Premisa.Text == "" || Buscador.Text == "")
+            {
+                lista = trabajador.ObtenerTodos(0, 0);
+                Mostrar.DataSource = lista;
+            }
             if (Premisa.Text.Equals("Provincia"))
             { 
                 lista=trabajador.BuscarPorProvincia(Buscador.Text);
@@ -69,10 +70,12 @@ namespace LimpiezasPalmeralForms
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            //TrabajadorEN trabajador = new TrabajadorEN();
-
-            //trabajador=(TrabajadorEN) Mostrar.SelectedRows;
-
+            
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorEN trabajador_eliminar =(TrabajadorEN) Mostrar.CurrentRow.DataBoundItem;
+            MessageBox.Show(trabajador_eliminar.Nif);
+            trabajador.Eliminar(trabajador_eliminar.Nif);
+            //Grid_Load(sender, e);
         }
 
         private void Modificar_Click(object sender, EventArgs e)
@@ -89,6 +92,11 @@ namespace LimpiezasPalmeralForms
         {
             Eliminar.Enabled = false;
             Modificar.Enabled = false;
+        }
+
+        private void Buscador_Click(object sender, EventArgs e)
+        {
+            Buscador.Text = "";
         }
     }
 }
