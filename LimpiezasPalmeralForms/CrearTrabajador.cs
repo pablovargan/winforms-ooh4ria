@@ -20,38 +20,49 @@ namespace LimpiezasPalmeralForms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Crear_Click(object sender, EventArgs e)
         {
             //Crear trabajador
             TrabajadorCEN trabajador = new TrabajadorCEN();
 
-            if(NIF.Text.Length!=0 && Nombre.Text.Length!=0 && Apellidos.Text.Length!=0 && Direccion.Text.Length!=0 &&
-                Telefono.Text.Length!=0 && CP.Text.Length!=0 && Pais.Text.Length!=0 && Localidad.Text.Length!=0 &&
+            if (NIF.Text.Length != 0 && Nombre.Text.Length != 0 && Apellidos.Text.Length != 0 && Direccion.Text.Length != 0 &&
+                Telefono.Text.Length != 0 && CP.Text.Length != 0 && Pais.Text.Length != 0 && Localidad.Text.Length != 0 &&
                 Provincia.Text.Length != 0 && Tipo.Text.Length != 0)
             {
                 try
                 {
                     if (Tipo.SelectedItem.ToString().Equals("Cooperativista"))
                     {
-                        trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Cooperativista);
+                        trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
+                            CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Cooperativista);
                     }
                     else
                     {
-                        trabajador.Crear(nif, nom, ape, dir, tel, c, pa, lo, pro, TipoEmpleoEnum.Empleado);
+                        trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
+                            CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Empleado);
                     }
+                    //alert Creado correctamente
+                    //MessageBox.Show("Trabajador creado correctamente");
+                    this.Close();
                 }
                 catch (Exception exp)
                 {
-                    throw exp;
+                    MessageBox.Show("El trabajador no se pudo crear");
+                    //throw exp;
                 }
-
             }
             else
             {
+                //alert hay campos sin rellenar
+                MessageBox.Show("Existen campos vacios");
             }
+        
+        }
 
-           
-
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            //cerrar ventana
+            this.Close();
         }
     }
 }
