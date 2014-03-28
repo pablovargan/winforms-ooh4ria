@@ -80,23 +80,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaProveedor.cs">
+    <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaProveedor.Designer.cs">
+    <Compile Include="Proveedor\AltaProveedor.Designer.cs">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Constantes.cs" />
-    <Compile Include="PantallaCliente.cs">
+    <Compile Include="Cliente\PantallaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PantallaCliente.Designer.cs">
+    <Compile Include="Cliente\PantallaCliente.Designer.cs">
       <DependentUpon>PantallaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaInicial.cs">
+    <Compile Include="Principal\PantallaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PantallaInicial.Designer.cs">
+    <Compile Include="Principal\PantallaInicial.Designer.cs">
       <DependentUpon>PantallaInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="PantallaInstalacion.cs">
@@ -105,10 +105,10 @@
     <Compile Include="PantallaInstalacion.Designer.cs">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaPrincipal.cs">
+    <Compile Include="Principal\PantallaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PantallaPrincipal.Designer.cs">
+    <Compile Include="Principal\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="PantallaProducto.cs">
@@ -117,10 +117,10 @@
     <Compile Include="PantallaProducto.Designer.cs">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaProveedor.cs">
+    <Compile Include="Proveedor\PantallaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PantallaProveedor.Designer.cs">
+    <Compile Include="Proveedor\PantallaProveedor.Designer.cs">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="CrearTrabajador.cs">
@@ -137,22 +137,22 @@
     <Compile Include="PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AltaProveedor.resx">
+    <EmbeddedResource Include="Proveedor\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearTrabajador.resx">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PantallaCliente.resx">
+    <EmbeddedResource Include="Cliente\PantallaCliente.resx">
       <DependentUpon>PantallaCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PantallaInicial.resx">
+    <EmbeddedResource Include="Principal\PantallaInicial.resx">
       <DependentUpon>PantallaInicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PantallaPrincipal.resx">
+    <EmbeddedResource Include="Principal\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PantallaProveedor.resx">
+    <EmbeddedResource Include="Proveedor\PantallaProveedor.resx">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
