@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
+            this.dataGridViewCliente = new System.Windows.Forms.DataGridView();
             this.groupBoxClientesAcciones = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonClienteDarAlta = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.buttonClienteBuscar = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
+            this.buttonConsultar = new System.Windows.Forms.Button();
+            this.buttonDarAlta = new System.Windows.Forms.Button();
+            this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.groupBoxClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             this.groupBoxClientesAcciones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,10 +47,9 @@
             this.groupBoxClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxClientes.Controls.Add(this.comboBox1);
-            this.groupBoxClientes.Controls.Add(this.textBox1);
-            this.groupBoxClientes.Controls.Add(this.buttonClienteBuscar);
-            this.groupBoxClientes.Controls.Add(this.dataGridView1);
+            this.groupBoxClientes.Controls.Add(this.comboBoxFiltro);
+            this.groupBoxClientes.Controls.Add(this.textBoxBuscar);
+            this.groupBoxClientes.Controls.Add(this.dataGridViewCliente);
             this.groupBoxClientes.Location = new System.Drawing.Point(13, 13);
             this.groupBoxClientes.Name = "groupBoxClientes";
             this.groupBoxClientes.Size = new System.Drawing.Size(562, 353);
@@ -58,33 +57,42 @@
             this.groupBoxClientes.TabStop = false;
             this.groupBoxClientes.Text = "Clientes";
             // 
-            // textBox1
+            // textBoxBuscar
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(134, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBoxBuscar.Location = new System.Drawing.Point(134, 17);
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(422, 20);
+            this.textBoxBuscar.TabIndex = 2;
+            this.textBoxBuscar.Text = "Introduzca el dato del cliente que desea buscar.";
+            this.textBoxBuscar.Click += new System.EventHandler(this.textBoxBuscar_Click);
             // 
-            // dataGridView1
+            // dataGridViewCliente
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewCliente.AllowUserToAddRows = false;
+            this.dataGridViewCliente.AllowUserToDeleteRows = false;
+            this.dataGridViewCliente.AllowUserToResizeColumns = false;
+            this.dataGridViewCliente.AllowUserToResizeRows = false;
+            this.dataGridViewCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(549, 300);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCliente.Location = new System.Drawing.Point(7, 47);
+            this.dataGridViewCliente.Name = "dataGridViewCliente";
+            this.dataGridViewCliente.ReadOnly = true;
+            this.dataGridViewCliente.Size = new System.Drawing.Size(549, 300);
+            this.dataGridViewCliente.TabIndex = 0;
             // 
             // groupBoxClientesAcciones
             // 
             this.groupBoxClientesAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxClientesAcciones.Controls.Add(this.button2);
-            this.groupBoxClientesAcciones.Controls.Add(this.button1);
-            this.groupBoxClientesAcciones.Controls.Add(this.buttonClienteDarAlta);
+            this.groupBoxClientesAcciones.Controls.Add(this.buttonEliminar);
+            this.groupBoxClientesAcciones.Controls.Add(this.buttonEditar);
+            this.groupBoxClientesAcciones.Controls.Add(this.buttonConsultar);
+            this.groupBoxClientesAcciones.Controls.Add(this.buttonDarAlta);
             this.groupBoxClientesAcciones.Location = new System.Drawing.Point(581, 13);
             this.groupBoxClientesAcciones.Name = "groupBoxClientesAcciones";
             this.groupBoxClientesAcciones.Size = new System.Drawing.Size(133, 353);
@@ -92,52 +100,55 @@
             this.groupBoxClientesAcciones.TabStop = false;
             this.groupBoxClientesAcciones.Text = "Acciones";
             // 
-            // button2
+            // buttonEliminar
             // 
-            this.button2.Location = new System.Drawing.Point(6, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 43);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Dar de Alta";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Location = new System.Drawing.Point(6, 167);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(121, 44);
+            this.buttonEliminar.TabIndex = 3;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
-            // button1
+            // buttonEditar
             // 
-            this.button1.Location = new System.Drawing.Point(6, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Dar de Alta";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttonEditar.Location = new System.Drawing.Point(6, 117);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(121, 44);
+            this.buttonEditar.TabIndex = 2;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
             // 
-            // buttonClienteDarAlta
+            // buttonConsultar
             // 
-            this.buttonClienteDarAlta.Location = new System.Drawing.Point(6, 17);
-            this.buttonClienteDarAlta.Name = "buttonClienteDarAlta";
-            this.buttonClienteDarAlta.Size = new System.Drawing.Size(121, 44);
-            this.buttonClienteDarAlta.TabIndex = 0;
-            this.buttonClienteDarAlta.Text = "Dar de Alta";
-            this.buttonClienteDarAlta.UseVisualStyleBackColor = true;
-            this.buttonClienteDarAlta.Click += new System.EventHandler(this.button1_Click);
+            this.buttonConsultar.Location = new System.Drawing.Point(6, 67);
+            this.buttonConsultar.Name = "buttonConsultar";
+            this.buttonConsultar.Size = new System.Drawing.Size(121, 44);
+            this.buttonConsultar.TabIndex = 1;
+            this.buttonConsultar.Text = "Consultar";
+            this.buttonConsultar.UseVisualStyleBackColor = true;
+            this.buttonConsultar.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // comboBox1
+            // buttonDarAlta
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.buttonDarAlta.Location = new System.Drawing.Point(6, 17);
+            this.buttonDarAlta.Name = "buttonDarAlta";
+            this.buttonDarAlta.Size = new System.Drawing.Size(121, 44);
+            this.buttonDarAlta.TabIndex = 0;
+            this.buttonDarAlta.Text = "Dar de Alta";
+            this.buttonDarAlta.UseVisualStyleBackColor = true;
+            this.buttonDarAlta.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonClienteBuscar
+            // comboBoxFiltro
             // 
-            this.buttonClienteBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClienteBuscar.Location = new System.Drawing.Point(458, 17);
-            this.buttonClienteBuscar.Name = "buttonClienteBuscar";
-            this.buttonClienteBuscar.Size = new System.Drawing.Size(98, 24);
-            this.buttonClienteBuscar.TabIndex = 1;
-            this.buttonClienteBuscar.Text = "Buscar";
-            this.buttonClienteBuscar.UseVisualStyleBackColor = true;
+            this.comboBoxFiltro.FormattingEnabled = true;
+            this.comboBoxFiltro.Items.AddRange(new object[] {
+            "NIF",
+            "Nombre"});
+            this.comboBoxFiltro.Location = new System.Drawing.Point(7, 17);
+            this.comboBoxFiltro.Name = "comboBoxFiltro";
+            this.comboBoxFiltro.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxFiltro.TabIndex = 3;
             // 
             // PantallaCliente
             // 
@@ -153,7 +164,7 @@
             this.Text = "PantallaCliente";
             this.groupBoxClientes.ResumeLayout(false);
             this.groupBoxClientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).EndInit();
             this.groupBoxClientesAcciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -162,14 +173,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxClientes;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBoxBuscar;
+        private System.Windows.Forms.DataGridView dataGridViewCliente;
         private System.Windows.Forms.GroupBox groupBoxClientesAcciones;
-        private System.Windows.Forms.Button buttonClienteDarAlta;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button buttonClienteBuscar;
+        private System.Windows.Forms.Button buttonDarAlta;
+        private System.Windows.Forms.Button buttonEditar;
+        private System.Windows.Forms.Button buttonConsultar;
+        private System.Windows.Forms.Button buttonEliminar;
+        private System.Windows.Forms.ComboBox comboBoxFiltro;
 
     }
 }

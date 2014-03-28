@@ -59,7 +59,7 @@
             this.busquedaBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.busquedaBox.Location = new System.Drawing.Point(116, 20);
-            this.busquedaBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.busquedaBox.Margin = new System.Windows.Forms.Padding(2);
             this.busquedaBox.Name = "busquedaBox";
             this.busquedaBox.Size = new System.Drawing.Size(448, 20);
             this.busquedaBox.TabIndex = 2;
@@ -76,7 +76,7 @@
             "Nombre",
             "Provincia"});
             this.buscarComboBox.Location = new System.Drawing.Point(6, 19);
-            this.buscarComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buscarComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.buscarComboBox.Name = "buscarComboBox";
             this.buscarComboBox.Size = new System.Drawing.Size(106, 21);
             this.buscarComboBox.TabIndex = 3;
@@ -88,6 +88,7 @@
             this.proveedorGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.proveedorGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.proveedorGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.proveedorGrid.Location = new System.Drawing.Point(6, 45);
             this.proveedorGrid.Name = "proveedorGrid";
@@ -101,9 +102,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.accionesGB.Controls.Add(this.altaButton);
             this.accionesGB.Location = new System.Drawing.Point(588, 12);
-            this.accionesGB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accionesGB.Margin = new System.Windows.Forms.Padding(2);
             this.accionesGB.Name = "accionesGB";
-            this.accionesGB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accionesGB.Padding = new System.Windows.Forms.Padding(2);
             this.accionesGB.Size = new System.Drawing.Size(161, 381);
             this.accionesGB.TabIndex = 12;
             this.accionesGB.TabStop = false;
@@ -112,7 +113,7 @@
             // altaButton
             // 
             this.altaButton.Location = new System.Drawing.Point(5, 18);
-            this.altaButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altaButton.Margin = new System.Windows.Forms.Padding(2);
             this.altaButton.Name = "altaButton";
             this.altaButton.Size = new System.Drawing.Size(152, 46);
             this.altaButton.TabIndex = 0;
