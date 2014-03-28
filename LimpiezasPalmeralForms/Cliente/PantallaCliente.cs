@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LimpiezasPalmeralForms.Cliente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,10 @@ namespace LimpiezasPalmeralForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AltaCliente ac = new AltaCliente() { Owner = this };
+            ac.Show();
+            // Cuando se pierda el foco de la pantalla cargará el grid de nuevo
+            //ac.Deactivate += GridClient
         }
 
         private void button1_Click_1(object sender, EventArgs e)

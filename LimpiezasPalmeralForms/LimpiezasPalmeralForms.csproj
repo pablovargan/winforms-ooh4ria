@@ -146,6 +146,9 @@
     <EmbeddedResource Include="Cliente\AltaCliente.resx">
       <DependentUpon>AltaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Producto\PantallaProducto.resx">
+      <DependentUpon>PantallaProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
     </EmbeddedResource>

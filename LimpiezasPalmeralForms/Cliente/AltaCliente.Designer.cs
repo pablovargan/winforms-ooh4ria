@@ -173,6 +173,7 @@
             this.Controls.Add(this.crearButton);
             this.Controls.Add(this.ClienteGB);
             this.Name = "AltaCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaCliente";
             this.ClienteGB.ResumeLayout(false);
             this.ClienteGB.PerformLayout();
