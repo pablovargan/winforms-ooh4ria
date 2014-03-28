@@ -17,8 +17,8 @@ namespace LimpiezasPalmeralForms.Cliente
         public ConsultarEditarCliente(DataGridView dataGridViewCliente, bool editar)
         {
             InitializeComponent();
-            ClienteEN clienteMostrar = (ClienteEN)dataGridViewCliente.CurrentRow.DataBoundItem;
-            pintarDatosCliente(clienteMostrar);
+            ClienteCEN clienteMostrar = new ClienteCEN();
+            pintarDatosCliente((ClienteEN)clienteMostrar.ObtenerCliente(dataGridViewCliente.SelectedRows[0].Cells[0].Value.ToString()));
             buttonCancelar.Hide();
             if (editar) activarCampos();
         }

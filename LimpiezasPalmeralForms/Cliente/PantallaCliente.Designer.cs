@@ -94,6 +94,7 @@
             this.dataGridViewCliente.Location = new System.Drawing.Point(7, 47);
             this.dataGridViewCliente.Name = "dataGridViewCliente";
             this.dataGridViewCliente.ReadOnly = true;
+            this.dataGridViewCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCliente.Size = new System.Drawing.Size(549, 300);
             this.dataGridViewCliente.TabIndex = 0;
             // 

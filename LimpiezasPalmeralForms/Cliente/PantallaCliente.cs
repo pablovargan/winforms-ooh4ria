@@ -51,9 +51,25 @@ namespace LimpiezasPalmeralForms
         private void Grid_Load(object sender, EventArgs e)
         {
             ClienteCEN cliente = new ClienteCEN();
+            List<ClienteGV> clienteGV = new List<ClienteGV>();
             IList<ClienteEN> lista;
             lista = cliente.ObtenerTodos(0, 0);
-            dataGridViewCliente.DataSource = lista;
+            foreach (ClienteEN c in lista)
+            {
+                clienteGV.Add(new ClienteGV()
+                {
+                    NIF = c.Nif,
+                    Nombre = c.Nombre,
+                    Email = c.Email,
+                    Direccion = c.Direccion,
+                    Localidad = c.Localidad,
+                    Provincia = c.Provincia,
+                    Telefono = c.Telefono,
+                    CodigoPostal = c.CodigoPostal,
+                    Pais = c.Pais
+                });
+            }
+            dataGridViewCliente.DataSource = clienteGV;
 
         }
 
@@ -104,5 +120,18 @@ namespace LimpiezasPalmeralForms
         {
             Grid_Load(sender, e);
         }
+    }
+
+    public class ClienteGV
+    {
+        public string NIF { get; set; }
+        public string Nombre { get; set; }
+        public string Email { get; set; }
+        public string Direccion { get; set; }
+        public string Localidad { get; set; }
+        public string Provincia { get; set; }
+        public string Telefono { get; set; }
+        public string CodigoPostal { get; set; }
+        public string Pais { get; set; }
     }
 }

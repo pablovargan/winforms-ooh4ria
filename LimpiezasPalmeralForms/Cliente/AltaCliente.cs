@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PalmeralGenNHibernate.CEN.Default_;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,34 @@ namespace LimpiezasPalmeralForms.Cliente
             InitializeComponent();
         }
 
-        private void cancelarButton_Click(object sender, EventArgs e)
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void crearButton_Click(object sender, EventArgs e)
+        private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ClienteCEN cliente = new ClienteCEN();
+
+            if (!string.IsNullOrWhiteSpace(textBoxNIF.Text as string))
+            {
+                try
+                {
+                    cliente.Crear(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
+                        textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
+                        textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
+                    this.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(Constantes._ERRORCREAR);
+                }
+            }
+            else
+                MessageBox.Show(Constantes._ERRORNIF);
+           
         }
     }
 }
