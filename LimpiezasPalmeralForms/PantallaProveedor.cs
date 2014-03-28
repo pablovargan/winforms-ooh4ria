@@ -21,7 +21,8 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
             _proveedor = new ProveedorCEN();
-            this.Load += new EventHandler(GridProveedor_Load); 
+            busquedaBox.KeyUp += busquedaBox_KeyUp;
+            this.Load += GridProveedor_Load; 
         }
 
         private void GridProveedor_Load(object sender, EventArgs e)
@@ -35,6 +36,19 @@ namespace LimpiezasPalmeralForms
             ap.Show();
             // Cuando se pierda el foco de la pantalla cargará el grid de nuevo
             ap.Deactivate += GridProveedor_Load;
+        }
+
+        private void busquedaBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(buscarComboBox.SelectedItem as string))
+            {
+
+            }
+        }
+
+        private void Buscador_Click(object sender, EventArgs e)
+        {
+            busquedaBox.Clear();
         }
 
 

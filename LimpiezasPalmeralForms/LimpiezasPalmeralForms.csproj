@@ -143,6 +143,12 @@
     <EmbeddedResource Include="CrearTrabajador.resx">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PantallaInicial.resx">
+      <DependentUpon>PantallaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaProveedor.resx">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </EmbeddedResource>

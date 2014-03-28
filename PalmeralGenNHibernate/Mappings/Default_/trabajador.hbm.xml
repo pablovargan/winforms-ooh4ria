@@ -76,8 +76,8 @@
 		  </class>
 		  
 		  <query name="TrabajadorENReadAllHQL">from TrabajadorEN</query>
-		  <query name="TrabajadorENbuscarPorLocalidadHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Localidad = :p_localidad]]></query>
-		  <query name="TrabajadorENbuscarPorProvinciaHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Provincia = :p_provincia]]></query>
-		  <query name="TrabajadorENbuscarPorTipoHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Tipo = :p_tipoEmpleo]]></query>
+		  <query name="TrabajadorENbuscarPorLocalidadHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Localidad LIKE CONCAT('%', :p_localidad , '%')]]></query>
+		  <query name="TrabajadorENbuscarPorProvinciaHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Provincia LIKE CONCAT('%', :p_provincia , '%')]]></query>
+		  <query name="TrabajadorENbuscarPorTipoHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Tipo LIKE CONCAT('%', :p_tipoEmpleo , '%')]]></query>
 		</hibernate-mapping>
 	
