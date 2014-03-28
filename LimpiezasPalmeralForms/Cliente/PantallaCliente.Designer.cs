@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
+            this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.dataGridViewCliente = new System.Windows.Forms.DataGridView();
             this.groupBoxClientesAcciones = new System.Windows.Forms.GroupBox();
@@ -36,7 +37,6 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonConsultar = new System.Windows.Forms.Button();
             this.buttonDarAlta = new System.Windows.Forms.Button();
-            this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.groupBoxClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             this.groupBoxClientesAcciones.SuspendLayout();
@@ -57,6 +57,17 @@
             this.groupBoxClientes.TabStop = false;
             this.groupBoxClientes.Text = "Clientes";
             // 
+            // comboBoxFiltro
+            // 
+            this.comboBoxFiltro.FormattingEnabled = true;
+            this.comboBoxFiltro.Items.AddRange(new object[] {
+            "NIF",
+            "Nombre"});
+            this.comboBoxFiltro.Location = new System.Drawing.Point(7, 17);
+            this.comboBoxFiltro.Name = "comboBoxFiltro";
+            this.comboBoxFiltro.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxFiltro.TabIndex = 3;
+            // 
             // textBoxBuscar
             // 
             this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -67,6 +78,7 @@
             this.textBoxBuscar.TabIndex = 2;
             this.textBoxBuscar.Text = "Introduzca el dato del cliente que desea buscar.";
             this.textBoxBuscar.Click += new System.EventHandler(this.textBoxBuscar_Click);
+            this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // dataGridViewCliente
             // 
@@ -118,6 +130,7 @@
             this.buttonEditar.TabIndex = 2;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonConsultar
             // 
@@ -138,17 +151,6 @@
             this.buttonDarAlta.Text = "Dar de Alta";
             this.buttonDarAlta.UseVisualStyleBackColor = true;
             this.buttonDarAlta.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBoxFiltro
-            // 
-            this.comboBoxFiltro.FormattingEnabled = true;
-            this.comboBoxFiltro.Items.AddRange(new object[] {
-            "NIF",
-            "Nombre"});
-            this.comboBoxFiltro.Location = new System.Drawing.Point(7, 17);
-            this.comboBoxFiltro.Name = "comboBoxFiltro";
-            this.comboBoxFiltro.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxFiltro.TabIndex = 3;
             // 
             // PantallaCliente
             // 

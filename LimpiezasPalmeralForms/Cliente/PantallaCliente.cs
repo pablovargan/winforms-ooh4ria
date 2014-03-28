@@ -46,6 +46,7 @@ namespace LimpiezasPalmeralForms
                 dataGridViewCliente.DataSource = lista;
             }
         }
+        
 
         private void Grid_Load(object sender, EventArgs e)
         {
@@ -59,14 +60,18 @@ namespace LimpiezasPalmeralForms
         private void button1_Click(object sender, EventArgs e)
         {
             AltaCliente ac = new AltaCliente() { Owner = this };
+            ac.Owner = this;
+            ac.Deactivate += new EventHandler(Grid_Load);
             ac.Show();
             // Cuando se pierda el foco de la pantalla cargará el grid de nuevo
-            //ac.Deactivate += GridClient
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            ConsultarEditarCliente cc = new ConsultarEditarCliente(dataGridViewCliente, false) { Owner = this };
+            cc.Owner = this;
+            cc.Deactivate += new EventHandler(Grid_Load);
+            cc.Show();
         }
 
         private void textBoxBuscar_Click(object sender, EventArgs e)
@@ -85,6 +90,19 @@ namespace LimpiezasPalmeralForms
             Grid_Load(sender, e);
              
              */
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ConsultarEditarCliente ec = new ConsultarEditarCliente(dataGridViewCliente, true) { Owner = this };
+            ec.Owner = this;
+            ec.Deactivate += new EventHandler(Grid_Load);
+            ec.Show();
+        }
+
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Grid_Load(sender, e);
         }
     }
 }

@@ -16,5 +16,15 @@ namespace LimpiezasPalmeralForms.Cliente
         {
             InitializeComponent();
         }
+
+        private void cancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void crearButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

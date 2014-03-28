@@ -86,6 +86,12 @@
     <Compile Include="Cliente\AltaCliente.Designer.cs">
       <DependentUpon>AltaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\ConsultarEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\ConsultarEditarCliente.Designer.cs">
+      <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="Cliente\AltaCliente.resx">
       <DependentUpon>AltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\ConsultarEditarCliente.resx">
+      <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\PantallaProducto.resx">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
