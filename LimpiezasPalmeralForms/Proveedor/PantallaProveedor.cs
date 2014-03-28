@@ -16,42 +16,94 @@ namespace LimpiezasPalmeralForms
     public partial class PantallaProveedor : Form
     {
         private ProveedorCEN _proveedor;
+        private List<ProveedorGV> _provGD;
 
         public PantallaProveedor()
         {
             InitializeComponent();
             _proveedor = new ProveedorCEN();
-            busquedaBox.KeyUp += busquedaBox_KeyUp;
-            this.Load += GridProveedor_Load; 
+            _provGD = new List<ProveedorGV>();
+            this.Load += GridProveedor_Load;
         }
 
         private void GridProveedor_Load(object sender, EventArgs e)
         {
-            proveedorGrid.DataSource = _proveedor.ObtenerTodos(0,0);
+            if(_provGD != null)
+            {
+                proveedorGrid.DataSource = null;
+                _provGD.Clear();
+                foreach (ProveedorEN p in _proveedor.ObtenerTodos(0, 0))
+                {
+                    _provGD.Add(new ProveedorGV()
+                    {
+                        NIF = p.Id,
+                        Nombre = p.Nombre,
+                        Email = p.Email,
+                        Direccion = p.Direccion,
+                        Localidad = p.Localidad,
+                        Provincia = p.Provincia,
+                        Telefono = p.Telefono,
+                        CodigoPostal = p.CodigoPostal,
+                        Pais = p.Pais
+                    });
+                }
+                proveedorGrid.DataSource = _provGD;
+            } 
         }
 
         private void AltaProveedor_Click(object sender, EventArgs e)
         {
             AltaProveedor ap = new AltaProveedor() { Owner = this };
             ap.Show();
-            // Cuando se pierda el foco de la pantalla cargará el grid de nuevo
             ap.Deactivate += GridProveedor_Load;
-        }
-
-        private void busquedaBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if(!string.IsNullOrWhiteSpace(buscarComboBox.SelectedItem as string))
-            {
-
-            }
         }
 
         private void Buscador_Click(object sender, EventArgs e)
         {
             busquedaBox.Clear();
+            busquedaBox.TextChanged += GridProveedor_Load;
         }
 
+        private void Buscar_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(busquedaBox.Text as string))
+            {
+                if(_provGD != null )
+                {
+                    proveedorGrid.DataSource = null;
+                    ProveedorEN p = _proveedor.ObtenerProveedor(busquedaBox.Text);
+                    if (p != null)
+                    {
+                        _provGD.Clear();
+                        _provGD.Add(new ProveedorGV()
+                        {
+                            NIF = p.Id,
+                            Nombre = p.Nombre,
+                            Email = p.Email,
+                            Direccion = p.Direccion,
+                            Localidad = p.Localidad,
+                            Provincia = p.Provincia,
+                            Telefono = p.Telefono,
+                            CodigoPostal = p.CodigoPostal,
+                            Pais = p.Pais
+                        });
+                        proveedorGrid.DataSource = _provGD;
+                    }
+                }
+            }
+        }
+    }
 
-
+    public class ProveedorGV
+    {
+        public string NIF { get; set; }
+        public string Nombre { get; set; }
+        public string Email { get; set; }
+        public string Direccion { get; set; }
+        public string Localidad { get; set; }
+        public string Provincia { get; set; }
+        public string Telefono { get; set; }
+        public string CodigoPostal { get; set; }
+        public string Pais { get; set; }
     }
 }
