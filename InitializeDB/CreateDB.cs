@@ -128,7 +128,8 @@ public static void InitializeData ()
                 productoCEN.Crear ("2", "lejia", "Limpialo todo", 5, "foto.com");
                 ProveedorCEN proveedorCEN = new ProveedorCEN ();
                 proveedorCEN.Crear ("1", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "España", "oooo que chulo");
-
+                proveedorCEN.Crear("2", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "Espa�a", "oooo que chulo");
+                proveedorCEN.Crear("3", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "Espa�a", "oooo que chulo");
                 TrabajadorCEN trabajadorCEN = new TrabajadorCEN ();
                 trabajadorCEN.Crear ("11111111A", "Trabajador 1", "Apellidos trabajador1", "Calle del trabajador1", "123456789", "00440", "Espa�a", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
                 trabajadorCEN.Crear ("22222222B", "Trabajador 2", "Apellidos trabajador2", "Calle del trabajador2", "234552345", "00442", "Espa�a", "Villena", "AxoWorld", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
