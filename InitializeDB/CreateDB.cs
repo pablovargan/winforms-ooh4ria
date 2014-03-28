@@ -124,7 +124,10 @@ public static void InitializeData ()
                 proveedorCEN.Crear ("1", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "Espa�a", "oooo que chulo");
 
                 TrabajadorCEN trabajadorCEN = new TrabajadorCEN ();
-                trabajadorCEN.Crear ("11111111A", "Trabajador 1", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "Espa�a", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                trabajadorCEN.Crear ("11111111A", "Trabajador 1", "Apellidos trabajador1", "Calle del trabajador1", "123456789", "00440", "Espa�a", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                trabajadorCEN.Crear ("22222222B", "Trabajador 2", "Apellidos trabajador2", "Calle del trabajador2", "234552345", "00442", "Espa�a", "Villena", "AxoWorld", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
+                trabajadorCEN.Crear ("33333333C", "Trabajador 3", "Apellidos trabajador3", "Calle del trabajador3", "235254534", "00443", "Francia", "Buxusua", "Buxusue", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
+                trabajadorCEN.Crear ("44444444D", "Trabajador 4", "Apellidos trabajador4", "Calle del trabajador4", "623452345", "00444", "Espa�a", "de por ahi", "Perdio", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
 
                 IList<LineaPedidoEN> lineas = new List<LineaPedidoEN>();
                 lineas.Add (new LineaPedidoEN (1, 5, productoCEN.get_IProductoCAD ().ReadOIDDefault ("1"), null));

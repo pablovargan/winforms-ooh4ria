@@ -36,4 +36,3 @@ C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\PalmeralGenNHibernate.dll
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\bin\Debug\PalmeralGenNHibernate.pdb
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
-C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\InitializeDB\bin\Debug\InitializeDB.exe.config

@@ -80,6 +80,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaProveedor.Designer.cs">
+      <DependentUpon>AltaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constantes.cs" />
     <Compile Include="PantallaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,8 +137,17 @@
     <Compile Include="PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AltaProveedor.resx">
+      <DependentUpon>AltaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearTrabajador.resx">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaInicial.resx">
+      <DependentUpon>PantallaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaProveedor.resx">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>

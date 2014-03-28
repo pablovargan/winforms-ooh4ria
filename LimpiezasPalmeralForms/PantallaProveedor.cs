@@ -21,20 +21,34 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
             _proveedor = new ProveedorCEN();
-            this.Load += new EventHandler(PantallaProveedor_Load);
-            
+            busquedaBox.KeyUp += busquedaBox_KeyUp;
+            this.Load += GridProveedor_Load; 
         }
 
-        private void PantallaProveedor_Load(object sender, EventArgs e)
+        private void GridProveedor_Load(object sender, EventArgs e)
         {
-            //if(_proveedor != null)
-            //    proveedorBindingSource.DataSource = _proveedor.ObtenerTodos(0,0);
+            proveedorGrid.DataSource = _proveedor.ObtenerTodos(0,0);
         }
 
-        private void altaProveedor_click(object sender, EventArgs e)
+        private void AltaProveedor_Click(object sender, EventArgs e)
         {
-            //_proveedor.Crear(dniBox.Text, nombreBox.Text, telefonoBox.Text, direccionBox.Text, localidadBox.Text, provinciaBox.Text,
-            //    codigoPostalBox.Text, emailBox.Text, paisBox.Text, descripcionBox.Text);
+            AltaProveedor ap = new AltaProveedor() { Owner = this };
+            ap.Show();
+            // Cuando se pierda el foco de la pantalla cargará el grid de nuevo
+            ap.Deactivate += GridProveedor_Load;
+        }
+
+        private void busquedaBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(buscarComboBox.SelectedItem as string))
+            {
+
+            }
+        }
+
+        private void Buscador_Click(object sender, EventArgs e)
+        {
+            busquedaBox.Clear();
         }
 
 
