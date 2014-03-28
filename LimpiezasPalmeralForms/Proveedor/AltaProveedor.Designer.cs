@@ -1,6 +1,6 @@
 ﻿namespace LimpiezasPalmeralForms
 {
-    partial class AltaProveedor
+    partial class ConsultarProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.altaProveedorGB = new System.Windows.Forms.GroupBox();
+            this.descripcionBox = new System.Windows.Forms.TextBox();
+            this.paisBox = new System.Windows.Forms.TextBox();
             this.descripcionLabel = new System.Windows.Forms.Label();
             this.codigoPostalBox = new System.Windows.Forms.TextBox();
             this.telefonoBox = new System.Windows.Forms.TextBox();
@@ -49,8 +51,6 @@
             this.nifLabel = new System.Windows.Forms.Label();
             this.crearButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
-            this.paisBox = new System.Windows.Forms.TextBox();
-            this.descripcionBox = new System.Windows.Forms.TextBox();
             this.altaProveedorGB.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,22 @@
             this.altaProveedorGB.TabIndex = 0;
             this.altaProveedorGB.TabStop = false;
             this.altaProveedorGB.Text = "Proveedor";
+            // 
+            // descripcionBox
+            // 
+            this.descripcionBox.Location = new System.Drawing.Point(312, 186);
+            this.descripcionBox.Multiline = true;
+            this.descripcionBox.Name = "descripcionBox";
+            this.descripcionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descripcionBox.Size = new System.Drawing.Size(249, 82);
+            this.descripcionBox.TabIndex = 20;
+            // 
+            // paisBox
+            // 
+            this.paisBox.Location = new System.Drawing.Point(431, 126);
+            this.paisBox.Name = "paisBox";
+            this.paisBox.Size = new System.Drawing.Size(130, 22);
+            this.paisBox.TabIndex = 19;
             // 
             // descripcionLabel
             // 
@@ -234,7 +250,7 @@
             this.crearButton.Location = new System.Drawing.Point(181, 318);
             this.crearButton.Name = "crearButton";
             this.crearButton.Size = new System.Drawing.Size(203, 56);
-            this.crearButton.TabIndex = 0;
+            this.crearButton.TabIndex = 1;
             this.crearButton.Text = "Crear";
             this.crearButton.UseVisualStyleBackColor = true;
             this.crearButton.Click += new System.EventHandler(this.Crear_Click);
@@ -244,35 +260,21 @@
             this.cancelarButton.Location = new System.Drawing.Point(390, 318);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(203, 56);
-            this.cancelarButton.TabIndex = 1;
+            this.cancelarButton.TabIndex = 0;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
             this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
             // 
-            // paisBox
-            // 
-            this.paisBox.Location = new System.Drawing.Point(431, 126);
-            this.paisBox.Name = "paisBox";
-            this.paisBox.Size = new System.Drawing.Size(130, 22);
-            this.paisBox.TabIndex = 19;
-            // 
-            // descripcionBox
-            // 
-            this.descripcionBox.Location = new System.Drawing.Point(312, 186);
-            this.descripcionBox.Multiline = true;
-            this.descripcionBox.Name = "descripcionBox";
-            this.descripcionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descripcionBox.Size = new System.Drawing.Size(249, 82);
-            this.descripcionBox.TabIndex = 20;
-            // 
             // AltaProveedor
             // 
             this.ClientSize = new System.Drawing.Size(605, 386);
+            this.ControlBox = false;
             this.Controls.Add(this.cancelarButton);
             this.Controls.Add(this.crearButton);
             this.Controls.Add(this.altaProveedorGB);
             this.Name = "AltaProveedor";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.altaProveedorGB.ResumeLayout(false);
             this.altaProveedorGB.PerformLayout();
             this.ResumeLayout(false);
