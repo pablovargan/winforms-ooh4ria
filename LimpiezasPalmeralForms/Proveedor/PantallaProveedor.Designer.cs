@@ -68,39 +68,13 @@
             // 
             // busquedaBox
             // 
-<<<<<<< HEAD
-            this.busquedaBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.busquedaBox.Location = new System.Drawing.Point(116, 20);
-            this.busquedaBox.Margin = new System.Windows.Forms.Padding(2);
-=======
             this.busquedaBox.Location = new System.Drawing.Point(8, 23);
             this.busquedaBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> 5e242ee5280a0689d9d857fc485e9c3c2df2cf0d
             this.busquedaBox.Name = "busquedaBox";
             this.busquedaBox.Size = new System.Drawing.Size(106, 22);
             this.busquedaBox.TabIndex = 2;
             this.busquedaBox.Text = "NIF";
             this.busquedaBox.Click += new System.EventHandler(this.Buscador_Click);
-<<<<<<< HEAD
-            this.busquedaBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.busquedaBox_KeyUp);
-            // 
-            // buscarComboBox
-            // 
-            this.buscarComboBox.FormattingEnabled = true;
-            this.buscarComboBox.Items.AddRange(new object[] {
-            "Id",
-            "Localidad",
-            "Nombre",
-            "Provincia"});
-            this.buscarComboBox.Location = new System.Drawing.Point(6, 19);
-            this.buscarComboBox.Margin = new System.Windows.Forms.Padding(2);
-            this.buscarComboBox.Name = "buscarComboBox";
-            this.buscarComboBox.Size = new System.Drawing.Size(106, 21);
-            this.buscarComboBox.TabIndex = 3;
-            this.buscarComboBox.Text = "Buscar por...";
-=======
->>>>>>> 5e242ee5280a0689d9d857fc485e9c3c2df2cf0d
             // 
             // proveedorGrid
             // 
@@ -126,32 +100,19 @@
             this.accionesGB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.accionesGB.Controls.Add(this.altaButton);
-<<<<<<< HEAD
-            this.accionesGB.Location = new System.Drawing.Point(588, 12);
-            this.accionesGB.Margin = new System.Windows.Forms.Padding(2);
-            this.accionesGB.Name = "accionesGB";
-            this.accionesGB.Padding = new System.Windows.Forms.Padding(2);
-            this.accionesGB.Size = new System.Drawing.Size(161, 381);
-=======
             this.accionesGB.Location = new System.Drawing.Point(784, 15);
             this.accionesGB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accionesGB.Name = "accionesGB";
             this.accionesGB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accionesGB.Size = new System.Drawing.Size(215, 469);
->>>>>>> 5e242ee5280a0689d9d857fc485e9c3c2df2cf0d
             this.accionesGB.TabIndex = 12;
             this.accionesGB.TabStop = false;
             this.accionesGB.Text = "Acciones";
             // 
             // altaButton
             // 
-<<<<<<< HEAD
-            this.altaButton.Location = new System.Drawing.Point(5, 18);
-            this.altaButton.Margin = new System.Windows.Forms.Padding(2);
-=======
             this.altaButton.Location = new System.Drawing.Point(7, 22);
             this.altaButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> 5e242ee5280a0689d9d857fc485e9c3c2df2cf0d
             this.altaButton.Name = "altaButton";
             this.altaButton.Size = new System.Drawing.Size(203, 57);
             this.altaButton.TabIndex = 0;

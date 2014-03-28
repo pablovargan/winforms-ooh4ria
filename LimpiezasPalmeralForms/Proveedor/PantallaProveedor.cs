@@ -53,7 +53,7 @@ namespace LimpiezasPalmeralForms
 
         private void AltaProveedor_Click(object sender, EventArgs e)
         {
-            AltaProveedor ap = new AltaProveedor() { Owner = this };
+            ConsultarProveedor ap = new ConsultarProveedor() { Owner = this };
             ap.Show();
             ap.Deactivate += GridProveedor_Load;
         }

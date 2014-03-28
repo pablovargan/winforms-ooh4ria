@@ -1,6 +1,6 @@
 ﻿namespace LimpiezasPalmeralForms
 {
-    partial class AltaProveedor
+    partial class ConsultarProveedor
     {
         /// <summary>
         /// Required designer variable.
