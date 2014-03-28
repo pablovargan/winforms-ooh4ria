@@ -80,6 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente\AltaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\AltaCliente.Designer.cs">
+      <DependentUpon>AltaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,10 +117,10 @@
     <Compile Include="Principal\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaProducto.cs">
+    <Compile Include="Producto\PantallaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PantallaProducto.Designer.cs">
+    <Compile Include="Producto\PantallaProducto.Designer.cs">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedor\PantallaProveedor.cs">
@@ -137,6 +143,9 @@
     <Compile Include="PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cliente\AltaCliente.resx">
+      <DependentUpon>AltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
     </EmbeddedResource>
