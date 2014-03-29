@@ -57,7 +57,7 @@
             // Buscar
             // 
             this.Buscar.Location = new System.Drawing.Point(90, 16);
-            this.Buscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Buscar.Margin = new System.Windows.Forms.Padding(2);
             this.Buscar.Name = "Buscar";
             this.Buscar.Size = new System.Drawing.Size(82, 23);
             this.Buscar.TabIndex = 3;
@@ -68,7 +68,7 @@
             // busquedaBox
             // 
             this.busquedaBox.Location = new System.Drawing.Point(6, 19);
-            this.busquedaBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.busquedaBox.Margin = new System.Windows.Forms.Padding(2);
             this.busquedaBox.Name = "busquedaBox";
             this.busquedaBox.Size = new System.Drawing.Size(80, 20);
             this.busquedaBox.TabIndex = 2;
@@ -99,9 +99,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.accionesGB.Controls.Add(this.altaButton);
             this.accionesGB.Location = new System.Drawing.Point(588, 12);
-            this.accionesGB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accionesGB.Margin = new System.Windows.Forms.Padding(2);
             this.accionesGB.Name = "accionesGB";
-            this.accionesGB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accionesGB.Padding = new System.Windows.Forms.Padding(2);
             this.accionesGB.Size = new System.Drawing.Size(161, 381);
             this.accionesGB.TabIndex = 12;
             this.accionesGB.TabStop = false;
@@ -110,7 +110,7 @@
             // altaButton
             // 
             this.altaButton.Location = new System.Drawing.Point(5, 18);
-            this.altaButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altaButton.Margin = new System.Windows.Forms.Padding(2);
             this.altaButton.Name = "altaButton";
             this.altaButton.Size = new System.Drawing.Size(152, 46);
             this.altaButton.TabIndex = 0;

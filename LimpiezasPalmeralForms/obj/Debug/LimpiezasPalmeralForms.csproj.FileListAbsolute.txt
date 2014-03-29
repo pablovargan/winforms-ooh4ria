@@ -93,3 +93,4 @@ C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\Limpieza
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.exe
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.pdb
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.PantallaInstalacion.resources
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.AltaInstalacion.resources
