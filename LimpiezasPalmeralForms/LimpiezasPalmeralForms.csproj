@@ -92,6 +92,18 @@
     <Compile Include="Cliente\ConsultarEditarCliente.Designer.cs">
       <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\PantallaInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\PantallaInstalacion.Designer.cs">
+      <DependentUpon>PantallaInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaProveedor.Designer.cs">
+      <DependentUpon>PantallaProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +166,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\ConsultarEditarCliente.resx">
       <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
+      <DependentUpon>PantallaInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaProveedor.resx">
+      <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\PantallaProducto.resx">
       <DependentUpon>PantallaProducto.cs</DependentUpon>

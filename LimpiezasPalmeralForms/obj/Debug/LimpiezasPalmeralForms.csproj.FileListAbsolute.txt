@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\hibernate.cfg.xml
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe
@@ -34,8 +33,6 @@ C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\Limpie
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\log4net.dll
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\InitializeDB.pdb
 C:\Users\Pablo\Documents\Visual Studio 2013\Projects\LimpiezasPalmeralDSS\LimpiezasPalmeralForms\bin\Debug\PalmeralGenNHibernate.pdb
-=======
->>>>>>> 490a45d1d7b8949f6d6574e5a29aec87e8acc0b0
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.exe
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.pdb
@@ -63,3 +60,4 @@ C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\nunit.core.dll
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\nunit.framework.dll
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csprojResolveAssemblyReference.cache
