@@ -80,8 +80,6 @@ C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\Limpieza
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\PalmeralGenNHibernate.pdb
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Cliente.AltaCliente.resources
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Cliente.ConsultarEditarCliente.resources
-C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Instalacion.AltaInstalacion.resources
-C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Instalacion.PantallaInstalacion.resources
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.PantallaProducto.resources
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.ConsultarProveedor.resources
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.CrearTrabajador.resources
@@ -94,3 +92,4 @@ C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\Limpieza
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csproj.GenerateResource.Cache
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.exe
 C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.pdb
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.PantallaInstalacion.resources
