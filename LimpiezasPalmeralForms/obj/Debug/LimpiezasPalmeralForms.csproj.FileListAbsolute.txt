@@ -35,3 +35,6 @@ C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\LimpiezasPalm
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csprojResolveAssemblyReference.cache
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.Properties.Resources.resources
 C:\Users\alberto\Documents\Visual Studio 2013\Projects\El_Palmeral\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\bin\Debug\LimpiezasPalmeralForms.exe.config
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.exe
+C:\Users\Daniel\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\LimpiezasPalmeralForms\obj\Debug\LimpiezasPalmeralForms.pdb
