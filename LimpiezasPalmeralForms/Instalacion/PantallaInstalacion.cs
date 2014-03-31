@@ -46,7 +46,7 @@ namespace LimpiezasPalmeralForms
                         CP = i.CodigoPostal,
                         Telefono = i.Telefono,
                         Metros = i.MetrosCuadrados,
-                        Cliente = i.Cliente.Nombre
+                        Cliente = i.Cliente.Nif
                     });
                 }
 
