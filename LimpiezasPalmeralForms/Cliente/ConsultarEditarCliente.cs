@@ -23,6 +23,36 @@ namespace LimpiezasPalmeralForms.Cliente
             if (editar) activarCampos();
         }
 
+        private IList<InstalacionClienteGV> modificarFV(IList<InstalacionEN> lista)
+        {
+            IList<InstalacionClienteGV> listaFiltrada = new List<InstalacionClienteGV>();
+
+            foreach (InstalacionEN i in lista)
+            {
+                if (i.Cliente.Nif == textBoxNIF.Text)
+                {
+                    listaFiltrada.Add(new InstalacionClienteGV()
+                    {
+                        Nombre = i.Nombre,
+                        CodigoPostal = i.CodigoPostal
+
+                    });
+                }
+            }
+
+            return listaFiltrada;
+        }
+
+        private void pintarInstalaciones()
+        {
+            IList<InstalacionClienteGV> listaFiltrada = new List<InstalacionClienteGV>();
+            IList<InstalacionEN> lista = new List<InstalacionEN>();
+            InstalacionCEN instalacion = new InstalacionCEN();
+            lista = instalacion.ObtenerTodas(0, 0);
+            listaFiltrada = modificarFV(lista);
+            dataGridViewInstalaciones.DataSource = listaFiltrada;
+        }
+
         private void pintarDatosCliente(ClienteEN cliente)
         {
             textBoxNIF.Text = cliente.Nif;
@@ -35,6 +65,7 @@ namespace LimpiezasPalmeralForms.Cliente
             textBoxPais.Text = cliente.Pais;
             textBoxTelefono.Text = cliente.Telefono;
             textBoxDescripcion.Text = cliente.Descripcion;
+            pintarInstalaciones();
 
         }
 
@@ -89,5 +120,11 @@ namespace LimpiezasPalmeralForms.Cliente
         {
             this.Close();
         }
+    }
+
+    public class InstalacionClienteGV
+    {
+        public string Nombre { get; set; }
+        public string CodigoPostal { get; set; }
     }
 }

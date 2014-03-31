@@ -141,18 +141,18 @@
     <Compile Include="Proveedor\PantallaProveedor.Designer.cs">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearTrabajador.cs">
+    <Compile Include="Trabajador\CrearTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearTrabajador.Designer.cs">
+    <Compile Include="Trabajador\CrearTrabajador.Designer.cs">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PantallaTrabajador.cs">
+    <Compile Include="Trabajador\PantallaTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PantallaTrabajador.Designer.cs">
+    <Compile Include="Trabajador\PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Cliente\AltaCliente.resx">
@@ -173,7 +173,7 @@
     <EmbeddedResource Include="Proveedor\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearTrabajador.resx">
+    <EmbeddedResource Include="Trabajador\CrearTrabajador.resx">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\PantallaCliente.resx">
@@ -197,7 +197,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PantallaTrabajador.resx">
+    <EmbeddedResource Include="Trabajador\PantallaTrabajador.resx">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PalmeralGenNHibernate.CEN.Default_.ClienteCEN.datasource" />

@@ -145,6 +145,10 @@ public static void InitializeData ()
 
                 PedidoCEN pedido = new PedidoCEN();
                 pedido.Crear(pedidos[0].Id, pedidos[0].Fecha, pedidos[0].Estado, pedidos[0].TipoPago, pedidos[0].Lineas, pedidos[0].Proveedor.Id);
+
+                InstalacionCEN instalacion = new InstalacionCEN();
+                instalacion.Crear("1", "insta", "descr", "alicante", "alicante", "españa", "calle", "03009", "666666", 15 , "11111111A");
+            
             /*PROTECTED REGION END*/
         }
         catch (Exception ex)
