@@ -4,8 +4,8 @@
 *.sln.docstates
 
 #Build results
-[Dd]ebug/
-[Rr]elease/
+*/[Dd]ebug/
+*/[Rr]elease/
 x86/
 build/
 [Bb]in/

@@ -33,6 +33,7 @@ namespace LimpiezasPalmeralForms.Cliente
                 {
                     listaFiltrada.Add(new InstalacionClienteGV()
                     {
+                        Nombre = i.Nombre,
                         CodigoPostal = i.CodigoPostal
 
                     });
@@ -123,7 +124,7 @@ namespace LimpiezasPalmeralForms.Cliente
 
     public class InstalacionClienteGV
     {
-
+        public string Nombre { get; set; }
         public string CodigoPostal { get; set; }
     }
 }
