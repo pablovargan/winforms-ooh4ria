@@ -1,3 +1,16 @@
+#Archivos de usuario
+*.suo
+*.user
+*.sln.docstates
+
+#Build results
+[Dd]ebug/
+[Rr]elease/
+x86/
+build/
+[Bb]in/
+[Oo]bj/
+
 InitializeDB/bin/Debug/*
 InitializeDB/Program.cs
 InitializeDB/CreateDB.cs

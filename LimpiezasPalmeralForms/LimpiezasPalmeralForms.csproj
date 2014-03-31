@@ -92,6 +92,18 @@
     <Compile Include="Cliente\ConsultarEditarCliente.Designer.cs">
       <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\AltaInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\AltaInstalacion.Designer.cs">
+      <DependentUpon>AltaInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instalacion\PantallaInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\PantallaInstalacion.Designer.cs">
+      <DependentUpon>PantallaInstalacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,12 +122,6 @@
     </Compile>
     <Compile Include="Principal\PantallaInicial.Designer.cs">
       <DependentUpon>PantallaInicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PantallaInstalacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PantallaInstalacion.Designer.cs">
-      <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal\PantallaPrincipal.cs">
       <SubType>Form</SubType>
@@ -154,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\ConsultarEditarCliente.resx">
       <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\AltaInstalacion.resx">
+      <DependentUpon>AltaInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
+      <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\PantallaProducto.resx">
       <DependentUpon>PantallaProducto.cs</DependentUpon>

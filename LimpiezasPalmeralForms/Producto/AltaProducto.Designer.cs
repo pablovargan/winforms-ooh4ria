@@ -1,6 +1,6 @@
-﻿namespace LimpiezasPalmeralForms
+﻿namespace LimpiezasPalmeralForms.Producto
 {
-    partial class PantallaInstalacion
+    partial class AltaProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // AltaProducto
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "PantallaInstalacion";
+            this.ClientSize = new System.Drawing.Size(419, 305);
+            this.Name = "AltaProducto";
+            this.Text = "AltaProducto";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

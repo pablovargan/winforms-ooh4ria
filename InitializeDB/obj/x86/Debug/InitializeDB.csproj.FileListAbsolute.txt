@@ -55,3 +55,25 @@ C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\Initializ
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.exe
 C:\Users\HectoR\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.pdb
+<<<<<<< HEAD
+=======
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\hibernate.cfg.xml
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\InitializeDB.exe.config
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\InitializeDB.exe
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\InitializeDB.pdb
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\Iesi.Collections.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\LinFu.DynamicProxy.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\log4net.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\NHibernate.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\nunit.core.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\nunit.framework.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\PalmeralGenNHibernate.dll
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\bin\Debug\PalmeralGenNHibernate.pdb
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.exe
+C:\Users\Víctor\Documents\Visual Studio 2013\Projects\winforms-ooh4ria\InitializeDB\obj\x86\Debug\InitializeDB.pdb
+>>>>>>> cd7044971f38f3519ddb8ddfeabdee949a402e94
