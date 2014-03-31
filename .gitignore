@@ -9,7 +9,7 @@
 x86/
 build/
 [Bb]in/
-[Oo]bject/
+[Oo]bj/
 
 InitializeDB/bin/Debug/*
 InitializeDB/Program.cs
