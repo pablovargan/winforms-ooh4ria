@@ -43,6 +43,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.Premisa);
             this.groupBox1.Controls.Add(this.Mostrar);
             this.groupBox1.Controls.Add(this.Buscador);
@@ -58,16 +61,19 @@
             this.Premisa.FormattingEnabled = true;
             this.Premisa.Items.AddRange(new object[] {
             "Provincia",
-            "Nombre",
+            "Tipo",
             "Localidad"});
             this.Premisa.Location = new System.Drawing.Point(6, 17);
             this.Premisa.Name = "Premisa";
             this.Premisa.Size = new System.Drawing.Size(121, 21);
             this.Premisa.TabIndex = 3;
-            this.Premisa.Text = "Buscar por...";
+            this.Premisa.Text = "Buscar...";
             // 
             // Mostrar
             // 
+            this.Mostrar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Mostrar.Location = new System.Drawing.Point(6, 45);
             this.Mostrar.MultiSelect = false;
@@ -80,6 +86,8 @@
             // 
             // Buscador
             // 
+            this.Buscador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Buscador.Location = new System.Drawing.Point(138, 19);
             this.Buscador.Name = "Buscador";
             this.Buscador.Size = new System.Drawing.Size(426, 20);
@@ -89,6 +97,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.Modificar);
             this.groupBox2.Controls.Add(this.Eliminar);
             this.groupBox2.Controls.Add(this.Crear);
@@ -101,10 +111,12 @@
             // 
             // Modificar
             // 
+            this.Modificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Modificar.Enabled = false;
             this.Modificar.Location = new System.Drawing.Point(6, 126);
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(103, 23);
+            this.Modificar.Size = new System.Drawing.Size(146, 23);
             this.Modificar.TabIndex = 2;
             this.Modificar.Text = "Modificar";
             this.Modificar.UseVisualStyleBackColor = true;
@@ -112,10 +124,12 @@
             // 
             // Eliminar
             // 
+            this.Eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Eliminar.Enabled = false;
             this.Eliminar.Location = new System.Drawing.Point(6, 85);
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(103, 23);
+            this.Eliminar.Size = new System.Drawing.Size(146, 23);
             this.Eliminar.TabIndex = 1;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
@@ -123,9 +137,11 @@
             // 
             // Crear
             // 
+            this.Crear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Crear.Location = new System.Drawing.Point(6, 45);
             this.Crear.Name = "Crear";
-            this.Crear.Size = new System.Drawing.Size(103, 23);
+            this.Crear.Size = new System.Drawing.Size(146, 23);
             this.Crear.TabIndex = 0;
             this.Crear.Text = "Dar de Alta";
             this.Crear.UseVisualStyleBackColor = true;
