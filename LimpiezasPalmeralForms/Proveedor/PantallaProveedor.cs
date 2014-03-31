@@ -16,7 +16,7 @@ namespace LimpiezasPalmeralForms
     public partial class PantallaProveedor : Form
     {
         private ProveedorCEN _proveedor;
-        private List<ProveedorGV> _provGD;
+        private dynamic _provGD;
 
         public PantallaProveedor()
         {
