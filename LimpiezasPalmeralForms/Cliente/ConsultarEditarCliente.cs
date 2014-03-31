@@ -34,8 +34,12 @@ namespace LimpiezasPalmeralForms.Cliente
                     listaFiltrada.Add(new InstalacionClienteGV()
                     {
                         Nombre = i.Nombre,
-                        CodigoPostal = i.CodigoPostal
-
+                        Direccion = i.Direccion,
+                        Localidad = i.Localidad, 
+                        Provincia = i.Provincia, 
+                        CP = i.CodigoPostal,
+                        Pais = i.Pais,
+                        Telefono = i.Telefono
                     });
                 }
             }
@@ -125,6 +129,11 @@ namespace LimpiezasPalmeralForms.Cliente
     public class InstalacionClienteGV
     {
         public string Nombre { get; set; }
-        public string CodigoPostal { get; set; }
+        public string Direccion { get; set; }
+        public string Localidad { get; set; }
+        public string Provincia { get; set; }
+        public string CP { get; set; }
+        public string Pais { get; set; }
+        public string Telefono { get; set; }
     }
 }

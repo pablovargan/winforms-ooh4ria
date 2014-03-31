@@ -26,3 +26,5 @@ InitializeDB/obj/*
 LimpiezasPalmeralForms/obj/Debug/*
 PalmeralGenNHibernate/obj/Debug/*
 LimpiezasPalmeralTest/obj/Debug/*
+*.cache
+LimpiezasPalmeralForms/obj/Debug/LimpiezasPalmeralForms.csproj.FileListAbsolute.txt
