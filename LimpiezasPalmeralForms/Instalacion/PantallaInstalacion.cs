@@ -43,9 +43,9 @@ namespace LimpiezasPalmeralForms
                         Provincia = i.Provincia,
                         Pais = i.Pais,
                         Direccion = i.Direccion,
-                        CodigoPostal = i.CodigoPostal,
+                        CP = i.CodigoPostal,
                         Telefono = i.Telefono,
-                        MetrosCuadrados = i.MetrosCuadrados,
+                        Metros = i.MetrosCuadrados,
                         Cliente = i.Cliente.Nombre
                     });
                 }
@@ -66,6 +66,11 @@ namespace LimpiezasPalmeralForms
         {
 
         }
+
+        private void GridInstalacion_Load(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
     public class InstalacionGV {
@@ -76,9 +81,9 @@ namespace LimpiezasPalmeralForms
         public string Provincia { get; set; }
         public string Pais { get; set; }
         public string Direccion { get; set; }
-        public string CodigoPostal { get; set; }
+        public string CP { get; set; }
         public string Telefono { get; set; } 
-        public float MetrosCuadrados { get; set; } 
+        public float Metros { get; set; } 
         public string Cliente { get; set; }
     }
 }

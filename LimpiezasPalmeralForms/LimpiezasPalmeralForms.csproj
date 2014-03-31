@@ -200,6 +200,7 @@
     <EmbeddedResource Include="PantallaTrabajador.resx">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="PalmeralGenNHibernate.CEN.Default_.ClienteCEN.datasource" />
     <None Include="PalmeralGenNHibernate.CEN.Default_.ProveedorCEN.datasource" />
     <None Include="PalmeralGenNHibernateDataSet.xsc">
       <DependentUpon>PalmeralGenNHibernateDataSet.xsd</DependentUpon>
