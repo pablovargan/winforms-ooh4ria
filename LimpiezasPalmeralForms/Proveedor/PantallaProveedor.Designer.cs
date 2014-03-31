@@ -33,6 +33,7 @@
             this.busquedaBox = new System.Windows.Forms.TextBox();
             this.proveedorGrid = new System.Windows.Forms.DataGridView();
             this.accionesGB = new System.Windows.Forms.GroupBox();
+            this.consultarButton = new System.Windows.Forms.Button();
             this.altaButton = new System.Windows.Forms.Button();
             this.proveedoresGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorGrid)).BeginInit();
@@ -47,19 +48,21 @@
             this.proveedoresGB.Controls.Add(this.Buscar);
             this.proveedoresGB.Controls.Add(this.busquedaBox);
             this.proveedoresGB.Controls.Add(this.proveedorGrid);
-            this.proveedoresGB.Location = new System.Drawing.Point(12, 12);
+            this.proveedoresGB.Location = new System.Drawing.Point(16, 15);
+            this.proveedoresGB.Margin = new System.Windows.Forms.Padding(4);
             this.proveedoresGB.Name = "proveedoresGB";
-            this.proveedoresGB.Size = new System.Drawing.Size(571, 381);
+            this.proveedoresGB.Padding = new System.Windows.Forms.Padding(4);
+            this.proveedoresGB.Size = new System.Drawing.Size(761, 469);
             this.proveedoresGB.TabIndex = 11;
             this.proveedoresGB.TabStop = false;
             this.proveedoresGB.Text = "Proveedores";
             // 
             // Buscar
             // 
-            this.Buscar.Location = new System.Drawing.Point(90, 16);
-            this.Buscar.Margin = new System.Windows.Forms.Padding(2);
+            this.Buscar.Location = new System.Drawing.Point(120, 20);
+            this.Buscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(82, 23);
+            this.Buscar.Size = new System.Drawing.Size(109, 28);
             this.Buscar.TabIndex = 3;
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = true;
@@ -67,10 +70,10 @@
             // 
             // busquedaBox
             // 
-            this.busquedaBox.Location = new System.Drawing.Point(6, 19);
-            this.busquedaBox.Margin = new System.Windows.Forms.Padding(2);
+            this.busquedaBox.Location = new System.Drawing.Point(8, 23);
+            this.busquedaBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.busquedaBox.Name = "busquedaBox";
-            this.busquedaBox.Size = new System.Drawing.Size(80, 20);
+            this.busquedaBox.Size = new System.Drawing.Size(105, 22);
             this.busquedaBox.TabIndex = 2;
             this.busquedaBox.Text = "NIF";
             this.busquedaBox.Click += new System.EventHandler(this.Buscador_Click);
@@ -86,33 +89,46 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.proveedorGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.proveedorGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.proveedorGrid.Location = new System.Drawing.Point(6, 45);
+            this.proveedorGrid.Location = new System.Drawing.Point(8, 55);
+            this.proveedorGrid.Margin = new System.Windows.Forms.Padding(4);
             this.proveedorGrid.Name = "proveedorGrid";
             this.proveedorGrid.ReadOnly = true;
             this.proveedorGrid.RowTemplate.Height = 24;
-            this.proveedorGrid.Size = new System.Drawing.Size(558, 330);
+            this.proveedorGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.proveedorGrid.Size = new System.Drawing.Size(744, 406);
             this.proveedorGrid.TabIndex = 0;
             // 
             // accionesGB
             // 
             this.accionesGB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.accionesGB.Controls.Add(this.consultarButton);
             this.accionesGB.Controls.Add(this.altaButton);
-            this.accionesGB.Location = new System.Drawing.Point(588, 12);
-            this.accionesGB.Margin = new System.Windows.Forms.Padding(2);
+            this.accionesGB.Location = new System.Drawing.Point(784, 15);
+            this.accionesGB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accionesGB.Name = "accionesGB";
-            this.accionesGB.Padding = new System.Windows.Forms.Padding(2);
-            this.accionesGB.Size = new System.Drawing.Size(161, 381);
+            this.accionesGB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accionesGB.Size = new System.Drawing.Size(215, 469);
             this.accionesGB.TabIndex = 12;
             this.accionesGB.TabStop = false;
             this.accionesGB.Text = "Acciones";
             // 
+            // consultarButton
+            // 
+            this.consultarButton.Location = new System.Drawing.Point(7, 87);
+            this.consultarButton.Name = "consultarButton";
+            this.consultarButton.Size = new System.Drawing.Size(203, 57);
+            this.consultarButton.TabIndex = 4;
+            this.consultarButton.Text = "Consultar";
+            this.consultarButton.UseVisualStyleBackColor = true;
+            this.consultarButton.Click += new System.EventHandler(this.Consulta_Click);
+            // 
             // altaButton
             // 
-            this.altaButton.Location = new System.Drawing.Point(5, 18);
-            this.altaButton.Margin = new System.Windows.Forms.Padding(2);
+            this.altaButton.Location = new System.Drawing.Point(7, 22);
+            this.altaButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.altaButton.Name = "altaButton";
-            this.altaButton.Size = new System.Drawing.Size(152, 46);
+            this.altaButton.Size = new System.Drawing.Size(203, 57);
             this.altaButton.TabIndex = 0;
             this.altaButton.Text = "Dar de Alta";
             this.altaButton.UseVisualStyleBackColor = true;
@@ -120,12 +136,13 @@
             // 
             // PantallaProveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 405);
+            this.ClientSize = new System.Drawing.Size(1011, 498);
             this.ControlBox = false;
             this.Controls.Add(this.accionesGB);
             this.Controls.Add(this.proveedoresGB);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PantallaProveedor";
             this.ShowIcon = false;
             this.Text = "PantallaProveedores";
@@ -146,5 +163,6 @@
         private System.Windows.Forms.Button altaButton;
         private System.Windows.Forms.TextBox busquedaBox;
         private System.Windows.Forms.Button Buscar;
+        private System.Windows.Forms.Button consultarButton;
     }
 }

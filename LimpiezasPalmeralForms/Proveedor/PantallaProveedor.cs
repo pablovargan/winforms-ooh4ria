@@ -10,6 +10,7 @@ using System.Windows.Forms;
 // Proveedor
 using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
+using LimpiezasPalmeralForms.Proveedor;
 
 namespace LimpiezasPalmeralForms
 {
@@ -53,7 +54,7 @@ namespace LimpiezasPalmeralForms
 
         private void AltaProveedor_Click(object sender, EventArgs e)
         {
-            ConsultarProveedor ap = new ConsultarProveedor() { Owner = this };
+            AltaProveedor ap = new AltaProveedor() { Owner = this };
             ap.Show();
             ap.Deactivate += GridProveedor_Load;
         }
@@ -91,6 +92,18 @@ namespace LimpiezasPalmeralForms
                     }
                 }
             }
+        }
+
+        private void Consulta_Click(object sender, EventArgs e)
+        {
+            var columnaSeleccionada = proveedorGrid.SelectedRows[0];
+            ConsultaProveedor cp = new ConsultaProveedor() 
+            { 
+                Nif = columnaSeleccionada.Cells["NIF"].Value.ToString(), 
+                Owner = this 
+            };
+            cp.Show();
+            cp.Deactivate += GridProveedor_Load;   
         }
     }
 

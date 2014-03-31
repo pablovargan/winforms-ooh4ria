@@ -135,6 +135,12 @@
     <Compile Include="Producto\PantallaProducto.Designer.cs">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedor\ConsultaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor\ConsultaProveedor.Designer.cs">
+      <DependentUpon>ConsultaProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\PantallaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor\ConsultaProveedor.resx">
+      <DependentUpon>ConsultaProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trabajador\CrearTrabajador.resx">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>
