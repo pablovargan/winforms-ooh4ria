@@ -41,11 +41,19 @@ namespace LimpiezasPalmeralForms
                 clienteGV = modificarFV(lista);
                 dataGridViewCliente.DataSource = clienteGV;
             }
-            else if (comboBoxFiltro.Text == "NIF")
+            else 
             {
-                lista.Add(cliente.ObtenerCliente(textBoxBuscar.Text));
-                clienteGV = modificarFV(lista);
-                dataGridViewCliente.DataSource = clienteGV;
+                ClienteEN clienteBusqueda = cliente.ObtenerCliente(textBoxBuscar.Text);
+                if (clienteBusqueda == null)
+                {
+                    dataGridViewCliente.DataSource = lista;
+                }
+                else
+                {
+                    lista.Add(clienteBusqueda);
+                    clienteGV = modificarFV(lista);
+                    dataGridViewCliente.DataSource = clienteGV;
+                }
             }
         }
 
