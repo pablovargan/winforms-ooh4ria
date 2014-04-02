@@ -1,6 +1,6 @@
-﻿namespace LimpiezasPalmeralForms
+﻿namespace LimpiezasPalmeralForms.Proveedor
 {
-    partial class AltaProveedor
+    partial class ConsultaProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,76 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.altaProveedorGB = new System.Windows.Forms.GroupBox();
+            this.proveedorGB = new System.Windows.Forms.GroupBox();
             this.descripcionBox = new System.Windows.Forms.TextBox();
-            this.paisBox = new System.Windows.Forms.TextBox();
             this.descripcionLabel = new System.Windows.Forms.Label();
-            this.codigoPostalBox = new System.Windows.Forms.TextBox();
-            this.telefonoBox = new System.Windows.Forms.TextBox();
+            this.paisBox = new System.Windows.Forms.TextBox();
             this.paisLabel = new System.Windows.Forms.Label();
+            this.codigoPostalBox = new System.Windows.Forms.TextBox();
             this.codigoPostalLabel = new System.Windows.Forms.Label();
+            this.telefonoBox = new System.Windows.Forms.TextBox();
             this.telefonoLabel = new System.Windows.Forms.Label();
             this.provinciaBox = new System.Windows.Forms.TextBox();
-            this.localidadBox = new System.Windows.Forms.TextBox();
-            this.direccionBox = new System.Windows.Forms.TextBox();
-            this.emailBox = new System.Windows.Forms.TextBox();
-            this.nombreBox = new System.Windows.Forms.TextBox();
-            this.nifBox = new System.Windows.Forms.TextBox();
             this.provinciaLabel = new System.Windows.Forms.Label();
+            this.localidadBox = new System.Windows.Forms.TextBox();
             this.localidadLabel = new System.Windows.Forms.Label();
+            this.direccionBox = new System.Windows.Forms.TextBox();
             this.direccionLabel = new System.Windows.Forms.Label();
+            this.emailBox = new System.Windows.Forms.TextBox();
             this.emailLabel = new System.Windows.Forms.Label();
+            this.nombreBox = new System.Windows.Forms.TextBox();
             this.nombreLabel = new System.Windows.Forms.Label();
             this.nifLabel = new System.Windows.Forms.Label();
-            this.crearButton = new System.Windows.Forms.Button();
+            this.nifBox = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.cancelarButton = new System.Windows.Forms.Button();
-            this.altaProveedorGB.SuspendLayout();
+            this.editarButton = new System.Windows.Forms.Button();
+            this.proveedorGB.SuspendLayout();
             this.SuspendLayout();
             // 
-            // altaProveedorGB
+            // proveedorGB
             // 
-            this.altaProveedorGB.Controls.Add(this.descripcionBox);
-            this.altaProveedorGB.Controls.Add(this.paisBox);
-            this.altaProveedorGB.Controls.Add(this.descripcionLabel);
-            this.altaProveedorGB.Controls.Add(this.codigoPostalBox);
-            this.altaProveedorGB.Controls.Add(this.telefonoBox);
-            this.altaProveedorGB.Controls.Add(this.paisLabel);
-            this.altaProveedorGB.Controls.Add(this.codigoPostalLabel);
-            this.altaProveedorGB.Controls.Add(this.telefonoLabel);
-            this.altaProveedorGB.Controls.Add(this.provinciaBox);
-            this.altaProveedorGB.Controls.Add(this.localidadBox);
-            this.altaProveedorGB.Controls.Add(this.direccionBox);
-            this.altaProveedorGB.Controls.Add(this.emailBox);
-            this.altaProveedorGB.Controls.Add(this.nombreBox);
-            this.altaProveedorGB.Controls.Add(this.nifBox);
-            this.altaProveedorGB.Controls.Add(this.provinciaLabel);
-            this.altaProveedorGB.Controls.Add(this.localidadLabel);
-            this.altaProveedorGB.Controls.Add(this.direccionLabel);
-            this.altaProveedorGB.Controls.Add(this.emailLabel);
-            this.altaProveedorGB.Controls.Add(this.nombreLabel);
-            this.altaProveedorGB.Controls.Add(this.nifLabel);
-            this.altaProveedorGB.Location = new System.Drawing.Point(12, 12);
-            this.altaProveedorGB.Name = "altaProveedorGB";
-            this.altaProveedorGB.Size = new System.Drawing.Size(581, 300);
-            this.altaProveedorGB.TabIndex = 0;
-            this.altaProveedorGB.TabStop = false;
-            this.altaProveedorGB.Text = "Proveedor";
+            this.proveedorGB.Controls.Add(this.descripcionBox);
+            this.proveedorGB.Controls.Add(this.descripcionLabel);
+            this.proveedorGB.Controls.Add(this.paisBox);
+            this.proveedorGB.Controls.Add(this.paisLabel);
+            this.proveedorGB.Controls.Add(this.codigoPostalBox);
+            this.proveedorGB.Controls.Add(this.codigoPostalLabel);
+            this.proveedorGB.Controls.Add(this.telefonoBox);
+            this.proveedorGB.Controls.Add(this.telefonoLabel);
+            this.proveedorGB.Controls.Add(this.provinciaBox);
+            this.proveedorGB.Controls.Add(this.provinciaLabel);
+            this.proveedorGB.Controls.Add(this.localidadBox);
+            this.proveedorGB.Controls.Add(this.localidadLabel);
+            this.proveedorGB.Controls.Add(this.direccionBox);
+            this.proveedorGB.Controls.Add(this.direccionLabel);
+            this.proveedorGB.Controls.Add(this.emailBox);
+            this.proveedorGB.Controls.Add(this.emailLabel);
+            this.proveedorGB.Controls.Add(this.nombreBox);
+            this.proveedorGB.Controls.Add(this.nombreLabel);
+            this.proveedorGB.Controls.Add(this.nifLabel);
+            this.proveedorGB.Controls.Add(this.nifBox);
+            this.proveedorGB.Location = new System.Drawing.Point(12, 12);
+            this.proveedorGB.Name = "proveedorGB";
+            this.proveedorGB.Size = new System.Drawing.Size(581, 300);
+            this.proveedorGB.TabIndex = 0;
+            this.proveedorGB.TabStop = false;
+            this.proveedorGB.Text = "Proveedor";
             // 
             // descripcionBox
             // 
             this.descripcionBox.Location = new System.Drawing.Point(312, 186);
             this.descripcionBox.Multiline = true;
             this.descripcionBox.Name = "descripcionBox";
+            this.descripcionBox.ReadOnly = true;
             this.descripcionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descripcionBox.Size = new System.Drawing.Size(249, 82);
             this.descripcionBox.TabIndex = 20;
-            // 
-            // paisBox
-            // 
-            this.paisBox.Location = new System.Drawing.Point(431, 126);
-            this.paisBox.Name = "paisBox";
-            this.paisBox.Size = new System.Drawing.Size(130, 22);
-            this.paisBox.TabIndex = 19;
             // 
             // descripcionLabel
             // 
@@ -108,19 +103,13 @@
             this.descripcionLabel.TabIndex = 16;
             this.descripcionLabel.Text = "Descripción";
             // 
-            // codigoPostalBox
+            // paisBox
             // 
-            this.codigoPostalBox.Location = new System.Drawing.Point(431, 86);
-            this.codigoPostalBox.Name = "codigoPostalBox";
-            this.codigoPostalBox.Size = new System.Drawing.Size(130, 22);
-            this.codigoPostalBox.TabIndex = 15;
-            // 
-            // telefonoBox
-            // 
-            this.telefonoBox.Location = new System.Drawing.Point(431, 46);
-            this.telefonoBox.Name = "telefonoBox";
-            this.telefonoBox.Size = new System.Drawing.Size(130, 22);
-            this.telefonoBox.TabIndex = 14;
+            this.paisBox.Location = new System.Drawing.Point(431, 126);
+            this.paisBox.Name = "paisBox";
+            this.paisBox.ReadOnly = true;
+            this.paisBox.Size = new System.Drawing.Size(130, 22);
+            this.paisBox.TabIndex = 19;
             // 
             // paisLabel
             // 
@@ -131,6 +120,14 @@
             this.paisLabel.TabIndex = 13;
             this.paisLabel.Text = "País";
             // 
+            // codigoPostalBox
+            // 
+            this.codigoPostalBox.Location = new System.Drawing.Point(431, 86);
+            this.codigoPostalBox.Name = "codigoPostalBox";
+            this.codigoPostalBox.ReadOnly = true;
+            this.codigoPostalBox.Size = new System.Drawing.Size(130, 22);
+            this.codigoPostalBox.TabIndex = 15;
+            // 
             // codigoPostalLabel
             // 
             this.codigoPostalLabel.AutoSize = true;
@@ -139,6 +136,14 @@
             this.codigoPostalLabel.Size = new System.Drawing.Size(95, 17);
             this.codigoPostalLabel.TabIndex = 12;
             this.codigoPostalLabel.Text = "Código Postal";
+            // 
+            // telefonoBox
+            // 
+            this.telefonoBox.Location = new System.Drawing.Point(431, 46);
+            this.telefonoBox.Name = "telefonoBox";
+            this.telefonoBox.ReadOnly = true;
+            this.telefonoBox.Size = new System.Drawing.Size(130, 22);
+            this.telefonoBox.TabIndex = 14;
             // 
             // telefonoLabel
             // 
@@ -153,43 +158,9 @@
             // 
             this.provinciaBox.Location = new System.Drawing.Point(133, 246);
             this.provinciaBox.Name = "provinciaBox";
+            this.provinciaBox.ReadOnly = true;
             this.provinciaBox.Size = new System.Drawing.Size(130, 22);
             this.provinciaBox.TabIndex = 11;
-            // 
-            // localidadBox
-            // 
-            this.localidadBox.Location = new System.Drawing.Point(133, 206);
-            this.localidadBox.Name = "localidadBox";
-            this.localidadBox.Size = new System.Drawing.Size(130, 22);
-            this.localidadBox.TabIndex = 10;
-            // 
-            // direccionBox
-            // 
-            this.direccionBox.Location = new System.Drawing.Point(133, 166);
-            this.direccionBox.Name = "direccionBox";
-            this.direccionBox.Size = new System.Drawing.Size(130, 22);
-            this.direccionBox.TabIndex = 9;
-            // 
-            // emailBox
-            // 
-            this.emailBox.Location = new System.Drawing.Point(133, 126);
-            this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(130, 22);
-            this.emailBox.TabIndex = 8;
-            // 
-            // nombreBox
-            // 
-            this.nombreBox.Location = new System.Drawing.Point(133, 86);
-            this.nombreBox.Name = "nombreBox";
-            this.nombreBox.Size = new System.Drawing.Size(130, 22);
-            this.nombreBox.TabIndex = 7;
-            // 
-            // nifBox
-            // 
-            this.nifBox.Location = new System.Drawing.Point(133, 46);
-            this.nifBox.Name = "nifBox";
-            this.nifBox.Size = new System.Drawing.Size(130, 22);
-            this.nifBox.TabIndex = 6;
             // 
             // provinciaLabel
             // 
@@ -200,6 +171,14 @@
             this.provinciaLabel.TabIndex = 5;
             this.provinciaLabel.Text = "Provincia";
             // 
+            // localidadBox
+            // 
+            this.localidadBox.Location = new System.Drawing.Point(133, 206);
+            this.localidadBox.Name = "localidadBox";
+            this.localidadBox.ReadOnly = true;
+            this.localidadBox.Size = new System.Drawing.Size(130, 22);
+            this.localidadBox.TabIndex = 9;
+            // 
             // localidadLabel
             // 
             this.localidadLabel.AutoSize = true;
@@ -208,6 +187,14 @@
             this.localidadLabel.Size = new System.Drawing.Size(69, 17);
             this.localidadLabel.TabIndex = 4;
             this.localidadLabel.Text = "Localidad";
+            // 
+            // direccionBox
+            // 
+            this.direccionBox.Location = new System.Drawing.Point(133, 166);
+            this.direccionBox.Name = "direccionBox";
+            this.direccionBox.ReadOnly = true;
+            this.direccionBox.Size = new System.Drawing.Size(130, 22);
+            this.direccionBox.TabIndex = 9;
             // 
             // direccionLabel
             // 
@@ -218,6 +205,14 @@
             this.direccionLabel.TabIndex = 3;
             this.direccionLabel.Text = "Dirección";
             // 
+            // emailBox
+            // 
+            this.emailBox.Location = new System.Drawing.Point(133, 126);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.ReadOnly = true;
+            this.emailBox.Size = new System.Drawing.Size(130, 22);
+            this.emailBox.TabIndex = 8;
+            // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
@@ -226,6 +221,14 @@
             this.emailLabel.Size = new System.Drawing.Size(42, 17);
             this.emailLabel.TabIndex = 2;
             this.emailLabel.Text = "Email";
+            // 
+            // nombreBox
+            // 
+            this.nombreBox.Location = new System.Drawing.Point(133, 86);
+            this.nombreBox.Name = "nombreBox";
+            this.nombreBox.ReadOnly = true;
+            this.nombreBox.Size = new System.Drawing.Size(130, 22);
+            this.nombreBox.TabIndex = 7;
             // 
             // nombreLabel
             // 
@@ -245,15 +248,13 @@
             this.nifLabel.TabIndex = 0;
             this.nifLabel.Text = "NIF";
             // 
-            // crearButton
+            // nifBox
             // 
-            this.crearButton.Location = new System.Drawing.Point(181, 318);
-            this.crearButton.Name = "crearButton";
-            this.crearButton.Size = new System.Drawing.Size(203, 56);
-            this.crearButton.TabIndex = 1;
-            this.crearButton.Text = "Crear";
-            this.crearButton.UseVisualStyleBackColor = true;
-            this.crearButton.Click += new System.EventHandler(this.Crear_Click);
+            this.nifBox.Location = new System.Drawing.Point(133, 46);
+            this.nifBox.Name = "nifBox";
+            this.nifBox.ReadOnly = true;
+            this.nifBox.Size = new System.Drawing.Size(130, 22);
+            this.nifBox.TabIndex = 6;
             // 
             // cancelarButton
             // 
@@ -265,46 +266,59 @@
             this.cancelarButton.UseVisualStyleBackColor = true;
             this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
             // 
-            // ConsultarProveedor
+            // editarButton
             // 
+            this.editarButton.Location = new System.Drawing.Point(181, 318);
+            this.editarButton.Name = "editarButton";
+            this.editarButton.Size = new System.Drawing.Size(203, 56);
+            this.editarButton.TabIndex = 1;
+            this.editarButton.Text = "Editar";
+            this.editarButton.UseVisualStyleBackColor = true;
+            this.editarButton.Click += new System.EventHandler(this.Editar_Click);
+            // 
+            // ConsultaProveedor
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 386);
             this.ControlBox = false;
+            this.Controls.Add(this.editarButton);
             this.Controls.Add(this.cancelarButton);
-            this.Controls.Add(this.crearButton);
-            this.Controls.Add(this.altaProveedorGB);
-            this.Name = "ConsultarProveedor";
+            this.Controls.Add(this.proveedorGB);
+            this.Name = "ConsultaProveedor";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.altaProveedorGB.ResumeLayout(false);
-            this.altaProveedorGB.PerformLayout();
+            this.proveedorGB.ResumeLayout(false);
+            this.proveedorGB.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox altaProveedorGB;
-        private System.Windows.Forms.Button crearButton;
+        private System.Windows.Forms.GroupBox proveedorGB;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button cancelarButton;
+        private System.Windows.Forms.Button editarButton;
+        private System.Windows.Forms.TextBox nifBox;
         private System.Windows.Forms.Label nifLabel;
         private System.Windows.Forms.Label nombreLabel;
-        private System.Windows.Forms.Label provinciaLabel;
-        private System.Windows.Forms.Label localidadLabel;
-        private System.Windows.Forms.Label direccionLabel;
-        private System.Windows.Forms.Label emailLabel;
-        private System.Windows.Forms.TextBox nifBox;
-        private System.Windows.Forms.TextBox localidadBox;
-        private System.Windows.Forms.TextBox direccionBox;
-        private System.Windows.Forms.TextBox emailBox;
         private System.Windows.Forms.TextBox nombreBox;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.Label direccionLabel;
+        private System.Windows.Forms.TextBox direccionBox;
+        private System.Windows.Forms.Label localidadLabel;
+        private System.Windows.Forms.TextBox localidadBox;
+        private System.Windows.Forms.Label provinciaLabel;
         private System.Windows.Forms.TextBox provinciaBox;
-        private System.Windows.Forms.Label paisLabel;
+        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.TextBox telefonoBox;
         private System.Windows.Forms.Label codigoPostalLabel;
         private System.Windows.Forms.TextBox codigoPostalBox;
-        private System.Windows.Forms.TextBox telefonoBox;
-        private System.Windows.Forms.Label descripcionLabel;
-        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.Label paisLabel;
         private System.Windows.Forms.TextBox paisBox;
+        private System.Windows.Forms.Label descripcionLabel;
         private System.Windows.Forms.TextBox descripcionBox;
     }
 }

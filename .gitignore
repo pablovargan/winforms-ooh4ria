@@ -4,10 +4,12 @@
 *.sln.docstates
 
 #Build results
-[Dd]ebug/
-[Rr]elease/
+*/[Dd]ebug/
+*/[Rr]elease/
+*/[Dd]ebugPublic/
 x86/
 build/
+bld/
 [Bb]in/
 [Oo]bj/
 
@@ -24,3 +26,5 @@ InitializeDB/obj/*
 LimpiezasPalmeralForms/obj/Debug/*
 PalmeralGenNHibernate/obj/Debug/*
 LimpiezasPalmeralTest/obj/Debug/*
+*.cache
+LimpiezasPalmeralForms/obj/Debug/LimpiezasPalmeralForms.csproj.FileListAbsolute.txt

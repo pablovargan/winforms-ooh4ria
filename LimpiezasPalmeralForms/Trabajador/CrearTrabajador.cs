@@ -27,11 +27,11 @@ namespace LimpiezasPalmeralForms
 
             if (NIF.Text.Length != 0 && Nombre.Text.Length != 0 && Apellidos.Text.Length != 0 && Direccion.Text.Length != 0 &&
                 Telefono.Text.Length != 0 && CP.Text.Length != 0 && Pais.Text.Length != 0 && Localidad.Text.Length != 0 &&
-                Provincia.Text.Length != 0 && Tipo.Text.Length != 0)
+                Provincia.Text.Length != 0 && Tipo1.Text.Length != 0)
             {
                 try
                 {
-                    if (Tipo.SelectedItem.ToString().Equals("Cooperativista"))
+                    if (Tipo1.SelectedItem.ToString().Equals("Cooperativista"))
                     {
                         trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
                             CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Cooperativista);

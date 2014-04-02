@@ -21,7 +21,31 @@ namespace LimpiezasPalmeralForms
             this.Load += new EventHandler(Grid_Load);
            // Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
             Buscador.KeyUp += new KeyEventHandler(Buscar_Trabajadores);
+            Buscador.Click += new EventHandler(Grid_Load);
             Eliminar.Click += new EventHandler(Grid_Load);
+        }
+
+        private List<TrabajadorGV> Convertir_TrabajadorGW(IList<TrabajadorEN> lista)
+        {
+            List<TrabajadorGV> l = new List<TrabajadorGV>();
+
+            foreach (TrabajadorEN t in lista)
+            {
+                l.Add(new TrabajadorGV()
+                {
+                    Apellidos = t.Apellidos,
+                    Nif = t.Nif,
+                    Nombre = t.Nombre,
+                    Provincia = t.Provincia,
+                    Localidad = t.Localidad,
+                    CP = t.CodigoPostal,
+                    Direccion = t.Direccion,
+                    Pais = t.Pais,
+                    Telefono = t.Telefono,
+                    Tipo = t.Tipo.ToString()
+                });
+            }
+            return l;
         }
 
         private void Grid_Load(object sender, EventArgs e)
@@ -29,7 +53,7 @@ namespace LimpiezasPalmeralForms
             TrabajadorCEN trabajador = new TrabajadorCEN();
             IList<TrabajadorEN> lista;
             lista=trabajador.ObtenerTodos(0, 0);
-            Mostrar.DataSource = lista;
+            Mostrar.DataSource = Convertir_TrabajadorGW(lista);
 
         }
 
@@ -40,20 +64,21 @@ namespace LimpiezasPalmeralForms
             if (Premisa.Text == "" || Buscador.Text == "")
             {
                 lista = trabajador.ObtenerTodos(0, 0);
-                Mostrar.DataSource = lista;
+                Mostrar.DataSource = Convertir_TrabajadorGW(lista);
             }
             if (Premisa.Text.Equals("Provincia"))
             { 
                 lista=trabajador.BuscarPorProvincia(Buscador.Text);
-                Mostrar.DataSource = lista;
+                Mostrar.DataSource = Convertir_TrabajadorGW(lista);
             }
             else if (Premisa.Text.Equals("Localidad"))
             {
                 lista = trabajador.BuscarPorLocalidad(Buscador.Text);
-                Mostrar.DataSource = lista;
+                Mostrar.DataSource = Convertir_TrabajadorGW(lista);
             }
             else
             {
+                
                 
             }
             Mostrar.ClearSelection();
@@ -70,12 +95,17 @@ namespace LimpiezasPalmeralForms
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            
-            TrabajadorCEN trabajador = new TrabajadorCEN();
-            TrabajadorEN trabajador_eliminar =(TrabajadorEN) Mostrar.CurrentRow.DataBoundItem;
-            MessageBox.Show(trabajador_eliminar.Nif);
-            trabajador.Eliminar(trabajador_eliminar.Nif);
-            //Grid_Load(sender, e);
+            if (Mostrar.SelectedRows == null)
+            {
+                MessageBox.Show("Seleccion el trabajador que desee eliminar");
+            }
+            else
+            {
+                TrabajadorCEN trabajador = new TrabajadorCEN();
+                TrabajadorGV trabajador_eliminar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+                MessageBox.Show("Desea eliminar: " + trabajador_eliminar.Nombre);
+                trabajador.Eliminar(trabajador_eliminar.Nif);
+            }
         }
 
         private void Modificar_Click(object sender, EventArgs e)
@@ -98,5 +128,19 @@ namespace LimpiezasPalmeralForms
         {
             Buscador.Text = "";
         }
+    }
+
+    public class TrabajadorGV
+    {
+        public string Nombre { set; get; }
+        public string Nif { set; get; }
+        public string Apellidos { set; get; }
+        public string Provincia { set; get; }
+        public string Localidad { set; get; }
+        public string CP { set; get; }
+        public string Direccion { set; get; }
+        public string Pais { set; get; }
+        public string Telefono { set; get; }
+        public string Tipo { set; get; }
     }
 }

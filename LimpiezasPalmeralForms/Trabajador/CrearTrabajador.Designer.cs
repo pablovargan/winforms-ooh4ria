@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Crear = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Tipo1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.Tipo = new System.Windows.Forms.ListBox();
             this.Telefono = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,8 +52,9 @@
             this.Nombre = new System.Windows.Forms.TextBox();
             this.NIF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.proveedorCENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorCENBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Crear
@@ -77,9 +79,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.Tipo1);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.Tipo);
             this.groupBox1.Controls.Add(this.Telefono);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
@@ -105,6 +106,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajador";
             // 
+            // Tipo1
+            // 
+            this.Tipo1.FormattingEnabled = true;
+            this.Tipo1.Items.AddRange(new object[] {
+            "Cooperativista",
+            "Empleado"});
+            this.Tipo1.Location = new System.Drawing.Point(94, 255);
+            this.Tipo1.Name = "Tipo1";
+            this.Tipo1.Size = new System.Drawing.Size(121, 21);
+            this.Tipo1.TabIndex = 41;
+            this.Tipo1.Text = "Selecciona uno...";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -113,17 +126,6 @@
             this.label11.Size = new System.Drawing.Size(28, 13);
             this.label11.TabIndex = 40;
             this.label11.Text = "Tipo";
-            // 
-            // Tipo
-            // 
-            this.Tipo.FormattingEnabled = true;
-            this.Tipo.Items.AddRange(new object[] {
-            "Cooperativista",
-            "Empleado"});
-            this.Tipo.Location = new System.Drawing.Point(94, 258);
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Size = new System.Drawing.Size(133, 30);
-            this.Tipo.TabIndex = 39;
             // 
             // Telefono
             // 
@@ -269,27 +271,22 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "NIF";
             // 
-            // comboBox1
+            // proveedorCENBindingSource
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Cooperativista",
-            "Empleado"});
-            this.comboBox1.Location = new System.Drawing.Point(255, 258);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 41;
-            this.comboBox1.Text = "Selecciona uno...";
+            this.proveedorCENBindingSource.DataSource = typeof(PalmeralGenNHibernate.CEN.Default_.ProveedorCEN);
             // 
             // CrearTrabajador
             // 
             this.ClientSize = new System.Drawing.Size(605, 386);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Crear);
             this.Name = "CrearTrabajador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorCENBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -300,7 +297,6 @@
         private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ListBox Tipo;
         private System.Windows.Forms.TextBox Telefono;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -319,6 +315,7 @@
         private System.Windows.Forms.TextBox Nombre;
         private System.Windows.Forms.TextBox NIF;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Tipo1;
+        private System.Windows.Forms.BindingSource proveedorCENBindingSource;
     }
 }

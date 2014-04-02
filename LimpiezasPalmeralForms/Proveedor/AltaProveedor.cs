@@ -12,9 +12,9 @@ using PalmeralGenNHibernate.CEN.Default_;
 
 namespace LimpiezasPalmeralForms
 {
-    public partial class ConsultarProveedor : Form
+    public partial class AltaProveedor : Form
     {
-        public ConsultarProveedor()
+        public AltaProveedor()
         {
             InitializeComponent();
         }

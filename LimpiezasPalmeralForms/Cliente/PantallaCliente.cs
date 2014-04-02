@@ -29,6 +29,7 @@ namespace LimpiezasPalmeralForms
         private void Buscar_Clientes(object sender, EventArgs e)
         {
             ClienteCEN cliente = new ClienteCEN();
+            List<ClienteGV> clienteGV = new List<ClienteGV>();
             IList<ClienteEN> lista = new List<ClienteEN>();
             if (comboBoxFiltro.Text == "" || textBoxBuscar.Text == "")
             {
@@ -37,23 +38,29 @@ namespace LimpiezasPalmeralForms
             else if (comboBoxFiltro.Text == "Nombre")
             {
                 lista = cliente.BuscarPorNombre(textBoxBuscar.Text);
-                dataGridViewCliente.DataSource = lista;
-
+                clienteGV = modificarFV(lista);
+                dataGridViewCliente.DataSource = clienteGV;
             }
-            else if (comboBoxFiltro.Text == "NIF")
+            else 
             {
-                lista.Add(cliente.ObtenerCliente(textBoxBuscar.Text));
-                dataGridViewCliente.DataSource = lista;
+                ClienteEN clienteBusqueda = cliente.ObtenerCliente(textBoxBuscar.Text);
+                if (clienteBusqueda == null)
+                {
+                    dataGridViewCliente.DataSource = lista;
+                }
+                else
+                {
+                    lista.Add(clienteBusqueda);
+                    clienteGV = modificarFV(lista);
+                    dataGridViewCliente.DataSource = clienteGV;
+                }
             }
         }
-        
 
-        private void Grid_Load(object sender, EventArgs e)
+        private List<ClienteGV> modificarFV(IList<ClienteEN> lista)
         {
-            ClienteCEN cliente = new ClienteCEN();
             List<ClienteGV> clienteGV = new List<ClienteGV>();
-            IList<ClienteEN> lista;
-            lista = cliente.ObtenerTodos(0, 0);
+
             foreach (ClienteEN c in lista)
             {
                 clienteGV.Add(new ClienteGV()
@@ -69,6 +76,16 @@ namespace LimpiezasPalmeralForms
                     Pais = c.Pais
                 });
             }
+            return clienteGV;
+        }
+
+        private void Grid_Load(object sender, EventArgs e)
+        {
+            ClienteCEN cliente = new ClienteCEN();
+            List<ClienteGV> clienteGV = new List<ClienteGV>();
+            IList<ClienteEN> lista;
+            lista = cliente.ObtenerTodos(0, 0);
+            clienteGV = modificarFV(lista);
             dataGridViewCliente.DataSource = clienteGV;
 
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PalmeralGenNHibernate.CEN.Default_;
+using PalmeralGenNHibernate.EN.Default_;
 
 namespace LimpiezasPalmeralForms
 {
@@ -26,23 +27,27 @@ namespace LimpiezasPalmeralForms
         private void alta_Click(object sender, EventArgs e)
         {
             var _instalacion = new InstalacionCEN();
+            
+            string id = (new InstalacionCEN().ObtenerTodas(0,0).Count + 1).ToString(); // ID = Número de instalaciones + 1.
+            float m2_b = (float)Convert.ToDouble(m2_box.Text); // Cast.
+            _instalacion.Crear(id,nombre_box.Text,desc_box.Text,loc_box.Text,prov_box.Text,pais_box.Text,dir_box.Text,
+                cp_box.Text,tlfno_box.Text,m2_b,cliente_comboBox.Text);
+            this.Close();
+        }
 
-            if (!string.IsNullOrWhiteSpace(id_box.Text as string))
+        private void AltaInstalacion_Load(object sender, EventArgs e)
+        {
+            IList<ClienteEN> clientes = new List<ClienteEN>();
+            clientes = new ClienteCEN().ObtenerTodos(0, 0);
+            IList<string> nifs = new List<string>();
+            int tam = clientes.Count;
+
+            foreach(ClienteEN cliente in clientes)
             {
-                try
-                {
-                    float m2_b = (float)Convert.ToDouble(m2_box.Text); // Cast.
-                    _instalacion.Crear(id_box.Text,nombre_box.Text,desc_box.Text,loc_box.Text,prov_box.Text,pais_box.Text,dir_box.Text,
-                        cp_box.Text,tlfno_box.Text,m2_b,cliente_box.Text);
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(Constantes._ERRORINSTALACION);
-                }
+                nifs.Add(cliente.Nif);
             }
-            else
-                MessageBox.Show(Constantes._ERRORIDINST);
+
+            cliente_comboBox.DataSource = nifs;
         }
     }
 }
