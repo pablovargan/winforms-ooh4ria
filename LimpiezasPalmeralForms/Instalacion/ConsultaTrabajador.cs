@@ -14,9 +14,15 @@ namespace LimpiezasPalmeralForms
 {
     public partial class ConsultaTrabajador : Form
     {
+        private TrabajadorCEN _trabajador;
+        private IList<TrabajadorGV> _trabGV;
+
         public ConsultaTrabajador()
         {
             InitializeComponent();
+            _trabajador = new TrabajadorCEN();
+            _trabGV = new List<TrabajadorGV>();
+            this.Load += GridConsulta_Load;
         }
 
         private void ConsultaTrabajador_Load(object sender, EventArgs e)
@@ -85,6 +91,35 @@ namespace LimpiezasPalmeralForms
         private void comboBox_provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadInstalacion(comboBox_provincia.Text);
+        }
+
+        private void GridConsulta_Load(object sender, EventArgs e)
+        {
+            if (_trabGV != null)
+            {
+                GridConsulta.DataSource = null;
+                _trabGV.Clear();
+                IList<TrabajadorEN> lista = _trabajador.ObtenerTodos(0, 0);
+
+                foreach (TrabajadorEN i in lista)
+                {
+                    _trabGV.Add(new TrabajadorGV()
+                    {
+                        Nif = i.Nif,
+                        Nombre = i.Nombre,
+                        Apellidos = i.Apellidos,
+                        Direccion = i.Direccion,
+                        Telefono = i.Telefono,
+                        CP = i.CodigoPostal,
+                        Pais = i.Pais,
+                        Localidad = i.Localidad,
+                        Provincia = i.Provincia,
+                        Tipo = i.Tipo.ToString()
+                    });
+                }
+
+                GridConsulta.DataSource = _trabGV;
+            }
         }
     }
 }

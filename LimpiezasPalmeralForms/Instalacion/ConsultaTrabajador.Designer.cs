@@ -29,19 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.GridConsulta = new System.Windows.Forms.DataGridView();
-            this.comboBox_instalaciones = new System.Windows.Forms.ComboBox();
-            this.comboBox_provincia = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox_instalaciones = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox_provincia = new System.Windows.Forms.ComboBox();
+            this.GridConsulta = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridConsulta)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridConsulta)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.GridConsulta);
@@ -52,52 +55,56 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consultar trabajadores";
             // 
-            // GridConsulta
+            // groupBox3
             // 
-            this.GridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridConsulta.Location = new System.Drawing.Point(7, 73);
-            this.GridConsulta.Name = "GridConsulta";
-            this.GridConsulta.Size = new System.Drawing.Size(609, 258);
-            this.GridConsulta.TabIndex = 1;
-            this.GridConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellContentClick);
+            this.groupBox3.Controls.Add(this.comboBox_instalaciones);
+            this.groupBox3.Location = new System.Drawing.Point(215, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(202, 48);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Seleccione instalación";
             // 
             // comboBox_instalaciones
             // 
             this.comboBox_instalaciones.FormattingEnabled = true;
-            this.comboBox_instalaciones.Location = new System.Drawing.Point(6, 19);
+            this.comboBox_instalaciones.Location = new System.Drawing.Point(8, 19);
             this.comboBox_instalaciones.Name = "comboBox_instalaciones";
-            this.comboBox_instalaciones.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_instalaciones.Size = new System.Drawing.Size(188, 21);
             this.comboBox_instalaciones.TabIndex = 0;
             this.comboBox_instalaciones.SelectedIndexChanged += new System.EventHandler(this.comboBox_instalaciones_SelectedIndexChanged);
-            // 
-            // comboBox_provincia
-            // 
-            this.comboBox_provincia.FormattingEnabled = true;
-            this.comboBox_provincia.Location = new System.Drawing.Point(6, 19);
-            this.comboBox_provincia.Name = "comboBox_provincia";
-            this.comboBox_provincia.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_provincia.TabIndex = 2;
-            this.comboBox_provincia.SelectedIndexChanged += new System.EventHandler(this.comboBox_provincia_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBox_provincia);
             this.groupBox2.Location = new System.Drawing.Point(7, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(133, 48);
+            this.groupBox2.Size = new System.Drawing.Size(202, 48);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccione provincia";
             // 
-            // groupBox3
+            // comboBox_provincia
             // 
-            this.groupBox3.Controls.Add(this.comboBox_instalaciones);
-            this.groupBox3.Location = new System.Drawing.Point(155, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(135, 48);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Seleccione instalación";
+            this.comboBox_provincia.FormattingEnabled = true;
+            this.comboBox_provincia.Location = new System.Drawing.Point(6, 19);
+            this.comboBox_provincia.Name = "comboBox_provincia";
+            this.comboBox_provincia.Size = new System.Drawing.Size(190, 21);
+            this.comboBox_provincia.TabIndex = 2;
+            this.comboBox_provincia.SelectedIndexChanged += new System.EventHandler(this.comboBox_provincia_SelectedIndexChanged);
+            // 
+            // GridConsulta
+            // 
+            this.GridConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridConsulta.Location = new System.Drawing.Point(7, 73);
+            this.GridConsulta.Name = "GridConsulta";
+            this.GridConsulta.Size = new System.Drawing.Size(609, 258);
+            this.GridConsulta.TabIndex = 1;
+            this.GridConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellContentClick);
             // 
             // ConsultaTrabajador
             // 
@@ -108,11 +115,12 @@
             this.Name = "ConsultaTrabajador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaTrabajador";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ConsultaTrabajador_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridConsulta)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridConsulta)).EndInit();
             this.ResumeLayout(false);
 
         }
