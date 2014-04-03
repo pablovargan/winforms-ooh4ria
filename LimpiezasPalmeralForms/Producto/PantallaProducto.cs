@@ -60,17 +60,25 @@ namespace LimpiezasPalmeralForms
             lista = producto.ObtenerTodos(0, 0);
             foreach (ProductoEN p in lista)
             {
+                //PictureBox i = new PictureBox();
+                //i.ImageLocation = p.Foto;
+                //i.AutoSize = true;
+                //i.SizeMode = PictureBoxSizeMode.StretchImage;
                 productoGV.Add(new ProductoGV()
                 {
                     Id = p.Id,
                     Nombre = p.Nombre,
                     //Descripcion = p.Descripcion,
                     Stock = p.Stock,
-                    Foto = p.Foto
+                    //Foto = p.Foto,
+                    //imagen = null
                 });
+                //DataGridViewImageColumn img = new DataGridViewImageColumn();
+                //Image image = Image.FromFile(p.Foto);
+                //img.Image = image;
+                //dataGridViewProducto.Columns.Add(img);
             }
             dataGridViewProducto.DataSource = productoGV;
-
         }
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
@@ -78,7 +86,8 @@ namespace LimpiezasPalmeralForms
             AltaProducto ac = new AltaProducto() { Owner = this };
             ac.Owner = this;
             ac.Deactivate += new EventHandler(Grid_Load);
-            ac.Show();
+            ac.StartPosition = FormStartPosition.CenterParent;
+            ac.ShowDialog();
         }
 
         private void buttonConsultar_Click(object sender, EventArgs e)
@@ -112,6 +121,7 @@ namespace LimpiezasPalmeralForms
         public string Nombre { get; set; }
         //public string Descripcion { get; set; }
         public int Stock { get; set; }
-        public string Foto { get; set; }
+        //public string Foto { get; set; }
+        //public Image imagen { get; set; }
     }
 }
