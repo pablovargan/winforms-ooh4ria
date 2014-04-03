@@ -52,7 +52,7 @@ namespace LimpiezasPalmeralForms.Producto
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "Image files (*.jpg)|*.jpg|All files (*.*)|*.*";
+            openFileDialog1.Filter = "Image files (*.jpg)|*.jpg|Image files (*.png)|*.png";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
 
