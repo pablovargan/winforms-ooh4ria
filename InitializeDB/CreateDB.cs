@@ -146,15 +146,32 @@ public static void InitializeData ()
                 PedidoCEN pedido = new PedidoCEN();
                 pedido.Crear(pedidos[0].Id, pedidos[0].Fecha, pedidos[0].Estado, pedidos[0].TipoPago, pedidos[0].Lineas, pedidos[0].Proveedor.Id);
 
+                IList<InstalacionEN> instalaciones = new List<InstalacionEN>();
+
                 InstalacionCEN instalacion = new InstalacionCEN();
-                InstalacionCEN instalacion2 = new InstalacionCEN();
-                InstalacionCEN instalacion3 = new InstalacionCEN();
-                InstalacionCEN instalacion4 = new InstalacionCEN();
+
                 instalacion.Crear("1", "insta", "descr", "alicante", "alicante", "españa", "calle", "03009", "666666", 15 , "11111111A");
-                instalacion2.Crear("2", "insta2", "descr2", "elche", "alicante", "españa", "calle", "03008", "666667", 15, "22222222B");
-                instalacion3.Crear("3", "insta3", "descr3", "mislata", "valencia", "españa", "calle", "03509", "666566", 15, "33333333C");
-                instalacion4.Crear("4", "insta4", "descr4", "alcora", "castellon", "españa", "calle", "03409", "663366", 15, "44444444D");
-            
+                instalacion.Crear("2", "insta2", "descr2", "elche", "alicante", "españa", "calle", "03008", "666667", 15, "22222222B");
+                instalacion.Crear("3", "insta3", "descr3", "mislata", "valencia", "españa", "calle", "03509", "666566", 15, "33333333C");
+                instalacion.Crear("4", "insta4", "descr4", "alcora", "castellon", "españa", "calle", "03409", "663366", 15, "11111111A");
+
+                instalaciones.Add(instalacion.ObtenerInstalacion("1"));
+                instalaciones.Add(instalacion.ObtenerInstalacion("2"));
+                instalaciones.Add(instalacion.ObtenerInstalacion("3"));
+                instalaciones.Add(instalacion.ObtenerInstalacion("4"));
+
+
+
+                IList<TrabajadorEN> trabajadores = new List<TrabajadorEN>();
+                trabajadores.Add(new TrabajadorEN("000000","d","a", "calle", "telefono","00","e", "a", "a", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado,null,null));
+
+                JornadaFechaCEN j = new JornadaFechaCEN();
+                IList<JornadaFechaEN> jornadas = new List<JornadaFechaEN>();
+                jornadas.Add(new JornadaFechaEN(1, DateTime.Now, trabajadores, instalacion.ObtenerInstalacion("1")));
+                
+                              
+                
+
             /*PROTECTED REGION END*/
         }
         catch (Exception ex)
