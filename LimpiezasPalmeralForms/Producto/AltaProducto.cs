@@ -27,10 +27,14 @@ namespace LimpiezasPalmeralForms.Producto
             {
                 try
                 {
-                    int stock = Convert.ToInt32(numericStock.Text);
+                    int stock = 0;
+                    stock = Convert.ToInt32(numericStock.Text);
+                    if(pictureBoxImagen.ImageLocation == null)
+                    {
+                        pictureBoxImagen.ImageLocation = "";
+                    }
                     producto.Crear(textBoxId.Text,textBoxNombre.Text,textBoxDescripcion.Text, stock, pictureBoxImagen.ImageLocation);
                     this.Close();
-
                 }
                 catch (Exception ex)
                 {
@@ -66,8 +70,6 @@ namespace LimpiezasPalmeralForms.Producto
                         {
                             string imagen;
                             imagen = openFileDialog1.FileName;
-                            pictureBoxImagen.AutoSize = true;
-                            pictureBoxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
                             pictureBoxImagen.ImageLocation = imagen;
                         }
                     }
