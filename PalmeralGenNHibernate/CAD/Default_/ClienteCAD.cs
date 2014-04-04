@@ -226,6 +226,7 @@ public ClienteEN ObtenerCliente (string nif)
                 SessionRollBack ();
                 if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
                         throw ex;
+                
                 throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in ClienteCAD.", ex);
         }
 
