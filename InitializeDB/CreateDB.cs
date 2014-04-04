@@ -160,7 +160,7 @@ public static void InitializeData ()
                 JornadaFechaCEN j = new JornadaFechaCEN(); 
                 IList<JornadaFechaEN> jornadas = new List<JornadaFechaEN>(); jornadas.Add(new JornadaFechaEN(1, DateTime.Now, trabajadores, instalacion.ObtenerInstalacion("1")));
 
-                IList<JornadaFechaEN> jor = j.ReadFilter(DateTime.Now, "1");
+                //IList<JornadaFechaEN> jor = j.ReadFilter(DateTime.Now, "1");
                 //Console.WriteLine(jor.Count == 0 ? jor[0].Trabajadores.ToString() : "Esta vacia");
             
             /*PROTECTED REGION END*/

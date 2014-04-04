@@ -189,7 +189,7 @@ public System.Collections.Generic.IList<JornadaFechaEN> ObtenerTodas (int first,
         return result;
 }
 
-public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> ReadFilter (Nullable<DateTime> p_fecha, string p_instalacion)
+public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> ReadFilter (Nullable<DateTime> p_fecha, PalmeralGenNHibernate.EN.Default_.InstalacionEN p_instalacion)
 {
         System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> result;
         try
