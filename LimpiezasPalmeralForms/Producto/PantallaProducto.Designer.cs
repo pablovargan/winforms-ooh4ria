@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxProductosAcciones = new System.Windows.Forms.GroupBox();
+            this.buttonReducirStock = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonConsultar = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.dataGridViewProducto = new System.Windows.Forms.DataGridView();
-            this.buttonReducirStock = new System.Windows.Forms.Button();
             this.groupBoxProductosAcciones.SuspendLayout();
             this.groupBoxProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducto)).BeginInit();
@@ -52,12 +52,21 @@
             this.groupBoxProductosAcciones.Controls.Add(this.buttonEditar);
             this.groupBoxProductosAcciones.Controls.Add(this.buttonConsultar);
             this.groupBoxProductosAcciones.Controls.Add(this.buttonRegistrar);
-            this.groupBoxProductosAcciones.Location = new System.Drawing.Point(579, 4);
+            this.groupBoxProductosAcciones.Location = new System.Drawing.Point(594, 12);
             this.groupBoxProductosAcciones.Name = "groupBoxProductosAcciones";
-            this.groupBoxProductosAcciones.Size = new System.Drawing.Size(133, 348);
+            this.groupBoxProductosAcciones.Size = new System.Drawing.Size(133, 356);
             this.groupBoxProductosAcciones.TabIndex = 3;
             this.groupBoxProductosAcciones.TabStop = false;
             this.groupBoxProductosAcciones.Text = "Acciones";
+            // 
+            // buttonReducirStock
+            // 
+            this.buttonReducirStock.Location = new System.Drawing.Point(6, 217);
+            this.buttonReducirStock.Name = "buttonReducirStock";
+            this.buttonReducirStock.Size = new System.Drawing.Size(121, 44);
+            this.buttonReducirStock.TabIndex = 4;
+            this.buttonReducirStock.Text = "Reducir Stock";
+            this.buttonReducirStock.UseVisualStyleBackColor = true;
             // 
             // buttonEliminar
             // 
@@ -107,9 +116,9 @@
             this.groupBoxProductos.Controls.Add(this.comboBoxFiltro);
             this.groupBoxProductos.Controls.Add(this.textBoxBuscar);
             this.groupBoxProductos.Controls.Add(this.dataGridViewProducto);
-            this.groupBoxProductos.Location = new System.Drawing.Point(7, 4);
+            this.groupBoxProductos.Location = new System.Drawing.Point(12, 12);
             this.groupBoxProductos.Name = "groupBoxProductos";
-            this.groupBoxProductos.Size = new System.Drawing.Size(566, 348);
+            this.groupBoxProductos.Size = new System.Drawing.Size(576, 356);
             this.groupBoxProductos.TabIndex = 2;
             this.groupBoxProductos.TabStop = false;
             this.groupBoxProductos.Text = "Productos";
@@ -132,7 +141,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscar.Location = new System.Drawing.Point(134, 17);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(426, 20);
+            this.textBoxBuscar.Size = new System.Drawing.Size(436, 20);
             this.textBoxBuscar.TabIndex = 2;
             this.textBoxBuscar.Text = "Introduzca el producto que desea buscar.";
             this.textBoxBuscar.Click += new System.EventHandler(this.textBoxBuscar_Click);
@@ -153,23 +162,14 @@
             this.dataGridViewProducto.Name = "dataGridViewProducto";
             this.dataGridViewProducto.ReadOnly = true;
             this.dataGridViewProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProducto.Size = new System.Drawing.Size(553, 295);
+            this.dataGridViewProducto.Size = new System.Drawing.Size(563, 303);
             this.dataGridViewProducto.TabIndex = 0;
-            // 
-            // buttonReducirStock
-            // 
-            this.buttonReducirStock.Location = new System.Drawing.Point(6, 217);
-            this.buttonReducirStock.Name = "buttonReducirStock";
-            this.buttonReducirStock.Size = new System.Drawing.Size(121, 44);
-            this.buttonReducirStock.TabIndex = 4;
-            this.buttonReducirStock.Text = "Reducir Stock";
-            this.buttonReducirStock.UseVisualStyleBackColor = true;
             // 
             // PantallaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 357);
+            this.ClientSize = new System.Drawing.Size(739, 380);
             this.ControlBox = false;
             this.Controls.Add(this.groupBoxProductosAcciones);
             this.Controls.Add(this.groupBoxProductos);

@@ -345,6 +345,7 @@
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInstalaciones.Size = new System.Drawing.Size(434, 135);
             this.dataGridViewInstalaciones.TabIndex = 0;
+            this.dataGridViewInstalaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellContentClick);
             // 
             // ConsultarEditarCliente
             // 

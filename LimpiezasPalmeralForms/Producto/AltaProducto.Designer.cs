@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonEscogerImagen = new System.Windows.Forms.Button();
-            this.labelImagen = new System.Windows.Forms.Label();
             this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
             this.numericStock = new System.Windows.Forms.NumericUpDown();
             this.labelStock = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.buttonEscogerImagen);
-            this.groupBox1.Controls.Add(this.labelImagen);
             this.groupBox1.Controls.Add(this.pictureBoxImagen);
             this.groupBox1.Controls.Add(this.numericStock);
             this.groupBox1.Controls.Add(this.labelStock);
@@ -64,36 +62,28 @@
             this.groupBox1.Controls.Add(this.labelId);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(449, 223);
+            this.groupBox1.Size = new System.Drawing.Size(453, 223);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
             // 
             // buttonEscogerImagen
             // 
-            this.buttonEscogerImagen.Location = new System.Drawing.Point(279, 21);
+            this.buttonEscogerImagen.Location = new System.Drawing.Point(230, 189);
             this.buttonEscogerImagen.Name = "buttonEscogerImagen";
-            this.buttonEscogerImagen.Size = new System.Drawing.Size(164, 23);
+            this.buttonEscogerImagen.Size = new System.Drawing.Size(213, 23);
             this.buttonEscogerImagen.TabIndex = 14;
             this.buttonEscogerImagen.Text = "Escoger imagen";
             this.buttonEscogerImagen.UseVisualStyleBackColor = true;
             this.buttonEscogerImagen.Click += new System.EventHandler(this.buttonEscogerImagen_Click);
             // 
-            // labelImagen
-            // 
-            this.labelImagen.AutoSize = true;
-            this.labelImagen.Location = new System.Drawing.Point(227, 26);
-            this.labelImagen.Name = "labelImagen";
-            this.labelImagen.Size = new System.Drawing.Size(42, 13);
-            this.labelImagen.TabIndex = 13;
-            this.labelImagen.Text = "Imagen";
-            // 
             // pictureBoxImagen
             // 
             this.pictureBoxImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxImagen.Location = new System.Drawing.Point(230, 49);
+            this.pictureBoxImagen.Location = new System.Drawing.Point(230, 21);
             this.pictureBoxImagen.Name = "pictureBoxImagen";
             this.pictureBoxImagen.Size = new System.Drawing.Size(213, 158);
+            this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImagen.TabIndex = 12;
             this.pictureBoxImagen.TabStop = false;
             // 
@@ -167,9 +157,9 @@
             // 
             this.groupBox2.Controls.Add(this.buttonCancelar);
             this.groupBox2.Controls.Add(this.buttonAceptar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 256);
+            this.groupBox2.Location = new System.Drawing.Point(12, 241);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(449, 74);
+            this.groupBox2.Size = new System.Drawing.Size(453, 77);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
@@ -198,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 342);
+            this.ClientSize = new System.Drawing.Size(477, 331);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "AltaProducto";
@@ -227,7 +217,6 @@
         private System.Windows.Forms.Label labelStock;
         private System.Windows.Forms.NumericUpDown numericStock;
         private System.Windows.Forms.PictureBox pictureBoxImagen;
-        private System.Windows.Forms.Label labelImagen;
         private System.Windows.Forms.Button buttonEscogerImagen;
     }
 }

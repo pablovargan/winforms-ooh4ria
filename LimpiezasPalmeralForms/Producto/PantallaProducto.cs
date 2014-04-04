@@ -15,68 +15,72 @@ namespace LimpiezasPalmeralForms
 {
     public partial class PantallaProducto : Form
     {
+        private IList<ProductoEN> lista;
+        ProductoCEN producto;
         public PantallaProducto()
         {
             InitializeComponent();
+            producto = new ProductoCEN();
+            lista = new List<ProductoEN>();
+
+            lista = producto.ObtenerTodos(0, 0);
             this.Load += new EventHandler(Grid_Load);
-            this.Load += new EventHandler(Grid_Load);
-            // Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
+
             textBoxBuscar.KeyUp += new KeyEventHandler(Buscar_Productos);
             comboBoxFiltro.SelectedIndex = 0;
-            //Eliminar.Click += new EventHandler(Grid_Load);
         }
         private void Buscar_Productos(object sender, EventArgs e)
         {
-            ProductoCEN producto = new ProductoCEN();
-            IList<ProductoEN> lista = new List<ProductoEN>();
             if (comboBoxFiltro.Text == "" || textBoxBuscar.Text == "")
             {
-                Grid_Load(sender, e);
+                recargarGrid(sender,e);
             }
             else if (comboBoxFiltro.Text == "Nombre")
             {
+                lista = new List<ProductoEN>();
                 lista = producto.BuscarPorNombre(textBoxBuscar.Text);
-                dataGridViewProducto.DataSource = lista;
-
+                Grid_Load(sender, e);
+                //dataGridViewProducto.DataSource = lista;
             }
             else if (comboBoxFiltro.Text == "Id")
             {
-                lista.Add(producto.ObtenerProducto(textBoxBuscar.Text));
-                dataGridViewProducto.DataSource = lista;
+                lista = new List<ProductoEN>();
+                ProductoEN p = producto.ObtenerProducto(textBoxBuscar.Text);
+                if (p == null)
+                {
+                    List<ProductoGV> productoGV = new List<ProductoGV>();
+                    dataGridViewProducto.DataSource = productoGV;
+                }
+                else
+                {
+                    lista.Add(p);
+                    Grid_Load(sender, e);
+                }
+                //dataGridViewProducto.DataSource = lista;
             }
             else if (comboBoxFiltro.Text == "Stock")
             {
                 int stock;
+                lista = new List<ProductoEN>();
                 stock = Convert.ToInt32(textBoxBuscar.Text);
                 lista = producto.BuscarPorStock(stock);
-                dataGridViewProducto.DataSource = lista;
+                //dataGridViewProducto.DataSource = lista;
+                Grid_Load(sender, e);
             }
         }
         private void Grid_Load(object sender, EventArgs e)
         {
-            ProductoCEN producto = new ProductoCEN();
             List<ProductoGV> productoGV = new List<ProductoGV>();
-            IList<ProductoEN> lista;
-            lista = producto.ObtenerTodos(0, 0);
+
             foreach (ProductoEN p in lista)
             {
-                //PictureBox i = new PictureBox();
-                //i.ImageLocation = p.Foto;
-                //i.AutoSize = true;
-                //i.SizeMode = PictureBoxSizeMode.StretchImage;
                 productoGV.Add(new ProductoGV()
                 {
                     Id = p.Id,
                     Nombre = p.Nombre,
-                    //Descripcion = p.Descripcion,
+                    Descripcion = p.Descripcion,
                     Stock = p.Stock,
-                    //Foto = p.Foto,
-                    //imagen = null
                 });
-                //DataGridViewImageColumn img = new DataGridViewImageColumn();
-                //Image image = Image.FromFile(p.Foto);
-                //img.Image = image;
-                //dataGridViewProducto.Columns.Add(img);
             }
             dataGridViewProducto.DataSource = productoGV;
         }
@@ -85,14 +89,23 @@ namespace LimpiezasPalmeralForms
         {
             AltaProducto ac = new AltaProducto() { Owner = this };
             ac.Owner = this;
-            ac.Deactivate += new EventHandler(Grid_Load);
+            ac.Deactivate += new EventHandler(recargarGrid);
             ac.StartPosition = FormStartPosition.CenterParent;
             ac.ShowDialog();
+        }
+        private void recargarGrid(object sender, EventArgs e)
+        {
+            lista = producto.ObtenerTodos(0, 0);
+            Grid_Load(sender, e);
         }
 
         private void buttonConsultar_Click(object sender, EventArgs e)
         {
-
+            ConsultarProducto consulta = new ConsultarProducto(dataGridViewProducto) { Owner = this };
+            consulta.Owner = this;
+            consulta.Deactivate += new EventHandler(recargarGrid);
+            consulta.StartPosition = FormStartPosition.CenterParent;
+            consulta.ShowDialog();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -119,7 +132,7 @@ namespace LimpiezasPalmeralForms
     {
         public string Id { get; set; }
         public string Nombre { get; set; }
-        //public string Descripcion { get; set; }
+        public string Descripcion { get; set; }
         public int Stock { get; set; }
         //public string Foto { get; set; }
         //public Image imagen { get; set; }
