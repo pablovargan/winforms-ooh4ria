@@ -71,6 +71,12 @@ namespace LimpiezasPalmeralForms
         {
 
         }
+
+        private void button_consulta_Click(object sender, EventArgs e)
+        {
+            ConsultaTrabajador consulta = new ConsultaTrabajador();
+            consulta.Show();
+        }
     }
 
     public class InstalacionGV {
