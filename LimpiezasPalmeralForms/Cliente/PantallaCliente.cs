@@ -46,7 +46,8 @@ namespace LimpiezasPalmeralForms
                 ClienteEN clienteBusqueda = cliente.ObtenerCliente(textBoxBuscar.Text);
                 if (clienteBusqueda == null)
                 {
-                    dataGridViewCliente.DataSource = lista;
+                    List<ClienteGV> listaclienteGV = new List<ClienteGV>();
+                    dataGridViewCliente.DataSource = listaclienteGV;
                 }
                 else
                 {

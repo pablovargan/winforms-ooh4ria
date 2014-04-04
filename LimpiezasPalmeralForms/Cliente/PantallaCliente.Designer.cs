@@ -50,9 +50,9 @@
             this.groupBoxClientes.Controls.Add(this.comboBoxFiltro);
             this.groupBoxClientes.Controls.Add(this.textBoxBuscar);
             this.groupBoxClientes.Controls.Add(this.dataGridViewCliente);
-            this.groupBoxClientes.Location = new System.Drawing.Point(13, 13);
+            this.groupBoxClientes.Location = new System.Drawing.Point(13, 12);
             this.groupBoxClientes.Name = "groupBoxClientes";
-            this.groupBoxClientes.Size = new System.Drawing.Size(562, 353);
+            this.groupBoxClientes.Size = new System.Drawing.Size(562, 354);
             this.groupBoxClientes.TabIndex = 0;
             this.groupBoxClientes.TabStop = false;
             this.groupBoxClientes.Text = "Clientes";
@@ -95,7 +95,7 @@
             this.dataGridViewCliente.Name = "dataGridViewCliente";
             this.dataGridViewCliente.ReadOnly = true;
             this.dataGridViewCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCliente.Size = new System.Drawing.Size(549, 300);
+            this.dataGridViewCliente.Size = new System.Drawing.Size(549, 301);
             this.dataGridViewCliente.TabIndex = 0;
             // 
             // groupBoxClientesAcciones
