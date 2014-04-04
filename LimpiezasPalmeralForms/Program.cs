@@ -3,6 +3,7 @@ using NHibernate.Tool.hbm2ddl;
 using PalmeralGenNHibernate.EN.Default_;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,20 +33,11 @@ namespace LimpiezasPalmeralForms
                 Application.SetCompatibleTextRenderingDefault(false);
                 try
                 {
-                    InitializeDB.CreateDB.Create("PalmeralGenNHibernate", "nhibernateUser", "nhibernatePass");
-                    var cfg = new Configuration();
-                    cfg.Configure();
-                    cfg.AddAssembly(typeof(ProductoEN).Assembly);
-                    new SchemaExport(cfg).Execute(true, true, false);
-                    InitializeDB.CreateDB.InitializeData();
-                }
-                catch (Exception e)
-                {
-                    System.Console.WriteLine(e.Message.ToString() + '\n' + e.StackTrace);
-                }
-                finally
-                {
                     Application.Run(new PantallaPrincipal());
+                }
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.Message.ToString() + '\n' + ex.StackTrace);
                 }
             }
             // Se libera la exclusión mutua

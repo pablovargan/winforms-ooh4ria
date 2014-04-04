@@ -330,16 +330,28 @@
             // 
             // dataGridViewInstalaciones
             // 
+            this.dataGridViewInstalaciones.AllowUserToAddRows = false;
+            this.dataGridViewInstalaciones.AllowUserToDeleteRows = false;
+            this.dataGridViewInstalaciones.AllowUserToResizeColumns = false;
+            this.dataGridViewInstalaciones.AllowUserToResizeRows = false;
+            this.dataGridViewInstalaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewInstalaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewInstalaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInstalaciones.Location = new System.Drawing.Point(7, 20);
             this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
+            this.dataGridViewInstalaciones.ReadOnly = true;
+            this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInstalaciones.Size = new System.Drawing.Size(434, 135);
             this.dataGridViewInstalaciones.TabIndex = 0;
+            this.dataGridViewInstalaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellContentClick);
             // 
             // ConsultarEditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(474, 503);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

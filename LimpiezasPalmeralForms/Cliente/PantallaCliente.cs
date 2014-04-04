@@ -19,7 +19,6 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
             this.Load += new EventHandler(Grid_Load);
-            this.Load += new EventHandler(Grid_Load);
             // Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
             textBoxBuscar.KeyUp += new KeyEventHandler(Buscar_Clientes);
             comboBoxFiltro.SelectedIndex = 0;
@@ -46,7 +45,8 @@ namespace LimpiezasPalmeralForms
                 ClienteEN clienteBusqueda = cliente.ObtenerCliente(textBoxBuscar.Text);
                 if (clienteBusqueda == null)
                 {
-                    dataGridViewCliente.DataSource = lista;
+                    List<ClienteGV> listaclienteGV = new List<ClienteGV>();
+                    dataGridViewCliente.DataSource = listaclienteGV;
                 }
                 else
                 {

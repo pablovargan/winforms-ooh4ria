@@ -124,6 +124,12 @@ namespace LimpiezasPalmeralForms.Cliente
         {
             this.Close();
         }
+
+        private void dataGridViewInstalaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PantallaInstalacion pi = new PantallaInstalacion();
+            dataGridViewInstalaciones.SelectedRows[0].Cells[0].Value.ToString();
+        }
     }
 
     public class InstalacionClienteGV

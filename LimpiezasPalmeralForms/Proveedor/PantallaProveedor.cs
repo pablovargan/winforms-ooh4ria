@@ -71,7 +71,7 @@ namespace LimpiezasPalmeralForms
             {
                 if(_provGD != null )
                 {
-                    proveedorGrid.DataSource = null;
+                    proveedorGrid.DataSource = new List<ProveedorGV>();  
                     ProveedorEN p = _proveedor.ObtenerProveedor(busquedaBox.Text);
                     if (p != null)
                     {
@@ -96,14 +96,17 @@ namespace LimpiezasPalmeralForms
 
         private void Consulta_Click(object sender, EventArgs e)
         {
-            var columnaSeleccionada = proveedorGrid.SelectedRows[0];
-            ConsultaProveedor cp = new ConsultaProveedor() 
-            { 
-                Nif = columnaSeleccionada.Cells["NIF"].Value.ToString(), 
-                Owner = this 
-            };
-            cp.Show();
-            cp.Deactivate += GridProveedor_Load;   
+            if (proveedorGrid.DataSource != null)
+            {
+                var columnaSeleccionada = proveedorGrid.SelectedRows[0];
+                ConsultaProveedor cp = new ConsultaProveedor()
+                {
+                    Nif = columnaSeleccionada.Cells["NIF"].Value.ToString(),
+                    Owner = this
+                };
+                cp.Show();
+                cp.Deactivate += GridProveedor_Load;   
+            }
         }
     }
 
