@@ -98,11 +98,23 @@
     <Compile Include="Instalacion\AltaInstalacion.Designer.cs">
       <DependentUpon>AltaInstalacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\ConsultaTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\ConsultaTrabajador.Designer.cs">
+      <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instalacion\PantallaInstalacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Instalacion\PantallaInstalacion.Designer.cs">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\AltaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\AltaProducto.Designer.cs">
+      <DependentUpon>AltaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
@@ -170,8 +182,14 @@
     <EmbeddedResource Include="Instalacion\AltaInstalacion.resx">
       <DependentUpon>AltaInstalacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\ConsultaTrabajador.resx">
+      <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\AltaProducto.resx">
+      <DependentUpon>AltaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\PantallaProducto.resx">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
