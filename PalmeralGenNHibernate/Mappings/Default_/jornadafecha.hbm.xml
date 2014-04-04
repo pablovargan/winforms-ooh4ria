@@ -36,5 +36,6 @@
 		  </class>
 		  
 		  <query name="JornadaFechaENReadAllHQL">from JornadaFechaEN</query>
+		  <query name="JornadaFechaENreadFilterHQL"><![CDATA[FROM JornadaFechaEN AS jor WHERE jor.Fecha := p_fecha AND jor.Instalacion := p_instalacion]]></query>
 		</hibernate-mapping>
 	

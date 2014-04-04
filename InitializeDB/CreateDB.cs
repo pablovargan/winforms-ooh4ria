@@ -154,6 +154,14 @@ public static void InitializeData ()
                 instalacion2.Crear("2", "insta2", "descr2", "elche", "alicante", "españa", "calle", "03008", "666667", 15, "22222222B");
                 instalacion3.Crear("3", "insta3", "descr3", "mislata", "valencia", "españa", "calle", "03509", "666566", 15, "33333333C");
                 instalacion4.Crear("4", "insta4", "descr4", "alcora", "castellon", "españa", "calle", "03409", "663366", 15, "44444444D");
+
+                IList<TrabajadorEN> trabajadores = new List<TrabajadorEN>(); trabajadores.Add(new TrabajadorEN("000000", "d", "a", "calle", "telefono", "00", "e", "a", "a", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado, null, null));
+
+                JornadaFechaCEN j = new JornadaFechaCEN(); 
+                IList<JornadaFechaEN> jornadas = new List<JornadaFechaEN>(); jornadas.Add(new JornadaFechaEN(1, DateTime.Now, trabajadores, instalacion.ObtenerInstalacion("1")));
+
+                IList<JornadaFechaEN> jor = j.ReadFilter(DateTime.Now, "1");
+                //Console.WriteLine(jor.Count == 0 ? jor[0].Trabajadores.ToString() : "Esta vacia");
             
             /*PROTECTED REGION END*/
         }

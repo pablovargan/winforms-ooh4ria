@@ -71,7 +71,7 @@ namespace LimpiezasPalmeralForms
             {
                 if(_provGD != null )
                 {
-                    proveedorGrid.DataSource = null;
+                    proveedorGrid.DataSource = new List<ProveedorGV>();  
                     ProveedorEN p = _proveedor.ObtenerProveedor(busquedaBox.Text);
                     if (p != null)
                     {
