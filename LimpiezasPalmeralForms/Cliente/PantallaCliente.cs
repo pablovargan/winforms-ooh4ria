@@ -19,7 +19,6 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
             this.Load += new EventHandler(Grid_Load);
-            // Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
             textBoxBuscar.KeyUp += new KeyEventHandler(Buscar_Clientes);
             comboBoxFiltro.SelectedIndex = 0;
             //Eliminar.Click += new EventHandler(Grid_Load);
