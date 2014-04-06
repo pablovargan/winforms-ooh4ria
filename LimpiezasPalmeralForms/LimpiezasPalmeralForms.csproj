@@ -104,6 +104,12 @@
     <Compile Include="Instalacion\ConsultaTrabajador.Designer.cs">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\GestionarTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\GestionarTrabajador.Designer.cs">
+      <DependentUpon>GestionarTrabajador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instalacion\PantallaInstalacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\ConsultaTrabajador.resx">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\GestionarTrabajador.resx">
+      <DependentUpon>GestionarTrabajador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>

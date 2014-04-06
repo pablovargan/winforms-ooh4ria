@@ -125,6 +125,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "Gestionar trabajadores";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -164,6 +165,7 @@
             this.Controls.Add(this.Instalación);
             this.Name = "PantallaInstalacion";
             this.Text = "PantallaInstalacion";
+            this.Load += new System.EventHandler(this.PantallaInstalacion_Load);
             this.Instalación.ResumeLayout(false);
             this.Instalación.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instalacionGrid)).EndInit();
