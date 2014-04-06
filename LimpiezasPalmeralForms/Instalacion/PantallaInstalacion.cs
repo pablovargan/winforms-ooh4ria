@@ -80,8 +80,7 @@ namespace LimpiezasPalmeralForms
 
         private void button5_Click(object sender, EventArgs e)
         {
-            GestionarTrabajador gestionar = new GestionarTrabajador();
-            gestionar.Show();
+            
         }
 
         private void PantallaInstalacion_Load(object sender, EventArgs e)
