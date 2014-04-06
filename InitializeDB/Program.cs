@@ -6,7 +6,6 @@ using System.Text;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using PalmeralGenNHibernate.EN.Default_;
-using PalmeralGenNHibernate.CEN.Default_;
 
 
 namespace InitializeDB
@@ -51,9 +50,6 @@ static void Main (string[] args)
 
         finally
         {
-                ClienteCEN cliente = new ClienteCEN ();
-                
-            System.Console.WriteLine(cliente.ObtenerCliente("11111111A").Nombre);
                 System.Console.WriteLine ("Powered by OOH4RIA. Press any key to exit....");
                 Console.ReadLine ();
         }

@@ -86,9 +86,5 @@ public System.Collections.Generic.IList<JornadaFechaEN> ObtenerTodas (int first,
         list = _IJornadaFechaCAD.ObtenerTodas (first, size);
         return list;
 }
-public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> ReadFilter (Nullable<DateTime> p_fecha, PalmeralGenNHibernate.EN.Default_.InstalacionEN p_instalacion)
-{
-        return _IJornadaFechaCAD.ReadFilter (p_fecha, p_instalacion);
-}
 }
 }

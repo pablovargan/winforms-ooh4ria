@@ -118,5 +118,21 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Trabaj
 {
         return _ITrabajadorCAD.BuscarPorTipo (p_tipoEmpleo);
 }
+public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN> BuscarPorNombre (string p_nombre)
+{
+        return _ITrabajadorCAD.BuscarPorNombre (p_nombre);
+}
+public void AddInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion)
+{
+        //Call to TrabajadorCAD
+
+        _ITrabajadorCAD.AddInstalacion (p_trabajador, p_instalacion);
+}
+public void DeleteInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion)
+{
+        //Call to TrabajadorCAD
+
+        _ITrabajadorCAD.DeleteInstalacion (p_trabajador, p_instalacion);
+}
 }
 }

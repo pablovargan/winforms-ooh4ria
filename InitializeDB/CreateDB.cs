@@ -115,55 +115,27 @@ public static void InitializeData ()
                  * //albumCEN.New_("Album 1", "This is a Album 1", artists, musicTracks);*/
 
                 ClienteCEN clienteCEN = new ClienteCEN ();
-                clienteCEN.Crear ("11111111A", "Juan", "Cliente 1", "pepe@gmail.com", "Aspe", "Alicante", "España", "Calle de Pepe", "03680", "123456789");
-                ClienteCEN clienteCEN2 = new ClienteCEN();
-                clienteCEN.Crear ("22222222B", "Oscar", "Cliente 2", "pepe@gmail.com", "Aspe", "Alicante", "España", "Calle de Pepe", "03680", "123456789");
-                ClienteCEN clienteCEN3 = new ClienteCEN();
-                clienteCEN.Crear ("33333333C", "Antonio", "Cliente 3", "pepe@gmail.com", "Aspe", "Alicante", "España", "Calle de Pepe", "03680", "123456789");
-                ClienteCEN clienteCEN4 = new ClienteCEN();
-                clienteCEN.Crear("44444444D", "Pablo", "Cliente 4", "pepe@gmail.com", "Aspe", "Alicante", "España", "Calle de Pepe", "03680", "123456789");
+                clienteCEN.Crear ("11111111A", "Juan", "Cliente 1", "pepe@gmail.com", "Aspe", "Alicante", "Espa�a", "Calle de Pepe", "03680", "123456789");
 
                 ProductoCEN productoCEN = new ProductoCEN ();
                 productoCEN.Crear ("1", "lejia", "Limpialo todo", 5, "foto.com");
                 productoCEN.Crear ("2", "lejia", "Limpialo todo", 5, "foto.com");
                 ProveedorCEN proveedorCEN = new ProveedorCEN ();
-                proveedorCEN.Crear ("1", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "España", "oooo que chulo");
-                proveedorCEN.Crear("2", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "Espa�a", "oooo que chulo");
-                proveedorCEN.Crear("3", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "Espa�a", "oooo que chulo");
+                proveedorCEN.Crear ("1", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "Espa�a", "oooo que chulo");
+
                 TrabajadorCEN trabajadorCEN = new TrabajadorCEN ();
-                trabajadorCEN.Crear ("11111111A", "Trabajador 1", "Apellidos trabajador1", "Calle del trabajador1", "123456789", "00440", "Espa�a", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
-                trabajadorCEN.Crear ("22222222B", "Trabajador 2", "Apellidos trabajador2", "Calle del trabajador2", "234552345", "00442", "Espa�a", "Villena", "AxoWorld", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
-                trabajadorCEN.Crear ("33333333C", "Trabajador 3", "Apellidos trabajador3", "Calle del trabajador3", "235254534", "00443", "Francia", "Buxusua", "Buxusue", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
-                trabajadorCEN.Crear ("44444444D", "Trabajador 4", "Apellidos trabajador4", "Calle del trabajador4", "623452345", "00444", "Espa�a", "de por ahi", "Perdio", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
+                trabajadorCEN.Crear ("11111111A", "Trabajador 1", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "Espa�a", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
 
                 IList<LineaPedidoEN> lineas = new List<LineaPedidoEN>();
                 lineas.Add (new LineaPedidoEN (1, 5, productoCEN.get_IProductoCAD ().ReadOIDDefault ("1"), null));
                 lineas.Add (new LineaPedidoEN (2, 4, productoCEN.get_IProductoCAD ().ReadOIDDefault ("2"), null));
 
                 IList<PedidoEN> pedidos = new List<PedidoEN>();
-                pedidos.Add(new PedidoEN("1", DateTime.Today, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum.Enviado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum.Contado,lineas,proveedorCEN.get_IProveedorCAD().ReadOIDDefault("1")));
+                pedidos.Add (new PedidoEN ("1", DateTime.Today, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum.Enviado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum.Contado, lineas, proveedorCEN.get_IProveedorCAD ().ReadOIDDefault ("1")));
 
-                PedidoCEN pedido = new PedidoCEN();
-                pedido.Crear(pedidos[0].Id, pedidos[0].Fecha, pedidos[0].Estado, pedidos[0].TipoPago, pedidos[0].Lineas, pedidos[0].Proveedor.Id);
-
-                IList<InstalacionEN> instalaciones = new List<InstalacionEN>();
-
-                InstalacionCEN instalacion = new InstalacionCEN();
-
-                instalacion.Crear("1", "insta", "descr", "alicante", "alicante", "españa", "calle", "03009", "666666", 15 , "11111111A");
-                instalacion.Crear("2", "insta2", "descr2", "elche", "alicante", "españa", "calle", "03008", "666667", 15, "22222222B");
-                instalacion.Crear("3", "insta3", "descr3", "mislata", "valencia", "españa", "calle", "03509", "666566", 15, "33333333C");
-                instalacion.Crear("4", "insta4", "descr4", "alcora", "castellon", "españa", "calle", "03409", "663366", 15, "44444444D");
-
-                IList<TrabajadorEN> trabajadores = new List<TrabajadorEN>(); trabajadores.Add(new TrabajadorEN("000000", "d", "a", "calle", "telefono", "00", "e", "a", "a", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado, null, null));
-
-                JornadaFechaCEN j = new JornadaFechaCEN(); 
-                IList<JornadaFechaEN> jornadas = new List<JornadaFechaEN>(); jornadas.Add(new JornadaFechaEN(1, DateTime.Now, trabajadores, instalacion.ObtenerInstalacion("1")));
-
-                //IList<JornadaFechaEN> jor = j.ReadFilter(DateTime.Now, "1");
-                //Console.WriteLine(jor.Count == 0 ? jor[0].Trabajadores.ToString() : "Esta vacia");
-            
-            /*PROTECTED REGION END*/
+                PedidoCEN pedido = new PedidoCEN ();
+                pedido.Crear (pedidos [0].Id, pedidos [0].Fecha, pedidos [0].Estado, pedidos [0].TipoPago, pedidos [0].Lineas, pedidos [0].Proveedor.Id);
+                /*PROTECTED REGION END*/
         }
         catch (Exception ex)
         {

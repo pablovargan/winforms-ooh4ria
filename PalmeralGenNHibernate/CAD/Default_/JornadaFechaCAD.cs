@@ -188,37 +188,5 @@ public System.Collections.Generic.IList<JornadaFechaEN> ObtenerTodas (int first,
 
         return result;
 }
-
-public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> ReadFilter (Nullable<DateTime> p_fecha, PalmeralGenNHibernate.EN.Default_.InstalacionEN p_instalacion)
-{
-        System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> result;
-        try
-        {
-                SessionInitializeTransaction ();
-                //String sql = @"FROM JornadaFechaEN self where FROM JornadaFechaEN AS jor WHERE jor.Fecha := p_fecha AND jor.Instalacion := p_instalacion";
-                //IQuery query = session.CreateQuery(sql);
-                IQuery query = (IQuery)session.GetNamedQuery ("JornadaFechaENreadFilterHQL");
-                query.SetParameter ("p_fecha", p_fecha);
-                query.SetParameter ("p_instalacion", p_instalacion);
-
-                result = query.List<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN>();
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in JornadaFechaCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-
-        return result;
-}
 }
 }

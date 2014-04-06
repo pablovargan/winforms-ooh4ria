@@ -23,5 +23,10 @@ InstalacionEN ObtenerInstalacion (string id);
 
 
 System.Collections.Generic.IList<InstalacionEN> ObtenerTodas (int first, int size);
+
+
+void AddTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador);
+
+void DeleteTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador);
 }
 }

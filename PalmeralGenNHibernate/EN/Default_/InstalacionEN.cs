@@ -83,6 +83,12 @@ private System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Jorna
 
 private System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.FacturaEN> facturas;
 
+/**
+ *
+ */
+
+private System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN> trabajadores;
+
 
 
 
@@ -152,6 +158,11 @@ public virtual System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default
 }
 
 
+public virtual System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN> Trabajadores {
+        get { return trabajadores; } set { trabajadores = value;  }
+}
+
+
 
 
 
@@ -159,22 +170,23 @@ public InstalacionEN()
 {
         jornadas = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN>();
         facturas = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.FacturaEN>();
+        trabajadores = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.TrabajadorEN>();
 }
 
 
 
-public InstalacionEN(string id, string nombre, string descripcion, string localidad, string provincia, string pais, string direccion, string codigoPostal, string telefono, float metrosCuadrados, PalmeralGenNHibernate.EN.Default_.ClienteEN cliente, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.FacturaEN> facturas)
+public InstalacionEN(string id, string nombre, string descripcion, string localidad, string provincia, string pais, string direccion, string codigoPostal, string telefono, float metrosCuadrados, PalmeralGenNHibernate.EN.Default_.ClienteEN cliente, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.FacturaEN> facturas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN> trabajadores)
 {
-        this.init (id, nombre, descripcion, localidad, provincia, pais, direccion, codigoPostal, telefono, metrosCuadrados, cliente, jornadas, facturas);
+        this.init (id, nombre, descripcion, localidad, provincia, pais, direccion, codigoPostal, telefono, metrosCuadrados, cliente, jornadas, facturas, trabajadores);
 }
 
 
 public InstalacionEN(InstalacionEN instalacion)
 {
-        this.init (instalacion.Id, instalacion.Nombre, instalacion.Descripcion, instalacion.Localidad, instalacion.Provincia, instalacion.Pais, instalacion.Direccion, instalacion.CodigoPostal, instalacion.Telefono, instalacion.MetrosCuadrados, instalacion.Cliente, instalacion.Jornadas, instalacion.Facturas);
+        this.init (instalacion.Id, instalacion.Nombre, instalacion.Descripcion, instalacion.Localidad, instalacion.Provincia, instalacion.Pais, instalacion.Direccion, instalacion.CodigoPostal, instalacion.Telefono, instalacion.MetrosCuadrados, instalacion.Cliente, instalacion.Jornadas, instalacion.Facturas, instalacion.Trabajadores);
 }
 
-private void init (string id, string nombre, string descripcion, string localidad, string provincia, string pais, string direccion, string codigoPostal, string telefono, float metrosCuadrados, PalmeralGenNHibernate.EN.Default_.ClienteEN cliente, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.FacturaEN> facturas)
+private void init (string id, string nombre, string descripcion, string localidad, string provincia, string pais, string direccion, string codigoPostal, string telefono, float metrosCuadrados, PalmeralGenNHibernate.EN.Default_.ClienteEN cliente, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.FacturaEN> facturas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN> trabajadores)
 {
         this.Id = id;
 
@@ -202,6 +214,8 @@ private void init (string id, string nombre, string descripcion, string localida
         this.Jornadas = jornadas;
 
         this.Facturas = facturas;
+
+        this.Trabajadores = trabajadores;
 }
 
 public override bool Equals (object obj)

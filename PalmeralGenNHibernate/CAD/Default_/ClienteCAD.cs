@@ -187,7 +187,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Client
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM ClienteEN self where FROM ClienteEN AS cli WHERE cli.Nombre = :p_nombre";
+                //String sql = @"FROM ClienteEN self where FROM ClienteEN AS cli WHERE cli.Nombre LIKE CONCAT('%', :p_nombre , '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("ClienteENbuscarPorNombreHQL");
                 query.SetParameter ("p_nombre", p_nombre);
@@ -226,7 +226,6 @@ public ClienteEN ObtenerCliente (string nif)
                 SessionRollBack ();
                 if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
                         throw ex;
-                
                 throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in ClienteCAD.", ex);
         }
 

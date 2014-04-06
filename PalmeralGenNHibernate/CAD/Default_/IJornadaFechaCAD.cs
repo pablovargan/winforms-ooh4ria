@@ -20,8 +20,5 @@ JornadaFechaEN ObtenerJornada (int id);
 
 
 System.Collections.Generic.IList<JornadaFechaEN> ObtenerTodas (int first, int size);
-
-
-System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> ReadFilter (Nullable<DateTime> p_fecha, PalmeralGenNHibernate.EN.Default_.InstalacionEN p_instalacion);
 }
 }

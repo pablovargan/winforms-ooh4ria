@@ -77,6 +77,12 @@ private System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomin
 
 private System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas;
 
+/**
+ *
+ */
+
+private System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.InstalacionEN> instalaciones;
+
 
 
 
@@ -141,6 +147,11 @@ public virtual System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default
 }
 
 
+public virtual System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.InstalacionEN> Instalaciones {
+        get { return instalaciones; } set { instalaciones = value;  }
+}
+
+
 
 
 
@@ -148,22 +159,23 @@ public TrabajadorEN()
 {
         nominas = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.NominaEN>();
         jornadas = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN>();
+        instalaciones = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.InstalacionEN>();
 }
 
 
 
-public TrabajadorEN(string nif, string nombre, string apellidos, string direccion, string telefono, string codigoPostal, string pais, string localidad, string provincia, PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum tipo, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> nominas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas)
+public TrabajadorEN(string nif, string nombre, string apellidos, string direccion, string telefono, string codigoPostal, string pais, string localidad, string provincia, PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum tipo, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> nominas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.InstalacionEN> instalaciones)
 {
-        this.init (nif, nombre, apellidos, direccion, telefono, codigoPostal, pais, localidad, provincia, tipo, nominas, jornadas);
+        this.init (nif, nombre, apellidos, direccion, telefono, codigoPostal, pais, localidad, provincia, tipo, nominas, jornadas, instalaciones);
 }
 
 
 public TrabajadorEN(TrabajadorEN trabajador)
 {
-        this.init (trabajador.Nif, trabajador.Nombre, trabajador.Apellidos, trabajador.Direccion, trabajador.Telefono, trabajador.CodigoPostal, trabajador.Pais, trabajador.Localidad, trabajador.Provincia, trabajador.Tipo, trabajador.Nominas, trabajador.Jornadas);
+        this.init (trabajador.Nif, trabajador.Nombre, trabajador.Apellidos, trabajador.Direccion, trabajador.Telefono, trabajador.CodigoPostal, trabajador.Pais, trabajador.Localidad, trabajador.Provincia, trabajador.Tipo, trabajador.Nominas, trabajador.Jornadas, trabajador.Instalaciones);
 }
 
-private void init (string nif, string nombre, string apellidos, string direccion, string telefono, string codigoPostal, string pais, string localidad, string provincia, PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum tipo, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> nominas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas)
+private void init (string nif, string nombre, string apellidos, string direccion, string telefono, string codigoPostal, string pais, string localidad, string provincia, PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum tipo, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> nominas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.InstalacionEN> instalaciones)
 {
         this.Nif = nif;
 
@@ -189,6 +201,8 @@ private void init (string nif, string nombre, string apellidos, string direccion
         this.Nominas = nominas;
 
         this.Jornadas = jornadas;
+
+        this.Instalaciones = instalaciones;
 }
 
 public override bool Equals (object obj)

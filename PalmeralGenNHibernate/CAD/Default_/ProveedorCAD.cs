@@ -104,6 +104,7 @@ public void Editar (ProveedorEN proveedor)
 
                 proveedorEN.Email = proveedor.Email;
 
+
                 proveedorEN.Pais = proveedor.Pais;
 
 

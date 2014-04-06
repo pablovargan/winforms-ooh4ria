@@ -172,7 +172,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Produc
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM ProductoEN self where FROM ProductoEN AS prod WHERE prod.Nombre = :p_nombre";
+                //String sql = @"FROM ProductoEN self where FROM ProductoEN AS prod WHERE prod.Nombre LIKE CONCAT('%', :p_nombre , '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("ProductoENbuscarPorNombreHQL");
                 query.SetParameter ("p_nombre", p_nombre);

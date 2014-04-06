@@ -147,7 +147,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Factur
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM FacturaEN self where FROM FacturaEN AS fac WHERE fac.Instalacion = :p_instalacion";
+                //String sql = @"FROM FacturaEN self where FROM FacturaEN AS fac WHERE fac.Instalacion LIKE CONCAT('%', :p_instalacion , '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("FacturaENobtenerFacturasInstalacionHQL");
                 query.SetParameter ("p_instalacion", p_instalacion);
@@ -234,7 +234,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Factur
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM FacturaEN self where FROM FacturaEN AS fac WHERE year(fac.Fecha) = :p_anyo";
+                //String sql = @"FROM FacturaEN self where FROM FacturaEN AS fac WHERE year(fac.Fecha) LIKE CONCAT('%', :p_anyo , '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("FacturaENobtenerPorAnyoHQL");
                 query.SetParameter ("p_anyo", p_anyo);
