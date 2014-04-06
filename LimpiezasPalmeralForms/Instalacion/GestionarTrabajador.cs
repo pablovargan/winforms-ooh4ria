@@ -67,7 +67,13 @@ namespace LimpiezasPalmeralForms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            IList<string> trabajadores = new List<string>();
+            InstalacionCEN instalacion = new InstalacionCEN();
+            trabajadores.Add(comboBox_trab.Text);
+            instalacion.AddTrabajador(comboBox_inst.Text,trabajadores);
+
+            TrabajadorAgregado tag = new TrabajadorAgregado();
+            tag.Show();
         }
     }
 }
