@@ -37,11 +37,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox_trab = new System.Windows.Forms.ComboBox();
             this.comboBox_inst = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_trab = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -134,10 +134,37 @@
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Location = new System.Drawing.Point(6, 19);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(526, 204);
+            this.groupBox4.Size = new System.Drawing.Size(526, 64);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Agregar trabajador";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(415, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Agregar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(212, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Trabajador";
+            // 
+            // comboBox_trab
+            // 
+            this.comboBox_trab.FormattingEnabled = true;
+            this.comboBox_trab.Location = new System.Drawing.Point(276, 22);
+            this.comboBox_trab.Name = "comboBox_trab";
+            this.comboBox_trab.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_trab.TabIndex = 2;
             // 
             // comboBox_inst
             // 
@@ -157,38 +184,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Instalación";
             // 
-            // comboBox_trab
-            // 
-            this.comboBox_trab.FormattingEnabled = true;
-            this.comboBox_trab.Location = new System.Drawing.Point(276, 22);
-            this.comboBox_trab.Name = "comboBox_trab";
-            this.comboBox_trab.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_trab.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(212, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Trabajador";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(415, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // GestionarTrabajador
             // 
             this.ClientSize = new System.Drawing.Size(562, 253);
             this.Controls.Add(this.groupBox3);
             this.Name = "GestionarTrabajador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.GestionarTrabajador_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
