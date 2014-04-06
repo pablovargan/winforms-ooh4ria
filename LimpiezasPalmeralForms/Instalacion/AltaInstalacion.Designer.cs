@@ -80,7 +80,7 @@
             this.groupBox1.Controls.Add(this.m2_box);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(627, 227);
+            this.groupBox1.Size = new System.Drawing.Size(581, 258);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -88,7 +88,7 @@
             // cliente_comboBox
             // 
             this.cliente_comboBox.FormattingEnabled = true;
-            this.cliente_comboBox.Location = new System.Drawing.Point(430, 186);
+            this.cliente_comboBox.Location = new System.Drawing.Point(372, 186);
             this.cliente_comboBox.Name = "cliente_comboBox";
             this.cliente_comboBox.Size = new System.Drawing.Size(136, 21);
             this.cliente_comboBox.TabIndex = 22;
@@ -96,7 +96,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(383, 189);
+            this.label11.Location = new System.Drawing.Point(327, 189);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(39, 13);
             this.label11.TabIndex = 21;
@@ -105,7 +105,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(330, 152);
+            this.label10.Location = new System.Drawing.Point(274, 152);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 13);
             this.label10.TabIndex = 19;
@@ -114,7 +114,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(373, 115);
+            this.label9.Location = new System.Drawing.Point(317, 115);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 13);
             this.label9.TabIndex = 17;
@@ -123,7 +123,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(395, 77);
+            this.label8.Location = new System.Drawing.Point(339, 77);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 16;
@@ -132,7 +132,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(67, 115);
+            this.label7.Location = new System.Drawing.Point(38, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 15;
@@ -141,7 +141,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(393, 40);
+            this.label6.Location = new System.Drawing.Point(337, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 14;
@@ -150,7 +150,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(69, 189);
+            this.label5.Location = new System.Drawing.Point(39, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 13;
@@ -159,7 +159,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 152);
+            this.label4.Location = new System.Drawing.Point(37, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 12;
@@ -168,7 +168,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 77);
+            this.label3.Location = new System.Drawing.Point(27, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 11;
@@ -177,7 +177,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 40);
+            this.label2.Location = new System.Drawing.Point(46, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 10;
@@ -185,63 +185,63 @@
             // 
             // tlfno_box
             // 
-            this.tlfno_box.Location = new System.Drawing.Point(430, 112);
+            this.tlfno_box.Location = new System.Drawing.Point(372, 115);
             this.tlfno_box.Name = "tlfno_box";
             this.tlfno_box.Size = new System.Drawing.Size(136, 20);
             this.tlfno_box.TabIndex = 8;
             // 
             // cp_box
             // 
-            this.cp_box.Location = new System.Drawing.Point(430, 74);
+            this.cp_box.Location = new System.Drawing.Point(372, 74);
             this.cp_box.Name = "cp_box";
             this.cp_box.Size = new System.Drawing.Size(136, 20);
             this.cp_box.TabIndex = 7;
             // 
             // dir_box
             // 
-            this.dir_box.Location = new System.Drawing.Point(125, 112);
+            this.dir_box.Location = new System.Drawing.Point(96, 112);
             this.dir_box.Name = "dir_box";
             this.dir_box.Size = new System.Drawing.Size(136, 20);
             this.dir_box.TabIndex = 3;
             // 
             // pais_box
             // 
-            this.pais_box.Location = new System.Drawing.Point(430, 37);
+            this.pais_box.Location = new System.Drawing.Point(372, 37);
             this.pais_box.Name = "pais_box";
             this.pais_box.Size = new System.Drawing.Size(136, 20);
             this.pais_box.TabIndex = 6;
             // 
             // prov_box
             // 
-            this.prov_box.Location = new System.Drawing.Point(126, 186);
+            this.prov_box.Location = new System.Drawing.Point(96, 186);
             this.prov_box.Name = "prov_box";
             this.prov_box.Size = new System.Drawing.Size(136, 20);
             this.prov_box.TabIndex = 5;
             // 
             // loc_box
             // 
-            this.loc_box.Location = new System.Drawing.Point(126, 149);
+            this.loc_box.Location = new System.Drawing.Point(96, 149);
             this.loc_box.Name = "loc_box";
             this.loc_box.Size = new System.Drawing.Size(136, 20);
             this.loc_box.TabIndex = 4;
             // 
             // desc_box
             // 
-            this.desc_box.Location = new System.Drawing.Point(125, 74);
+            this.desc_box.Location = new System.Drawing.Point(96, 74);
             this.desc_box.Name = "desc_box";
             this.desc_box.Size = new System.Drawing.Size(136, 20);
             this.desc_box.TabIndex = 2;
             // 
             // nombre_box
             // 
-            this.nombre_box.Location = new System.Drawing.Point(125, 37);
+            this.nombre_box.Location = new System.Drawing.Point(96, 37);
             this.nombre_box.Name = "nombre_box";
             this.nombre_box.Size = new System.Drawing.Size(136, 20);
             this.nombre_box.TabIndex = 1;
             // 
             // m2_box
             // 
-            this.m2_box.Location = new System.Drawing.Point(430, 149);
+            this.m2_box.Location = new System.Drawing.Point(372, 149);
             this.m2_box.Name = "m2_box";
             this.m2_box.Size = new System.Drawing.Size(136, 20);
             this.m2_box.TabIndex = 9;
@@ -250,18 +250,18 @@
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 245);
+            this.groupBox2.Location = new System.Drawing.Point(12, 276);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(627, 96);
+            this.groupBox2.Size = new System.Drawing.Size(581, 75);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(455, 19);
+            this.button2.Location = new System.Drawing.Point(372, 13);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 71);
+            this.button2.Size = new System.Drawing.Size(203, 56);
             this.button2.TabIndex = 1;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
@@ -269,9 +269,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(286, 19);
+            this.button1.Location = new System.Drawing.Point(163, 13);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 71);
+            this.button1.Size = new System.Drawing.Size(203, 56);
             this.button1.TabIndex = 0;
             this.button1.Text = "Alta";
             this.button1.UseVisualStyleBackColor = true;
@@ -281,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 353);
+            this.ClientSize = new System.Drawing.Size(605, 363);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "AltaInstalacion";
