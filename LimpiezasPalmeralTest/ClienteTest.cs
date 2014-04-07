@@ -9,19 +9,23 @@ namespace LimpiezasPalmeralTest
     public class ClienteTest
     {
         private ClienteCEN clienteTest;
+        private string DNI = "99999999Z";
 
         [TestInitialize]
         public void TestMethod1()
         {
             clienteTest = new ClienteCEN();
+            if (clienteTest.ObtenerCliente(DNI) != null)
+                clienteTest.Eliminar(DNI);
+
         }
 
         [TestMethod]
         public void Cli_Registrar()
         {
-            string expected = clienteTest.Crear("99999999Z", "Cliente", "Descripcion", "email@email.com", "Alicante", "Alicante", "España", "Calle", "03339", "665855458");
-            clienteTest.Eliminar("99999999Z");
-            Assert.AreEqual("99999999Z", expected);
+            string expected = clienteTest.Crear(DNI, "Cliente", "Descripcion", "email@email.com", "Alicante", "Alicante", "España", "Calle", "03339", "665855458");
+            clienteTest.Eliminar(DNI);
+            Assert.AreEqual(DNI, expected);
         }
 
         [TestMethod]
@@ -29,9 +33,9 @@ namespace LimpiezasPalmeralTest
         {
             try
             {
-                clienteTest.Crear("99999999Z", "Cliente", "Descripcion", "email@email.com", "Alicante", "Alicante", "España", "Calle", "03339", "665855458");
-                string expected = clienteTest.Crear("99999999Z", "Cliente", "Descripcion", "email@email.com", "Alicante", "Alicante", "España", "Calle", "03339", "665855458");
-                clienteTest.Eliminar("99999999Z");
+                clienteTest.Crear(DNI, "Cliente", "Descripcion", "email@email.com", "Alicante", "Alicante", "España", "Calle", "03339", "665855458");
+                string expected = clienteTest.Crear(DNI, "Cliente", "Descripcion", "email@email.com", "Alicante", "Alicante", "España", "Calle", "03339", "665855458");
+                clienteTest.Eliminar(DNI);
                 Assert.Fail("Excepcion no lanzada");
             }
             catch (PalmeralGenNHibernate.Exceptions.DataLayerException ex)
@@ -44,7 +48,8 @@ namespace LimpiezasPalmeralTest
         [TestMethod]
         public void Cli_Consultar()
         {
-            ClienteEN expected = clienteTest.ObtenerCliente("99999999Z");
+            clienteTest.Crear(DNI, "Cliente", "Descripcion", "email@email.com", "Alicante", "Alicante", "España", "Calle", "03339", "665855458");
+            ClienteEN expected = clienteTest.ObtenerCliente(DNI);
             string actual = "Cliente";
             Assert.AreEqual(actual, expected.Nombre);
         }
