@@ -72,7 +72,7 @@
             this.buttonEscogerImagen.Location = new System.Drawing.Point(230, 189);
             this.buttonEscogerImagen.Name = "buttonEscogerImagen";
             this.buttonEscogerImagen.Size = new System.Drawing.Size(213, 23);
-            this.buttonEscogerImagen.TabIndex = 14;
+            this.buttonEscogerImagen.TabIndex = 5;
             this.buttonEscogerImagen.Text = "Escoger imagen";
             this.buttonEscogerImagen.UseVisualStyleBackColor = true;
             this.buttonEscogerImagen.Click += new System.EventHandler(this.buttonEscogerImagen_Click);
@@ -92,7 +92,7 @@
             this.numericStock.Location = new System.Drawing.Point(101, 82);
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(100, 20);
-            this.numericStock.TabIndex = 11;
+            this.numericStock.TabIndex = 3;
             // 
             // labelStock
             // 
@@ -110,21 +110,21 @@
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxDescripcion.Size = new System.Drawing.Size(183, 82);
-            this.textBoxDescripcion.TabIndex = 7;
+            this.textBoxDescripcion.TabIndex = 4;
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(101, 49);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNombre.TabIndex = 6;
+            this.textBoxNombre.TabIndex = 2;
             // 
             // textBoxId
             // 
             this.textBoxId.Location = new System.Drawing.Point(101, 21);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxId.TabIndex = 5;
+            this.textBoxId.TabIndex = 1;
             // 
             // label3
             // 
@@ -169,7 +169,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(230, 19);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(140, 44);
-            this.buttonCancelar.TabIndex = 5;
+            this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -179,7 +179,7 @@
             this.buttonAceptar.Location = new System.Drawing.Point(84, 19);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(140, 44);
-            this.buttonAceptar.TabIndex = 1;
+            this.buttonAceptar.TabIndex = 6;
             this.buttonAceptar.Text = "Aceptar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
@@ -189,10 +189,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 331);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "AltaProducto";
-            this.Text = "AltaProducto";
+            this.Text = "Alta Producto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).EndInit();
