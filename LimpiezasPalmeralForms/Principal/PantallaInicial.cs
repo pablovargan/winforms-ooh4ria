@@ -17,43 +17,55 @@ namespace LimpiezasPalmeralForms
         public PantallaInicial()
         {
             InitializeComponent();
+            numericStock.Value = 5;
             this.Load += new EventHandler(Grid_Load);
-            textBoxStock.KeyUp += new KeyEventHandler(Buscar_Articulos);
+            
 
         }
 
-        private void Buscar_Articulos(object sender, KeyEventArgs e)
+        private void Buscar_Articulos(object sender, EventArgs e)
         { 
             ProductoCEN producto = new ProductoCEN();
             IList<ProductoEN> lista;
-            if ( textBoxStock.Text == "")
+            if ( numericStock.Text == "")
             {
                 lista = producto.BuscarPorStock(0);
                 dataGridViewStock.DataSource = lista;
             }
             else
             {
-                lista = producto.BuscarPorStock(Convert.ToInt32(textBoxStock.Text));
+                lista = producto.BuscarPorStock(Convert.ToInt32(numericStock.Text));
                 dataGridViewStock.DataSource = lista;
             }
- 
-
         }
 
-
-
-        private void Grid_Load(object sender, EventArgs e)
+        public void Grid_Load(object sender, EventArgs e)
         {
             ProductoCEN producto = new ProductoCEN();
+            List<ProductoGV> productoGV = new List<ProductoGV>();
             IList<ProductoEN> lista;
-            lista = producto.BuscarPorStock(5);
-            dataGridViewStock.DataSource = lista;
-
+            lista = producto.BuscarPorStock(Convert.ToInt32(numericStock.Text));
+            foreach (ProductoEN p in lista)
+            {
+                productoGV.Add(new ProductoGV()
+                {
+                    Id = p.Id,
+                    Nombre = p.Nombre,
+                    Descripcion = p.Descripcion,
+                    Stock = p.Stock,
+                });
+            }
+            dataGridViewStock.DataSource = productoGV;
         }
 
         private void PantallaInicial_Load(object sender, EventArgs e)
         {
+            Grid_Load(sender, e);
+        }
 
+        private void numericStock_ValueChanged(object sender, EventArgs e)
+        {
+            Grid_Load(sender, e);
         }
 
 

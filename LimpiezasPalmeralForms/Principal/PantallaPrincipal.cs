@@ -145,8 +145,10 @@ namespace LimpiezasPalmeralForms
             }
 
             PantallaInicial ini = new PantallaInicial() { MdiParent = this };
+            ini.Grid_Load(sender, e);
             ini.Show();
             ini.WindowState = FormWindowState.Maximized;
+            
         }
     }
 }

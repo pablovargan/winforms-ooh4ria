@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewStock = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBoxStock = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.numericStock = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -50,8 +51,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox2.Controls.Add(this.numericStock);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBoxStock);
             this.groupBox2.Controls.Add(this.dataGridViewStock);
             this.groupBox2.Location = new System.Drawing.Point(447, 12);
             this.groupBox2.Name = "groupBox2";
@@ -60,11 +61,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock Crítico";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Stock Mínimo";
+            // 
             // dataGridViewStock
             // 
             this.dataGridViewStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStock.Location = new System.Drawing.Point(6, 46);
             this.dataGridViewStock.Name = "dataGridViewStock";
@@ -119,25 +130,15 @@
             this.dataGridView2.Size = new System.Drawing.Size(263, 225);
             this.dataGridView2.TabIndex = 1;
             // 
-            // textBoxStock
+            // numericStock
             // 
-            this.textBoxStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numericStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxStock.Location = new System.Drawing.Point(85, 20);
-            this.textBoxStock.Name = "textBoxStock";
-            this.textBoxStock.Size = new System.Drawing.Size(183, 20);
-            this.textBoxStock.TabIndex = 2;
-            this.textBoxStock.Text = "5";
-            this.textBoxStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Stock Mínimo";
+            this.numericStock.Location = new System.Drawing.Point(95, 21);
+            this.numericStock.Name = "numericStock";
+            this.numericStock.Size = new System.Drawing.Size(62, 20);
+            this.numericStock.TabIndex = 12;
+            this.numericStock.ValueChanged += new System.EventHandler(this.numericStock_ValueChanged);
             // 
             // PantallaInicial
             // 
@@ -159,6 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,7 +173,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridViewStock;
-        private System.Windows.Forms.TextBox textBoxStock;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericStock;
     }
 }
