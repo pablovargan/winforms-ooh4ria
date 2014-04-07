@@ -33,7 +33,8 @@
             this.Mostrar = new System.Windows.Forms.DataGridView();
             this.Buscador = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Modificar = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.Button();
+            this.Consultar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Crear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -51,7 +52,7 @@
             this.groupBox1.Controls.Add(this.Buscador);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(570, 349);
+            this.groupBox1.Size = new System.Drawing.Size(563, 354);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajadores";
@@ -60,10 +61,11 @@
             // 
             this.Premisa.FormattingEnabled = true;
             this.Premisa.Items.AddRange(new object[] {
+            "Nombre",
             "Provincia",
             "Tipo",
             "Localidad"});
-            this.Premisa.Location = new System.Drawing.Point(6, 17);
+            this.Premisa.Location = new System.Drawing.Point(7, 17);
             this.Premisa.Name = "Premisa";
             this.Premisa.Size = new System.Drawing.Size(121, 21);
             this.Premisa.TabIndex = 3;
@@ -74,23 +76,23 @@
             this.Mostrar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Mostrar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Mostrar.Location = new System.Drawing.Point(6, 45);
             this.Mostrar.MultiSelect = false;
             this.Mostrar.Name = "Mostrar";
             this.Mostrar.ReadOnly = true;
             this.Mostrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Mostrar.Size = new System.Drawing.Size(558, 298);
+            this.Mostrar.Size = new System.Drawing.Size(551, 303);
             this.Mostrar.TabIndex = 2;
-            this.Mostrar.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Mostrar_CellClick);
             // 
             // Buscador
             // 
             this.Buscador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscador.Location = new System.Drawing.Point(138, 19);
+            this.Buscador.Location = new System.Drawing.Point(134, 17);
             this.Buscador.Name = "Buscador";
-            this.Buscador.Size = new System.Drawing.Size(426, 20);
+            this.Buscador.Size = new System.Drawing.Size(419, 20);
             this.Buscador.TabIndex = 0;
             this.Buscador.Text = "Introduzca el término a buscar";
             this.Buscador.Click += new System.EventHandler(this.Buscador_Click);
@@ -99,37 +101,46 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.Modificar);
+            this.groupBox2.Controls.Add(this.Editar);
+            this.groupBox2.Controls.Add(this.Consultar);
             this.groupBox2.Controls.Add(this.Eliminar);
             this.groupBox2.Controls.Add(this.Crear);
-            this.groupBox2.Location = new System.Drawing.Point(588, 12);
+            this.groupBox2.Location = new System.Drawing.Point(581, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(158, 349);
+            this.groupBox2.Size = new System.Drawing.Size(133, 354);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
-            // Modificar
+            // Editar
             // 
-            this.Modificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Editar.Location = new System.Drawing.Point(6, 117);
+            this.Editar.Name = "Editar";
+            this.Editar.Size = new System.Drawing.Size(121, 44);
+            this.Editar.TabIndex = 3;
+            this.Editar.Text = "Editar";
+            this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
+            // 
+            // Consultar
+            // 
+            this.Consultar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Modificar.Enabled = false;
-            this.Modificar.Location = new System.Drawing.Point(6, 126);
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(146, 23);
-            this.Modificar.TabIndex = 2;
-            this.Modificar.Text = "Modificar";
-            this.Modificar.UseVisualStyleBackColor = true;
-            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
+            this.Consultar.Location = new System.Drawing.Point(6, 67);
+            this.Consultar.Name = "Consultar";
+            this.Consultar.Size = new System.Drawing.Size(121, 44);
+            this.Consultar.TabIndex = 2;
+            this.Consultar.Text = "Consultar";
+            this.Consultar.UseVisualStyleBackColor = true;
+            this.Consultar.Click += new System.EventHandler(this.Consultar_Click);
             // 
             // Eliminar
             // 
             this.Eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Eliminar.Enabled = false;
-            this.Eliminar.Location = new System.Drawing.Point(6, 85);
+            this.Eliminar.Location = new System.Drawing.Point(6, 167);
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(146, 23);
+            this.Eliminar.Size = new System.Drawing.Size(121, 44);
             this.Eliminar.TabIndex = 1;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
@@ -139,9 +150,9 @@
             // 
             this.Crear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Crear.Location = new System.Drawing.Point(6, 45);
+            this.Crear.Location = new System.Drawing.Point(6, 17);
             this.Crear.Name = "Crear";
-            this.Crear.Size = new System.Drawing.Size(146, 23);
+            this.Crear.Size = new System.Drawing.Size(121, 44);
             this.Crear.TabIndex = 0;
             this.Crear.Text = "Dar de Alta";
             this.Crear.UseVisualStyleBackColor = true;
@@ -151,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 373);
+            this.ClientSize = new System.Drawing.Size(726, 378);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -173,7 +184,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Crear;
         private System.Windows.Forms.Button Eliminar;
-        private System.Windows.Forms.Button Modificar;
+        private System.Windows.Forms.Button Consultar;
         private System.Windows.Forms.ComboBox Premisa;
+        private System.Windows.Forms.Button Editar;
     }
 }

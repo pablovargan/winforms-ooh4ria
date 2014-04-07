@@ -48,7 +48,7 @@ namespace LimpiezasPalmeralForms
                 catch (Exception exp)
                 {
                     MessageBox.Show("El trabajador no se pudo crear");
-                    //throw exp;
+                    throw exp;
                 }
             }
             else
@@ -63,6 +63,96 @@ namespace LimpiezasPalmeralForms
         {
             //cerrar ventana
             this.Close();
+        }
+
+        private void Tipo1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Telefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pais_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Provincia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Localidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Direccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Apellidos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

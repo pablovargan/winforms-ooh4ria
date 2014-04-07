@@ -165,6 +165,12 @@
     <Compile Include="Proveedor\PantallaProveedor.Designer.cs">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trabajador\ConsultarEditarTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trabajador\ConsultarEditarTrabajador.Designer.cs">
+      <DependentUpon>ConsultarEditarTrabajador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trabajador\CrearTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\ConsultaProveedor.resx">
       <DependentUpon>ConsultaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trabajador\ConsultarEditarTrabajador.resx">
+      <DependentUpon>ConsultarEditarTrabajador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trabajador\CrearTrabajador.resx">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>

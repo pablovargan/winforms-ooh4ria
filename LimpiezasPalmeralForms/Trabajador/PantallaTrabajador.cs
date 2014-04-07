@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
+using LimpiezasPalmeralForms.Trabajador;
 
 namespace LimpiezasPalmeralForms
 {
@@ -19,10 +20,10 @@ namespace LimpiezasPalmeralForms
             InitializeComponent();
             this.Load += new EventHandler(Grid_Load);
             this.Load += new EventHandler(Grid_Load);
-           // Mostrar.LostFocus += new EventHandler(Desactivar_Botones);
             Buscador.KeyUp += new KeyEventHandler(Buscar_Trabajadores);
             Buscador.Click += new EventHandler(Grid_Load);
             Eliminar.Click += new EventHandler(Grid_Load);
+            Premisa.SelectedIndex = 0;
         }
 
         private List<TrabajadorGV> Convertir_TrabajadorGW(IList<TrabajadorEN> lista)
@@ -76,13 +77,15 @@ namespace LimpiezasPalmeralForms
                 lista = trabajador.BuscarPorLocalidad(Buscador.Text);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
             }
+            else if (Premisa.Text.Equals("Nombre"))
+            {
+                lista = trabajador.BuscarPorNombre(Buscador.Text);
+                Mostrar.DataSource = Convertir_TrabajadorGW(lista);   
+            }
             else
             {
-                
-                
+                //buscar por tipo
             }
-            Mostrar.ClearSelection();
-
         }
 
         private void Crear_Click(object sender, EventArgs e)
@@ -95,7 +98,7 @@ namespace LimpiezasPalmeralForms
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            if (Mostrar.SelectedRows == null)
+            /*if (Mostrar.SelectedRows == null)
             {
                 MessageBox.Show("Seleccion el trabajador que desee eliminar");
             }
@@ -105,28 +108,53 @@ namespace LimpiezasPalmeralForms
                 TrabajadorGV trabajador_eliminar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
                 MessageBox.Show("Desea eliminar: " + trabajador_eliminar.Nombre);
                 trabajador.Eliminar(trabajador_eliminar.Nif);
+            }*/
+        }
+
+        private void Consultar_Click(object sender, EventArgs e)
+        {
+            if (Mostrar.SelectedRows == null)
+            {
+                MessageBox.Show("Seleccion el trabajador que desee consultar");
             }
-        }
-
-        private void Modificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Mostrar_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Eliminar.Enabled = true;
-            Modificar.Enabled = true;
-        }
-        private void Desactivar_Botones(object sender, EventArgs e)
-        {
-            Eliminar.Enabled = false;
-            Modificar.Enabled = false;
+            else
+            {     
+                TrabajadorCEN trabajador = new TrabajadorCEN();
+                TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+                try
+                {
+                    ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, false);
+                    consulta.Owner = this;
+                    consulta.Deactivate += new EventHandler(Grid_Load);
+                    consulta.Show();
+                }
+                catch (Exception exp)
+                {
+                    throw exp;
+                }
+            }
         }
 
         private void Buscador_Click(object sender, EventArgs e)
         {
             Buscador.Text = "";
+        }
+
+        private void Editar_Click(object sender, EventArgs e)
+        {
+            if (Mostrar.SelectedRows == null)
+            {
+                MessageBox.Show("Seleccion el trabajador que desee modificar");
+            }
+            else
+            {
+                TrabajadorCEN trabajador = new TrabajadorCEN();
+                TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+                ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, true);
+                consulta.Owner = this;
+                consulta.Deactivate += new EventHandler(Grid_Load);
+                consulta.Show();
+            }
         }
     }
 
