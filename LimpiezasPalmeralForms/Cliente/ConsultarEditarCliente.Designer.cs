@@ -97,7 +97,7 @@
             this.textBoxPais.Location = new System.Drawing.Point(335, 21);
             this.textBoxPais.Name = "textBoxPais";
             this.textBoxPais.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPais.TabIndex = 24;
+            this.textBoxPais.TabIndex = 8;
             this.textBoxPais.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label7
@@ -116,7 +116,7 @@
             this.textBoxTelefono.Location = new System.Drawing.Point(335, 49);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTelefono.TabIndex = 20;
+            this.textBoxTelefono.TabIndex = 9;
             // 
             // textBoxCP
             // 
@@ -124,7 +124,7 @@
             this.textBoxCP.Location = new System.Drawing.Point(101, 189);
             this.textBoxCP.Name = "textBoxCP";
             this.textBoxCP.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCP.TabIndex = 19;
+            this.textBoxCP.TabIndex = 7;
             // 
             // textBoxDireccion
             // 
@@ -132,7 +132,7 @@
             this.textBoxDireccion.Location = new System.Drawing.Point(101, 105);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDireccion.TabIndex = 18;
+            this.textBoxDireccion.TabIndex = 4;
             // 
             // textBoxProvincia
             // 
@@ -140,7 +140,7 @@
             this.textBoxProvincia.Location = new System.Drawing.Point(101, 161);
             this.textBoxProvincia.Name = "textBoxProvincia";
             this.textBoxProvincia.Size = new System.Drawing.Size(100, 20);
-            this.textBoxProvincia.TabIndex = 16;
+            this.textBoxProvincia.TabIndex = 6;
             // 
             // label10
             // 
@@ -184,7 +184,7 @@
             this.textBoxLocalidad.Location = new System.Drawing.Point(101, 133);
             this.textBoxLocalidad.Name = "textBoxLocalidad";
             this.textBoxLocalidad.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLocalidad.TabIndex = 9;
+            this.textBoxLocalidad.TabIndex = 5;
             // 
             // textBoxEmail
             // 
@@ -192,7 +192,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(101, 77);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmail.TabIndex = 8;
+            this.textBoxEmail.TabIndex = 3;
             // 
             // textBoxDescripcion
             // 
@@ -202,7 +202,7 @@
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxDescripcion.Size = new System.Drawing.Size(183, 113);
-            this.textBoxDescripcion.TabIndex = 7;
+            this.textBoxDescripcion.TabIndex = 10;
             // 
             // textBoxNombre
             // 
@@ -210,7 +210,7 @@
             this.textBoxNombre.Location = new System.Drawing.Point(101, 49);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNombre.TabIndex = 6;
+            this.textBoxNombre.TabIndex = 2;
             // 
             // textBoxNIF
             // 
@@ -218,7 +218,7 @@
             this.textBoxNIF.Location = new System.Drawing.Point(101, 21);
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNIF.TabIndex = 5;
+            this.textBoxNIF.TabIndex = 1;
             // 
             // label5
             // 
@@ -270,7 +270,7 @@
             this.buttonAceptar.Location = new System.Drawing.Point(6, 19);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(140, 44);
-            this.buttonAceptar.TabIndex = 1;
+            this.buttonAceptar.TabIndex = 12;
             this.buttonAceptar.Text = "Aceptar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.button1_Click);
@@ -290,7 +290,7 @@
             this.buttonEliminar.Location = new System.Drawing.Point(302, 19);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(140, 44);
-            this.buttonEliminar.TabIndex = 4;
+            this.buttonEliminar.TabIndex = 14;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.button2_Click);
@@ -313,7 +313,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(153, 19);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(140, 44);
-            this.buttonCancelar.TabIndex = 5;
+            this.buttonCancelar.TabIndex = 13;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -344,7 +344,7 @@
             this.dataGridViewInstalaciones.ReadOnly = true;
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInstalaciones.Size = new System.Drawing.Size(434, 135);
-            this.dataGridViewInstalaciones.TabIndex = 0;
+            this.dataGridViewInstalaciones.TabIndex = 11;
             this.dataGridViewInstalaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellContentClick);
             // 
             // ConsultarEditarCliente
@@ -353,6 +353,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(474, 503);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

@@ -72,7 +72,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(230, 19);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(140, 44);
-            this.buttonCancelar.TabIndex = 5;
+            this.buttonCancelar.TabIndex = 12;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
@@ -121,7 +121,7 @@
             this.textBoxPais.Location = new System.Drawing.Point(335, 21);
             this.textBoxPais.Name = "textBoxPais";
             this.textBoxPais.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPais.TabIndex = 24;
+            this.textBoxPais.TabIndex = 9;
             // 
             // label7
             // 
@@ -137,28 +137,28 @@
             this.textBoxTelefono.Location = new System.Drawing.Point(335, 49);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTelefono.TabIndex = 20;
+            this.textBoxTelefono.TabIndex = 10;
             // 
             // textBoxCP
             // 
             this.textBoxCP.Location = new System.Drawing.Point(101, 189);
             this.textBoxCP.Name = "textBoxCP";
             this.textBoxCP.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCP.TabIndex = 19;
+            this.textBoxCP.TabIndex = 8;
             // 
             // textBoxDireccion
             // 
             this.textBoxDireccion.Location = new System.Drawing.Point(101, 105);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDireccion.TabIndex = 18;
+            this.textBoxDireccion.TabIndex = 5;
             // 
             // textBoxProvincia
             // 
             this.textBoxProvincia.Location = new System.Drawing.Point(101, 161);
             this.textBoxProvincia.Name = "textBoxProvincia";
             this.textBoxProvincia.Size = new System.Drawing.Size(100, 20);
-            this.textBoxProvincia.TabIndex = 16;
+            this.textBoxProvincia.TabIndex = 7;
             // 
             // label10
             // 
@@ -201,14 +201,14 @@
             this.textBoxLocalidad.Location = new System.Drawing.Point(101, 133);
             this.textBoxLocalidad.Name = "textBoxLocalidad";
             this.textBoxLocalidad.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLocalidad.TabIndex = 9;
+            this.textBoxLocalidad.TabIndex = 6;
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(101, 77);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmail.TabIndex = 8;
+            this.textBoxEmail.TabIndex = 4;
             // 
             // textBoxDescripcion
             // 
@@ -217,21 +217,21 @@
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxDescripcion.Size = new System.Drawing.Size(183, 113);
-            this.textBoxDescripcion.TabIndex = 7;
+            this.textBoxDescripcion.TabIndex = 11;
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(101, 49);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNombre.TabIndex = 6;
+            this.textBoxNombre.TabIndex = 3;
             // 
             // textBoxNIF
             // 
             this.textBoxNIF.Location = new System.Drawing.Point(101, 21);
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNIF.TabIndex = 5;
+            this.textBoxNIF.TabIndex = 2;
             // 
             // label5
             // 
@@ -283,11 +283,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 321);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "AltaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AltaCliente";
+            this.Text = "Alta Cliente";
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
