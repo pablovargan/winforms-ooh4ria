@@ -27,8 +27,15 @@ namespace LimpiezasPalmeralForms.Producto
             {
                 try
                 {
-                    int stock = 0;
-                    stock = Convert.ToInt32(numericStock.Text);
+                    int stock;
+                    if(numericStock.Text == "")
+                    {
+                        stock = 0;
+                    }
+                    else
+                    {
+                        stock = Convert.ToInt32(numericStock.Text);
+                    }
                     if(pictureBoxImagen.ImageLocation == null)
                     {
                         pictureBoxImagen.ImageLocation = "";
