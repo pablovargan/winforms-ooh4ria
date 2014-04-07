@@ -37,6 +37,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button_consulta = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.Instalación.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instalacionGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -53,7 +54,7 @@
             this.Instalación.Location = new System.Drawing.Point(12, 13);
             this.Instalación.Name = "Instalación";
             this.Instalación.Padding = new System.Windows.Forms.Padding(4);
-            this.Instalación.Size = new System.Drawing.Size(562, 353);
+            this.Instalación.Size = new System.Drawing.Size(563, 353);
             this.Instalación.TabIndex = 0;
             this.Instalación.TabStop = false;
             this.Instalación.Text = "Instalaciones";
@@ -61,7 +62,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(8, 19);
+            this.comboBox1.Location = new System.Drawing.Point(8, 17);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 3;
@@ -75,7 +76,7 @@
             this.instalacionGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.instalacionGrid.Location = new System.Drawing.Point(8, 47);
             this.instalacionGrid.Name = "instalacionGrid";
-            this.instalacionGrid.Size = new System.Drawing.Size(549, 300);
+            this.instalacionGrid.Size = new System.Drawing.Size(548, 300);
             this.instalacionGrid.TabIndex = 2;
             this.instalacionGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridInstalacion_Load);
             // 
@@ -84,9 +85,9 @@
             this.textBox_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_buscar.Location = new System.Drawing.Point(135, 19);
+            this.textBox_buscar.Location = new System.Drawing.Point(135, 17);
             this.textBox_buscar.Name = "textBox_buscar";
-            this.textBox_buscar.Size = new System.Drawing.Size(420, 20);
+            this.textBox_buscar.Size = new System.Drawing.Size(421, 20);
             this.textBox_buscar.TabIndex = 0;
             this.textBox_buscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -94,6 +95,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button_consulta);
@@ -108,7 +110,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(6, 119);
+            this.button4.Location = new System.Drawing.Point(6, 167);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(121, 44);
             this.button4.TabIndex = 2;
@@ -117,7 +119,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 69);
+            this.button3.Location = new System.Drawing.Point(6, 117);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 44);
             this.button3.TabIndex = 1;
@@ -126,7 +128,7 @@
             // 
             // button_consulta
             // 
-            this.button_consulta.Location = new System.Drawing.Point(6, 169);
+            this.button_consulta.Location = new System.Drawing.Point(6, 217);
             this.button_consulta.Name = "button_consulta";
             this.button_consulta.Size = new System.Drawing.Size(121, 44);
             this.button_consulta.TabIndex = 3;
@@ -136,13 +138,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
+            this.button1.Location = new System.Drawing.Point(6, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 44);
             this.button1.TabIndex = 0;
             this.button1.Text = "Dar de alta";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.AltaInstalacion_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 67);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 44);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Consultar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // PantallaInstalacion
             // 
@@ -174,5 +185,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

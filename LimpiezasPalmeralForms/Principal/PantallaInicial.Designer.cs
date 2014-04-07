@@ -138,7 +138,7 @@
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(62, 20);
             this.numericStock.TabIndex = 12;
-            this.numericStock.ValueChanged += new System.EventHandler(this.numericStock_ValueChanged);
+           // this.numericStock.ValueChanged += new System.EventHandler(this.numericStock_ValueChanged);
             // 
             // PantallaInicial
             // 
@@ -152,7 +152,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "PantallaInicial";
             this.Text = "PantallaInicial";
-            this.Load += new System.EventHandler(this.PantallaInicial_Load);
+           // this.Load += new System.EventHandler(this.PantallaInicial_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();

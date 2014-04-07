@@ -34,23 +34,25 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox_provincia = new System.Windows.Forms.ComboBox();
             this.GridConsulta = new System.Windows.Forms.DataGridView();
+            this.Acce = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsulta)).BeginInit();
+            this.Acce.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.GridConsulta);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(622, 337);
+            this.groupBox1.Size = new System.Drawing.Size(781, 321);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consultar trabajadores";
@@ -95,32 +97,53 @@
             // 
             // GridConsulta
             // 
-            this.GridConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.GridConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridConsulta.Location = new System.Drawing.Point(7, 73);
             this.GridConsulta.Name = "GridConsulta";
-            this.GridConsulta.Size = new System.Drawing.Size(609, 258);
+            this.GridConsulta.Size = new System.Drawing.Size(768, 242);
             this.GridConsulta.TabIndex = 1;
             this.GridConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellContentClick);
+            // 
+            // Acce
+            // 
+            this.Acce.Controls.Add(this.button1);
+            this.Acce.Location = new System.Drawing.Point(13, 344);
+            this.Acce.Name = "Acce";
+            this.Acce.Size = new System.Drawing.Size(780, 78);
+            this.Acce.TabIndex = 2;
+            this.Acce.TabStop = false;
+            this.Acce.Text = "Acciones";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(321, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 44);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Aceptar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ConsultaTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 361);
+            this.ClientSize = new System.Drawing.Size(805, 434);
+            this.ControlBox = false;
+            this.Controls.Add(this.Acce);
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultaTrabajador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ConsultaTrabajador";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Consultar Trabajadores";
             this.Load += new System.EventHandler(this.ConsultaTrabajador_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridConsulta)).EndInit();
+            this.Acce.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -133,5 +156,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox_provincia;
+        private System.Windows.Forms.GroupBox Acce;
+        private System.Windows.Forms.Button button1;
     }
 }

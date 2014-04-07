@@ -19,55 +19,36 @@ namespace LimpiezasPalmeralForms
             InitializeComponent();
             numericStock.Value = 5;
             this.Load += new EventHandler(Grid_Load);
-            
-
+            numericStock.TextChanged += new EventHandler(Grid_Load);
+            numericStock.KeyUp += new KeyEventHandler(Grid_Load);
         }
 
-        private void Buscar_Articulos(object sender, EventArgs e)
-        { 
-            ProductoCEN producto = new ProductoCEN();
-            IList<ProductoEN> lista;
-            if ( numericStock.Text == "")
-            {
-                lista = producto.BuscarPorStock(0);
-                dataGridViewStock.DataSource = lista;
-            }
-            else
-            {
-                lista = producto.BuscarPorStock(Convert.ToInt32(numericStock.Text));
-                dataGridViewStock.DataSource = lista;
-            }
-        }
+
 
         public void Grid_Load(object sender, EventArgs e)
         {
             ProductoCEN producto = new ProductoCEN();
             List<ProductoGV> productoGV = new List<ProductoGV>();
             IList<ProductoEN> lista;
-            lista = producto.BuscarPorStock(Convert.ToInt32(numericStock.Text));
-            foreach (ProductoEN p in lista)
+            if (numericStock.Text == "")
             {
-                productoGV.Add(new ProductoGV()
-                {
-                    Id = p.Id,
-                    Nombre = p.Nombre,
-                    Descripcion = p.Descripcion,
-                    Stock = p.Stock,
-                });
+                dataGridViewStock.DataSource = productoGV;
             }
-            dataGridViewStock.DataSource = productoGV;
+            else
+            {
+                lista = producto.BuscarPorStock(Convert.ToInt32(numericStock.Text));
+                foreach (ProductoEN p in lista)
+                {
+                    productoGV.Add(new ProductoGV()
+                    {
+                        Id = p.Id,
+                        Nombre = p.Nombre,
+                        Descripcion = p.Descripcion,
+                        Stock = p.Stock,
+                    });
+                }
+                dataGridViewStock.DataSource = productoGV;
+            }
         }
-
-        private void PantallaInicial_Load(object sender, EventArgs e)
-        {
-            Grid_Load(sender, e);
-        }
-
-        private void numericStock_ValueChanged(object sender, EventArgs e)
-        {
-            Grid_Load(sender, e);
-        }
-
-
     }
 }

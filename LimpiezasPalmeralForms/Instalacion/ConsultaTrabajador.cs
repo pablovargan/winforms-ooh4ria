@@ -121,5 +121,10 @@ namespace LimpiezasPalmeralForms
                 GridConsulta.DataSource = _trabGV;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
