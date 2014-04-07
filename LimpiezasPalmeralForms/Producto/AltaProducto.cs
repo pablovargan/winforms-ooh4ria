@@ -41,6 +41,7 @@ namespace LimpiezasPalmeralForms.Producto
                         pictureBoxImagen.ImageLocation = "";
                     }
                     producto.Crear(textBoxId.Text,textBoxNombre.Text,textBoxDescripcion.Text, stock, pictureBoxImagen.ImageLocation);
+                    
                     this.Close();
                 }
                 catch (Exception ex)

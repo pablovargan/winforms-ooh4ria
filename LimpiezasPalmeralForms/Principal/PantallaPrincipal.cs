@@ -138,16 +138,19 @@ namespace LimpiezasPalmeralForms
             {
                 if (form is PantallaInicial)
                 {
-                    form.Activate();
-                    form.WindowState = FormWindowState.Maximized;
+                    form.Close();
+                    PantallaInicial ini = new PantallaInicial() { MdiParent = this };
+                    ini.Grid_Load(sender, e);
+                    ini.Show();
+                    ini.WindowState = FormWindowState.Maximized;
                     return;
                 }
             }
 
-            PantallaInicial ini = new PantallaInicial() { MdiParent = this };
-            ini.Grid_Load(sender, e);
-            ini.Show();
-            ini.WindowState = FormWindowState.Maximized;
+            PantallaInicial ini2 = new PantallaInicial() { MdiParent = this };
+            ini2.Grid_Load(sender, e);
+            ini2.Show();
+            ini2.WindowState = FormWindowState.Maximized;
             
         }
     }
