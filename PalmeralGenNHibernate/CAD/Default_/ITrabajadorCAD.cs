@@ -29,5 +29,13 @@ System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN>
 
 
 System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN> BuscarPorTipo (PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum p_tipoEmpleo);
+
+
+System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN> BuscarPorNombre (string p_nombre);
+
+
+void AddInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion);
+
+void DeleteInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion);
 }
 }

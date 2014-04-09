@@ -3,6 +3,7 @@ using NHibernate.Tool.hbm2ddl;
 using PalmeralGenNHibernate.EN.Default_;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,25 +19,29 @@ namespace LimpiezasPalmeralForms
         [STAThread]
         public static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            try
+            bool activo;
+            System.Threading.Mutex m = new System.Threading.Mutex(true, "LimpiezasPalmeralForms", out activo);
+
+            if (!activo)
             {
-                InitializeDB.CreateDB.Create("PalmeralGenNHibernate", "nhibernateUser", "nhibernatePass");
-                var cfg = new Configuration();
-                cfg.Configure();
-                cfg.AddAssembly(typeof(ProductoEN).Assembly);
-                new SchemaExport(cfg).Execute(true, true, false);
-                InitializeDB.CreateDB.InitializeData();
+                MessageBox.Show("Ya se ha iniciado la aplicación");
+                Application.Exit();
             }
-            catch(Exception e)
+            else
             {
-                System.Console.WriteLine (e.Message.ToString () + '\n' + e.StackTrace);
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                try
+                {
+                    Application.Run(new PantallaPrincipal());
+                }
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.Message.ToString() + '\n' + ex.StackTrace);
+                }
             }
-            finally
-            {
-                Application.Run(new Form1());
-            }
+            // Se libera la exclusión mutua
+            m.ReleaseMutex();
         }
     }
 }

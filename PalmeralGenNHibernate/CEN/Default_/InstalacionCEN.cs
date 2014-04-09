@@ -116,5 +116,17 @@ public System.Collections.Generic.IList<InstalacionEN> ObtenerTodas (int first, 
         list = _IInstalacionCAD.ObtenerTodas (first, size);
         return list;
 }
+public void AddTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador)
+{
+        //Call to InstalacionCAD
+
+        _IInstalacionCAD.AddTrabajador (p_instalacion, p_trabajador);
+}
+public void DeleteTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador)
+{
+        //Call to InstalacionCAD
+
+        _IInstalacionCAD.DeleteTrabajador (p_instalacion, p_trabajador);
+}
 }
 }

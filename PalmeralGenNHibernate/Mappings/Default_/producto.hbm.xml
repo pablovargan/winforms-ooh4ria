@@ -40,7 +40,7 @@
 		  </class>
 		  
 		  <query name="ProductoENReadAllHQL">from ProductoEN</query>
-		  <query name="ProductoENbuscarPorNombreHQL"><![CDATA[FROM ProductoEN AS prod WHERE prod.nombre = :p_nombre]]></query>
-		  <query name="ProductoENbuscarPorStockHQL"><![CDATA[FROM ProductoEN AS prod WHERE prod.stock <= :p_stock]]></query>
+		  <query name="ProductoENbuscarPorNombreHQL"><![CDATA[FROM ProductoEN AS prod WHERE prod.Nombre LIKE CONCAT('%', :p_nombre , '%')]]></query>
+		  <query name="ProductoENbuscarPorStockHQL"><![CDATA[FROM ProductoEN AS prod WHERE prod.Stock <= :p_stock]]></query>
 		</hibernate-mapping>
 	

@@ -65,6 +65,17 @@
 							<one-to-many class="PalmeralGenNHibernate.EN.Default_.FacturaEN"/>
 					    </bag>
 					
+			
+		  			
+						<bag name="Trabajadores" table="[InstalacionTrabajador]" inverse="true" >
+							<key>
+									<column name="[FK_id_instalaciones]"/>
+							</key>
+      						<many-to-many class="PalmeralGenNHibernate.EN.Default_.TrabajadorEN">
+									<column name="[FK_nif_trabajadores]"/>
+      						</many-to-many>
+    					</bag>
+					
 					
 					
 					
@@ -82,6 +93,6 @@
 		  </class>
 		  
 		  <query name="InstalacionENReadAllHQL">from InstalacionEN</query>
-		  <query name="InstalacionENbuscarInstalacionesClienteHQL"><![CDATA[FROM InstalacionEN AS ins WHERE ins.p_cliente = :p_cliente]]></query>
+		  <query name="InstalacionENbuscarInstalacionesClienteHQL"><![CDATA[FROM InstalacionEN AS ins WHERE ins.Cliente LIKE CONCAT('%', :p_cliente , '%')]]></query>
 		</hibernate-mapping>
 	

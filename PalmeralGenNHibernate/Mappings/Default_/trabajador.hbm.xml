@@ -60,6 +60,17 @@
 									<column name="[FK_id_jornadas]"/>
       						</many-to-many>
     					</bag>
+			
+		  			
+						<bag name="Instalaciones" table="[InstalacionTrabajador]"  >
+							<key>
+									<column name="[FK_nif_trabajadores]"/>
+							</key>
+      						<many-to-many class="PalmeralGenNHibernate.EN.Default_.InstalacionEN">
+									<column name="[FK_id_instalaciones]"/>
+      						</many-to-many>
+    					</bag>
+					
 					
 					
 					
@@ -76,8 +87,9 @@
 		  </class>
 		  
 		  <query name="TrabajadorENReadAllHQL">from TrabajadorEN</query>
-		  <query name="TrabajadorENbuscarPorLocalidadHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.localidad = :p_localidad]]></query>
-		  <query name="TrabajadorENbuscarPorProvinciaHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.provincia = :p_provincia]]></query>
-		  <query name="TrabajadorENbuscarPorTipoHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.tipo = :p_tipoEmpleo]]></query>
+		  <query name="TrabajadorENbuscarPorLocalidadHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Localidad LIKE CONCAT('%', :p_localidad , '%')]]></query>
+		  <query name="TrabajadorENbuscarPorProvinciaHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Provincia LIKE CONCAT('%', :p_provincia , '%')]]></query>
+		  <query name="TrabajadorENbuscarPorTipoHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Tipo LIKE CONCAT('%', :p_tipoEmpleo , '%')]]></query>
+		  <query name="TrabajadorENbuscarPorNombreHQL"><![CDATA[FROM TrabajadorEN AS trab WHERE trab.Nombre LIKE CONCAT('%', :p_nombre , '%')]]></query>
 		</hibernate-mapping>
 	

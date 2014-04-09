@@ -207,7 +207,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE nom.p_trabajador = :p_trabajador";
+                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE nom.Trabajador = :p_trabajador";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("NominaENobtenerTodasNominasTrabajadorHQL");
                 query.SetParameter ("p_trabajador", p_trabajador);
@@ -237,7 +237,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE nom.parteFija = :p_parteFija";
+                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE nom.ParteFija = :p_parteFija";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("NominaENbuscarPorParteFijaHQL");
                 query.SetParameter ("p_parteFija", p_parteFija);
@@ -267,7 +267,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE year(nom.fecha) = :p_anyo";
+                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE year(nom.Fecha) = :p_anyo";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("NominaENbuscarPorAnyoHQL");
                 query.SetParameter ("p_anyo", p_anyo);
@@ -297,7 +297,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE month(nom.fecha) = :p_mes AND year(nom.fecha) = :p_anyo";
+                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE month(nom.Fecha) = :p_mes AND year(nom.Fecha) = :p_anyo";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("NominaENbuscarPorMesAnyoHQL");
                 query.SetParameter ("p_mes", p_mes);

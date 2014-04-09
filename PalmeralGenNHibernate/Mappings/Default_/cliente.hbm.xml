@@ -65,6 +65,6 @@
 		  </class>
 		  
 		  <query name="ClienteENReadAllHQL">from ClienteEN</query>
-		  <query name="ClienteENbuscarPorNombreHQL"><![CDATA[FROM ClienteEN AS cli WHERE cli.nombre = :p_nombre]]></query>
+		  <query name="ClienteENbuscarPorNombreHQL"><![CDATA[FROM ClienteEN AS cli WHERE cli.Nombre LIKE CONCAT('%', :p_nombre , '%')]]></query>
 		</hibernate-mapping>
 	

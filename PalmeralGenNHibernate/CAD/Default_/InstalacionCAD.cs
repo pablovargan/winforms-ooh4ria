@@ -162,7 +162,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Instal
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM InstalacionEN self where FROM InstalacionEN AS ins WHERE ins.p_cliente = :p_cliente";
+                //String sql = @"FROM InstalacionEN self where FROM InstalacionEN AS ins WHERE ins.Cliente LIKE CONCAT('%', :p_cliente , '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("InstalacionENbuscarInstalacionesClienteHQL");
                 query.SetParameter ("p_cliente", p_cliente);
@@ -241,6 +241,84 @@ public System.Collections.Generic.IList<InstalacionEN> ObtenerTodas (int first, 
         }
 
         return result;
+}
+
+public void AddTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador)
+{
+        PalmeralGenNHibernate.EN.Default_.InstalacionEN instalacionEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                instalacionEN = (InstalacionEN)session.Load (typeof(InstalacionEN), p_instalacion);
+                PalmeralGenNHibernate.EN.Default_.TrabajadorEN trabajadoresENAux = null;
+                if (instalacionEN.Trabajadores == null) {
+                        instalacionEN.Trabajadores = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.TrabajadorEN>();
+                }
+
+                foreach (string item in p_trabajador) {
+                        trabajadoresENAux = new PalmeralGenNHibernate.EN.Default_.TrabajadorEN ();
+                        trabajadoresENAux = (PalmeralGenNHibernate.EN.Default_.TrabajadorEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.TrabajadorEN), item);
+                        trabajadoresENAux.Instalaciones.Add (instalacionEN);
+
+                        instalacionEN.Trabajadores.Add (trabajadoresENAux);
+                }
+
+
+                session.Update (instalacionEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in InstalacionCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void DeleteTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                PalmeralGenNHibernate.EN.Default_.InstalacionEN instalacionEN = null;
+                instalacionEN = (InstalacionEN)session.Load (typeof(InstalacionEN), p_instalacion);
+
+                PalmeralGenNHibernate.EN.Default_.TrabajadorEN trabajadoresENAux = null;
+                if (instalacionEN.Trabajadores != null) {
+                        foreach (string item in p_trabajador) {
+                                trabajadoresENAux = (PalmeralGenNHibernate.EN.Default_.TrabajadorEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.TrabajadorEN), item);
+                                if (instalacionEN.Trabajadores.Contains (trabajadoresENAux) == true) {
+                                        instalacionEN.Trabajadores.Remove (trabajadoresENAux);
+                                        trabajadoresENAux.Instalaciones.Remove (instalacionEN);
+                                }
+                                else
+                                        throw new ModelException ("The identifier " + item + " in p_trabajador you are trying to unrelationer, doesn't exist in InstalacionEN");
+                        }
+                }
+
+                session.Update (instalacionEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in InstalacionCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
 }
 }
 }
