@@ -38,7 +38,10 @@
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+>>>>>>> e068519abbade755254195b336cbdda71b5a2c0d
             this.backupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +56,6 @@
             this.productoToolStripMenuItem,
             this.proveedorToolStripMenuItem,
             this.trabajadorToolStripMenuItem,
-            this.nóminasToolStripMenuItem,
             this.backupsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -134,12 +136,15 @@
             this.nóminasToolStripMenuItem1.Size = new System.Drawing.Size(162, 32);
             this.nóminasToolStripMenuItem1.Text = "Nóminas";
             // 
+<<<<<<< HEAD
             // nóminasToolStripMenuItem
             // 
             this.nóminasToolStripMenuItem.Name = "nóminasToolStripMenuItem";
             this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(102, 32);
             this.nóminasToolStripMenuItem.Text = "Nóminas";
             // 
+=======
+>>>>>>> e068519abbade755254195b336cbdda71b5a2c0d
             // backupsToolStripMenuItem
             // 
             this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
@@ -174,7 +179,6 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instalaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nóminasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
