@@ -1,4 +1,5 @@
 ﻿using NHibernate.Cfg;
+using LimpiezasPalmeralForms.Principal;
 using NHibernate.Tool.hbm2ddl;
 using PalmeralGenNHibernate.EN.Default_;
 using System;
@@ -33,7 +34,7 @@ namespace LimpiezasPalmeralForms
                 Application.SetCompatibleTextRenderingDefault(false);
                 try
                 {
-                    Application.Run(new PantallaPrincipal());
+                    Application.Run(new Login());
                 }
                 catch (Exception ex)
                 {

@@ -116,6 +116,12 @@
     <Compile Include="Instalacion\PantallaInstalacion.Designer.cs">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principal\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\AltaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\AltaProducto.resx">
       <DependentUpon>AltaProducto.cs</DependentUpon>
