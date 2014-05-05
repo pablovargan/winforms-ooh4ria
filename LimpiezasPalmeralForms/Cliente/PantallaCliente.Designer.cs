@@ -37,6 +37,7 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonConsultar = new System.Windows.Forms.Button();
             this.buttonDarAlta = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             this.groupBoxClientesAcciones.SuspendLayout();
@@ -102,6 +103,7 @@
             // 
             this.groupBoxClientesAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxClientesAcciones.Controls.Add(this.button1);
             this.groupBoxClientesAcciones.Controls.Add(this.buttonEliminar);
             this.groupBoxClientesAcciones.Controls.Add(this.buttonEditar);
             this.groupBoxClientesAcciones.Controls.Add(this.buttonConsultar);
@@ -115,7 +117,7 @@
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(6, 167);
+            this.buttonEliminar.Location = new System.Drawing.Point(6, 217);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(121, 44);
             this.buttonEliminar.TabIndex = 3;
@@ -125,7 +127,7 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(6, 117);
+            this.buttonEditar.Location = new System.Drawing.Point(6, 167);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(121, 44);
             this.buttonEditar.TabIndex = 2;
@@ -152,6 +154,16 @@
             this.buttonDarAlta.Text = "Dar de Alta";
             this.buttonDarAlta.UseVisualStyleBackColor = true;
             this.buttonDarAlta.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 44);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Generar Informe";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // PantallaCliente
             // 
@@ -184,6 +196,7 @@
         private System.Windows.Forms.Button buttonConsultar;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.ComboBox comboBoxFiltro;
+        private System.Windows.Forms.Button button1;
 
     }
 }

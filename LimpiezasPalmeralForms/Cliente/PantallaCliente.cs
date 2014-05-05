@@ -136,6 +136,14 @@ namespace LimpiezasPalmeralForms
         {
             Grid_Load(sender, e);
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            GenerarInforme gi = new GenerarInforme();
+            gi.Owner = this;
+            gi.Deactivate += new EventHandler(Grid_Load);
+            gi.Show();
+        }
     }
 
     public class ClienteGV
