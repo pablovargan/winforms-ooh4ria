@@ -35,11 +35,10 @@
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trabajadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nóminasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trabajadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nóminasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +52,6 @@
             this.productoToolStripMenuItem,
             this.proveedorToolStripMenuItem,
             this.trabajadorToolStripMenuItem,
-            this.nóminasToolStripMenuItem,
             this.backupsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -112,6 +110,12 @@
             this.proveedorToolStripMenuItem.Text = "Proveedor";
             this.proveedorToolStripMenuItem.Click += new System.EventHandler(this.proveedor_Click);
             // 
+            // pedidosToolStripMenuItem
+            // 
+            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(154, 32);
+            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            // 
             // trabajadorToolStripMenuItem
             // 
             this.trabajadorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -122,29 +126,17 @@
             this.trabajadorToolStripMenuItem.Text = "Trabajador";
             this.trabajadorToolStripMenuItem.Click += new System.EventHandler(this.trabajador_Click);
             // 
-            // nóminasToolStripMenuItem
-            // 
-            this.nóminasToolStripMenuItem.Name = "nóminasToolStripMenuItem";
-            this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(102, 32);
-            this.nóminasToolStripMenuItem.Text = "Nóminas";
-            // 
-            // backupsToolStripMenuItem
-            // 
-            this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
-            this.backupsToolStripMenuItem.Size = new System.Drawing.Size(95, 32);
-            this.backupsToolStripMenuItem.Text = "Backups";
-            // 
             // nóminasToolStripMenuItem1
             // 
             this.nóminasToolStripMenuItem1.Name = "nóminasToolStripMenuItem1";
             this.nóminasToolStripMenuItem1.Size = new System.Drawing.Size(162, 32);
             this.nóminasToolStripMenuItem1.Text = "Nóminas";
             // 
-            // pedidosToolStripMenuItem
+            // backupsToolStripMenuItem
             // 
-            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(154, 32);
-            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
+            this.backupsToolStripMenuItem.Size = new System.Drawing.Size(95, 32);
+            this.backupsToolStripMenuItem.Text = "Backups";
             // 
             // PantallaPrincipal
             // 
@@ -174,7 +166,6 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instalaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nóminasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
