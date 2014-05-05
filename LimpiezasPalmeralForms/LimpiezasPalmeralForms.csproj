@@ -209,6 +209,7 @@
     <Compile Include="Trabajador\PantallaTrabajador.Designer.cs">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Servicios\Validador.cs" />
     <EmbeddedResource Include="Backup\PantallaBackup.resx">
       <DependentUpon>PantallaBackup.cs</DependentUpon>
     </EmbeddedResource>

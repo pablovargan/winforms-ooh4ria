@@ -30,17 +30,25 @@ namespace LimpiezasPalmeralForms.Cliente
 
             if (!string.IsNullOrWhiteSpace(textBoxNIF.Text as string))
             {
-                try
+                NumeroNif nf = new NumeroNif(textBoxNIF.Text);
+                if (nf.EsCorrecto)
                 {
-                    cliente.Crear(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
-                        textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
-                        textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
-                    this.Close();
+                    try
+                    {
+                        cliente.Crear(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
+                            textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
+                            textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
+                        this.Close();
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(Constantes._ERRORCREAR);
+                    }
                 }
-                catch (Exception ex)
+                else 
                 {
-                    MessageBox.Show(Constantes._ERRORCREAR);
+                    MessageBox.Show("DNI Incorrecto");
                 }
             }
             else

@@ -65,7 +65,7 @@ namespace LimpiezasPalmeralForms
         /// </summary>
         /// <param name="numero">Cadena de 9 u 11 caracteres que contiene el DNI/NIF
         /// tal cual lo ha introducido el usuario para su verificación</param>
-        private NumeroNif(string numero)
+        public NumeroNif(string numero)
         {
             // Se eliminan los carácteres sobrantes
             numero = EliminaCaracteres(numero);
