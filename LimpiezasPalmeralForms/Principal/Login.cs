@@ -29,10 +29,10 @@ namespace LimpiezasPalmeralForms.Principal
 
             if(textBoxUsuario.Text == usuario && textBoxPass.Text == pass)
             {
-                PantallaPrincipal p = new PantallaPrincipal() { Owner = this };
-                p.Owner = this;
-                p.StartPosition = FormStartPosition.CenterParent;
+                PantallaPrincipal p = new PantallaPrincipal() { Owner = this};
                 p.ShowDialog();
+                textBoxUsuario.Text = "";
+                textBoxPass.Text = "";
             }
             else
             {
