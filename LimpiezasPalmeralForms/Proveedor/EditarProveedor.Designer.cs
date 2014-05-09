@@ -1,6 +1,6 @@
 ﻿namespace LimpiezasPalmeralForms.Proveedor
 {
-    partial class ConsultaProveedor
+    partial class EditarProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -49,12 +49,10 @@
             this.nombreLabel = new System.Windows.Forms.Label();
             this.nifLabel = new System.Windows.Forms.Label();
             this.nifBox = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.eliminarButton = new System.Windows.Forms.Button();
-            this.editarButton = new System.Windows.Forms.Button();
-            this.accionesGB = new System.Windows.Forms.GroupBox();
-            this.aceptarButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
+            this.guardarButton = new System.Windows.Forms.Button();
+            this.eliminarButton = new System.Windows.Forms.Button();
+            this.accionesGB = new System.Windows.Forms.GroupBox();
             this.proveedorGB.SuspendLayout();
             this.accionesGB.SuspendLayout();
             this.SuspendLayout();
@@ -81,12 +79,12 @@
             this.proveedorGB.Controls.Add(this.nombreLabel);
             this.proveedorGB.Controls.Add(this.nifLabel);
             this.proveedorGB.Controls.Add(this.nifBox);
-            this.proveedorGB.Location = new System.Drawing.Point(16, 15);
+            this.proveedorGB.Location = new System.Drawing.Point(16, 11);
             this.proveedorGB.Margin = new System.Windows.Forms.Padding(4);
             this.proveedorGB.Name = "proveedorGB";
             this.proveedorGB.Padding = new System.Windows.Forms.Padding(4);
             this.proveedorGB.Size = new System.Drawing.Size(599, 274);
-            this.proveedorGB.TabIndex = 0;
+            this.proveedorGB.TabIndex = 3;
             this.proveedorGB.TabStop = false;
             this.proveedorGB.Text = "Proveedor";
             // 
@@ -95,7 +93,7 @@
             this.descripcionBox.Location = new System.Drawing.Point(318, 176);
             this.descripcionBox.Multiline = true;
             this.descripcionBox.Name = "descripcionBox";
-            this.descripcionBox.ReadOnly = true;
+            this.descripcionBox.ReadOnly = false;
             this.descripcionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descripcionBox.Size = new System.Drawing.Size(249, 82);
             this.descripcionBox.TabIndex = 20;
@@ -113,7 +111,7 @@
             // 
             this.paisBox.Location = new System.Drawing.Point(437, 116);
             this.paisBox.Name = "paisBox";
-            this.paisBox.ReadOnly = true;
+            this.paisBox.ReadOnly = false;
             this.paisBox.Size = new System.Drawing.Size(130, 22);
             this.paisBox.TabIndex = 19;
             // 
@@ -130,7 +128,7 @@
             // 
             this.codigoPostalBox.Location = new System.Drawing.Point(437, 76);
             this.codigoPostalBox.Name = "codigoPostalBox";
-            this.codigoPostalBox.ReadOnly = true;
+            this.codigoPostalBox.ReadOnly = false;
             this.codigoPostalBox.Size = new System.Drawing.Size(130, 22);
             this.codigoPostalBox.TabIndex = 15;
             // 
@@ -147,7 +145,7 @@
             // 
             this.telefonoBox.Location = new System.Drawing.Point(437, 36);
             this.telefonoBox.Name = "telefonoBox";
-            this.telefonoBox.ReadOnly = true;
+            this.telefonoBox.ReadOnly = false;
             this.telefonoBox.Size = new System.Drawing.Size(130, 22);
             this.telefonoBox.TabIndex = 14;
             // 
@@ -164,7 +162,7 @@
             // 
             this.provinciaBox.Location = new System.Drawing.Point(139, 236);
             this.provinciaBox.Name = "provinciaBox";
-            this.provinciaBox.ReadOnly = true;
+            this.provinciaBox.ReadOnly = false;
             this.provinciaBox.Size = new System.Drawing.Size(130, 22);
             this.provinciaBox.TabIndex = 11;
             // 
@@ -181,7 +179,7 @@
             // 
             this.localidadBox.Location = new System.Drawing.Point(139, 196);
             this.localidadBox.Name = "localidadBox";
-            this.localidadBox.ReadOnly = true;
+            this.localidadBox.ReadOnly = false;
             this.localidadBox.Size = new System.Drawing.Size(130, 22);
             this.localidadBox.TabIndex = 9;
             // 
@@ -198,7 +196,7 @@
             // 
             this.direccionBox.Location = new System.Drawing.Point(139, 156);
             this.direccionBox.Name = "direccionBox";
-            this.direccionBox.ReadOnly = true;
+            this.direccionBox.ReadOnly = false;
             this.direccionBox.Size = new System.Drawing.Size(130, 22);
             this.direccionBox.TabIndex = 9;
             // 
@@ -215,7 +213,7 @@
             // 
             this.emailBox.Location = new System.Drawing.Point(139, 116);
             this.emailBox.Name = "emailBox";
-            this.emailBox.ReadOnly = true;
+            this.emailBox.ReadOnly = false;
             this.emailBox.Size = new System.Drawing.Size(130, 22);
             this.emailBox.TabIndex = 8;
             // 
@@ -232,7 +230,6 @@
             // 
             this.nombreBox.Location = new System.Drawing.Point(139, 76);
             this.nombreBox.Name = "nombreBox";
-            this.nombreBox.ReadOnly = true;
             this.nombreBox.Size = new System.Drawing.Size(130, 22);
             this.nombreBox.TabIndex = 7;
             // 
@@ -258,9 +255,31 @@
             // 
             this.nifBox.Location = new System.Drawing.Point(139, 36);
             this.nifBox.Name = "nifBox";
-            this.nifBox.ReadOnly = true;
             this.nifBox.Size = new System.Drawing.Size(130, 22);
             this.nifBox.TabIndex = 6;
+            // 
+            // cancelarButton
+            // 
+            this.cancelarButton.Location = new System.Drawing.Point(204, 23);
+            this.cancelarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(187, 54);
+            this.cancelarButton.TabIndex = 4;
+            this.cancelarButton.Text = "Cancelar";
+            this.cancelarButton.UseVisualStyleBackColor = true;
+            this.cancelarButton.Visible = true;
+            this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
+            // 
+            // guardarButton
+            // 
+            this.guardarButton.Location = new System.Drawing.Point(8, 23);
+            this.guardarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.guardarButton.Name = "guardarButton";
+            this.guardarButton.Size = new System.Drawing.Size(187, 54);
+            this.guardarButton.TabIndex = 1;
+            this.guardarButton.Text = "Guardar";
+            this.guardarButton.UseVisualStyleBackColor = true;
+            this.guardarButton.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // eliminarButton
             // 
@@ -272,67 +291,31 @@
             this.eliminarButton.UseVisualStyleBackColor = true;
             this.eliminarButton.Click += new System.EventHandler(this.Eliminar_Click);
             // 
-            // editarButton
-            // 
-            this.editarButton.Location = new System.Drawing.Point(204, 23);
-            this.editarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.editarButton.Name = "editarButton";
-            this.editarButton.Size = new System.Drawing.Size(187, 54);
-            this.editarButton.TabIndex = 2;
-            this.editarButton.Text = "Editar";
-            this.editarButton.UseVisualStyleBackColor = true;
-            this.editarButton.Click += new System.EventHandler(this.Editar_Click);
-            // 
             // accionesGB
             // 
             this.accionesGB.Controls.Add(this.cancelarButton);
-            this.accionesGB.Controls.Add(this.aceptarButton);
-            this.accionesGB.Controls.Add(this.editarButton);
+            this.accionesGB.Controls.Add(this.guardarButton);
             this.accionesGB.Controls.Add(this.eliminarButton);
-            this.accionesGB.Location = new System.Drawing.Point(16, 297);
+            this.accionesGB.Location = new System.Drawing.Point(16, 293);
             this.accionesGB.Margin = new System.Windows.Forms.Padding(4);
             this.accionesGB.Name = "accionesGB";
             this.accionesGB.Padding = new System.Windows.Forms.Padding(4);
             this.accionesGB.Size = new System.Drawing.Size(599, 91);
-            this.accionesGB.TabIndex = 2;
+            this.accionesGB.TabIndex = 4;
             this.accionesGB.TabStop = false;
             this.accionesGB.Text = "Acciones";
             // 
-            // aceptarButton
-            // 
-            this.aceptarButton.Location = new System.Drawing.Point(8, 23);
-            this.aceptarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.aceptarButton.Name = "aceptarButton";
-            this.aceptarButton.Size = new System.Drawing.Size(187, 54);
-            this.aceptarButton.TabIndex = 1;
-            this.aceptarButton.Text = "Aceptar";
-            this.aceptarButton.UseVisualStyleBackColor = true;
-            this.aceptarButton.Click += new System.EventHandler(this.Aceptar_Click);
-            // 
-            // cancelarButton
-            // 
-            this.cancelarButton.Location = new System.Drawing.Point(204, 23);
-            this.cancelarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(187, 54);
-            this.cancelarButton.TabIndex = 4;
-            this.cancelarButton.Text = "Cancelar";
-            this.cancelarButton.UseVisualStyleBackColor = true;
-            this.cancelarButton.Visible = false;
-            this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
-            // ConsultaProveedor
+            // EditarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 395);
             this.ControlBox = false;
-            this.Controls.Add(this.accionesGB);
             this.Controls.Add(this.proveedorGB);
-            this.Name = "ConsultaProveedor";
-            this.ShowIcon = false;
+            this.Controls.Add(this.accionesGB);
+            this.Name = "EditarProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consulta Proveedor";
+            this.Text = "Editar Proveedor";
             this.proveedorGB.ResumeLayout(false);
             this.proveedorGB.PerformLayout();
             this.accionesGB.ResumeLayout(false);
@@ -343,31 +326,29 @@
         #endregion
 
         private System.Windows.Forms.GroupBox proveedorGB;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button eliminarButton;
-        private System.Windows.Forms.Button editarButton;
-        private System.Windows.Forms.TextBox nifBox;
-        private System.Windows.Forms.Label nifLabel;
-        private System.Windows.Forms.Label nombreLabel;
-        private System.Windows.Forms.TextBox nombreBox;
-        private System.Windows.Forms.Label emailLabel;
-        private System.Windows.Forms.TextBox emailBox;
-        private System.Windows.Forms.Label direccionLabel;
-        private System.Windows.Forms.TextBox direccionBox;
-        private System.Windows.Forms.Label localidadLabel;
-        private System.Windows.Forms.TextBox localidadBox;
-        private System.Windows.Forms.Label provinciaLabel;
-        private System.Windows.Forms.TextBox provinciaBox;
-        private System.Windows.Forms.Label telefonoLabel;
-        private System.Windows.Forms.TextBox telefonoBox;
-        private System.Windows.Forms.Label codigoPostalLabel;
-        private System.Windows.Forms.TextBox codigoPostalBox;
-        private System.Windows.Forms.Label paisLabel;
-        private System.Windows.Forms.TextBox paisBox;
-        private System.Windows.Forms.Label descripcionLabel;
         private System.Windows.Forms.TextBox descripcionBox;
-        private System.Windows.Forms.GroupBox accionesGB;
-        private System.Windows.Forms.Button aceptarButton;
+        private System.Windows.Forms.Label descripcionLabel;
+        private System.Windows.Forms.TextBox paisBox;
+        private System.Windows.Forms.Label paisLabel;
+        private System.Windows.Forms.TextBox codigoPostalBox;
+        private System.Windows.Forms.Label codigoPostalLabel;
+        private System.Windows.Forms.TextBox telefonoBox;
+        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.TextBox provinciaBox;
+        private System.Windows.Forms.Label provinciaLabel;
+        private System.Windows.Forms.TextBox localidadBox;
+        private System.Windows.Forms.Label localidadLabel;
+        private System.Windows.Forms.TextBox direccionBox;
+        private System.Windows.Forms.Label direccionLabel;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.TextBox nombreBox;
+        private System.Windows.Forms.Label nombreLabel;
+        private System.Windows.Forms.Label nifLabel;
+        private System.Windows.Forms.TextBox nifBox;
         private System.Windows.Forms.Button cancelarButton;
+        private System.Windows.Forms.Button guardarButton;
+        private System.Windows.Forms.Button eliminarButton;
+        private System.Windows.Forms.GroupBox accionesGB;
     }
 }

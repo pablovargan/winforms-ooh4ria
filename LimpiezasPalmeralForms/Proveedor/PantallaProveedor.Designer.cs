@@ -137,6 +137,7 @@
             this.editarButton.TabIndex = 5;
             this.editarButton.Text = "Editar";
             this.editarButton.UseVisualStyleBackColor = true;
+            this.editarButton.Click += new System.EventHandler(this.Editar_Click);
             // 
             // consultarButton
             // 

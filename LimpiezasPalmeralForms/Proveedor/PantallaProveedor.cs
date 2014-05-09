@@ -108,6 +108,21 @@ namespace LimpiezasPalmeralForms
                 cp.Deactivate += GridProveedor_Load;   
             }
         }
+
+        private void Editar_Click(object sender, EventArgs e)
+        {
+            if (proveedorGrid.DataSource != null)
+            {
+                var columnaSeleccionada = proveedorGrid.SelectedRows[0];
+                EditarProveedor ep = new EditarProveedor()
+                {
+                    Nif = columnaSeleccionada.Cells["NIF"].Value.ToString(),
+                    Owner = this
+                };
+                ep.Show();
+                ep.Deactivate += GridProveedor_Load;
+            }
+        }
     }
 
     public class ProveedorGV
