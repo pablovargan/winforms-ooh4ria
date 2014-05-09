@@ -113,15 +113,21 @@ namespace LimpiezasPalmeralForms
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            /* 
-             
+            string mensaje = "¿Estás seguro que deseas eliminar el cliente con NIF: " + dataGridViewCliente.SelectedRows[0].Cells[0].Value.ToString() + "?";
+            string titulo = "Eliminando Cliente";
+            MessageBoxButtons botones = MessageBoxButtons.YesNo;
+            DialogResult resultado;
+
             ClienteCEN cliente = new ClienteCEN();
-            ClienteEN clienteEliminado = (ClienteEN)dataGridViewCliente.CurrentRow.DataBoundItem;
-            MessageBox.Show(clienteEliminado.Nif);
-            cliente.Eliminar(clienteEliminado.Nif);
-            Grid_Load(sender, e);
-             
-             */
+            ClienteEN clienteEliminado = cliente.ObtenerCliente(dataGridViewCliente.SelectedRows[0].Cells[0].Value.ToString());
+            resultado = MessageBox.Show(mensaje, titulo, botones);
+
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                cliente.Eliminar(clienteEliminado.Nif);
+                Grid_Load(sender, e);
+            }
+
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)

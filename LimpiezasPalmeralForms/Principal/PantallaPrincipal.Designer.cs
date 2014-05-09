@@ -38,10 +38,6 @@
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
-            this.nóminasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
->>>>>>> e068519abbade755254195b336cbdda71b5a2c0d
             this.backupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -136,15 +132,6 @@
             this.nóminasToolStripMenuItem1.Size = new System.Drawing.Size(162, 32);
             this.nóminasToolStripMenuItem1.Text = "Nóminas";
             // 
-<<<<<<< HEAD
-            // nóminasToolStripMenuItem
-            // 
-            this.nóminasToolStripMenuItem.Name = "nóminasToolStripMenuItem";
-            this.nóminasToolStripMenuItem.Size = new System.Drawing.Size(102, 32);
-            this.nóminasToolStripMenuItem.Text = "Nóminas";
-            // 
-=======
->>>>>>> e068519abbade755254195b336cbdda71b5a2c0d
             // backupsToolStripMenuItem
             // 
             this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
