@@ -93,7 +93,6 @@
             this.descripcionBox.Location = new System.Drawing.Point(318, 176);
             this.descripcionBox.Multiline = true;
             this.descripcionBox.Name = "descripcionBox";
-            this.descripcionBox.ReadOnly = false;
             this.descripcionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descripcionBox.Size = new System.Drawing.Size(249, 82);
             this.descripcionBox.TabIndex = 20;
@@ -111,7 +110,6 @@
             // 
             this.paisBox.Location = new System.Drawing.Point(437, 116);
             this.paisBox.Name = "paisBox";
-            this.paisBox.ReadOnly = false;
             this.paisBox.Size = new System.Drawing.Size(130, 22);
             this.paisBox.TabIndex = 19;
             // 
@@ -128,7 +126,6 @@
             // 
             this.codigoPostalBox.Location = new System.Drawing.Point(437, 76);
             this.codigoPostalBox.Name = "codigoPostalBox";
-            this.codigoPostalBox.ReadOnly = false;
             this.codigoPostalBox.Size = new System.Drawing.Size(130, 22);
             this.codigoPostalBox.TabIndex = 15;
             // 
@@ -145,7 +142,6 @@
             // 
             this.telefonoBox.Location = new System.Drawing.Point(437, 36);
             this.telefonoBox.Name = "telefonoBox";
-            this.telefonoBox.ReadOnly = false;
             this.telefonoBox.Size = new System.Drawing.Size(130, 22);
             this.telefonoBox.TabIndex = 14;
             // 
@@ -162,7 +158,6 @@
             // 
             this.provinciaBox.Location = new System.Drawing.Point(139, 236);
             this.provinciaBox.Name = "provinciaBox";
-            this.provinciaBox.ReadOnly = false;
             this.provinciaBox.Size = new System.Drawing.Size(130, 22);
             this.provinciaBox.TabIndex = 11;
             // 
@@ -179,7 +174,6 @@
             // 
             this.localidadBox.Location = new System.Drawing.Point(139, 196);
             this.localidadBox.Name = "localidadBox";
-            this.localidadBox.ReadOnly = false;
             this.localidadBox.Size = new System.Drawing.Size(130, 22);
             this.localidadBox.TabIndex = 9;
             // 
@@ -196,7 +190,6 @@
             // 
             this.direccionBox.Location = new System.Drawing.Point(139, 156);
             this.direccionBox.Name = "direccionBox";
-            this.direccionBox.ReadOnly = false;
             this.direccionBox.Size = new System.Drawing.Size(130, 22);
             this.direccionBox.TabIndex = 9;
             // 
@@ -213,7 +206,6 @@
             // 
             this.emailBox.Location = new System.Drawing.Point(139, 116);
             this.emailBox.Name = "emailBox";
-            this.emailBox.ReadOnly = false;
             this.emailBox.Size = new System.Drawing.Size(130, 22);
             this.emailBox.TabIndex = 8;
             // 
@@ -255,6 +247,7 @@
             // 
             this.nifBox.Location = new System.Drawing.Point(139, 36);
             this.nifBox.Name = "nifBox";
+            this.nifBox.ReadOnly = true;
             this.nifBox.Size = new System.Drawing.Size(130, 22);
             this.nifBox.TabIndex = 6;
             // 
@@ -267,7 +260,6 @@
             this.cancelarButton.TabIndex = 4;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
-            this.cancelarButton.Visible = true;
             this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // guardarButton
