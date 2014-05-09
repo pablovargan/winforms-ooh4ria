@@ -123,6 +123,21 @@ namespace LimpiezasPalmeralForms
                 ep.Deactivate += GridProveedor_Load;
             }
         }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+            string nif = proveedorGrid.SelectedRows[0].Cells["NIF"].Value.ToString();
+            MessageBoxButtons mButtons = MessageBoxButtons.YesNo;
+            string message = String.Format("¿Estás seguro que deseas eliminar el cliente con NIF: {0}?", nif);
+            string titulo = "Eliminando Proveedor";
+            
+            var response = MessageBox.Show(message, titulo, mButtons);
+            if (response.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                _proveedor.Eliminar(nif);
+                GridProveedor_Load(sender, e);
+            }   
+        }
     }
 
     public class ProveedorGV
