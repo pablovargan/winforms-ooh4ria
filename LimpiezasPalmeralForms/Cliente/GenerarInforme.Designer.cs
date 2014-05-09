@@ -30,8 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,15 +55,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(105, 27);
@@ -72,6 +63,16 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Generar PDF";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 30);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Aceptar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // GenerarInforme
             // 
