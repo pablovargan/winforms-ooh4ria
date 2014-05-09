@@ -131,7 +131,6 @@
             this.nóminasToolStripMenuItem1.Name = "nóminasToolStripMenuItem1";
             this.nóminasToolStripMenuItem1.Size = new System.Drawing.Size(162, 32);
             this.nóminasToolStripMenuItem1.Text = "Nóminas";
-            //
             // backupsToolStripMenuItem
             // 
             this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
