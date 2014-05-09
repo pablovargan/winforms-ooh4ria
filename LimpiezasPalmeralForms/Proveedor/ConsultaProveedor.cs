@@ -58,11 +58,11 @@ namespace LimpiezasPalmeralForms.Proveedor
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            if (editarButton.Visible)
-                this.Close();
-            else
+            if (!editarButton.Visible)
                 _proveedor.Editar(nifBox.Text, nombreBox.Text, telefonoBox.Text, direccionBox.Text, localidadBox.Text,
                     provinciaBox.Text, codigoPostalBox.Text, emailBox.Text, paisBox.Text, descripcionBox.Text);
+
+            this.Close();
         }
 
 
@@ -75,7 +75,8 @@ namespace LimpiezasPalmeralForms.Proveedor
         {
             foreach (Control c in container.Controls)
             {
-                if (c is TextBox)
+                System.Diagnostics.Debug.WriteLine(c.Name.ToString());
+                if (!c.Name.ToString().Equals("nifBox") && c is TextBox)
                     (c as TextBox).ReadOnly = mode;
                 else if (c is GroupBox)
                     EnableDisableTB(c, mode);

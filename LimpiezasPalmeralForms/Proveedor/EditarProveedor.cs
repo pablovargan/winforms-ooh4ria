@@ -43,7 +43,10 @@ namespace LimpiezasPalmeralForms.Proveedor
 
         private void Guardar_Click(object sender, EventArgs e)
         {
+            _proveedor.Editar(nifBox.Text, nombreBox.Text, telefonoBox.Text, direccionBox.Text, localidadBox.Text,
+                    provinciaBox.Text, codigoPostalBox.Text, emailBox.Text, paisBox.Text, descripcionBox.Text);
 
+            this.Close();
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
