@@ -17,7 +17,7 @@ namespace LimpiezasPalmeralForms
     public partial class PantallaProveedor : Form
     {
         private ProveedorCEN _proveedor;
-        private dynamic _provGD;
+        private List<ProveedorGV> _provGD;
 
         public PantallaProveedor()
         {
@@ -47,6 +47,12 @@ namespace LimpiezasPalmeralForms
                         CodigoPostal = p.CodigoPostal,
                         Pais = p.Pais
                     });
+                }
+                if (_provGD.Count == 0)
+                {
+                    consultarButton.Enabled = false;
+                    editarButton.Enabled = false;
+                    eliminarButton.Enabled = false;
                 }
                 proveedorGrid.DataSource = _provGD;
             } 
@@ -122,6 +128,21 @@ namespace LimpiezasPalmeralForms
                 ep.Show();
                 ep.Deactivate += GridProveedor_Load;
             }
+        }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+            string nif = proveedorGrid.SelectedRows[0].Cells["NIF"].Value.ToString();
+            MessageBoxButtons mButtons = MessageBoxButtons.YesNo;
+            string message = String.Format("¿Estás seguro que deseas eliminar el cliente con NIF: {0}?", nif);
+            string titulo = "Eliminando Proveedor";
+            
+            var response = MessageBox.Show(message, titulo, mButtons);
+            if (response.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                _proveedor.Eliminar(nif);
+                GridProveedor_Load(sender, e);
+            }   
         }
     }
 

@@ -68,7 +68,8 @@ namespace LimpiezasPalmeralForms.Proveedor
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            // TODO
+            _proveedor.Eliminar(Nif);
+            this.Close();
         }
 
         private void EnableDisableTB(Control container, bool mode)

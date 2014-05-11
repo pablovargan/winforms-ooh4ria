@@ -53,8 +53,8 @@
             this.eliminarButton = new System.Windows.Forms.Button();
             this.editarButton = new System.Windows.Forms.Button();
             this.accionesGB = new System.Windows.Forms.GroupBox();
-            this.aceptarButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
+            this.aceptarButton = new System.Windows.Forms.Button();
             this.proveedorGB.SuspendLayout();
             this.accionesGB.SuspendLayout();
             this.SuspendLayout();
@@ -183,7 +183,7 @@
             this.localidadBox.Name = "localidadBox";
             this.localidadBox.ReadOnly = true;
             this.localidadBox.Size = new System.Drawing.Size(130, 22);
-            this.localidadBox.TabIndex = 9;
+            this.localidadBox.TabIndex = 10;
             // 
             // localidadLabel
             // 
@@ -267,7 +267,7 @@
             this.eliminarButton.Location = new System.Drawing.Point(403, 23);
             this.eliminarButton.Name = "eliminarButton";
             this.eliminarButton.Size = new System.Drawing.Size(187, 54);
-            this.eliminarButton.TabIndex = 3;
+            this.eliminarButton.TabIndex = 4;
             this.eliminarButton.Text = "Eliminar";
             this.eliminarButton.UseVisualStyleBackColor = true;
             this.eliminarButton.Click += new System.EventHandler(this.Eliminar_Click);
@@ -298,6 +298,18 @@
             this.accionesGB.TabStop = false;
             this.accionesGB.Text = "Acciones";
             // 
+            // cancelarButton
+            // 
+            this.cancelarButton.Location = new System.Drawing.Point(204, 23);
+            this.cancelarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(187, 54);
+            this.cancelarButton.TabIndex = 3;
+            this.cancelarButton.Text = "Cancelar";
+            this.cancelarButton.UseVisualStyleBackColor = true;
+            this.cancelarButton.Visible = false;
+            this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
+            // 
             // aceptarButton
             // 
             this.aceptarButton.Location = new System.Drawing.Point(8, 23);
@@ -308,18 +320,6 @@
             this.aceptarButton.Text = "Aceptar";
             this.aceptarButton.UseVisualStyleBackColor = true;
             this.aceptarButton.Click += new System.EventHandler(this.Aceptar_Click);
-            // 
-            // cancelarButton
-            // 
-            this.cancelarButton.Location = new System.Drawing.Point(204, 23);
-            this.cancelarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(187, 54);
-            this.cancelarButton.TabIndex = 4;
-            this.cancelarButton.Text = "Cancelar";
-            this.cancelarButton.UseVisualStyleBackColor = true;
-            this.cancelarButton.Visible = false;
-            this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // ConsultaProveedor
             // 

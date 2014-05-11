@@ -255,7 +255,7 @@
             this.crearButton.Margin = new System.Windows.Forms.Padding(4);
             this.crearButton.Name = "crearButton";
             this.crearButton.Size = new System.Drawing.Size(187, 54);
-            this.crearButton.TabIndex = 1;
+            this.crearButton.TabIndex = 0;
             this.crearButton.Text = "Aceptar";
             this.crearButton.UseVisualStyleBackColor = true;
             this.crearButton.Click += new System.EventHandler(this.Crear_Click);
@@ -266,7 +266,7 @@
             this.cancelarButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(187, 54);
-            this.cancelarButton.TabIndex = 0;
+            this.cancelarButton.TabIndex = 1;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
             this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
