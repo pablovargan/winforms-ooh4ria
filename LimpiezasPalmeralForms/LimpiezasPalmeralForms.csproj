@@ -44,6 +44,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\InitializeDB\bin\Debug\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Desktop\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\InitializeDB\bin\Debug\LinFu.DynamicProxy.dll</HintPath>
@@ -196,6 +199,7 @@
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedor\ProveedorPadre.cs" />
+    <Compile Include="Servicios\GeneradorPDF.cs" />
     <Compile Include="Trabajador\ConsultarEditarTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
