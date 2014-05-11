@@ -17,7 +17,7 @@ namespace LimpiezasPalmeralForms
     public partial class PantallaProveedor : Form
     {
         private ProveedorCEN _proveedor;
-        private dynamic _provGD;
+        private List<ProveedorGV> _provGD;
 
         public PantallaProveedor()
         {
@@ -47,6 +47,12 @@ namespace LimpiezasPalmeralForms
                         CodigoPostal = p.CodigoPostal,
                         Pais = p.Pais
                     });
+                }
+                if (_provGD.Count == 0)
+                {
+                    consultarButton.Enabled = false;
+                    editarButton.Enabled = false;
+                    eliminarButton.Enabled = false;
                 }
                 proveedorGrid.DataSource = _provGD;
             } 
