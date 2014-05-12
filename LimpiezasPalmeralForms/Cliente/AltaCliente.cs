@@ -27,8 +27,11 @@ namespace LimpiezasPalmeralForms.Cliente
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
             ClienteCEN cliente = new ClienteCEN();
-
-            if (!string.IsNullOrWhiteSpace(textBoxNIF.Text as string))
+            if (textBoxNIF.Text.Length != 9)
+            {
+                MessageBox.Show(Constantes._ERRORNIFFORMATO);
+            }
+            else if (!string.IsNullOrWhiteSpace(textBoxNIF.Text as string))
             {
                 NumeroNif nf = new NumeroNif(textBoxNIF.Text);
                 if (nf.EsCorrecto)
@@ -48,7 +51,7 @@ namespace LimpiezasPalmeralForms.Cliente
                 }
                 else 
                 {
-                    MessageBox.Show("DNI Incorrecto");
+                    MessageBox.Show(Constantes._ERRORNIFFORMATO);
                 }
             }
             else
