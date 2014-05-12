@@ -1,6 +1,6 @@
 ﻿namespace LimpiezasPalmeralForms.Producto
 {
-    partial class ConsultarProducto
+    partial class EditarProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -40,9 +40,9 @@
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonAceptar = new System.Windows.Forms.Button();
+            this.cancelarButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericStock)).BeginInit();
@@ -64,7 +64,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(475, 223);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
             // 
@@ -155,25 +155,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.buttonEditar);
+            this.groupBox2.Controls.Add(this.cancelarButton);
             this.groupBox2.Controls.Add(this.buttonEliminar);
             this.groupBox2.Controls.Add(this.buttonAceptar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 241);
+            this.groupBox2.Location = new System.Drawing.Point(12, 242);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(475, 77);
-            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Location = new System.Drawing.Point(177, 19);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(140, 44);
-            this.buttonEditar.TabIndex = 2;
-            this.buttonEditar.Text = "Cancelar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonEliminar
             // 
@@ -190,20 +180,28 @@
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(153, 44);
             this.buttonAceptar.TabIndex = 1;
-            this.buttonAceptar.Text = "Aceptar";
+            this.buttonAceptar.Text = "Guardar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
-            // ConsultarProducto
+            // cancelarButton
+            // 
+            this.cancelarButton.Location = new System.Drawing.Point(177, 19);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(140, 44);
+            this.cancelarButton.TabIndex = 4;
+            this.cancelarButton.Text = "Cancelar";
+            this.cancelarButton.UseVisualStyleBackColor = true;
+            // 
+            // EditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 331);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ConsultarProducto";
-            this.Text = "Consultar Producto";
+            this.Name = "EditarProducto";
+            this.Text = "EditarProducto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).EndInit();
@@ -229,7 +227,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonAceptar;
-        private System.Windows.Forms.Button buttonEditar;
-
+        private System.Windows.Forms.Button cancelarButton;
     }
 }

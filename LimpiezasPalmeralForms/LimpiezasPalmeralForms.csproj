@@ -44,6 +44,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\InitializeDB\bin\Debug\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Desktop\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\InitializeDB\bin\Debug\LinFu.DynamicProxy.dll</HintPath>
@@ -98,6 +101,12 @@
     <Compile Include="Cliente\ConsultarEditarCliente.Designer.cs">
       <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\EliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\EliminarCliente.Designer.cs">
+      <DependentUpon>EliminarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente\GenerarInforme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +155,12 @@
     <Compile Include="Producto\ConsultarProducto.Designer.cs">
       <DependentUpon>ConsultarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\EditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,12 +198,20 @@
     <Compile Include="Proveedor\ConsultaProveedor.Designer.cs">
       <DependentUpon>ConsultaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedor\EditarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor\EditarProveedor.Designer.cs">
+      <DependentUpon>EditarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\PantallaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Proveedor\PantallaProveedor.Designer.cs">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedor\ProveedorPadre.cs" />
+    <Compile Include="Servicios\GeneradorPDF.cs" />
     <Compile Include="Trabajador\ConsultarEditarTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +248,9 @@
     <EmbeddedResource Include="Cliente\ConsultarEditarCliente.resx">
       <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\EliminarCliente.resx">
+      <DependentUpon>EliminarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente\GenerarInforme.resx">
       <DependentUpon>GenerarInforme.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +275,9 @@
     <EmbeddedResource Include="Producto\ConsultarProducto.resx">
       <DependentUpon>ConsultarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Producto\EditarProducto.resx">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto\PantallaProducto.resx">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\ConsultaProveedor.resx">
       <DependentUpon>ConsultaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor\EditarProveedor.resx">
+      <DependentUpon>EditarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trabajador\ConsultarEditarTrabajador.resx">
       <DependentUpon>ConsultarEditarTrabajador.cs</DependentUpon>
