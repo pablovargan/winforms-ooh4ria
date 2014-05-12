@@ -29,6 +29,8 @@ namespace LimpiezasPalmeralForms.Servicios
             id = id_pdf;
             if(tipo_pdf=="Cliente")
                 pdfCliente(document);
+        
+        
         }
 
 
