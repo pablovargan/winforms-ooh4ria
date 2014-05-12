@@ -109,5 +109,18 @@ public ClienteEN ObtenerCliente (string nif)
         clienteEN = _IClienteCAD.ObtenerCliente (nif);
         return clienteEN;
 }
+
+public void Unrelationer_instalaciones (string p_cliente, System.Collections.Generic.IList<string> p_instalacion)
+{
+        //Call to ClienteCAD
+
+        _IClienteCAD.Unrelationer_instalaciones (p_cliente, p_instalacion);
+}
+public void Relationer_instalaciones (string p_cliente, System.Collections.Generic.IList<string> p_instalacion)
+{
+        //Call to ClienteCAD
+
+        _IClienteCAD.Relationer_instalaciones (p_cliente, p_instalacion);
+}
 }
 }

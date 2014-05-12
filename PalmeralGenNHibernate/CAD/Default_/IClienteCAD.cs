@@ -23,5 +23,10 @@ System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.ClienteEN> Bu
 
 
 ClienteEN ObtenerCliente (string nif);
+
+
+void Unrelationer_instalaciones (string p_cliente, System.Collections.Generic.IList<string> p_instalacion);
+
+void Relationer_instalaciones (string p_cliente, System.Collections.Generic.IList<string> p_instalacion);
 }
 }

@@ -207,7 +207,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE nom.Trabajador = :p_trabajador";
+                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE nom.Trabajador LIKE CONTAT('%', :p_trabajador, '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("NominaENobtenerTodasNominasTrabajadorHQL");
                 query.SetParameter ("p_trabajador", p_trabajador);
@@ -267,7 +267,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE year(nom.Fecha) = :p_anyo";
+                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE year(nom.Fecha) LIKE CONTAT ('%', :p_anyo, '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("NominaENbuscarPorAnyoHQL");
                 query.SetParameter ("p_anyo", p_anyo);
@@ -297,7 +297,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE month(nom.Fecha) = :p_mes AND year(nom.Fecha) = :p_anyo";
+                //String sql = @"FROM NominaEN self where FROM NominaEN AS nom WHERE month(nom.Fecha) LIKE CONTAT ('%', :p_mes , '%') AND year(nom.Fecha) LIKE CONTAT('%', :p_anyo , '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("NominaENbuscarPorMesAnyoHQL");
                 query.SetParameter ("p_mes", p_mes);
@@ -321,6 +321,68 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
         }
 
         return result;
+}
+public void Relationer_trabajador (string p_nomina, string p_trabajador)
+{
+        PalmeralGenNHibernate.EN.Default_.NominaEN nominaEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                nominaEN = (NominaEN)session.Load (typeof(NominaEN), p_nomina);
+                nominaEN.Trabajador = (PalmeralGenNHibernate.EN.Default_.TrabajadorEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.TrabajadorEN), p_trabajador);
+
+                nominaEN.Trabajador.Nominas.Add (nominaEN);
+
+
+
+                session.Update (nominaEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in NominaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Unrelationer_trabajador (string p_nomina, string p_trabajador)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                PalmeralGenNHibernate.EN.Default_.NominaEN nominaEN = null;
+                nominaEN = (NominaEN)session.Load (typeof(NominaEN), p_nomina);
+
+                if (nominaEN.Trabajador.Nif == p_trabajador) {
+                        nominaEN.Trabajador = null;
+                }
+                else
+                        throw new ModelException ("The identifier " + p_trabajador + " in p_trabajador you are trying to unrelationer, doesn't exist in NominaEN");
+
+                session.Update (nominaEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in NominaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
 }
 }
 }

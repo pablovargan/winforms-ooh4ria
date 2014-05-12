@@ -19,7 +19,6 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
             this.Load += new EventHandler(Grid_Load);
-            this.Load += new EventHandler(Grid_Load);
             Buscador.KeyUp += new KeyEventHandler(Buscar_Trabajadores);
             Premisa.TextChanged += new EventHandler(Buscar_Trabajadores);
             BusquedaTipo.SelectedIndexChanged += new EventHandler(Buscar_Trabajadores);

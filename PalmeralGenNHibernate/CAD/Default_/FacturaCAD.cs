@@ -264,7 +264,7 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Factur
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM FacturaEN self where FROM FacturaEN AS fac WHERE month(fac.Fecha) = :p_mes AND year(fac.Fecha) = :p_anyo";
+                //String sql = @"FROM FacturaEN self where FROM FacturaEN AS fac WHERE month(fac.Fecha) LIKE CONCAT('%', :p_mes , '%') AND year(fac.Fecha) LIKE CONCAT('%', :p_anyo , '%')";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("FacturaENobtenerPorMesAnyoHQL");
                 query.SetParameter ("p_mes", p_mes);
@@ -288,6 +288,68 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Factur
         }
 
         return result;
+}
+public void Relationer_instalacion (string p_factura, string p_instalacion)
+{
+        PalmeralGenNHibernate.EN.Default_.FacturaEN facturaEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                facturaEN = (FacturaEN)session.Load (typeof(FacturaEN), p_factura);
+                facturaEN.Instalacion = (PalmeralGenNHibernate.EN.Default_.InstalacionEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.InstalacionEN), p_instalacion);
+
+                facturaEN.Instalacion.Facturas.Add (facturaEN);
+
+
+
+                session.Update (facturaEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in FacturaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Unrelationer_instalacion (string p_factura, string p_instalacion)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                PalmeralGenNHibernate.EN.Default_.FacturaEN facturaEN = null;
+                facturaEN = (FacturaEN)session.Load (typeof(FacturaEN), p_factura);
+
+                if (facturaEN.Instalacion.Id == p_instalacion) {
+                        facturaEN.Instalacion = null;
+                }
+                else
+                        throw new ModelException ("The identifier " + p_instalacion + " in p_instalacion you are trying to unrelationer, doesn't exist in FacturaEN");
+
+                session.Update (facturaEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in FacturaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
 }
 }
 }

@@ -42,8 +42,8 @@
 		  </class>
 		  
 		  <query name="PedidoENReadAllHQL">from PedidoEN</query>
-		  <query name="PedidoENbuscarPedidoPorAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE year(ped.Fecha) = :p_anyo]]></query>
-		  <query name="PedidoENbuscarPedidoPorMesAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE month(ped.Fecha) = :p_mes AND year(ped.Fecha) = :p_anyo]]></query>
+		  <query name="PedidoENbuscarPedidoPorAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE year(ped.Fecha) LIKE CONTAT('%', :p_anyo , '%')]]></query>
+		  <query name="PedidoENbuscarPedidoPorMesAnyoHQL"><![CDATA[FROM PedidoEN AS ped WHERE month(ped.Fecha) LIKE CONTAT('%', :p_mes, '%') AND year(ped.Fecha) LIKE CONTAT('%', :p_anyo, '%')]]></query>
 		  <query name="PedidoENbuscarPedidoPorProveedorHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.Proveedor = :p_proveedor]]></query>
 		  <query name="PedidoENbuscarPorEstadoHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.Estado = :p_estado]]></query>
 		  <query name="PedidoENbuscarPorTipoPagoHQL"><![CDATA[FROM PedidoEN AS ped WHERE ped.TipoPago  = :p_tipoPago]]></query>

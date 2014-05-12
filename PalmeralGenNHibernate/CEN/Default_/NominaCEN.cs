@@ -116,5 +116,17 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Nomina
 {
         return _INominaCAD.BuscarPorMesAnyo (p_mes, p_anyo);
 }
+public void Relationer_trabajador (string p_nomina, string p_trabajador)
+{
+        //Call to NominaCAD
+
+        _INominaCAD.Relationer_trabajador (p_nomina, p_trabajador);
+}
+public void Unrelationer_trabajador (string p_nomina, string p_trabajador)
+{
+        //Call to NominaCAD
+
+        _INominaCAD.Unrelationer_trabajador (p_nomina, p_trabajador);
+}
 }
 }
