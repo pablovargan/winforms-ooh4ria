@@ -24,7 +24,6 @@ namespace LimpiezasPalmeralForms.Cliente
         {
             textBoxNombre.Text = cliente.Nombre.ToString();
             textBoxNIF.Text = cliente.Nif.ToString();
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -65,8 +64,24 @@ namespace LimpiezasPalmeralForms.Cliente
 
             if (resultado == System.Windows.Forms.DialogResult.Yes)
             {
-                cliente.Eliminar(textBoxNombre.Text);
+                eliminarInstalacionesCliente((ClienteEN)cliente.ObtenerCliente(textBoxNIF.Text));
+               // cliente.Eliminar(textBoxNIF.Text);
             }
         }
+
+        private void eliminarInstalacionesCliente(ClienteEN cliente)
+        {
+            IList<InstalacionEN> lista = new List<InstalacionEN>(); 
+            InstalacionCEN instalacion = new InstalacionCEN();
+            lista = instalacion.ObtenerTodas(0, 0);
+            foreach (InstalacionEN i in lista)
+            {
+                if (i.Cliente.Nif == textBoxNIF.Text)
+                {
+                   // instalacion.Eliminar(i.Id);
+                }
+            }
+        }
+
     }
 }

@@ -27,8 +27,6 @@ namespace LimpiezasPalmeralForms.Cliente
         {
             IList<InstalacionClienteGV> listaFiltrada = new List<InstalacionClienteGV>();
 
-
-
             foreach (InstalacionEN i in lista)
             {
                 if (i.Cliente.Nif == textBoxNIF.Text)
