@@ -149,6 +149,15 @@ namespace LimpiezasPalmeralForms
             reducir.StartPosition = FormStartPosition.CenterParent;
             reducir.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IncrementarStock incrementar = new IncrementarStock(dataGridViewProducto) { Owner = this };
+            incrementar.Owner = this;
+            incrementar.Deactivate += new EventHandler(recargarGrid);
+            incrementar.StartPosition = FormStartPosition.CenterParent;
+            incrementar.ShowDialog();
+        }
     }
     public class ProductoGV
     {

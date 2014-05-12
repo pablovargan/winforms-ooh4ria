@@ -1,6 +1,6 @@
 ﻿namespace LimpiezasPalmeralForms.Producto
 {
-    partial class ReducirStock
+    partial class IncrementarStock
     {
         /// <summary>
         /// Required designer variable.
@@ -41,10 +41,10 @@
             // 
             this.groupBox2.Controls.Add(this.buttonCancelar);
             this.groupBox2.Controls.Add(this.buttonAceptar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 45);
+            this.groupBox2.Location = new System.Drawing.Point(11, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(300, 77);
-            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
@@ -71,16 +71,16 @@
             // labelId
             // 
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(9, 19);
+            this.labelId.Location = new System.Drawing.Point(8, 19);
             this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(215, 13);
-            this.labelId.TabIndex = 10;
-            this.labelId.Text = "¿Cuantas unidades de stock quiere reducir?";
+            this.labelId.Size = new System.Drawing.Size(238, 13);
+            this.labelId.TabIndex = 11;
+            this.labelId.Text = "¿Cuantas unidades de stock quiere incrementar?";
             // 
             // numericStock
             // 
             this.numericStock.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericStock.Location = new System.Drawing.Point(255, 17);
+            this.numericStock.Location = new System.Drawing.Point(254, 17);
             this.numericStock.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -90,18 +90,17 @@
             this.numericStock.Size = new System.Drawing.Size(57, 20);
             this.numericStock.TabIndex = 1;
             // 
-            // ReducirStock
+            // IncrementarStock
             // 
             this.AcceptButton = this.buttonAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 134);
-            this.ControlBox = false;
             this.Controls.Add(this.numericStock);
             this.Controls.Add(this.labelId);
             this.Controls.Add(this.groupBox2);
-            this.Name = "ReducirStock";
-            this.Text = "Reducir Stock";
+            this.Name = "IncrementarStock";
+            this.Text = "Incrementar Stock";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericStock)).EndInit();
             this.ResumeLayout(false);

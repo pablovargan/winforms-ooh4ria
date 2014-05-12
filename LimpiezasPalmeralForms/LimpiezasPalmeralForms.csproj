@@ -168,6 +168,12 @@
     <Compile Include="Producto\EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\IncrementarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\IncrementarStock.Designer.cs">
+      <DependentUpon>IncrementarStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\ReducirStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,9 @@
     <EmbeddedResource Include="Producto\EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Producto\IncrementarStock.resx">
+      <DependentUpon>IncrementarStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto\PantallaProducto.resx">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -389,7 +398,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Proveedor\Pedidos\" />
-    <Folder Include="Trabajador\Nóminas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

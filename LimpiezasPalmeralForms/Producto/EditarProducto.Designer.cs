@@ -40,9 +40,9 @@
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cancelarButton = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonAceptar = new System.Windows.Forms.Button();
-            this.cancelarButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericStock)).BeginInit();
@@ -73,7 +73,7 @@
             this.buttonEscogerImagen.Location = new System.Drawing.Point(230, 189);
             this.buttonEscogerImagen.Name = "buttonEscogerImagen";
             this.buttonEscogerImagen.Size = new System.Drawing.Size(213, 23);
-            this.buttonEscogerImagen.TabIndex = 14;
+            this.buttonEscogerImagen.TabIndex = 5;
             this.buttonEscogerImagen.Text = "Escoger imagen";
             this.buttonEscogerImagen.UseVisualStyleBackColor = true;
             // 
@@ -92,7 +92,7 @@
             this.numericStock.Location = new System.Drawing.Point(101, 82);
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(100, 20);
-            this.numericStock.TabIndex = 11;
+            this.numericStock.TabIndex = 3;
             // 
             // labelStock
             // 
@@ -110,21 +110,21 @@
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxDescripcion.Size = new System.Drawing.Size(183, 82);
-            this.textBoxDescripcion.TabIndex = 7;
+            this.textBoxDescripcion.TabIndex = 4;
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(101, 49);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNombre.TabIndex = 6;
+            this.textBoxNombre.TabIndex = 2;
             // 
             // textBoxId
             // 
             this.textBoxId.Location = new System.Drawing.Point(101, 21);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxId.TabIndex = 5;
+            this.textBoxId.TabIndex = 1;
             // 
             // label3
             // 
@@ -165,12 +165,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
+            // cancelarButton
+            // 
+            this.cancelarButton.Location = new System.Drawing.Point(177, 19);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(140, 44);
+            this.cancelarButton.TabIndex = 7;
+            this.cancelarButton.Text = "Cancelar";
+            this.cancelarButton.UseVisualStyleBackColor = true;
+            // 
             // buttonEliminar
             // 
             this.buttonEliminar.Location = new System.Drawing.Point(323, 19);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(140, 44);
-            this.buttonEliminar.TabIndex = 3;
+            this.buttonEliminar.TabIndex = 8;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
@@ -180,22 +189,14 @@
             this.buttonAceptar.Location = new System.Drawing.Point(18, 19);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(153, 44);
-            this.buttonAceptar.TabIndex = 1;
+            this.buttonAceptar.TabIndex = 6;
             this.buttonAceptar.Text = "Guardar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
-            // cancelarButton
-            // 
-            this.cancelarButton.Location = new System.Drawing.Point(177, 19);
-            this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(140, 44);
-            this.cancelarButton.TabIndex = 4;
-            this.cancelarButton.Text = "Cancelar";
-            this.cancelarButton.UseVisualStyleBackColor = true;
-            // 
             // EditarProducto
             // 
+            this.AcceptButton = this.buttonAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 331);
