@@ -67,6 +67,7 @@
             this.buttonReducirStock.TabIndex = 4;
             this.buttonReducirStock.Text = "Reducir Stock";
             this.buttonReducirStock.UseVisualStyleBackColor = true;
+            this.buttonReducirStock.Click += new System.EventHandler(this.buttonReducirStock_Click);
             // 
             // buttonEliminar
             // 
@@ -174,7 +175,7 @@
             this.Controls.Add(this.groupBoxProductosAcciones);
             this.Controls.Add(this.groupBoxProductos);
             this.Name = "PantallaProducto";
-            this.Text = "PantallaProducto";
+            this.Text = "Pantalla Producto";
             this.groupBoxProductosAcciones.ResumeLayout(false);
             this.groupBoxProductos.ResumeLayout(false);
             this.groupBoxProductos.PerformLayout();

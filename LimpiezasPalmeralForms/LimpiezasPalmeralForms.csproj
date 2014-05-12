@@ -45,7 +45,7 @@
       <HintPath>..\InitializeDB\bin\Debug\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\Desktop\itextsharp.dll</HintPath>
+      <HintPath>..\InitializeDB\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -161,6 +161,12 @@
     <Compile Include="Producto\EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\ReducirStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\ReducirStock.Designer.cs">
+      <DependentUpon>ReducirStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\PantallaProducto.resx">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\ReducirStock.resx">
+      <DependentUpon>ReducirStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>

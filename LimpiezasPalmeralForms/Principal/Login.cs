@@ -36,7 +36,7 @@ namespace LimpiezasPalmeralForms.Principal
             }
             else
             {
-                MessageBox.Show("El usuario o contraseña no es correcto");
+                MessageBox.Show(Constantes._ERRORLOGIN);
             }
         }
     }

@@ -54,5 +54,19 @@ namespace LimpiezasPalmeralForms.Producto
         {
             this.Close();
         }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            string id = textBoxId.Text;
+            ProductoCEN producto = new ProductoCEN();
+            DialogResult confirmar = MessageBox.Show("¿Desea eliminar el producto " + id + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirmar == DialogResult.Yes)
+            {
+                producto.Eliminar(id);
+                MessageBox.Show("El producto " + id + " ha sido eliminado");
+            }
+            this.Close();
+        }
     }
 }
