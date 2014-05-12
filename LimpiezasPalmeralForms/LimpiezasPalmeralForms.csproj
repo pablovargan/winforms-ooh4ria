@@ -45,7 +45,7 @@
       <HintPath>..\InitializeDB\bin\Debug\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\Desktop\itextsharp.dll</HintPath>
+      <HintPath>..\InitializeDB\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

@@ -58,6 +58,19 @@ namespace LimpiezasPalmeralForms
             lista=trabajador.ObtenerTodos(0, 0);
             Mostrar.DataSource = Convertir_TrabajadorGW(lista);
 
+            if (lista.Count == 0)
+            {
+                Consultar.Enabled = false;
+                Editar.Enabled = false;
+                Eliminar.Enabled = false;
+            }
+            else
+            {
+                Consultar.Enabled = true;
+                Editar.Enabled = true;
+                Eliminar.Enabled = true;
+            }
+
         }
 
         private void Buscar_Trabajadores(object sender, EventArgs e)
