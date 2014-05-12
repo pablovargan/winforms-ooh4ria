@@ -29,10 +29,14 @@ namespace LimpiezasPalmeralForms.Producto
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            //si quiere reducir mas stock del que existe, mostramos mensaje de error
-            if(Decimal.ToInt32(numericStock.Value) > stockProducto)
+            if (Decimal.ToInt32(numericStock.Value) > stockProducto)
             {
                 DialogResult error = MessageBox.Show(Constantes._ERRORREDUCIRSTOCK, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //si quiere reducir mas stock del que existe, mostramos mensaje de error
+            if (Decimal.ToInt32(numericStock.Value) == 0)
+            {
+                DialogResult error = MessageBox.Show("No se ha reducido el stock", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
