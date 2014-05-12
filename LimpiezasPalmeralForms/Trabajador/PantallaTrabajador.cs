@@ -21,6 +21,8 @@ namespace LimpiezasPalmeralForms
             this.Load += new EventHandler(Grid_Load);
             this.Load += new EventHandler(Grid_Load);
             Buscador.KeyUp += new KeyEventHandler(Buscar_Trabajadores);
+            Premisa.TextChanged += new EventHandler(Buscar_Trabajadores);
+            BusquedaTipo.SelectedIndexChanged += new EventHandler(Buscar_Trabajadores);
             Buscador.Click += new EventHandler(Grid_Load);
             Eliminar.Click += new EventHandler(Grid_Load);
             Premisa.SelectedIndex = 0;
@@ -64,27 +66,51 @@ namespace LimpiezasPalmeralForms
             IList<TrabajadorEN> lista;
             if (Premisa.Text == "" || Buscador.Text == "")
             {
+                Buscador.Visible = true;
+                BusquedaTipo.Visible = false;
                 lista = trabajador.ObtenerTodos(0, 0);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
             }
             if (Premisa.Text.Equals("Provincia"))
-            { 
+            {
+                Buscador.Visible = true;
+                BusquedaTipo.Visible = false;
                 lista=trabajador.BuscarPorProvincia(Buscador.Text);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
             }
             else if (Premisa.Text.Equals("Localidad"))
             {
+                Buscador.Visible = true;
+                BusquedaTipo.Visible = false;
                 lista = trabajador.BuscarPorLocalidad(Buscador.Text);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
             }
             else if (Premisa.Text.Equals("Nombre"))
             {
+                Buscador.Visible = true;
+                BusquedaTipo.Visible = false;
                 lista = trabajador.BuscarPorNombre(Buscador.Text);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);   
             }
-            else
+            else if (Premisa.Text.Equals("Tipo"))
             {
-                //buscar por tipo
+                Buscador.Visible = false;
+                BusquedaTipo.Visible = true;
+                if (BusquedaTipo.SelectedIndex == 0)
+                {
+                    lista = trabajador.BuscarPorTipo(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                    Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                }
+                else if (BusquedaTipo.SelectedIndex == 1)
+                {
+                    lista = trabajador.BuscarPorTipo(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
+                    Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                }
+                else
+                {
+                    lista = trabajador.ObtenerTodos(0, 0);
+                    Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                }
             }
         }
 
@@ -98,17 +124,15 @@ namespace LimpiezasPalmeralForms
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            /*if (Mostrar.SelectedRows == null)
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorGV trabajador_eliminar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+
+            DialogResult dr = MessageBox.Show("¿Desea eliminar el trabajador " + trabajador_eliminar.Nombre + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.Yes)
             {
-                MessageBox.Show("Seleccion el trabajador que desee eliminar");
-            }
-            else
-            {
-                TrabajadorCEN trabajador = new TrabajadorCEN();
-                TrabajadorGV trabajador_eliminar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
-                MessageBox.Show("Desea eliminar: " + trabajador_eliminar.Nombre);
                 trabajador.Eliminar(trabajador_eliminar.Nif);
-            }*/
+            }
         }
 
         private void Consultar_Click(object sender, EventArgs e)
