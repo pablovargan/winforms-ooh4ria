@@ -103,6 +103,7 @@
             this.GridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridConsulta.Location = new System.Drawing.Point(7, 73);
             this.GridConsulta.Name = "GridConsulta";
+            this.GridConsulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridConsulta.Size = new System.Drawing.Size(768, 242);
             this.GridConsulta.TabIndex = 1;
             this.GridConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellContentClick);

@@ -25,6 +25,7 @@ namespace LimpiezasPalmeralForms
             this.Load += new EventHandler(GridInstalacion_Load);
             textBox_buscar.KeyUp += new KeyEventHandler(buscarInstalaciones);
             textBox_buscar.Click += new EventHandler(GridInstalacion_Load);
+            //Eliminar.Click += new EventHandler(GridInstalacion_Load);
         }
 
         private void GridInstalacion_Load(object sender, EventArgs e)
@@ -245,6 +246,15 @@ namespace LimpiezasPalmeralForms
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            InstalacionCEN instalacion = new InstalacionCEN();
+            InstalacionEN eliminado = (InstalacionEN)instalacionGrid.CurrentRow.DataBoundItem;
+            MessageBox.Show(eliminado.Id);
+            instalacion.Eliminar(eliminado.Id);
+            GridInstalacion_Load(sender, e);
         }
     }
 
