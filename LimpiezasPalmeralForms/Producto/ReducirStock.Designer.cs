@@ -81,6 +81,11 @@
             // 
             this.numericStock.ForeColor = System.Drawing.SystemColors.WindowText;
             this.numericStock.Location = new System.Drawing.Point(254, 17);
+            this.numericStock.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(57, 20);
             this.numericStock.TabIndex = 12;
