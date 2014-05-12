@@ -116,17 +116,41 @@ public System.Collections.Generic.IList<InstalacionEN> ObtenerTodas (int first, 
         list = _IInstalacionCAD.ObtenerTodas (first, size);
         return list;
 }
-public void AddTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador)
+public void Relationer_cliente (string p_instalacion, string p_cliente)
 {
         //Call to InstalacionCAD
 
-        _IInstalacionCAD.AddTrabajador (p_instalacion, p_trabajador);
+        _IInstalacionCAD.Relationer_cliente (p_instalacion, p_cliente);
 }
-public void DeleteTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador)
+public void Relationer_facturas (string p_instalacion, System.Collections.Generic.IList<string> p_factura)
 {
         //Call to InstalacionCAD
 
-        _IInstalacionCAD.DeleteTrabajador (p_instalacion, p_trabajador);
+        _IInstalacionCAD.Relationer_facturas (p_instalacion, p_factura);
+}
+public void Relationer_jornadas (string p_instalacion, System.Collections.Generic.IList<int> p_jornadafecha)
+{
+        //Call to InstalacionCAD
+
+        _IInstalacionCAD.Relationer_jornadas (p_instalacion, p_jornadafecha);
+}
+public void Unrelationer_cliente (string p_instalacion, string p_cliente)
+{
+        //Call to InstalacionCAD
+
+        _IInstalacionCAD.Unrelationer_cliente (p_instalacion, p_cliente);
+}
+public void Unrelationer_facturas (string p_instalacion, System.Collections.Generic.IList<string> p_factura)
+{
+        //Call to InstalacionCAD
+
+        _IInstalacionCAD.Unrelationer_facturas (p_instalacion, p_factura);
+}
+public void Unrelationer_jornadas (string p_instalacion, System.Collections.Generic.IList<int> p_jornadafecha)
+{
+        //Call to InstalacionCAD
+
+        _IInstalacionCAD.Unrelationer_jornadas (p_instalacion, p_jornadafecha);
 }
 }
 }

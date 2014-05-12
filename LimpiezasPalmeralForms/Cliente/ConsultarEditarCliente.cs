@@ -35,14 +35,15 @@ namespace LimpiezasPalmeralForms.Cliente
                     {
                         Nombre = i.Nombre,
                         Direccion = i.Direccion,
-                        Localidad = i.Localidad, 
-                        Provincia = i.Provincia, 
+                        Localidad = i.Localidad,
+                        Provincia = i.Provincia,
                         CP = i.CodigoPostal,
                         Pais = i.Pais,
                         Telefono = i.Telefono
                     });
                 }
             }
+            
 
             return listaFiltrada;
         }
@@ -52,7 +53,7 @@ namespace LimpiezasPalmeralForms.Cliente
             IList<InstalacionClienteGV> listaFiltrada = new List<InstalacionClienteGV>();
             IList<InstalacionEN> lista = new List<InstalacionEN>();
             InstalacionCEN instalacion = new InstalacionCEN();
-            lista = instalacion.ObtenerTodas(0, 0);
+            lista = instalacion.ObtenerTodas(0, 0);          
             listaFiltrada = modificarFV(lista);
             dataGridViewInstalaciones.DataSource = listaFiltrada;
         }

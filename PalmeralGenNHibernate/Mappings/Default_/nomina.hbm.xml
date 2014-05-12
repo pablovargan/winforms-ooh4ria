@@ -42,9 +42,9 @@
 		  </class>
 		  
 		  <query name="NominaENReadAllHQL">from NominaEN</query>
-		  <query name="NominaENobtenerTodasNominasTrabajadorHQL"><![CDATA[FROM NominaEN AS nom WHERE nom.Trabajador = :p_trabajador]]></query>
+		  <query name="NominaENobtenerTodasNominasTrabajadorHQL"><![CDATA[FROM NominaEN AS nom WHERE nom.Trabajador LIKE CONTAT('%', :p_trabajador, '%')]]></query>
 		  <query name="NominaENbuscarPorParteFijaHQL"><![CDATA[FROM NominaEN AS nom WHERE nom.ParteFija = :p_parteFija]]></query>
-		  <query name="NominaENbuscarPorAnyoHQL"><![CDATA[FROM NominaEN AS nom WHERE year(nom.Fecha) = :p_anyo]]></query>
-		  <query name="NominaENbuscarPorMesAnyoHQL"><![CDATA[FROM NominaEN AS nom WHERE month(nom.Fecha) = :p_mes AND year(nom.Fecha) = :p_anyo]]></query>
+		  <query name="NominaENbuscarPorAnyoHQL"><![CDATA[FROM NominaEN AS nom WHERE year(nom.Fecha) LIKE CONTAT ('%', :p_anyo, '%')]]></query>
+		  <query name="NominaENbuscarPorMesAnyoHQL"><![CDATA[FROM NominaEN AS nom WHERE month(nom.Fecha) LIKE CONTAT ('%', :p_mes , '%') AND year(nom.Fecha) LIKE CONTAT('%', :p_anyo , '%')]]></query>
 		</hibernate-mapping>
 	

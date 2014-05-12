@@ -109,5 +109,17 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Factur
 {
         return _IFacturaCAD.ObtenerPorMesAnyo (p_mes, p_anyo);
 }
+public void Relationer_instalacion (string p_factura, string p_instalacion)
+{
+        //Call to FacturaCAD
+
+        _IFacturaCAD.Relationer_instalacion (p_factura, p_instalacion);
+}
+public void Unrelationer_instalacion (string p_factura, string p_instalacion)
+{
+        //Call to FacturaCAD
+
+        _IFacturaCAD.Unrelationer_instalacion (p_factura, p_instalacion);
+}
 }
 }

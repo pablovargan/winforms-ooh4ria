@@ -17,7 +17,7 @@ namespace LimpiezasPalmeralForms
     public partial class PantallaProveedor : Form
     {
         private ProveedorCEN _proveedor;
-        private dynamic _provGD;
+        private List<ProveedorGV> _provGD;
 
         public PantallaProveedor()
         {
@@ -48,6 +48,11 @@ namespace LimpiezasPalmeralForms
                         Pais = p.Pais
                     });
                 }
+                if (_provGD.Count == 0)
+                    EnableDisableBT(this, false);
+                else
+                    EnableDisableBT(this, true);
+
                 proveedorGrid.DataSource = _provGD;
             } 
         }
@@ -106,6 +111,47 @@ namespace LimpiezasPalmeralForms
                 };
                 cp.Show();
                 cp.Deactivate += GridProveedor_Load;   
+            }
+        }
+
+        private void Editar_Click(object sender, EventArgs e)
+        {
+            if (proveedorGrid.DataSource != null)
+            {
+                var columnaSeleccionada = proveedorGrid.SelectedRows[0];
+                EditarProveedor ep = new EditarProveedor()
+                {
+                    Nif = columnaSeleccionada.Cells["NIF"].Value.ToString(),
+                    Owner = this
+                };
+                ep.Show();
+                ep.Deactivate += GridProveedor_Load;
+            }
+        }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+            string nif = proveedorGrid.SelectedRows[0].Cells["NIF"].Value.ToString();
+            MessageBoxButtons mButtons = MessageBoxButtons.YesNo;
+            string message = String.Format("¿Estás seguro que deseas eliminar el cliente con NIF: {0}?", nif);
+            string titulo = "Eliminando Proveedor";
+            
+            var response = MessageBox.Show(message, titulo, mButtons);
+            if (response.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                _proveedor.Eliminar(nif);
+                GridProveedor_Load(sender, e);
+            }   
+        }
+
+        private void EnableDisableBT(Control container, bool mode)
+        {
+            foreach (Control c in container.Controls)
+            {
+                if (!c.Name.ToString().Equals("altaButton") && c is Button)
+                    (c as Button).Enabled = mode;
+                else if (c is GroupBox)
+                    EnableDisableBT(c, mode);
             }
         }
     }

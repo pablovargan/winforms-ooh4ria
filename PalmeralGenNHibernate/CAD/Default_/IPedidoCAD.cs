@@ -37,5 +37,14 @@ System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.PedidoEN> Bus
 
 
 System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.PedidoEN> BuscarPorTipoPago (string p_tipoPago);
+
+
+void Relationer_lineas (string p_pedido, System.Collections.Generic.IList<int> p_lineapedido);
+
+void Relationer_proveedor (string p_pedido, string p_proveedor);
+
+void Unrelationer_lineas (string p_pedido, System.Collections.Generic.IList<int> p_lineapedido);
+
+void Unrelationer_proveedor (string p_pedido, string p_proveedor);
 }
 }

@@ -86,5 +86,29 @@ public System.Collections.Generic.IList<JornadaFechaEN> ObtenerTodas (int first,
         list = _IJornadaFechaCAD.ObtenerTodas (first, size);
         return list;
 }
+public void Relationer_instalacion (int p_jornadafecha, string p_instalacion)
+{
+        //Call to JornadaFechaCAD
+
+        _IJornadaFechaCAD.Relationer_instalacion (p_jornadafecha, p_instalacion);
+}
+public void Relationer_trabajadores (int p_jornadafecha, System.Collections.Generic.IList<string> p_trabajador)
+{
+        //Call to JornadaFechaCAD
+
+        _IJornadaFechaCAD.Relationer_trabajadores (p_jornadafecha, p_trabajador);
+}
+public void Unrelationer_instalacion (int p_jornadafecha, string p_instalacion)
+{
+        //Call to JornadaFechaCAD
+
+        _IJornadaFechaCAD.Unrelationer_instalacion (p_jornadafecha, p_instalacion);
+}
+public void Unrelationer_trabajadores (int p_jornadafecha, System.Collections.Generic.IList<string> p_trabajador)
+{
+        //Call to JornadaFechaCAD
+
+        _IJornadaFechaCAD.Unrelationer_trabajadores (p_jornadafecha, p_trabajador);
+}
 }
 }

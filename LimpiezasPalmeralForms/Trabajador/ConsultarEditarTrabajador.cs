@@ -18,10 +18,11 @@ namespace LimpiezasPalmeralForms.Trabajador
         {
             InitializeComponent();
             MostrarCampos(id);
+            //CargarNominas(id);
             if (editar)
             {
                 activarCampos();
-            }
+            } 
         }
 
         private void MostrarCampos(string id){
@@ -40,7 +41,6 @@ namespace LimpiezasPalmeralForms.Trabajador
             TipoBox.Text = mostrar.Tipo.ToString();
             Editar.Visible = true;
             Cancelar.Visible = false;
-            //CargarNominas(mostrar.Nif);
         }
         private void activarCampos()
         {
@@ -93,9 +93,15 @@ namespace LimpiezasPalmeralForms.Trabajador
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            /*TrabajadorCEN trabajador = new TrabajadorCEN();
-            trabajador.Eliminar(NifBox.Text);
-            this.Close();*/
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+
+            DialogResult dr = MessageBox.Show("¿Desea eliminar el trabajador " + NombreBox.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.Yes)
+            {
+                trabajador.Eliminar(NifBox.Text);
+                this.Close();
+            }
         }
 
         private void CargarNominas(string id)

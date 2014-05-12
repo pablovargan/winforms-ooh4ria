@@ -99,5 +99,17 @@ public ProductoEN ObtenerProducto (string id)
         return productoEN;
 }
 
+public void Relationer_linea (string p_producto, System.Collections.Generic.IList<int> p_lineapedido)
+{
+        //Call to ProductoCAD
+
+        _IProductoCAD.Relationer_linea (p_producto, p_lineapedido);
+}
+public void Unrelationer_linea (string p_producto, System.Collections.Generic.IList<int> p_lineapedido)
+{
+        //Call to ProductoCAD
+
+        _IProductoCAD.Unrelationer_linea (p_producto, p_lineapedido);
+}
 }
 }

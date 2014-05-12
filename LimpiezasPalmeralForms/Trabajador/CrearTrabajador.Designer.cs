@@ -110,6 +110,7 @@
             // 
             // Tipo1
             // 
+            this.Tipo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Tipo1.FormattingEnabled = true;
             this.Tipo1.Items.AddRange(new object[] {
             "Cooperativista",
@@ -117,8 +118,7 @@
             this.Tipo1.Location = new System.Drawing.Point(298, 122);
             this.Tipo1.Name = "Tipo1";
             this.Tipo1.Size = new System.Drawing.Size(133, 21);
-            this.Tipo1.TabIndex = 41;
-            this.Tipo1.Text = "Selecciona...";
+            this.Tipo1.TabIndex = 31;
             this.Tipo1.SelectedIndexChanged += new System.EventHandler(this.Tipo1_SelectedIndexChanged);
             // 
             // label11
@@ -136,7 +136,7 @@
             this.Telefono.Location = new System.Drawing.Point(298, 96);
             this.Telefono.Name = "Telefono";
             this.Telefono.Size = new System.Drawing.Size(133, 20);
-            this.Telefono.TabIndex = 38;
+            this.Telefono.TabIndex = 30;
             this.Telefono.TextChanged += new System.EventHandler(this.Telefono_TextChanged);
             // 
             // label10
@@ -232,7 +232,7 @@
             this.Provincia.Location = new System.Drawing.Point(298, 18);
             this.Provincia.Name = "Provincia";
             this.Provincia.Size = new System.Drawing.Size(133, 20);
-            this.Provincia.TabIndex = 28;
+            this.Provincia.TabIndex = 27;
             this.Provincia.TextChanged += new System.EventHandler(this.Provincia_TextChanged);
             // 
             // Localidad
@@ -240,7 +240,7 @@
             this.Localidad.Location = new System.Drawing.Point(66, 122);
             this.Localidad.Name = "Localidad";
             this.Localidad.Size = new System.Drawing.Size(133, 20);
-            this.Localidad.TabIndex = 27;
+            this.Localidad.TabIndex = 26;
             this.Localidad.TextChanged += new System.EventHandler(this.Localidad_TextChanged);
             // 
             // CP
@@ -248,7 +248,7 @@
             this.CP.Location = new System.Drawing.Point(298, 44);
             this.CP.Name = "CP";
             this.CP.Size = new System.Drawing.Size(133, 20);
-            this.CP.TabIndex = 26;
+            this.CP.TabIndex = 28;
             this.CP.TextChanged += new System.EventHandler(this.CP_TextChanged);
             // 
             // Direccion

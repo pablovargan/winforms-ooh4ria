@@ -60,17 +60,6 @@
 									<column name="[FK_id_jornadas]"/>
       						</many-to-many>
     					</bag>
-			
-		  			
-						<bag name="Instalaciones" table="[InstalacionTrabajador]"  >
-							<key>
-									<column name="[FK_nif_trabajadores]"/>
-							</key>
-      						<many-to-many class="PalmeralGenNHibernate.EN.Default_.InstalacionEN">
-									<column name="[FK_id_instalaciones]"/>
-      						</many-to-many>
-    					</bag>
-					
 					
 					
 					

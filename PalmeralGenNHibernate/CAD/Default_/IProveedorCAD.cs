@@ -20,5 +20,10 @@ System.Collections.Generic.IList<ProveedorEN> ObtenerTodos (int first, int size)
 
 
 ProveedorEN ObtenerProveedor (string id);
+
+
+void Relationer_pedido (string p_proveedor, System.Collections.Generic.IList<string> p_pedido);
+
+void Unrelationer_pedido (string p_proveedor, System.Collections.Generic.IList<string> p_pedido);
 }
 }

@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using PalmeralGenNHibernate.CEN.Default_;
+using LimpiezasPalmeralForms.Proveedor;
 
 namespace LimpiezasPalmeralForms
 {
     public partial class AltaProveedor : Form
     {
+        protected ProveedorCEN _proveedor;
         public AltaProveedor()
         {
             InitializeComponent();

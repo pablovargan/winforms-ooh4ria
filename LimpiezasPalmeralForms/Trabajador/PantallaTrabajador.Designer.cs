@@ -37,6 +37,7 @@
             this.Consultar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Crear = new System.Windows.Forms.Button();
+            this.BusquedaTipo = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -47,6 +48,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.BusquedaTipo);
             this.groupBox1.Controls.Add(this.Premisa);
             this.groupBox1.Controls.Add(this.Mostrar);
             this.groupBox1.Controls.Add(this.Buscador);
@@ -59,6 +61,7 @@
             // 
             // Premisa
             // 
+            this.Premisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Premisa.FormattingEnabled = true;
             this.Premisa.Items.AddRange(new object[] {
             "Nombre",
@@ -69,7 +72,6 @@
             this.Premisa.Name = "Premisa";
             this.Premisa.Size = new System.Drawing.Size(121, 21);
             this.Premisa.TabIndex = 3;
-            this.Premisa.Text = "Buscar...";
             // 
             // Mostrar
             // 
@@ -94,7 +96,6 @@
             this.Buscador.Name = "Buscador";
             this.Buscador.Size = new System.Drawing.Size(419, 20);
             this.Buscador.TabIndex = 0;
-            this.Buscador.Text = "Introduzca el término a buscar";
             this.Buscador.Click += new System.EventHandler(this.Buscador_Click);
             // 
             // groupBox2
@@ -158,6 +159,22 @@
             this.Crear.UseVisualStyleBackColor = true;
             this.Crear.Click += new System.EventHandler(this.Crear_Click);
             // 
+            // BusquedaTipo
+            // 
+            this.BusquedaTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BusquedaTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BusquedaTipo.FormattingEnabled = true;
+            this.BusquedaTipo.Items.AddRange(new object[] {
+            "Cooperativista",
+            "Empleado",
+            "Todos"});
+            this.BusquedaTipo.Location = new System.Drawing.Point(134, 17);
+            this.BusquedaTipo.Name = "BusquedaTipo";
+            this.BusquedaTipo.Size = new System.Drawing.Size(419, 21);
+            this.BusquedaTipo.TabIndex = 4;
+            this.BusquedaTipo.Visible = false;
+            // 
             // PantallaTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,5 +204,6 @@
         private System.Windows.Forms.Button Consultar;
         private System.Windows.Forms.ComboBox Premisa;
         private System.Windows.Forms.Button Editar;
+        private System.Windows.Forms.ComboBox BusquedaTipo;
     }
 }
