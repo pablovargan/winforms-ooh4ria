@@ -101,6 +101,12 @@
     <Compile Include="Cliente\ConsultarEditarCliente.Designer.cs">
       <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\EliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\EliminarCliente.Designer.cs">
+      <DependentUpon>EliminarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente\GenerarInforme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\ConsultarEditarCliente.resx">
       <DependentUpon>ConsultarEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\EliminarCliente.resx">
+      <DependentUpon>EliminarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\GenerarInforme.resx">
       <DependentUpon>GenerarInforme.cs</DependentUpon>

@@ -26,7 +26,9 @@ namespace LimpiezasPalmeralForms.Servicios
         {
             document = new Document(PageSize.A4, 25, 25, 30, 30);
             tipo = tipo_pdf;
-            id = id_pdf;      
+            id = id_pdf;
+            if(tipo_pdf=="Cliente")
+                pdfCliente(document);
         }
 
 
