@@ -36,7 +36,7 @@ namespace LimpiezasPalmeralForms.Principal
             }
             else
             {
-                MessageBox.Show(Constantes._ERRORLOGIN);
+                DialogResult error = MessageBox.Show(Constantes._ERRORLOGIN, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

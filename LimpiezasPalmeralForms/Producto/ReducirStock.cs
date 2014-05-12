@@ -36,7 +36,7 @@ namespace LimpiezasPalmeralForms.Producto
             //si quiere reducir mas stock del que existe, mostramos mensaje de error
             if (Decimal.ToInt32(numericStock.Value) == 0)
             {
-                DialogResult error = MessageBox.Show("No se ha reducido el stock", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult error = MessageBox.Show("No se ha reducido el stock por que el valor introducido es 0 o no válido", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
