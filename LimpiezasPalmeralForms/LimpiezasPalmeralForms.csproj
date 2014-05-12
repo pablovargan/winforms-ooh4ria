@@ -137,6 +137,13 @@
     <Compile Include="Instalacion\PantallaInstalacion.Designer.cs">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedidos\CrearPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\CrearPedido.Designer.cs">
+      <DependentUpon>CrearPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\PedidoGV.cs" />
     <Compile Include="Principal\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +217,12 @@
     <Compile Include="Proveedor\PantallaProveedor.Designer.cs">
       <DependentUpon>PantallaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedidos\PantallaPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\PantallaPedidos.Designer.cs">
+      <DependentUpon>PantallaPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\ProveedorPadre.cs" />
     <Compile Include="Servicios\GeneradorPDF.cs" />
     <Compile Include="Trabajador\ConsultarEditarTrabajador.cs">
@@ -266,6 +279,9 @@
     <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\CrearPedido.resx">
+      <DependentUpon>CrearPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\EditarProveedor.resx">
       <DependentUpon>EditarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\PantallaPedidos.resx">
+      <DependentUpon>PantallaPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trabajador\ConsultarEditarTrabajador.resx">
       <DependentUpon>ConsultarEditarTrabajador.cs</DependentUpon>
@@ -361,6 +380,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Proveedor\Pedidos\" />
+    <Folder Include="Trabajador\Nóminas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

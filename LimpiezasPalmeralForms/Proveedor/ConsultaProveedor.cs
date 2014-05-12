@@ -76,7 +76,6 @@ namespace LimpiezasPalmeralForms.Proveedor
         {
             foreach (Control c in container.Controls)
             {
-                System.Diagnostics.Debug.WriteLine(c.Name.ToString());
                 if (!c.Name.ToString().Equals("nifBox") && c is TextBox)
                     (c as TextBox).ReadOnly = mode;
                 else if (c is GroupBox)

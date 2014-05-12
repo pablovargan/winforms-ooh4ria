@@ -49,11 +49,10 @@ namespace LimpiezasPalmeralForms
                     });
                 }
                 if (_provGD.Count == 0)
-                {
-                    consultarButton.Enabled = false;
-                    editarButton.Enabled = false;
-                    eliminarButton.Enabled = false;
-                }
+                    EnableDisableBT(this, false);
+                else
+                    EnableDisableBT(this, true);
+
                 proveedorGrid.DataSource = _provGD;
             } 
         }
@@ -143,6 +142,17 @@ namespace LimpiezasPalmeralForms
                 _proveedor.Eliminar(nif);
                 GridProveedor_Load(sender, e);
             }   
+        }
+
+        private void EnableDisableBT(Control container, bool mode)
+        {
+            foreach (Control c in container.Controls)
+            {
+                if (!c.Name.ToString().Equals("altaButton") && c is Button)
+                    (c as Button).Enabled = mode;
+                else if (c is GroupBox)
+                    EnableDisableBT(c, mode);
+            }
         }
     }
 
