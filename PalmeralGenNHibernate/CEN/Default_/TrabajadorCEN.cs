@@ -122,17 +122,29 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Trabaj
 {
         return _ITrabajadorCAD.BuscarPorNombre (p_nombre);
 }
-public void AddInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion)
+public void Relationer_jornadas (string p_trabajador, System.Collections.Generic.IList<int> p_jornadafecha)
 {
         //Call to TrabajadorCAD
 
-        _ITrabajadorCAD.AddInstalacion (p_trabajador, p_instalacion);
+        _ITrabajadorCAD.Relationer_jornadas (p_trabajador, p_jornadafecha);
 }
-public void DeleteInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion)
+public void Relationer_nominas (string p_trabajador, System.Collections.Generic.IList<string> p_nomina)
 {
         //Call to TrabajadorCAD
 
-        _ITrabajadorCAD.DeleteInstalacion (p_trabajador, p_instalacion);
+        _ITrabajadorCAD.Relationer_nominas (p_trabajador, p_nomina);
+}
+public void Unrelationer_jornadas (string p_trabajador, System.Collections.Generic.IList<int> p_jornadafecha)
+{
+        //Call to TrabajadorCAD
+
+        _ITrabajadorCAD.Unrelationer_jornadas (p_trabajador, p_jornadafecha);
+}
+public void Unrelationer_nominas (string p_trabajador, System.Collections.Generic.IList<string> p_nomina)
+{
+        //Call to TrabajadorCAD
+
+        _ITrabajadorCAD.Unrelationer_nominas (p_trabajador, p_nomina);
 }
 }
 }

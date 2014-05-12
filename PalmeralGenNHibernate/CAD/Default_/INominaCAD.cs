@@ -32,5 +32,10 @@ System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> Bus
 
 
 System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> BuscarPorMesAnyo (string p_mes, string p_anyo);
+
+
+void Relationer_trabajador (string p_nomina, string p_trabajador);
+
+void Unrelationer_trabajador (string p_nomina, string p_trabajador);
 }
 }

@@ -83,10 +83,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backup\PantallaBackup.cs">
+    <Compile Include="CopiaSeguridad\PantallaBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Backup\PantallaBackup.Designer.cs">
+    <Compile Include="CopiaSeguridad\PantallaBackup.Designer.cs">
       <DependentUpon>PantallaBackup.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente\AltaCliente.cs">
@@ -167,6 +167,18 @@
     </Compile>
     <Compile Include="Producto\EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\IncrementarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\IncrementarStock.Designer.cs">
+      <DependentUpon>IncrementarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\ReducirStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\ReducirStock.Designer.cs">
+      <DependentUpon>ReducirStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedor\AltaProveedor.cs">
       <SubType>Form</SubType>
@@ -258,7 +270,7 @@
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </Compile>
     <Compile Include="Servicios\Validador.cs" />
-    <EmbeddedResource Include="Backup\PantallaBackup.resx">
+    <EmbeddedResource Include="CopiaSeguridad\PantallaBackup.resx">
       <DependentUpon>PantallaBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\AltaCliente.resx">
@@ -300,8 +312,14 @@
     <EmbeddedResource Include="Producto\EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Producto\IncrementarStock.resx">
+      <DependentUpon>IncrementarStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto\PantallaProducto.resx">
       <DependentUpon>PantallaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\ReducirStock.resx">
+      <DependentUpon>ReducirStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor\AltaProveedor.resx">
       <DependentUpon>AltaProveedor.cs</DependentUpon>

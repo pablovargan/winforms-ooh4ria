@@ -105,5 +105,18 @@ public ProveedorEN ObtenerProveedor (string id)
         proveedorEN = _IProveedorCAD.ObtenerProveedor (id);
         return proveedorEN;
 }
+
+public void Relationer_pedido (string p_proveedor, System.Collections.Generic.IList<string> p_pedido)
+{
+        //Call to ProveedorCAD
+
+        _IProveedorCAD.Relationer_pedido (p_proveedor, p_pedido);
+}
+public void Unrelationer_pedido (string p_proveedor, System.Collections.Generic.IList<string> p_pedido)
+{
+        //Call to ProveedorCAD
+
+        _IProveedorCAD.Unrelationer_pedido (p_proveedor, p_pedido);
+}
 }
 }

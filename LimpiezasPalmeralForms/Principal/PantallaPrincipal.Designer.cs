@@ -138,6 +138,7 @@
             this.backupsToolStripMenuItem.Name = "backupsToolStripMenuItem";
             this.backupsToolStripMenuItem.Size = new System.Drawing.Size(95, 32);
             this.backupsToolStripMenuItem.Text = "Backups";
+            this.backupsToolStripMenuItem.Click += new System.EventHandler(this.backupsToolStripMenuItem_Click);
             // 
             // PantallaPrincipal
             // 
@@ -147,7 +148,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PantallaPrincipal";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
