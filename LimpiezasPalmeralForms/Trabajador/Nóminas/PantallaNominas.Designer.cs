@@ -136,6 +136,7 @@
             this.Crear.TabIndex = 0;
             this.Crear.Text = "Crear Nomina";
             this.Crear.UseVisualStyleBackColor = true;
+            this.Crear.Click += new System.EventHandler(this.Crear_Click);
             // 
             // PantallaNominas
             // 
