@@ -248,6 +248,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "CrearNomina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearNomina";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
