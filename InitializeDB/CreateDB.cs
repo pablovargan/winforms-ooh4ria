@@ -138,7 +138,6 @@ public static void InitializeData ()
                 IList<PedidoEN> pedidos = new List<PedidoEN>();
                 pedidos.Add (new PedidoEN ("1", DateTime.Today, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum.Enviado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum.Contado, lineas, proveedorCEN.get_IProveedorCAD ().ReadOIDDefault ("1")));
 
-<<<<<<< HEAD
                 PedidoCEN pedido = new PedidoCEN ();
                 pedido.Crear (pedidos [0].Id, pedidos [0].Fecha, pedidos [0].Estado, pedidos [0].TipoPago, pedidos [0].Lineas, pedidos [0].Proveedor.Id);
 
@@ -149,13 +148,9 @@ public static void InitializeData ()
                 
                 IList<string> listaTrabajadores = new List<string>();
                 listaTrabajadores.Add("11111111A");
-                instalacionCEN.AddTrabajador("1", listaTrabajadores);
                 InstalacionEN _ins = instalacionCEN.ObtenerInstalacion("1");
                 
             /*PROTECTED REGION END*/
-=======
-                /*PROTECTED REGION END*/
->>>>>>> 43a5af493340f267273bfd2b675b37981665babd
         }
         catch (Exception ex)
         {

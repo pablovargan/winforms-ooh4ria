@@ -104,5 +104,34 @@ public UsuarioEN ObtenerUsuario (string nif)
         usuarioEN = _IUsuarioCAD.ObtenerUsuario (nif);
         return usuarioEN;
 }
+
+public PalmeralGenNHibernate.EN.Default_.UsuarioEN ObtenerPorUsuario (string p_user)
+{
+        return _IUsuarioCAD.ObtenerPorUsuario (p_user);
+}
+public void Relationer_jornadas (string p_usuario, System.Collections.Generic.IList<int> p_jornadafecha)
+{
+        //Call to UsuarioCAD
+
+        _IUsuarioCAD.Relationer_jornadas (p_usuario, p_jornadafecha);
+}
+public void Relationer_nominas (string p_usuario, System.Collections.Generic.IList<string> p_nomina)
+{
+        //Call to UsuarioCAD
+
+        _IUsuarioCAD.Relationer_nominas (p_usuario, p_nomina);
+}
+public void Unrelationer_jornadas (string p_usuario, System.Collections.Generic.IList<int> p_jornadafecha)
+{
+        //Call to UsuarioCAD
+
+        _IUsuarioCAD.Unrelationer_jornadas (p_usuario, p_jornadafecha);
+}
+public void Unrelationer_nominas (string p_usuario, System.Collections.Generic.IList<string> p_nomina)
+{
+        //Call to UsuarioCAD
+
+        _IUsuarioCAD.Unrelationer_nominas (p_usuario, p_nomina);
+}
 }
 }
