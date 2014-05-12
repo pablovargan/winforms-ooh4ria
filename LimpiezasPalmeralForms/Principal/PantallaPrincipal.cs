@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LimpiezasPalmeralForms.Proveedor.Pedidos;
+using LimpiezasPalmeralForms.Trabajador.Nóminas;
 
 namespace LimpiezasPalmeralForms
 {
@@ -171,5 +172,26 @@ namespace LimpiezasPalmeralForms
             prov.Show();
             prov.WindowState = FormWindowState.Maximized;
         }
+
+        private void nóminasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            colorearMenu();
+            trabajadorToolStripMenuItem.ForeColor = Color.Blue;
+            nóminasToolStripMenuItem1.ForeColor = Color.Blue;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is PantallaNominas)
+                {
+                    form.Activate();
+                    form.WindowState = FormWindowState.Maximized;
+                    return;
+                }
+            }
+
+            PantallaNominas nomi = new PantallaNominas() { MdiParent = this };
+            nomi.Show();
+            nomi.WindowState = FormWindowState.Maximized;
+        }   
     }
 }
