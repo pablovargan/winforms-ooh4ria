@@ -9,7 +9,7 @@
    	</key>
 
 					<property name="User" type="string"> 
-						<column name="[user]"  not-null="true"/>
+						<column name="[user]"  unique="true" not-null="true"/>
 					</property>
 					<property name="Password" type="string"> 
 						<column name="[password]"  not-null="true"/>
@@ -22,5 +22,6 @@
 		  </joined-subclass>	
 		  
 		  <query name="UsuarioENReadAllHQL">from UsuarioEN</query>
+		  <query name="UsuarioENobtenerPorUsuarioHQL"><![CDATA[FROM UsuarioEN AS us where us.User = :p_user]]></query>
 		</hibernate-mapping>
 	
