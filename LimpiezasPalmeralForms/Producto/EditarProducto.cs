@@ -1,8 +1,7 @@
-﻿using LimpiezasPalmeralForms.Producto;
+﻿using System;
+using System.Collections.Generic;
 using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -13,46 +12,34 @@ using System.Windows.Forms;
 
 namespace LimpiezasPalmeralForms.Producto
 {
-    public partial class ConsultarProducto : Form
+    public partial class EditarProducto : Form
     {
-        public ConsultarProducto(DataGridView productoSelected)
+        private ProductoCEN producto;
+        private ProductoEN p;
+        public EditarProducto(DataGridView productoSelected)
         {
             InitializeComponent();
-            desactivarCampos();
-         
-           
+            producto = new ProductoCEN();
+
             obtenerDatosProducto(productoSelected);
-        }
-        public void desactivarCampos()
-        {
-            textBoxId.Enabled = false;
-            textBoxNombre.Enabled = false;
-            textBoxDescripcion.Enabled = false;
-            numericStock.Enabled = false;
-            pictureBoxImagen.Enabled = false;
-            buttonEscogerImagen.Enabled = false;
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            int stock = Decimal.ToInt32(numericStock.Value);
+            producto.Editar(textBoxId.Text, textBoxNombre.Text, textBoxDescripcion.Text, stock, pictureBoxImagen.ImageLocation);
+            MessageBox.Show("Los cambios han sido guardados");
         }
         private void obtenerDatosProducto(DataGridView productoSelected)
         {
-            ProductoCEN producto = new ProductoCEN();
             string id = productoSelected.SelectedRows[0].Cells[0].Value.ToString();
-            ProductoEN p = producto.ObtenerProducto(id);
+            p = producto.ObtenerProducto(id);
 
             textBoxId.Text = p.Id;
             textBoxNombre.Text = p.Nombre;
             textBoxDescripcion.Text = p.Descripcion;
             numericStock.Value = p.Stock;
             pictureBoxImagen.ImageLocation = p.Foto;
-        }
-
-        private void buttonEditar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

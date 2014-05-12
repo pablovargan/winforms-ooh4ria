@@ -110,12 +110,21 @@ namespace LimpiezasPalmeralForms
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-
+            EditarProducto editar = new EditarProducto(dataGridViewProducto) { Owner = this };
+            editar.Owner = this;
+            editar.Deactivate += new EventHandler(recargarGrid);
+            editar.StartPosition = FormStartPosition.CenterParent;
+            editar.ShowDialog();
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            DialogResult confirmar = MessageBox.Show("¿Desea eliminar este producto?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+            if(confirmar == DialogResult.Yes)
+            {
+
+            }
         }
 
         private void textBoxBuscar_Click(object sender, EventArgs e)
