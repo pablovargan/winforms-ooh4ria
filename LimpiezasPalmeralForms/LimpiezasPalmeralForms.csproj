@@ -139,9 +139,11 @@
     </Compile>
     <Compile Include="Pedidos\CrearPedido.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Pedidos\CrearPedido.Designer.cs">
       <DependentUpon>CrearPedido.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Pedidos\PedidoGV.cs" />
     <Compile Include="Principal\Login.cs">
@@ -281,6 +283,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\CrearPedido.resx">
       <DependentUpon>CrearPedido.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -378,10 +381,7 @@
       <Name>PalmeralGenNHibernate</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Proveedor\Pedidos\" />
-    <Folder Include="Trabajador\Nóminas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

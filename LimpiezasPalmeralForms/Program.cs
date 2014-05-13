@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LimpiezasPalmeralForms.Pedidos;
 
 
 namespace LimpiezasPalmeralForms
@@ -34,7 +35,9 @@ namespace LimpiezasPalmeralForms
                 Application.SetCompatibleTextRenderingDefault(false);
                 try
                 {
-                    Application.Run(new Login());
+                    //Application.Run(new Login());
+                    Application.Run(new CrearPedido());
+                    //Application.Run(new PantallaPrincipal());
                 }
                 catch (Exception ex)
                 {
