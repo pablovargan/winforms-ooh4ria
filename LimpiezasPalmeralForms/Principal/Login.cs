@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PalmeralGenNHibernate.CEN.Default_;
+using PalmeralGenNHibernate.EN.Default_;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,19 +26,27 @@ namespace LimpiezasPalmeralForms.Principal
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
-            String usuario = "judas";
-            String pass = "judas";
+            UsuarioCEN usuario = new UsuarioCEN();
+            UsuarioEN usuarioEN = usuario.ObtenerPorUsuario(textBoxUsuario.Text);
 
-            if(textBoxUsuario.Text == usuario && textBoxPass.Text == pass)
+            if (usuarioEN != null && usuarioEN.Password != null)
             {
-                PantallaPrincipal p = new PantallaPrincipal() { Owner = this};
-                p.ShowDialog();
-                textBoxUsuario.Text = "";
-                textBoxPass.Text = "";
+                if (usuarioEN.Password == textBoxPass.Text)
+                {
+                    PantallaPrincipal p = new PantallaPrincipal() { Owner = this };
+                    p.ShowDialog();
+                    textBoxUsuario.Text = "";
+                    textBoxPass.Text = "";
+                }
+                else
+                {
+                    DialogResult error = MessageBox.Show(Constantes._ERRORLOGINPASS, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("El usuario o contraseña no es correcto");
+                DialogResult error = MessageBox.Show(Constantes._ERRORLOGINUSER, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

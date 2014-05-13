@@ -18,10 +18,11 @@ namespace LimpiezasPalmeralForms.Trabajador
         {
             InitializeComponent();
             MostrarCampos(id);
+            //CargarNominas(id);
             if (editar)
             {
                 activarCampos();
-            }
+            } 
         }
 
         private void MostrarCampos(string id){
@@ -40,7 +41,6 @@ namespace LimpiezasPalmeralForms.Trabajador
             TipoBox.Text = mostrar.Tipo.ToString();
             Editar.Visible = true;
             Cancelar.Visible = false;
-            //CargarNominas(mostrar.Nif);
         }
         private void activarCampos()
         {

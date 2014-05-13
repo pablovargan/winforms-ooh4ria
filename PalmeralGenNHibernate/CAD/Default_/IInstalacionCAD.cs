@@ -25,8 +25,16 @@ InstalacionEN ObtenerInstalacion (string id);
 System.Collections.Generic.IList<InstalacionEN> ObtenerTodas (int first, int size);
 
 
-void AddTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador);
+void Relationer_cliente (string p_instalacion, string p_cliente);
 
-void DeleteTrabajador (string p_instalacion, System.Collections.Generic.IList<string> p_trabajador);
+void Relationer_facturas (string p_instalacion, System.Collections.Generic.IList<string> p_factura);
+
+void Relationer_jornadas (string p_instalacion, System.Collections.Generic.IList<int> p_jornadafecha);
+
+void Unrelationer_cliente (string p_instalacion, string p_cliente);
+
+void Unrelationer_facturas (string p_instalacion, System.Collections.Generic.IList<string> p_factura);
+
+void Unrelationer_jornadas (string p_instalacion, System.Collections.Generic.IList<int> p_jornadafecha);
 }
 }

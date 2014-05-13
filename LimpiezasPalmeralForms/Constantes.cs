@@ -15,6 +15,11 @@ namespace LimpiezasPalmeralForms
         public static string _ERRORIDINST = "El ID no puede estar vacío";
         public static string _ERRORCREARPRODUCTO = "El ID introducido ya existe";
         public static string _ERRORIDPRODUCTO = "El ID no puede estar vacio";
+        public static string _ERRORREDUCIRSTOCK = "No existen tantas unidades de stock";
+        public static string _ERRORREDUCIRSTOCKNEGATIVO = "El dato introducido es incorrecto";
+        public static string _ERRORLOGINPASS = "La contraseña es incorrecta";
+        public static string _ERRORLOGINUSER = "El usuario no existe";
+        
 
         public static string _ERRORID { get; set; }
     }
