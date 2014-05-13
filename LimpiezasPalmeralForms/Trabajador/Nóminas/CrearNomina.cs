@@ -18,29 +18,65 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
         {
             InitializeComponent();
             this.Load += new EventHandler(CrearNomina_Load);
-            Trabajadores.ValueMemberChanged += new EventHandler(Trabajadores_Changed);
+            Trabajadores.TextChanged += new EventHandler(Trabajadores_Changed);
         }
 
         private void Trabajadores_Changed(object sender, EventArgs e)
         {
+            TrabajadorCEN tra = new TrabajadorCEN();
             IList<TrabajadorEN> trabajador = new List<TrabajadorEN>();
-            trabajador = new TrabajadorCEN().ObtenerTodos(0, 0);
+            trabajador = tra.ObtenerTodos(0, 0);
 
-            foreach (TrabajadorEN t in trabajador)
+            if(trabajador.Contains(tra.ObtenerTrabajador(Trabajadores.SelectedItem.ToString())))
             {
-                if (Trabajadores.SelectedItem.ToString().Equals(t.Nif))
+                if (tra.ObtenerTrabajador(Trabajadores.SelectedItem.ToString()).Tipo.Equals(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista))
                 {
-                    if (t.Tipo.Equals(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista))
-                    {
-                        Variable.Visible = true;
-                        Variable_Box.Visible = true;
-                    }
-                    else
-                    {
-                        Variable.Visible = false;
-                        Variable_Box.Visible = false;
-                    }
+                    Variable.Visible = true;
+                    Variable_Box.Visible = true;
+                    Fija.Visible = true;
+                    Fija_Box.Visible = true;
+                    Horas.Visible = true;
+                    Horas_Box.Visible = true;
+                    Total.Visible = true;
+                    Total_Box.Visible = true;
+                    Fecha1.Visible = true;
+                    Fecha2.Visible = true;
+                    Mes_Box.Visible = true;
+                    Anyo_Box.Visible = true;
+                    Crear.Enabled = true;
                 }
+                else if (tra.ObtenerTrabajador(Trabajadores.SelectedItem.ToString()).Tipo.Equals(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado))
+                {
+                    Variable.Visible = false;
+                    Variable_Box.Visible = false;
+                    Fija_Box.Visible = true;
+                    Fija.Visible = true;
+                    Horas.Visible = true;
+                    Horas_Box.Visible = true;
+                    Total.Visible = true;
+                    Total_Box.Visible = true;
+                    Fecha1.Visible = true;
+                    Fecha2.Visible = true;
+                    Mes_Box.Visible = true;
+                    Anyo_Box.Visible = true;
+                    Crear.Enabled = true;
+                }
+            }
+            else
+            {
+                Variable.Visible = false;
+                Variable_Box.Visible = false;
+                Fija.Visible = false;
+                Fija_Box.Visible = false;
+                Horas.Visible = false;
+                Horas_Box.Visible = false;
+                Total.Visible = false;
+                Total_Box.Visible = false;
+                Fecha1.Visible = false;
+                Fecha2.Visible = false;
+                Mes_Box.Visible = false;
+                Anyo_Box.Visible = false;
+                Crear.Enabled = false;
             }
         }
 
@@ -50,6 +86,20 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             trabajador = new TrabajadorCEN().ObtenerTodos(0, 0);
             IList<string> nifs = new List<string>();
             int tam = trabajador.Count;
+
+            Variable.Visible = false;
+            Variable_Box.Visible = false;
+            Fija.Visible = false;
+            Fija_Box.Visible = false;
+            Horas.Visible = false;
+            Horas_Box.Visible = false;
+            Total.Visible = false;
+            Total_Box.Visible = false;
+            Fecha1.Visible = false;
+            Fecha2.Visible = false;
+            Mes_Box.Visible = false;
+            Anyo_Box.Visible = false;
+            Crear.Enabled = false;
 
             nifs.Add("Seleccione un Trabajdor");
 
