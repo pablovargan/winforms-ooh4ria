@@ -1,6 +1,7 @@
 ﻿using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,31 +26,40 @@ namespace LimpiezasPalmeralForms.Cliente
             textBoxNombre.Text = cliente.Nombre.ToString();
             textBoxNIF.Text = cliente.Nif.ToString();
 
+            IList<InstalacionEN> lista = new List<InstalacionEN>();
+            IList<InstalacionEN> lista2 = new List<InstalacionEN>();
+
+            InstalacionCEN instalacion = new InstalacionCEN();
+            lista = instalacion.ObtenerTodas(0, 0);
+            foreach (InstalacionEN i in lista)
+            {
+                if (i.Cliente.Nif == cliente.Nif)
+                {
+                    lista2.Add(i);
+                }
+            }
+
+            dataGridViewInstalaciones.DataSource = convertirGV(lista2);
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private List<InstalacionGVDeleteCliente> convertirGV(IList<InstalacionEN> lista)
         {
+            List<InstalacionGVDeleteCliente> instalaciones = new List<InstalacionGVDeleteCliente>();
 
-        }
+            foreach (InstalacionEN i in lista)
+            {
+                instalaciones.Add(new InstalacionGVDeleteCliente()
+                {
+                    Nombre = i.Nombre,
+                    Localidad = i.Localidad,
+                    Provincia = i.Provincia,
+                    Pais = i.Pais,
+                    Direccion = i.Direccion,
+                    CP = i.CodigoPostal,
+                });
+            }
 
-        private void textBoxEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxDireccion_TextChanged(object sender, EventArgs e)
-        {
-
+            return instalaciones;
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -65,8 +75,41 @@ namespace LimpiezasPalmeralForms.Cliente
 
             if (resultado == System.Windows.Forms.DialogResult.Yes)
             {
-                cliente.Eliminar(textBoxNombre.Text);
+                eliminarInstalacionesCliente(textBoxNIF.Text);
+                cliente.Eliminar(textBoxNIF.Text);
+            }
+
+            this.Close();
+        }
+
+        private void eliminarInstalacionesCliente(string nif)
+        {
+            IList<InstalacionEN> lista = new List<InstalacionEN>(); 
+            InstalacionCEN instalacion = new InstalacionCEN();
+            lista = instalacion.ObtenerTodas(0, 0);
+            foreach (InstalacionEN i in lista)
+            {
+                if (i.Cliente.Nif == nif)
+                {
+                    instalacion.Eliminar(i.Id);
+                }
             }
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+    }
+
+    public class InstalacionGVDeleteCliente
+    {
+        public string Nombre { get; set; }
+        public string Localidad { get; set; }
+        public string Provincia { get; set; }
+        public string Pais { get; set; }
+        public string Direccion { get; set; }
+        public string CP { get; set; }
     }
 }

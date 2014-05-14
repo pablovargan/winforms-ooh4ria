@@ -115,20 +115,27 @@ public static void InitializeData ()
                  * //albumCEN.New_("Album 1", "This is a Album 1", artists, musicTracks);*/
 
                 ClienteCEN clienteCEN = new ClienteCEN ();
-                clienteCEN.Crear ("11111111A", "Juan", "Cliente 1", "pepe@gmail.com", "Aspe", "Alicante", "Espa�a", "Calle de Pepe", "03680", "123456789");
+                clienteCEN.Crear ("11111111A", "Juan", "Cliente 1", "juan@gmail.com", "Aspe", "Alicante", "España", "Calle de Juan", "03680", "666332211");
+                clienteCEN.Crear ("22222222B", "Pepe", "Cliente 2", "pepe@gmail.com", "Elche", "Alicante", "España", "Calle de Pepe", "03682", "666778899");
+                clienteCEN.Crear ("33333333C", "Paco", "Cliente 3", "paco@gmail.com", "Elda", "Alicante", "España", "Calle de Paco", "03681", "666554433");
 
                 ProductoCEN productoCEN = new ProductoCEN ();
                 productoCEN.Crear ("1", "lejia", "Limpialo todo", 5, "foto.com");
                 productoCEN.Crear ("2", "lejia", "Limpialo todo", 5, "foto.com");
                 ProveedorCEN proveedorCEN = new ProveedorCEN ();
-                proveedorCEN.Crear ("1", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "Espa�a", "oooo que chulo");
+                proveedorCEN.Crear ("1", "Proveedor 1", "123456789", "Calle", "Aspe", "Alicante", "09080", "email@gmail.com", "España", "oooo que chulo");
 
                 TrabajadorCEN trabajadorCEN = new TrabajadorCEN ();
-                trabajadorCEN.Crear ("11111111A", "Trabajador 1", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "Espa�a", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                trabajadorCEN.Crear ("55555555A", "Dani", "Valero Clavel", "Calle del trabajador", "123456789", "00440", "España", "Elche", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
+                trabajadorCEN.Crear ("66666666B", "Victor", "Vives Boix", "Calle del trabajador", "123456789", "00440", "España", "Elche", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                trabajadorCEN.Crear ("77777777C", "Alberto", "Martinez Martinez", "Calle del trabajador", "123456789", "00440", "España", "Villena", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
+                trabajadorCEN.Crear ("88888888D", "Hector", "Martinez Matias", "Calle del trabajador", "123456789", "00440", "España", "Alicante", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
 
                 IList<LineaPedidoEN> lineas = new List<LineaPedidoEN>();
                 lineas.Add (new LineaPedidoEN (1, 5, productoCEN.get_IProductoCAD ().ReadOIDDefault ("1"), null));
                 lineas.Add (new LineaPedidoEN (2, 4, productoCEN.get_IProductoCAD ().ReadOIDDefault ("2"), null));
+
+
 
                 IList<PedidoEN> pedidos = new List<PedidoEN>();
                 pedidos.Add (new PedidoEN ("1", DateTime.Today, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum.Enviado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum.Contado, lineas, proveedorCEN.get_IProveedorCAD ().ReadOIDDefault ("1")));
@@ -137,13 +144,17 @@ public static void InitializeData ()
                 pedido.Crear (pedidos [0].Id, pedidos [0].Fecha, pedidos [0].Estado, pedidos [0].TipoPago, pedidos [0].Lineas, pedidos [0].Proveedor.Id);
 
                 InstalacionCEN instalacionCEN = new InstalacionCEN();
-                instalacionCEN.Crear("1", "Monti SA", "hola", "Localidad", "Alicante", "Espania", "cALLE FALSA", "04533", "98883434", 120.0f, "11111111A");
-                
+                instalacionCEN.Crear("1","Colegio 1","Colegio 1","Elche","Alicante","España","Calle 1","03200","666778899",405,"11111111A");
+                instalacionCEN.Crear("2", "Colegio 2", "Colegio 2", "Alicante", "Alicante", "España", "Calle 2", "03202", "666778899", 612, "11111111A");
+                instalacionCEN.Crear("3", "Colegio 3", "Colegio 3", "Elda", "Alicante", "España", "Calle 3", "03203", "666778899", 234, "11111111A");
+                instalacionCEN.Crear("4", "Colegio 3", "Colegio 3", "Elda", "Alicante", "España", "Calle 3", "03203", "666778899", 234, "22222222B");
+
                 IList<string> listaTrabajadores = new List<string>();
                 listaTrabajadores.Add("11111111A");
-                instalacionCEN.AddTrabajador("1", listaTrabajadores);
                 InstalacionEN _ins = instalacionCEN.ObtenerInstalacion("1");
                 
+                UsuarioCEN usuarioCEN = new UsuarioCEN();
+                usuarioCEN.Crear("Secretaria", "secretaria", "00000001R", "Trabajador 1", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "España", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
             /*PROTECTED REGION END*/
         }
         catch (Exception ex)

@@ -328,24 +328,24 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Trabaj
 
         return result;
 }
-public void AddInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion)
+public void Relationer_jornadas (string p_trabajador, System.Collections.Generic.IList<int> p_jornadafecha)
 {
         PalmeralGenNHibernate.EN.Default_.TrabajadorEN trabajadorEN = null;
         try
         {
                 SessionInitializeTransaction ();
                 trabajadorEN = (TrabajadorEN)session.Load (typeof(TrabajadorEN), p_trabajador);
-                PalmeralGenNHibernate.EN.Default_.InstalacionEN instalacionesENAux = null;
-                if (trabajadorEN.Instalaciones == null) {
-                        trabajadorEN.Instalaciones = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.InstalacionEN>();
+                PalmeralGenNHibernate.EN.Default_.JornadaFechaEN jornadasENAux = null;
+                if (trabajadorEN.Jornadas == null) {
+                        trabajadorEN.Jornadas = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN>();
                 }
 
-                foreach (string item in p_instalacion) {
-                        instalacionesENAux = new PalmeralGenNHibernate.EN.Default_.InstalacionEN ();
-                        instalacionesENAux = (PalmeralGenNHibernate.EN.Default_.InstalacionEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.InstalacionEN), item);
-                        instalacionesENAux.Trabajadores.Add (trabajadorEN);
+                foreach (int item in p_jornadafecha) {
+                        jornadasENAux = new PalmeralGenNHibernate.EN.Default_.JornadaFechaEN ();
+                        jornadasENAux = (PalmeralGenNHibernate.EN.Default_.JornadaFechaEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.JornadaFechaEN), item);
+                        jornadasENAux.Trabajadores.Add (trabajadorEN);
 
-                        trabajadorEN.Instalaciones.Add (instalacionesENAux);
+                        trabajadorEN.Jornadas.Add (jornadasENAux);
                 }
 
 
@@ -367,7 +367,46 @@ public void AddInstalacion (string p_trabajador, System.Collections.Generic.ILis
         }
 }
 
-public void DeleteInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion)
+public void Relationer_nominas (string p_trabajador, System.Collections.Generic.IList<string> p_nomina)
+{
+        PalmeralGenNHibernate.EN.Default_.TrabajadorEN trabajadorEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                trabajadorEN = (TrabajadorEN)session.Load (typeof(TrabajadorEN), p_trabajador);
+                PalmeralGenNHibernate.EN.Default_.NominaEN nominasENAux = null;
+                if (trabajadorEN.Nominas == null) {
+                        trabajadorEN.Nominas = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.NominaEN>();
+                }
+
+                foreach (string item in p_nomina) {
+                        nominasENAux = new PalmeralGenNHibernate.EN.Default_.NominaEN ();
+                        nominasENAux = (PalmeralGenNHibernate.EN.Default_.NominaEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.NominaEN), item);
+                        nominasENAux.Trabajador = trabajadorEN;
+
+                        trabajadorEN.Nominas.Add (nominasENAux);
+                }
+
+
+                session.Update (trabajadorEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in TrabajadorCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Unrelationer_jornadas (string p_trabajador, System.Collections.Generic.IList<int> p_jornadafecha)
 {
         try
         {
@@ -375,16 +414,54 @@ public void DeleteInstalacion (string p_trabajador, System.Collections.Generic.I
                 PalmeralGenNHibernate.EN.Default_.TrabajadorEN trabajadorEN = null;
                 trabajadorEN = (TrabajadorEN)session.Load (typeof(TrabajadorEN), p_trabajador);
 
-                PalmeralGenNHibernate.EN.Default_.InstalacionEN instalacionesENAux = null;
-                if (trabajadorEN.Instalaciones != null) {
-                        foreach (string item in p_instalacion) {
-                                instalacionesENAux = (PalmeralGenNHibernate.EN.Default_.InstalacionEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.InstalacionEN), item);
-                                if (trabajadorEN.Instalaciones.Contains (instalacionesENAux) == true) {
-                                        trabajadorEN.Instalaciones.Remove (instalacionesENAux);
-                                        instalacionesENAux.Trabajadores.Remove (trabajadorEN);
+                PalmeralGenNHibernate.EN.Default_.JornadaFechaEN jornadasENAux = null;
+                if (trabajadorEN.Jornadas != null) {
+                        foreach (int item in p_jornadafecha) {
+                                jornadasENAux = (PalmeralGenNHibernate.EN.Default_.JornadaFechaEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.JornadaFechaEN), item);
+                                if (trabajadorEN.Jornadas.Contains (jornadasENAux) == true) {
+                                        trabajadorEN.Jornadas.Remove (jornadasENAux);
+                                        jornadasENAux.Trabajadores.Remove (trabajadorEN);
                                 }
                                 else
-                                        throw new ModelException ("The identifier " + item + " in p_instalacion you are trying to unrelationer, doesn't exist in TrabajadorEN");
+                                        throw new ModelException ("The identifier " + item + " in p_jornadafecha you are trying to unrelationer, doesn't exist in TrabajadorEN");
+                        }
+                }
+
+                session.Update (trabajadorEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in TrabajadorCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+public void Unrelationer_nominas (string p_trabajador, System.Collections.Generic.IList<string> p_nomina)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                PalmeralGenNHibernate.EN.Default_.TrabajadorEN trabajadorEN = null;
+                trabajadorEN = (TrabajadorEN)session.Load (typeof(TrabajadorEN), p_trabajador);
+
+                PalmeralGenNHibernate.EN.Default_.NominaEN nominasENAux = null;
+                if (trabajadorEN.Nominas != null) {
+                        foreach (string item in p_nomina) {
+                                nominasENAux = (PalmeralGenNHibernate.EN.Default_.NominaEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.NominaEN), item);
+                                if (trabajadorEN.Nominas.Contains (nominasENAux) == true) {
+                                        trabajadorEN.Nominas.Remove (nominasENAux);
+                                        nominasENAux.Trabajador = null;
+                                }
+                                else
+                                        throw new ModelException ("The identifier " + item + " in p_nomina you are trying to unrelationer, doesn't exist in TrabajadorEN");
                         }
                 }
 

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LimpiezasPalmeralForms.Backup
+namespace LimpiezasPalmeralForms.Instalacion.Facturas
 {
-    public partial class PantallaBackup : Form
+    public partial class PantallaFacturas : Form
     {
-        public PantallaBackup()
+        public PantallaFacturas()
         {
             InitializeComponent();
         }

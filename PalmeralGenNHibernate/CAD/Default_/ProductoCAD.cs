@@ -252,5 +252,83 @@ public ProductoEN ObtenerProducto (string id)
 
         return productoEN;
 }
+
+public void Relationer_linea (string p_producto, System.Collections.Generic.IList<int> p_lineapedido)
+{
+        PalmeralGenNHibernate.EN.Default_.ProductoEN productoEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                productoEN = (ProductoEN)session.Load (typeof(ProductoEN), p_producto);
+                PalmeralGenNHibernate.EN.Default_.LineaPedidoEN lineaENAux = null;
+                if (productoEN.Linea == null) {
+                        productoEN.Linea = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN>();
+                }
+
+                foreach (int item in p_lineapedido) {
+                        lineaENAux = new PalmeralGenNHibernate.EN.Default_.LineaPedidoEN ();
+                        lineaENAux = (PalmeralGenNHibernate.EN.Default_.LineaPedidoEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.LineaPedidoEN), item);
+                        lineaENAux.Productos = productoEN;
+
+                        productoEN.Linea.Add (lineaENAux);
+                }
+
+
+                session.Update (productoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in ProductoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Unrelationer_linea (string p_producto, System.Collections.Generic.IList<int> p_lineapedido)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                PalmeralGenNHibernate.EN.Default_.ProductoEN productoEN = null;
+                productoEN = (ProductoEN)session.Load (typeof(ProductoEN), p_producto);
+
+                PalmeralGenNHibernate.EN.Default_.LineaPedidoEN lineaENAux = null;
+                if (productoEN.Linea != null) {
+                        foreach (int item in p_lineapedido) {
+                                lineaENAux = (PalmeralGenNHibernate.EN.Default_.LineaPedidoEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.LineaPedidoEN), item);
+                                if (productoEN.Linea.Contains (lineaENAux) == true) {
+                                        productoEN.Linea.Remove (lineaENAux);
+                                        lineaENAux.Productos = null;
+                                }
+                                else
+                                        throw new ModelException ("The identifier " + item + " in p_lineapedido you are trying to unrelationer, doesn't exist in ProductoEN");
+                        }
+                }
+
+                session.Update (productoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in ProductoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
 }
 }

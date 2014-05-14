@@ -237,5 +237,82 @@ public ClienteEN ObtenerCliente (string nif)
 
         return clienteEN;
 }
+
+public void Unrelationer_instalaciones (string p_cliente, System.Collections.Generic.IList<string> p_instalacion)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                PalmeralGenNHibernate.EN.Default_.ClienteEN clienteEN = null;
+                clienteEN = (ClienteEN)session.Load (typeof(ClienteEN), p_cliente);
+
+                PalmeralGenNHibernate.EN.Default_.InstalacionEN instalacionesENAux = null;
+                if (clienteEN.Instalaciones != null) {
+                        foreach (string item in p_instalacion) {
+                                instalacionesENAux = (PalmeralGenNHibernate.EN.Default_.InstalacionEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.InstalacionEN), item);
+                                if (clienteEN.Instalaciones.Contains (instalacionesENAux) == true) {
+                                        clienteEN.Instalaciones.Remove (instalacionesENAux);
+                                        instalacionesENAux.Cliente = null;
+                                }
+                                else
+                                        throw new ModelException ("The identifier " + item + " in p_instalacion you are trying to unrelationer, doesn't exist in ClienteEN");
+                        }
+                }
+
+                session.Update (clienteEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in ClienteCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+public void Relationer_instalaciones (string p_cliente, System.Collections.Generic.IList<string> p_instalacion)
+{
+        PalmeralGenNHibernate.EN.Default_.ClienteEN clienteEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                clienteEN = (ClienteEN)session.Load (typeof(ClienteEN), p_cliente);
+                PalmeralGenNHibernate.EN.Default_.InstalacionEN instalacionesENAux = null;
+                if (clienteEN.Instalaciones == null) {
+                        clienteEN.Instalaciones = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.InstalacionEN>();
+                }
+
+                foreach (string item in p_instalacion) {
+                        instalacionesENAux = new PalmeralGenNHibernate.EN.Default_.InstalacionEN ();
+                        instalacionesENAux = (PalmeralGenNHibernate.EN.Default_.InstalacionEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.InstalacionEN), item);
+                        instalacionesENAux.Cliente = clienteEN;
+
+                        clienteEN.Instalaciones.Add (instalacionesENAux);
+                }
+
+
+                session.Update (clienteEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in ClienteCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
 }
 }

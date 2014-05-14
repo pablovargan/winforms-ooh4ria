@@ -29,5 +29,10 @@ System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.FacturaEN> Ob
 
 
 System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.FacturaEN> ObtenerPorMesAnyo (string p_mes, string p_anyo);
+
+
+void Relationer_instalacion (string p_factura, string p_instalacion);
+
+void Unrelationer_instalacion (string p_factura, string p_instalacion);
 }
 }

@@ -19,7 +19,6 @@ namespace LimpiezasPalmeralForms
         {
             InitializeComponent();
             this.Load += new EventHandler(Grid_Load);
-            this.Load += new EventHandler(Grid_Load);
             Buscador.KeyUp += new KeyEventHandler(Buscar_Trabajadores);
             Premisa.TextChanged += new EventHandler(Buscar_Trabajadores);
             BusquedaTipo.SelectedIndexChanged += new EventHandler(Buscar_Trabajadores);
@@ -57,6 +56,19 @@ namespace LimpiezasPalmeralForms
             IList<TrabajadorEN> lista;
             lista=trabajador.ObtenerTodos(0, 0);
             Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+
+            if (lista.Count == 0)
+            {
+                Consultar.Enabled = false;
+                Editar.Enabled = false;
+                Eliminar.Enabled = false;
+            }
+            else
+            {
+                Consultar.Enabled = true;
+                Editar.Enabled = true;
+                Eliminar.Enabled = true;
+            }
 
         }
 
@@ -98,7 +110,15 @@ namespace LimpiezasPalmeralForms
                 BusquedaTipo.Visible = true;
                 if (BusquedaTipo.SelectedIndex == 0)
                 {
-                    lista = trabajador.BuscarPorTipo(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                    try {
+                        lista = trabajador.BuscarPorTipo(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                        throw exc;
+                    }
+                    
                     Mostrar.DataSource = Convertir_TrabajadorGW(lista);
                 }
                 else if (BusquedaTipo.SelectedIndex == 1)
@@ -136,26 +156,19 @@ namespace LimpiezasPalmeralForms
         }
 
         private void Consultar_Click(object sender, EventArgs e)
-        {
-            if (Mostrar.SelectedRows == null)
+        {    
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+            try
             {
-                MessageBox.Show("Seleccion el trabajador que desee consultar");
+                ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, false);
+                consulta.Owner = this;
+                consulta.Deactivate += new EventHandler(Grid_Load);
+                consulta.Show();
             }
-            else
-            {     
-                TrabajadorCEN trabajador = new TrabajadorCEN();
-                TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
-                try
-                {
-                    ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, false);
-                    consulta.Owner = this;
-                    consulta.Deactivate += new EventHandler(Grid_Load);
-                    consulta.Show();
-                }
-                catch (Exception exp)
-                {
-                    throw exp;
-                }
+            catch (Exception exp)
+            {
+                throw exp;
             }
         }
 

@@ -29,7 +29,7 @@ namespace LimpiezasPalmeralForms
                 try
                 {
                     _proveedor.Crear(nifBox.Text, nombreBox.Text, telefonoBox.Text, direccionBox.Text, localidadBox.Text, provinciaBox.Text,
-                    telefonoBox.Text, emailBox.Text, codigoPostalBox.Text, descripcionBox.Text);
+                    codigoPostalBox.Text, emailBox.Text, paisBox.Text, descripcionBox.Text);
                     this.Close();
                 }
                 catch (Exception ex)

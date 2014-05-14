@@ -26,5 +26,10 @@ System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.ProductoEN> B
 
 
 ProductoEN ObtenerProducto (string id);
+
+
+void Relationer_linea (string p_producto, System.Collections.Generic.IList<int> p_lineapedido);
+
+void Unrelationer_linea (string p_producto, System.Collections.Generic.IList<int> p_lineapedido);
 }
 }

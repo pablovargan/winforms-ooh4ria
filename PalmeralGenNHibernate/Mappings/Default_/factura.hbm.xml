@@ -39,6 +39,6 @@
 		  <query name="FacturaENReadAllHQL">from FacturaEN</query>
 		  <query name="FacturaENobtenerFacturasInstalacionHQL"><![CDATA[FROM FacturaEN AS fac WHERE fac.Instalacion LIKE CONCAT('%', :p_instalacion , '%')]]></query>
 		  <query name="FacturaENobtenerPorAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE year(fac.Fecha) LIKE CONCAT('%', :p_anyo , '%')]]></query>
-		  <query name="FacturaENobtenerPorMesAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE month(fac.Fecha) = :p_mes AND year(fac.Fecha) = :p_anyo]]></query>
+		  <query name="FacturaENobtenerPorMesAnyoHQL"><![CDATA[FROM FacturaEN AS fac WHERE month(fac.Fecha) LIKE CONCAT('%', :p_mes , '%') AND year(fac.Fecha) LIKE CONCAT('%', :p_anyo , '%')]]></query>
 		</hibernate-mapping>
 	
