@@ -356,6 +356,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Trabajador\Nóminas\CrearNomina.resx">
       <DependentUpon>CrearNomina.cs</DependentUpon>
@@ -404,6 +405,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Proveedor\Pedidos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

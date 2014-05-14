@@ -42,25 +42,20 @@ namespace LimpiezasPalmeralForms.Cliente
             dataGridViewInstalaciones.DataSource = convertirGV(lista2);
         }
 
-        private List<InstalacionGV> convertirGV(IList<InstalacionEN> lista)
+        private List<InstalacionGVDeleteCliente> convertirGV(IList<InstalacionEN> lista)
         {
-            List<InstalacionGV> instalaciones = new List<InstalacionGV>();
+            List<InstalacionGVDeleteCliente> instalaciones = new List<InstalacionGVDeleteCliente>();
 
             foreach (InstalacionEN i in lista)
             {
-                instalaciones.Add(new InstalacionGV()
+                instalaciones.Add(new InstalacionGVDeleteCliente()
                 {
-                    ID = i.Id,
                     Nombre = i.Nombre,
-                    Descripcion = i.Descripcion,
                     Localidad = i.Localidad,
                     Provincia = i.Provincia,
                     Pais = i.Pais,
                     Direccion = i.Direccion,
                     CP = i.CodigoPostal,
-                    Telefono = i.Telefono,
-                    Metros = i.MetrosCuadrados,
-                    Cliente = i.Cliente.Nif
                 });
             }
 
@@ -106,5 +101,15 @@ namespace LimpiezasPalmeralForms.Cliente
             this.Close();
         }
 
+    }
+
+    public class InstalacionGVDeleteCliente
+    {
+        public string Nombre { get; set; }
+        public string Localidad { get; set; }
+        public string Provincia { get; set; }
+        public string Pais { get; set; }
+        public string Direccion { get; set; }
+        public string CP { get; set; }
     }
 }
