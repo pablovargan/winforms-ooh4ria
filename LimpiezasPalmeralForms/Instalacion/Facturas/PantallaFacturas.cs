@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LimpiezasPalmeralForms.Instalacion
+namespace LimpiezasPalmeralForms.Instalacion.Facturas
 {
-    public partial class ConsultarInstalación : Form
+    public partial class PantallaFacturas : Form
     {
-        public ConsultarInstalación()
+        public PantallaFacturas()
         {
             InitializeComponent();
         }

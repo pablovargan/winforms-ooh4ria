@@ -86,15 +86,20 @@ namespace LimpiezasPalmeralForms.Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ClienteCEN cliente = new ClienteCEN();
+            cliente.ObtenerCliente(textBoxNIF.Text);
+            EliminarCliente ec = new EliminarCliente((ClienteEN)cliente.ObtenerCliente(textBoxNIF.Text)) { Owner = this };
+            ec.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ClienteCEN clienteEditar= new ClienteCEN();
-            clienteEditar.Editar(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
-                textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
-                textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
+            if (clienteEditar.ObtenerCliente(textBoxNIF.Text) != null) { 
+                clienteEditar.Editar(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
+                    textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
+                    textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
+            }
             this.Close();
 
         }
@@ -111,6 +116,7 @@ namespace LimpiezasPalmeralForms.Cliente
             textBoxPais.Enabled = true;
             textBoxTelefono.Enabled = true;
             textBoxDescripcion.Enabled = true;
+            
             buttonEditar.Hide();
             buttonCancelar.Show();
             buttonAceptar.Text = "Guardar";
@@ -118,6 +124,7 @@ namespace LimpiezasPalmeralForms.Cliente
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
             activarCampos();
         }
 
