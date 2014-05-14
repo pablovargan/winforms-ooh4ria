@@ -37,6 +37,8 @@ namespace LimpiezasPalmeralForms
             nóminasToolStripMenuItem.ForeColor = Color.Black;
             backupsToolStripMenuItem.ForeColor = Color.Black;
             facturasToolStripMenuItem.ForeColor = Color.Black;
+            pedidosToolStripMenuItem1.ForeColor = Color.Black;
+
         }
 
 
@@ -164,6 +166,9 @@ namespace LimpiezasPalmeralForms
 
         private void pedidos_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            pedidosToolStripMenuItem1.ForeColor = Color.Blue;
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaPedidos)

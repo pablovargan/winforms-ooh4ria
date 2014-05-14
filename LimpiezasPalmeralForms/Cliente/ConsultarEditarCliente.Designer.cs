@@ -56,6 +56,7 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridViewInstalaciones = new System.Windows.Forms.DataGridView();
+            this.buttonGenerarInforme = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,7 +87,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 223);
+            this.groupBox1.Size = new System.Drawing.Size(592, 223);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
@@ -94,16 +95,16 @@
             // textBoxPais
             // 
             this.textBoxPais.Enabled = false;
-            this.textBoxPais.Location = new System.Drawing.Point(335, 21);
+            this.textBoxPais.Location = new System.Drawing.Point(452, 21);
             this.textBoxPais.Name = "textBoxPais";
-            this.textBoxPais.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPais.Size = new System.Drawing.Size(134, 20);
             this.textBoxPais.TabIndex = 8;
             this.textBoxPais.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(249, 24);
+            this.label7.Location = new System.Drawing.Point(366, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 23;
@@ -113,9 +114,9 @@
             // textBoxTelefono
             // 
             this.textBoxTelefono.Enabled = false;
-            this.textBoxTelefono.Location = new System.Drawing.Point(335, 49);
+            this.textBoxTelefono.Location = new System.Drawing.Point(452, 49);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTelefono.Size = new System.Drawing.Size(134, 20);
             this.textBoxTelefono.TabIndex = 9;
             // 
             // textBoxCP
@@ -123,7 +124,7 @@
             this.textBoxCP.Enabled = false;
             this.textBoxCP.Location = new System.Drawing.Point(101, 189);
             this.textBoxCP.Name = "textBoxCP";
-            this.textBoxCP.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCP.Size = new System.Drawing.Size(132, 20);
             this.textBoxCP.TabIndex = 7;
             // 
             // textBoxDireccion
@@ -131,7 +132,7 @@
             this.textBoxDireccion.Enabled = false;
             this.textBoxDireccion.Location = new System.Drawing.Point(101, 105);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDireccion.Size = new System.Drawing.Size(132, 20);
             this.textBoxDireccion.TabIndex = 4;
             // 
             // textBoxProvincia
@@ -139,13 +140,13 @@
             this.textBoxProvincia.Enabled = false;
             this.textBoxProvincia.Location = new System.Drawing.Point(101, 161);
             this.textBoxProvincia.Name = "textBoxProvincia";
-            this.textBoxProvincia.Size = new System.Drawing.Size(100, 20);
+            this.textBoxProvincia.Size = new System.Drawing.Size(132, 20);
             this.textBoxProvincia.TabIndex = 6;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(249, 52);
+            this.label10.Location = new System.Drawing.Point(366, 52);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 14;
@@ -183,7 +184,7 @@
             this.textBoxLocalidad.Enabled = false;
             this.textBoxLocalidad.Location = new System.Drawing.Point(101, 133);
             this.textBoxLocalidad.Name = "textBoxLocalidad";
-            this.textBoxLocalidad.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLocalidad.Size = new System.Drawing.Size(132, 20);
             this.textBoxLocalidad.TabIndex = 5;
             // 
             // textBoxEmail
@@ -191,17 +192,17 @@
             this.textBoxEmail.Enabled = false;
             this.textBoxEmail.Location = new System.Drawing.Point(101, 77);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(132, 20);
             this.textBoxEmail.TabIndex = 3;
             // 
             // textBoxDescripcion
             // 
             this.textBoxDescripcion.Enabled = false;
-            this.textBoxDescripcion.Location = new System.Drawing.Point(252, 96);
+            this.textBoxDescripcion.Location = new System.Drawing.Point(369, 96);
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDescripcion.Size = new System.Drawing.Size(183, 113);
+            this.textBoxDescripcion.Size = new System.Drawing.Size(217, 113);
             this.textBoxDescripcion.TabIndex = 10;
             // 
             // textBoxNombre
@@ -209,7 +210,7 @@
             this.textBoxNombre.Enabled = false;
             this.textBoxNombre.Location = new System.Drawing.Point(101, 49);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(132, 20);
             this.textBoxNombre.TabIndex = 2;
             // 
             // textBoxNIF
@@ -217,7 +218,7 @@
             this.textBoxNIF.Enabled = false;
             this.textBoxNIF.Location = new System.Drawing.Point(101, 21);
             this.textBoxNIF.Name = "textBoxNIF";
-            this.textBoxNIF.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNIF.Size = new System.Drawing.Size(132, 20);
             this.textBoxNIF.TabIndex = 1;
             // 
             // label5
@@ -241,7 +242,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(249, 79);
+            this.label3.Location = new System.Drawing.Point(366, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 2;
@@ -287,7 +288,7 @@
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(302, 19);
+            this.buttonEliminar.Location = new System.Drawing.Point(446, 19);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(140, 44);
             this.buttonEliminar.TabIndex = 14;
@@ -297,20 +298,21 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonGenerarInforme);
             this.groupBox2.Controls.Add(this.buttonCancelar);
             this.groupBox2.Controls.Add(this.buttonAceptar);
             this.groupBox2.Controls.Add(this.buttonEliminar);
             this.groupBox2.Controls.Add(this.buttonEditar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 419);
+            this.groupBox2.Location = new System.Drawing.Point(13, 410);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(451, 74);
+            this.groupBox2.Size = new System.Drawing.Size(593, 83);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(153, 19);
+            this.buttonCancelar.Location = new System.Drawing.Point(154, 19);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(140, 44);
             this.buttonCancelar.TabIndex = 13;
@@ -323,7 +325,7 @@
             this.groupBox3.Controls.Add(this.dataGridViewInstalaciones);
             this.groupBox3.Location = new System.Drawing.Point(13, 243);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(450, 161);
+            this.groupBox3.Size = new System.Drawing.Size(592, 161);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Instalaciones";
@@ -343,16 +345,26 @@
             this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
             this.dataGridViewInstalaciones.ReadOnly = true;
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(434, 135);
+            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(579, 135);
             this.dataGridViewInstalaciones.TabIndex = 11;
             this.dataGridViewInstalaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellContentClick);
+            // 
+            // buttonGenerarInforme
+            // 
+            this.buttonGenerarInforme.Location = new System.Drawing.Point(300, 19);
+            this.buttonGenerarInforme.Name = "buttonGenerarInforme";
+            this.buttonGenerarInforme.Size = new System.Drawing.Size(140, 44);
+            this.buttonGenerarInforme.TabIndex = 15;
+            this.buttonGenerarInforme.Text = "Informe";
+            this.buttonGenerarInforme.UseVisualStyleBackColor = true;
+            this.buttonGenerarInforme.Click += new System.EventHandler(this.buttonGenerarInforme_Click);
             // 
             // ConsultarEditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(474, 503);
+            this.ClientSize = new System.Drawing.Size(618, 504);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -362,6 +374,7 @@
             this.Name = "ConsultarEditarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Cliente";
+            this.Load += new System.EventHandler(this.ConsultarEditarCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -401,5 +414,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridViewInstalaciones;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button buttonGenerarInforme;
     }
 }
