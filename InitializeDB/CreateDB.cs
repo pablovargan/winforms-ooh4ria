@@ -154,7 +154,7 @@ public static void InitializeData ()
                 InstalacionEN _ins = instalacionCEN.ObtenerInstalacion("1");
                 
                 UsuarioCEN usuarioCEN = new UsuarioCEN();
-                usuarioCEN.Crear("Secretaria", "secretaria", "00000001R", "Trabajador 1", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "España", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                usuarioCEN.Crear("Secretaria", "secretaria", "00000001R", "Secretaria", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "España", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
             /*PROTECTED REGION END*/
         }
         catch (Exception ex)

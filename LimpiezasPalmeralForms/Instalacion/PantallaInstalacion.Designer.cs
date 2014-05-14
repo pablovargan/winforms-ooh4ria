@@ -33,9 +33,8 @@
             this.instalacionGrid = new System.Windows.Forms.DataGridView();
             this.textBox_buscar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
             this.button_consulta = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Instalación.SuspendLayout();
@@ -96,9 +95,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.buttonEliminar);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.buttonEditar);
             this.groupBox2.Controls.Add(this.button_consulta);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(581, 13);
@@ -109,18 +107,9 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 67);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 44);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Consultar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(6, 167);
+            this.buttonEliminar.Location = new System.Drawing.Point(7, 117);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(121, 44);
             this.buttonEliminar.TabIndex = 2;
@@ -128,18 +117,19 @@
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
-            // button3
+            // buttonEditar
             // 
-            this.button3.Location = new System.Drawing.Point(6, 117);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 44);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonEditar.Location = new System.Drawing.Point(6, 67);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(121, 44);
+            this.buttonEditar.TabIndex = 1;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // button_consulta
             // 
-            this.button_consulta.Location = new System.Drawing.Point(6, 217);
+            this.button_consulta.Location = new System.Drawing.Point(7, 167);
             this.button_consulta.Name = "button_consulta";
             this.button_consulta.Size = new System.Drawing.Size(121, 44);
             this.button_consulta.TabIndex = 3;
@@ -185,8 +175,7 @@
         private System.Windows.Forms.DataGridView instalacionGrid;
         private System.Windows.Forms.Button button_consulta;
         private System.Windows.Forms.Button buttonEliminar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
     }
 }

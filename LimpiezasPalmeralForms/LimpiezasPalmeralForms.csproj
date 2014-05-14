@@ -125,6 +125,12 @@
     <Compile Include="Instalacion\ConsultaTrabajador.Designer.cs">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\EditarInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\EditarInstalacion.Designer.cs">
+      <DependentUpon>EditarInstalacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instalacion\Facturas\PantallaFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,9 @@
     <EmbeddedResource Include="Instalacion\ConsultaTrabajador.resx">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\EditarInstalacion.resx">
+      <DependentUpon>EditarInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,11 +414,11 @@
       <Name>PalmeralGenNHibernate</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
   <ItemGroup>
     <Folder Include="Proveedor\Pedidos\" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\logo.jpg" />
   </ItemGroup>
