@@ -145,7 +145,8 @@ public static void InitializeData ()
                 instalacionCEN.Crear("1","Colegio 1","Colegio 1","Elche","Alicante","España","Calle 1","03200","666778899",405,"11111111A");
                 instalacionCEN.Crear("2", "Colegio 2", "Colegio 2", "Alicante", "Alicante", "España", "Calle 2", "03202", "666778899", 612, "11111111A");
                 instalacionCEN.Crear("3", "Colegio 3", "Colegio 3", "Elda", "Alicante", "España", "Calle 3", "03203", "666778899", 234, "11111111A");
-                
+                instalacionCEN.Crear("4", "Colegio 3", "Colegio 3", "Elda", "Alicante", "España", "Calle 3", "03203", "666778899", 234, "22222222B");
+
                 IList<string> listaTrabajadores = new List<string>();
                 listaTrabajadores.Add("11111111A");
                 InstalacionEN _ins = instalacionCEN.ObtenerInstalacion("1");
