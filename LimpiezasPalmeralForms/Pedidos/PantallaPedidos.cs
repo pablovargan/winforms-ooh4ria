@@ -38,14 +38,15 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
 
                 foreach (PedidoEN p in _pedido.ObtenerTodos(0, 0))
                 {
-                    _pedGV.Add(new PedidoGV()
-                    {
-                        Id = p.Id,
-                        Fecha = p.Fecha,
-                        Estado = p.Estado,
-                        TipoPago = p.TipoPago,
-                        Proveedor = p.Proveedor
-                    });
+
+                    //_pedGV.Add(new PedidoGV()
+                    //{
+                    //    Id = p.Id,
+                    //    Fecha = p.Fecha,
+                    //    Estado = p.Estado,
+                    //    TipoPago = p.TipoPago,
+                    //    Proveedor = p.Proveedor
+                    //});
                 }
                 if (_pedGV.Count == 0)
                     EnableDisableBT(this, false);

@@ -45,6 +45,10 @@
             this.productosGrid = new System.Windows.Forms.DataGridView();
             this.pedidoGB = new System.Windows.Forms.GroupBox();
             this.pedidoGrid = new System.Windows.Forms.DataGridView();
+            this.tipoPagoLabel = new System.Windows.Forms.Label();
+            this.contadoRB = new System.Windows.Forms.RadioButton();
+            this.pagareRB = new System.Windows.Forms.RadioButton();
+            this.transferenciaRB = new System.Windows.Forms.RadioButton();
             this.accionesGB.SuspendLayout();
             this.proveedorGB.SuspendLayout();
             this.busquedaBox.SuspendLayout();
@@ -69,7 +73,7 @@
             this.accionesGB.Controls.Add(this.eliminarButton);
             this.accionesGB.Controls.Add(this.crearButton);
             this.accionesGB.Controls.Add(this.cancelarButton);
-            this.accionesGB.Location = new System.Drawing.Point(626, 491);
+            this.accionesGB.Location = new System.Drawing.Point(626, 553);
             this.accionesGB.Margin = new System.Windows.Forms.Padding(4);
             this.accionesGB.Name = "accionesGB";
             this.accionesGB.Padding = new System.Windows.Forms.Padding(4);
@@ -87,6 +91,7 @@
             this.eliminarButton.TabIndex = 2;
             this.eliminarButton.Text = "Eliminar Línea";
             this.eliminarButton.UseVisualStyleBackColor = true;
+            this.eliminarButton.Click += new System.EventHandler(this.EliminarLinea_Click);
             // 
             // crearButton
             // 
@@ -97,7 +102,7 @@
             this.crearButton.TabIndex = 0;
             this.crearButton.Text = "Aceptar";
             this.crearButton.UseVisualStyleBackColor = true;
-            this.crearButton.Click += new System.EventHandler(this.Alta_Click);
+            this.crearButton.Click += new System.EventHandler(this.Crear_Click);
             // 
             // fechaBox
             // 
@@ -173,14 +178,14 @@
             this.busquedaBox.Enabled = false;
             this.busquedaBox.Location = new System.Drawing.Point(16, 137);
             this.busquedaBox.Name = "busquedaBox";
-            this.busquedaBox.Size = new System.Drawing.Size(599, 445);
+            this.busquedaBox.Size = new System.Drawing.Size(599, 508);
             this.busquedaBox.TabIndex = 5;
             this.busquedaBox.TabStop = false;
             this.busquedaBox.Text = "Buscar";
             // 
             // agregarButton
             // 
-            this.agregarButton.Location = new System.Drawing.Point(7, 374);
+            this.agregarButton.Location = new System.Drawing.Point(7, 439);
             this.agregarButton.Name = "agregarButton";
             this.agregarButton.Size = new System.Drawing.Size(187, 54);
             this.agregarButton.TabIndex = 6;
@@ -231,17 +236,21 @@
             this.productosGrid.ReadOnly = true;
             this.productosGrid.RowTemplate.Height = 24;
             this.productosGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productosGrid.Size = new System.Drawing.Size(587, 291);
+            this.productosGrid.Size = new System.Drawing.Size(587, 354);
             this.productosGrid.TabIndex = 0;
             // 
             // pedidoGB
             // 
+            this.pedidoGB.Controls.Add(this.transferenciaRB);
+            this.pedidoGB.Controls.Add(this.pagareRB);
+            this.pedidoGB.Controls.Add(this.contadoRB);
+            this.pedidoGB.Controls.Add(this.tipoPagoLabel);
             this.pedidoGB.Controls.Add(this.pedidoGrid);
             this.pedidoGB.Enabled = false;
             this.pedidoGB.Location = new System.Drawing.Point(626, 11);
             this.pedidoGB.Margin = new System.Windows.Forms.Padding(4);
             this.pedidoGB.Name = "pedidoGB";
-            this.pedidoGB.Size = new System.Drawing.Size(599, 473);
+            this.pedidoGB.Size = new System.Drawing.Size(599, 534);
             this.pedidoGB.TabIndex = 7;
             this.pedidoGB.TabStop = false;
             this.pedidoGB.Text = "Pedido";
@@ -260,13 +269,56 @@
             this.pedidoGrid.Name = "pedidoGrid";
             this.pedidoGrid.RowTemplate.Height = 24;
             this.pedidoGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pedidoGrid.Size = new System.Drawing.Size(583, 446);
+            this.pedidoGrid.Size = new System.Drawing.Size(583, 466);
             this.pedidoGrid.TabIndex = 7;
+            // 
+            // tipoPagoLabel
+            // 
+            this.tipoPagoLabel.AutoSize = true;
+            this.tipoPagoLabel.Location = new System.Drawing.Point(6, 503);
+            this.tipoPagoLabel.Name = "tipoPagoLabel";
+            this.tipoPagoLabel.Size = new System.Drawing.Size(96, 17);
+            this.tipoPagoLabel.TabIndex = 8;
+            this.tipoPagoLabel.Text = "Tipo de pago:";
+            // 
+            // contadoRB
+            // 
+            this.contadoRB.AutoSize = true;
+            this.contadoRB.Checked = true;
+            this.contadoRB.Location = new System.Drawing.Point(120, 503);
+            this.contadoRB.Name = "contadoRB";
+            this.contadoRB.Size = new System.Drawing.Size(82, 21);
+            this.contadoRB.TabIndex = 9;
+            this.contadoRB.TabStop = true;
+            this.contadoRB.Text = "Contado";
+            this.contadoRB.UseVisualStyleBackColor = true;
+            // 
+            // pagareRB
+            // 
+            this.pagareRB.AutoSize = true;
+            this.pagareRB.Location = new System.Drawing.Point(283, 503);
+            this.pagareRB.Name = "pagareRB";
+            this.pagareRB.Size = new System.Drawing.Size(75, 21);
+            this.pagareRB.TabIndex = 10;
+            this.pagareRB.TabStop = true;
+            this.pagareRB.Text = "Pagaré";
+            this.pagareRB.UseVisualStyleBackColor = true;
+            // 
+            // transferenciaRB
+            // 
+            this.transferenciaRB.AutoSize = true;
+            this.transferenciaRB.Location = new System.Drawing.Point(445, 503);
+            this.transferenciaRB.Name = "transferenciaRB";
+            this.transferenciaRB.Size = new System.Drawing.Size(117, 21);
+            this.transferenciaRB.TabIndex = 11;
+            this.transferenciaRB.TabStop = true;
+            this.transferenciaRB.Text = "Transferencia";
+            this.transferenciaRB.UseVisualStyleBackColor = true;
             // 
             // CrearPedido
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1238, 595);
+            this.ClientSize = new System.Drawing.Size(1238, 657);
             this.ControlBox = false;
             this.Controls.Add(this.pedidoGB);
             this.Controls.Add(this.busquedaBox);
@@ -283,6 +335,7 @@
             this.busquedaBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productosGrid)).EndInit();
             this.pedidoGB.ResumeLayout(false);
+            this.pedidoGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoGrid)).EndInit();
             this.ResumeLayout(false);
 
@@ -307,5 +360,9 @@
         private System.Windows.Forms.Button agregarButton;
         private System.Windows.Forms.GroupBox pedidoGB;
         private System.Windows.Forms.DataGridView pedidoGrid;
+        private System.Windows.Forms.RadioButton contadoRB;
+        private System.Windows.Forms.Label tipoPagoLabel;
+        private System.Windows.Forms.RadioButton transferenciaRB;
+        private System.Windows.Forms.RadioButton pagareRB;
     }
 }

@@ -36,8 +36,8 @@ namespace LimpiezasPalmeralForms
                 try
                 {
                     //Application.Run(new Login());
-                    Application.Run(new CrearPedido());
-                    //Application.Run(new PantallaPrincipal());
+                    //Application.Run(new CrearPedido());
+                    Application.Run(new PantallaPrincipal());
                 }
                 catch (Exception ex)
                 {

@@ -10,23 +10,29 @@ using System.Windows.Forms;
 // Proveedores
 using PalmeralGenNHibernate.EN.Default_;
 using PalmeralGenNHibernate.CEN.Default_;
+using PalmeralGenNHibernate.Enumerated.Default_;
 
 namespace LimpiezasPalmeralForms.Pedidos
 {
     public partial class CrearPedido : Form
     {
         private ProveedorCEN _proveedorCEN;
+        private ProveedorEN _proveedor;
         private List<ProveedorEN> _lproveedores;
         
         private ProductoCEN _productoCEN;
         private List<ProductoGV> _lproductos;
+        private List<PedidoGV> _lproductosPedido;
 
-        private List<LineaPedidoEN> _lpedidos;
         public CrearPedido()
         {
             InitializeComponent();
             _proveedorCEN = new ProveedorCEN();
             _lproveedores = new List<ProveedorEN>();
+
+            contadoRB.Tag = TipoPagoEnum.Contado;
+            pagareRB.Tag = TipoPagoEnum.Pagare;
+            transferenciaRB.Tag = TipoPagoEnum.Transferencia;
 
             this.Load += CrearPedido_Load;
             filtroCB.SelectedIndex = 0;
@@ -37,6 +43,7 @@ namespace LimpiezasPalmeralForms.Pedidos
         {
             _productoCEN = new ProductoCEN();
             _lproductos = new List<ProductoGV>();
+            _lproductosPedido = new List<PedidoGV>();
 
             if (proveedorCB != null)
             {
@@ -104,6 +111,9 @@ namespace LimpiezasPalmeralForms.Pedidos
 
             if (productosGrid.Rows.Count == 0)
                 agregarButton.Enabled = false;
+            else
+                agregarButton.Enabled = true;
+            
         }
 
         private void GridProductos_All()
@@ -119,9 +129,41 @@ namespace LimpiezasPalmeralForms.Pedidos
             }
         }
 
-        private void Alta_Click(object sender, EventArgs e)
+        private void Crear_Click(object sender, EventArgs e)
         {
+            // Creo el pedido
+            //PedidoCEN pedido = new PedidoCEN();
+            
+            //var lpedidos = pedido.ObtenerTodos(0, 0);
+            //var enumSeleccionado = (TipoPagoEnum) pedidoGB.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked).Tag;
 
+            //List<LineaPedidoEN> lineaPedidos = new List<LineaPedidoEN>();
+            //foreach (PedidoGV p in _lproductosPedido)
+            //{
+            //    ProductoEN prod = _productoCEN.ObtenerProducto(p.Id);
+            //    lineaPedidos.Add(new LineaPedidoEN(Convert.ToInt32(p.Id), Convert.ToInt32(p.Cantidad), prod, null));
+            //}
+
+            //string id = pedido.Crear((lpedidos.Count+1).ToString(), DateTime.Today, 
+            //    PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum.Enviado,
+            //    enumSeleccionado,
+            //    lineaPedidos,
+            //    _proveedor.Id);
+
+            //PedidoEN pedidoActual = pedido.ObtenerPedido(id);
+            ////if(_proveedor.Pedido == null)
+            //  //  _proveedor.Pedido = new List<PedidoEN>();
+            ////_proveedor.Pedido.Add(pedidoActual);
+            //List<string> pedidosP = new List<string>();
+            //pedidosP.Add(pedidoActual.Id);
+            //ProveedorEN paaa = new ProveedorEN();
+            //ProveedorCEN pe = new ProveedorCEN();
+            //pe.Relationer_pedido(_proveedor.Id, pedidosP);
+
+            //foreach (LineaPedidoEN l in pedidoActual.Lineas)
+            //{
+            //    l.Pedido = pedidoActual;
+            //}
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -132,6 +174,8 @@ namespace LimpiezasPalmeralForms.Pedidos
         private void Proveedor_Selected(object sender, EventArgs e)
         {
             var prov = _lproveedores.First(p => p.Id == proveedorCB.Text);
+            _proveedor = prov;
+
             datosLabel.Text = String.Format("{0} - {1}{2}{3}{4}{5} {6}{7}{8} - {9}{10}",
                 prov.Nombre, prov.Email, Environment.NewLine,
                 prov.Direccion, Environment.NewLine,
@@ -154,8 +198,57 @@ namespace LimpiezasPalmeralForms.Pedidos
 
         private void AgregarProducto_Click(object sender, EventArgs e)
         {
-            var columnaSeleccionada = productosGrid.SelectedRows[0].Cells["Id"].Value.ToString();
-            //_lpedidos.Add()
+            var idSeleccionado = productosGrid.SelectedRows[0].Cells["Id"].Value.ToString();
+            bool existe = false;
+            for (int i = 0; i < _lproductosPedido.Count && !existe; i++)
+            {
+                if (_lproductosPedido[i].Id.Equals(idSeleccionado))
+                {
+                    _lproductosPedido[i].Cantidad += 1;
+                    existe = true;
+                }
+            }
+
+            if (!existe)
+            {
+                var productoSeleccionado = _lproductos.First(p => p.Id == idSeleccionado);
+                _lproductosPedido.Add(new PedidoGV()
+                {
+                    Id = productoSeleccionado.Id,
+                    Nombre = productoSeleccionado.Nombre,
+                    Cantidad = 1
+                });
+            }
+
+            BindingSource source = new BindingSource();
+            source.DataSource = _lproductosPedido;
+            pedidoGrid.DataSource = source;
+
+            source.ResetBindings(false);
+            
+            if(_lproductosPedido.Count > 0)
+                eliminarButton.Enabled = true;
+        }
+
+        private void EliminarLinea_Click(object sender, EventArgs e)
+        {
+            var idSeleccionado = pedidoGrid.SelectedRows[0].Cells["Id"].Value.ToString();
+            System.Diagnostics.Debug.WriteLine(idSeleccionado);
+            for (int i = 0; i < _lproductosPedido.Count; i++)
+            {
+                if (_lproductosPedido[i].Id.Equals(idSeleccionado))
+                {
+                    _lproductosPedido.RemoveAt(i);
+                    if (_lproductosPedido.Count == 0)
+                        eliminarButton.Enabled = false;
+                }
+            }
+
+            BindingSource source = new BindingSource();
+            source.DataSource = _lproductosPedido;
+            pedidoGrid.DataSource = source;
+
+            source.ResetBindings(false);
         }
     }
 
@@ -164,5 +257,12 @@ namespace LimpiezasPalmeralForms.Pedidos
         public string Id { get; set; }
         public string Nombre { get; set; }
         public int Stock { get; set; }
+    }
+
+    public class PedidoGV
+    {
+        public string Id { get; set; }
+        public string Nombre { get; set; }
+        public int Cantidad { get; set; }
     }
 }
