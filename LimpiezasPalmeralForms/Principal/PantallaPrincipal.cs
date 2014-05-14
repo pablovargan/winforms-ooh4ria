@@ -174,32 +174,10 @@ namespace LimpiezasPalmeralForms
             prov.WindowState = FormWindowState.Maximized;
         }
 
-        private void nóminasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            colorearMenu();
-            trabajadorToolStripMenuItem.ForeColor = Color.Blue;
-            nóminasToolStripMenuItem1.ForeColor = Color.Blue;
-
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is PantallaNominas)
-                {
-                    form.Activate();
-                    form.WindowState = FormWindowState.Maximized;
-                    return;
-                }
-            }
-
-            PantallaNominas nomi = new PantallaNominas() { MdiParent = this };
-            nomi.Show();
-            nomi.WindowState = FormWindowState.Maximized;
-        }
-
         private void backupsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             colorearMenu();
-            trabajadorToolStripMenuItem.ForeColor = Color.Blue;
-            nóminasToolStripMenuItem1.ForeColor = Color.Blue;
+            backupsToolStripMenuItem.ForeColor = Color.Blue;
 
             foreach (Form form in Application.OpenForms)
             {
@@ -215,6 +193,32 @@ namespace LimpiezasPalmeralForms
             nomi.Show();
             nomi.WindowState = FormWindowState.Maximized;
 
+        }
+
+        private void PantallaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nóminasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorearMenu();
+            nóminasToolStripMenuItem.ForeColor = Color.Blue;
+
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is PantallaNominas)
+                {
+                    form.Activate();
+                    form.WindowState = FormWindowState.Maximized;
+                    return;
+                }
+            }
+
+            PantallaNominas nomi = new PantallaNominas() { MdiParent = this };
+            nomi.Show();
+            nomi.WindowState = FormWindowState.Maximized;            
         }   
     }
 }
