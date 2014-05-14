@@ -138,6 +138,18 @@ namespace LimpiezasPalmeralForms.Cliente
             PantallaInstalacion pi = new PantallaInstalacion();
             dataGridViewInstalaciones.SelectedRows[0].Cells[0].Value.ToString();
         }
+
+        private void ConsultarEditarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonGenerarInforme_Click(object sender, EventArgs e)
+        {
+            ClienteCEN cliente = new ClienteCEN();
+            GenerarInforme gi = new GenerarInforme(cliente.ObtenerCliente(textBoxNIF.Text)) { Owner = this };
+            gi.Show();
+        }
     }
 
     public class InstalacionClienteGV
