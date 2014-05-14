@@ -44,11 +44,11 @@
             this.filtroCB = new System.Windows.Forms.ComboBox();
             this.productosGrid = new System.Windows.Forms.DataGridView();
             this.pedidoGB = new System.Windows.Forms.GroupBox();
-            this.pedidoGrid = new System.Windows.Forms.DataGridView();
-            this.tipoPagoLabel = new System.Windows.Forms.Label();
-            this.contadoRB = new System.Windows.Forms.RadioButton();
-            this.pagareRB = new System.Windows.Forms.RadioButton();
             this.transferenciaRB = new System.Windows.Forms.RadioButton();
+            this.pagareRB = new System.Windows.Forms.RadioButton();
+            this.contadoRB = new System.Windows.Forms.RadioButton();
+            this.tipoPagoLabel = new System.Windows.Forms.Label();
+            this.pedidoGrid = new System.Windows.Forms.DataGridView();
             this.accionesGB.SuspendLayout();
             this.proveedorGB.SuspendLayout();
             this.busquedaBox.SuspendLayout();
@@ -84,6 +84,7 @@
             // 
             // eliminarButton
             // 
+            this.eliminarButton.Enabled = false;
             this.eliminarButton.Location = new System.Drawing.Point(404, 23);
             this.eliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.eliminarButton.Name = "eliminarButton";
@@ -95,12 +96,13 @@
             // 
             // crearButton
             // 
+            this.crearButton.Enabled = false;
             this.crearButton.Location = new System.Drawing.Point(8, 23);
             this.crearButton.Margin = new System.Windows.Forms.Padding(4);
             this.crearButton.Name = "crearButton";
             this.crearButton.Size = new System.Drawing.Size(187, 54);
             this.crearButton.TabIndex = 0;
-            this.crearButton.Text = "Aceptar";
+            this.crearButton.Text = "Crear ";
             this.crearButton.UseVisualStyleBackColor = true;
             this.crearButton.Click += new System.EventHandler(this.Crear_Click);
             // 
@@ -255,6 +257,49 @@
             this.pedidoGB.TabStop = false;
             this.pedidoGB.Text = "Pedido";
             // 
+            // transferenciaRB
+            // 
+            this.transferenciaRB.AutoSize = true;
+            this.transferenciaRB.Location = new System.Drawing.Point(445, 503);
+            this.transferenciaRB.Name = "transferenciaRB";
+            this.transferenciaRB.Size = new System.Drawing.Size(117, 21);
+            this.transferenciaRB.TabIndex = 11;
+            this.transferenciaRB.TabStop = true;
+            this.transferenciaRB.Text = "Transferencia";
+            this.transferenciaRB.UseVisualStyleBackColor = true;
+            // 
+            // pagareRB
+            // 
+            this.pagareRB.AutoSize = true;
+            this.pagareRB.Location = new System.Drawing.Point(283, 503);
+            this.pagareRB.Name = "pagareRB";
+            this.pagareRB.Size = new System.Drawing.Size(75, 21);
+            this.pagareRB.TabIndex = 10;
+            this.pagareRB.TabStop = true;
+            this.pagareRB.Text = "Pagaré";
+            this.pagareRB.UseVisualStyleBackColor = true;
+            // 
+            // contadoRB
+            // 
+            this.contadoRB.AutoSize = true;
+            this.contadoRB.Checked = true;
+            this.contadoRB.Location = new System.Drawing.Point(120, 503);
+            this.contadoRB.Name = "contadoRB";
+            this.contadoRB.Size = new System.Drawing.Size(82, 21);
+            this.contadoRB.TabIndex = 9;
+            this.contadoRB.TabStop = true;
+            this.contadoRB.Text = "Contado";
+            this.contadoRB.UseVisualStyleBackColor = true;
+            // 
+            // tipoPagoLabel
+            // 
+            this.tipoPagoLabel.AutoSize = true;
+            this.tipoPagoLabel.Location = new System.Drawing.Point(6, 503);
+            this.tipoPagoLabel.Name = "tipoPagoLabel";
+            this.tipoPagoLabel.Size = new System.Drawing.Size(96, 17);
+            this.tipoPagoLabel.TabIndex = 8;
+            this.tipoPagoLabel.Text = "Tipo de pago:";
+            // 
             // pedidoGrid
             // 
             this.pedidoGrid.AllowUserToResizeColumns = false;
@@ -271,49 +316,6 @@
             this.pedidoGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pedidoGrid.Size = new System.Drawing.Size(583, 466);
             this.pedidoGrid.TabIndex = 7;
-            // 
-            // tipoPagoLabel
-            // 
-            this.tipoPagoLabel.AutoSize = true;
-            this.tipoPagoLabel.Location = new System.Drawing.Point(6, 503);
-            this.tipoPagoLabel.Name = "tipoPagoLabel";
-            this.tipoPagoLabel.Size = new System.Drawing.Size(96, 17);
-            this.tipoPagoLabel.TabIndex = 8;
-            this.tipoPagoLabel.Text = "Tipo de pago:";
-            // 
-            // contadoRB
-            // 
-            this.contadoRB.AutoSize = true;
-            this.contadoRB.Checked = true;
-            this.contadoRB.Location = new System.Drawing.Point(120, 503);
-            this.contadoRB.Name = "contadoRB";
-            this.contadoRB.Size = new System.Drawing.Size(82, 21);
-            this.contadoRB.TabIndex = 9;
-            this.contadoRB.TabStop = true;
-            this.contadoRB.Text = "Contado";
-            this.contadoRB.UseVisualStyleBackColor = true;
-            // 
-            // pagareRB
-            // 
-            this.pagareRB.AutoSize = true;
-            this.pagareRB.Location = new System.Drawing.Point(283, 503);
-            this.pagareRB.Name = "pagareRB";
-            this.pagareRB.Size = new System.Drawing.Size(75, 21);
-            this.pagareRB.TabIndex = 10;
-            this.pagareRB.TabStop = true;
-            this.pagareRB.Text = "Pagaré";
-            this.pagareRB.UseVisualStyleBackColor = true;
-            // 
-            // transferenciaRB
-            // 
-            this.transferenciaRB.AutoSize = true;
-            this.transferenciaRB.Location = new System.Drawing.Point(445, 503);
-            this.transferenciaRB.Name = "transferenciaRB";
-            this.transferenciaRB.Size = new System.Drawing.Size(117, 21);
-            this.transferenciaRB.TabIndex = 11;
-            this.transferenciaRB.TabStop = true;
-            this.transferenciaRB.Text = "Transferencia";
-            this.transferenciaRB.UseVisualStyleBackColor = true;
             // 
             // CrearPedido
             // 

@@ -131,39 +131,26 @@ namespace LimpiezasPalmeralForms.Pedidos
 
         private void Crear_Click(object sender, EventArgs e)
         {
-            // Creo el pedido
-            //PedidoCEN pedido = new PedidoCEN();
-            
-            //var lpedidos = pedido.ObtenerTodos(0, 0);
-            //var enumSeleccionado = (TipoPagoEnum) pedidoGB.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked).Tag;
-
-            //List<LineaPedidoEN> lineaPedidos = new List<LineaPedidoEN>();
-            //foreach (PedidoGV p in _lproductosPedido)
-            //{
-            //    ProductoEN prod = _productoCEN.ObtenerProducto(p.Id);
-            //    lineaPedidos.Add(new LineaPedidoEN(Convert.ToInt32(p.Id), Convert.ToInt32(p.Cantidad), prod, null));
-            //}
-
-            //string id = pedido.Crear((lpedidos.Count+1).ToString(), DateTime.Today, 
-            //    PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum.Enviado,
-            //    enumSeleccionado,
-            //    lineaPedidos,
-            //    _proveedor.Id);
-
-            //PedidoEN pedidoActual = pedido.ObtenerPedido(id);
-            ////if(_proveedor.Pedido == null)
-            //  //  _proveedor.Pedido = new List<PedidoEN>();
-            ////_proveedor.Pedido.Add(pedidoActual);
-            //List<string> pedidosP = new List<string>();
-            //pedidosP.Add(pedidoActual.Id);
-            //ProveedorEN paaa = new ProveedorEN();
-            //ProveedorCEN pe = new ProveedorCEN();
-            //pe.Relationer_pedido(_proveedor.Id, pedidosP);
-
-            //foreach (LineaPedidoEN l in pedidoActual.Lineas)
-            //{
-            //    l.Pedido = pedidoActual;
-            //}
+            PedidoCEN pedidoCEN = new PedidoCEN();
+            LineaPedidoCEN lineaPedidoCEN = new LineaPedidoCEN();
+            // Radiobox seleccionado con el tipo de enum
+            var enumSeleccionado = (TipoPagoEnum)pedidoGB.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked).Tag;
+            // Obtengo el numero de pedido a crear 
+            int idPedido = pedidoCEN.ObtenerTodos(0, 0).Count + 1;
+            // Linea de Pedido a insertar
+            IList<LineaPedidoEN> lineaPedido = new List<LineaPedidoEN>();
+            // Cojo la cantidad y el id de los productos del grid del pedido
+            foreach (PedidoGV p in _lproductosPedido)
+            {
+                // Añado a la lista
+                lineaPedido.Add(new LineaPedidoEN(Convert.ToInt32(p.Id), Convert.ToInt32(p.Cantidad), _productoCEN.get_IProductoCAD().ReadOIDDefault(p.Id), null));    
+            }
+            // Instancio y Creo el pedido
+            var pFinal = new PedidoEN(idPedido.ToString(), DateTime.Today, EstadoPedidoEnum.Enviado, enumSeleccionado, lineaPedido, _proveedorCEN.get_IProveedorCAD().ReadOIDDefault(_proveedor.Id));
+            pedidoCEN.Crear(pFinal.Id, pFinal.Fecha, pFinal.Estado, pFinal.TipoPago, pFinal.Lineas, pFinal.Proveedor.Id);
+            // Re-asigno el proveedor a las lineas
+            // TODO
+            this.Close();
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -225,9 +212,12 @@ namespace LimpiezasPalmeralForms.Pedidos
             pedidoGrid.DataSource = source;
 
             source.ResetBindings(false);
-            
-            if(_lproductosPedido.Count > 0)
+
+            if (_lproductosPedido.Count > 0)
+            {
                 eliminarButton.Enabled = true;
+                crearButton.Enabled = true;
+            }
         }
 
         private void EliminarLinea_Click(object sender, EventArgs e)
@@ -240,7 +230,10 @@ namespace LimpiezasPalmeralForms.Pedidos
                 {
                     _lproductosPedido.RemoveAt(i);
                     if (_lproductosPedido.Count == 0)
+                    {
                         eliminarButton.Enabled = false;
+                        crearButton.Enabled = false;
+                    }
                 }
             }
 
@@ -249,6 +242,7 @@ namespace LimpiezasPalmeralForms.Pedidos
             pedidoGrid.DataSource = source;
 
             source.ResetBindings(false);
+
         }
     }
 
