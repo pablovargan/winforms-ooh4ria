@@ -25,6 +25,7 @@ namespace LimpiezasPalmeralForms
             this.Load += new EventHandler(GridInstalacion_Load);
             textBox_buscar.KeyUp += new KeyEventHandler(buscarInstalaciones);
             textBox_buscar.Click += new EventHandler(GridInstalacion_Load);
+            buttonEliminar.Click += new EventHandler(GridInstalacion_Load);
         }
 
         private void GridInstalacion_Load(object sender, EventArgs e)
@@ -245,6 +246,19 @@ namespace LimpiezasPalmeralForms
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            InstalacionCEN instalacion = new InstalacionCEN();
+            InstalacionGV instgv = (InstalacionGV)instalacionGrid.CurrentRow.DataBoundItem;
+
+            DialogResult dr = MessageBox.Show("¿Desea eliminar la instalación ID " + instgv.ID + ": " + instgv.Nombre + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(dr == DialogResult.Yes) 
+            {
+                instalacion.Eliminar(instgv.ID);
+            }
         }
     }
 

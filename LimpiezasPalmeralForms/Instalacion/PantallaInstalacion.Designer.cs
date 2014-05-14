@@ -33,11 +33,11 @@
             this.instalacionGrid = new System.Windows.Forms.DataGridView();
             this.textBox_buscar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button_consulta = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Instalación.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instalacionGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -76,6 +76,7 @@
             this.instalacionGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.instalacionGrid.Location = new System.Drawing.Point(8, 47);
             this.instalacionGrid.Name = "instalacionGrid";
+            this.instalacionGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.instalacionGrid.Size = new System.Drawing.Size(548, 300);
             this.instalacionGrid.TabIndex = 2;
             this.instalacionGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridInstalacion_Load);
@@ -96,7 +97,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.buttonEliminar);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button_consulta);
             this.groupBox2.Controls.Add(this.button1);
@@ -108,14 +109,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
-            // button4
+            // button2
             // 
-            this.button4.Location = new System.Drawing.Point(6, 167);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 44);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(6, 67);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 44);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Consultar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.Location = new System.Drawing.Point(6, 167);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(121, 44);
+            this.buttonEliminar.TabIndex = 2;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // button3
             // 
@@ -146,15 +157,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.AltaInstalacion_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 67);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 44);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Consultar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // PantallaInstalacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,7 +184,7 @@
         private System.Windows.Forms.TextBox textBox_buscar;
         private System.Windows.Forms.DataGridView instalacionGrid;
         private System.Windows.Forms.Button button_consulta;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;

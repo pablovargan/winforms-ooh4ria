@@ -119,17 +119,17 @@
     <Compile Include="Instalacion\AltaInstalacion.Designer.cs">
       <DependentUpon>AltaInstalacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Instalacion\ConsultarInstalación.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Instalacion\ConsultarInstalación.Designer.cs">
-      <DependentUpon>ConsultarInstalación.cs</DependentUpon>
-    </Compile>
     <Compile Include="Instalacion\ConsultaTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Instalacion\ConsultaTrabajador.Designer.cs">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\PantallaFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\PantallaFacturas.Designer.cs">
+      <DependentUpon>PantallaFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Instalacion\PantallaInstalacion.cs">
       <SubType>Form</SubType>
@@ -289,9 +289,6 @@
     <EmbeddedResource Include="Instalacion\AltaInstalacion.resx">
       <DependentUpon>AltaInstalacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Instalacion\ConsultarInstalación.resx">
-      <DependentUpon>ConsultarInstalación.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\ConsultaTrabajador.resx">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +358,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Trabajador\Nóminas\CrearNomina.resx">
       <DependentUpon>CrearNomina.cs</DependentUpon>
@@ -409,6 +407,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Proveedor\Pedidos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
