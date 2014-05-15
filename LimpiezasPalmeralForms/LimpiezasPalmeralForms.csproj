@@ -301,6 +301,9 @@
     <EmbeddedResource Include="Instalacion\EditarInstalacion.resx">
       <DependentUpon>EditarInstalacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\Facturas\PantallaFacturas.resx">
+      <DependentUpon>PantallaFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </EmbeddedResource>
