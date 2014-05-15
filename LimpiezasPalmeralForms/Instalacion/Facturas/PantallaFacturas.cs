@@ -32,31 +32,43 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
 
         public void LoadFiltro()
         {
-            IList<string> busqueda = new List<string>();
-            busqueda.Add("Todas las facturas");
-            busqueda.Add("Facturas por instalación");
-            busqueda.Add("Facturas por año");
-            busqueda.Add("Facturas por mes/año");
-            comboBox1.DataSource = busqueda;
-            LoadSeleccion();
+            IList<string> filtro = new List<string>();
+            filtro.Add("Todas las facturas");
+            filtro.Add("Facturas por instalación");
+            filtro.Add("Facturas por año");
+            comboBox1.DataSource = filtro;
+            LoadSeleccion("Todas las facturas");
         }
 
-        public void LoadSeleccion()
+        public void LoadSeleccion(string filtro)
         {
+            IList<string> select = new List<string>();
 
-        }
-
-        private Boolean ProvinciaRepetida(IList<string> lista, string prov)
-        {
-            foreach (string dato in lista)
+            if (filtro == "Todas las facturas")
             {
-                if (dato == prov)
+                select.Add("Todas las facturas");
+            }
+
+            else if (filtro == "Facturas por instalación")
+            {
+                IList<InstalacionEN> instalaciones = new List<InstalacionEN>();
+                instalaciones = new InstalacionCEN().ObtenerTodas(0, 0);
+
+                foreach (InstalacionEN instalacion in instalaciones)
                 {
-                    return true;
+                    select.Add(instalacion.Nombre);
                 }
             }
 
-            return false;
+            else if (filtro == "Facturas por año")
+            {
+                for (int i = 2014; i >= 1990; i--)
+                {
+                    select.Add(i.ToString());
+                }
+            }
+
+            comboBox2.DataSource = select;
         }
 
         private void facturaGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -82,7 +94,7 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadInstalacion(comboBox1.Text);
+            LoadSeleccion(comboBox1.Text);
         }
 
     }
