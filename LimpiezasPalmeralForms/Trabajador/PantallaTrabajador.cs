@@ -57,7 +57,11 @@ namespace LimpiezasPalmeralForms
             IList<TrabajadorEN> lista;
             lista=trabajador.ObtenerTodos(0, 0);
             Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+            ComprobarLista(lista);
+        }
 
+        private void ComprobarLista(IList<TrabajadorEN> lista)
+        {
             if (lista.Count == 0)
             {
                 Consultar.Enabled = false;
@@ -70,7 +74,6 @@ namespace LimpiezasPalmeralForms
                 Editar.Enabled = true;
                 Eliminar.Enabled = true;
             }
-
         }
 
         private void Buscar_Trabajadores(object sender, EventArgs e)
@@ -83,6 +86,7 @@ namespace LimpiezasPalmeralForms
                 BusquedaTipo.Visible = false;
                 lista = trabajador.ObtenerTodos(0, 0);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                ComprobarLista(lista);
             }
             if (Premisa.Text.Equals("Provincia"))
             {
@@ -90,6 +94,7 @@ namespace LimpiezasPalmeralForms
                 BusquedaTipo.Visible = false;
                 lista=trabajador.BuscarPorProvincia(Buscador.Text);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                ComprobarLista(lista);
             }
             else if (Premisa.Text.Equals("Localidad"))
             {
@@ -97,13 +102,15 @@ namespace LimpiezasPalmeralForms
                 BusquedaTipo.Visible = false;
                 lista = trabajador.BuscarPorLocalidad(Buscador.Text);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                ComprobarLista(lista);
             }
             else if (Premisa.Text.Equals("Nombre"))
             {
                 Buscador.Visible = true;
                 BusquedaTipo.Visible = false;
                 lista = trabajador.BuscarPorNombre(Buscador.Text);
-                Mostrar.DataSource = Convertir_TrabajadorGW(lista);   
+                Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                ComprobarLista(lista);
             }
             else if (Premisa.Text.Equals("Tipo"))
             {
@@ -121,16 +128,19 @@ namespace LimpiezasPalmeralForms
                     }
                     
                     Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                    ComprobarLista(lista);
                 }
                 else if (BusquedaTipo.SelectedIndex == 1)
                 {
                     lista = trabajador.BuscarPorTipo(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
                     Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                    ComprobarLista(lista);
                 }
                 else
                 {
                     lista = trabajador.ObtenerTodos(0, 0);
                     Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                    ComprobarLista(lista);
                 }
             }
         }

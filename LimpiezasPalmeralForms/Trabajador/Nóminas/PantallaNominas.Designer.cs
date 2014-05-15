@@ -62,7 +62,8 @@
             this.Premisa.FormattingEnabled = true;
             this.Premisa.Items.AddRange(new object[] {
             "Trabajador",
-            "Fecha"});
+            "Fecha",
+            "Parte Fija"});
             this.Premisa.Location = new System.Drawing.Point(7, 17);
             this.Premisa.Name = "Premisa";
             this.Premisa.Size = new System.Drawing.Size(121, 21);
