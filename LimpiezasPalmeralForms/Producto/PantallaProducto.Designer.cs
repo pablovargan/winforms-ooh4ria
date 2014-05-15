@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxProductosAcciones = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonIncrementarStock = new System.Windows.Forms.Button();
             this.buttonReducirStock = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
@@ -39,6 +39,7 @@
             this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.dataGridViewProducto = new System.Windows.Forms.DataGridView();
+            this.buttonGenerarInforme = new System.Windows.Forms.Button();
             this.groupBoxProductosAcciones.SuspendLayout();
             this.groupBoxProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducto)).BeginInit();
@@ -48,7 +49,8 @@
             // 
             this.groupBoxProductosAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxProductosAcciones.Controls.Add(this.button1);
+            this.groupBoxProductosAcciones.Controls.Add(this.buttonGenerarInforme);
+            this.groupBoxProductosAcciones.Controls.Add(this.buttonIncrementarStock);
             this.groupBoxProductosAcciones.Controls.Add(this.buttonReducirStock);
             this.groupBoxProductosAcciones.Controls.Add(this.buttonEliminar);
             this.groupBoxProductosAcciones.Controls.Add(this.buttonEditar);
@@ -61,15 +63,15 @@
             this.groupBoxProductosAcciones.TabStop = false;
             this.groupBoxProductosAcciones.Text = "Acciones";
             // 
-            // button1
+            // buttonIncrementarStock
             // 
-            this.button1.Location = new System.Drawing.Point(6, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 44);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Incrementar Stock";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonIncrementarStock.Location = new System.Drawing.Point(6, 217);
+            this.buttonIncrementarStock.Name = "buttonIncrementarStock";
+            this.buttonIncrementarStock.Size = new System.Drawing.Size(121, 44);
+            this.buttonIncrementarStock.TabIndex = 8;
+            this.buttonIncrementarStock.Text = "Incrementar Stock";
+            this.buttonIncrementarStock.UseVisualStyleBackColor = true;
+            this.buttonIncrementarStock.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonReducirStock
             // 
@@ -178,6 +180,15 @@
             this.dataGridViewProducto.Size = new System.Drawing.Size(563, 303);
             this.dataGridViewProducto.TabIndex = 0;
             // 
+            // buttonGenerarInforme
+            // 
+            this.buttonGenerarInforme.Location = new System.Drawing.Point(6, 317);
+            this.buttonGenerarInforme.Name = "buttonGenerarInforme";
+            this.buttonGenerarInforme.Size = new System.Drawing.Size(121, 44);
+            this.buttonGenerarInforme.TabIndex = 9;
+            this.buttonGenerarInforme.Text = "Generar Informe";
+            this.buttonGenerarInforme.UseVisualStyleBackColor = true;
+            // 
             // PantallaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,7 +219,8 @@
         private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.DataGridView dataGridViewProducto;
         private System.Windows.Forms.Button buttonReducirStock;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonIncrementarStock;
+        private System.Windows.Forms.Button buttonGenerarInforme;
 
     }
 }

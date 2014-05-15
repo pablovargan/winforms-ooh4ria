@@ -154,7 +154,7 @@ namespace LimpiezasPalmeralForms
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            GenerarInforme gi = new GenerarInforme();
+            GenerarInforme gi = new GenerarInforme(dataGridViewCliente.SelectedRows[0].Cells[0].Value.ToString());
             gi.Owner = this;
             gi.Deactivate += new EventHandler(Grid_Load);
             gi.Show();

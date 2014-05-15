@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LimpiezasPalmeralForms.Trabajador;
+using LimpiezasPalmeralForms.Trabajador.Nóminas;
 
 namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 {
@@ -120,34 +122,53 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
         {
             NominaCEN nomina = new NominaCEN();
             TrabajadorCEN t = new TrabajadorCEN();
-            TrabajadorEN trabajador = t.ObtenerTrabajador(Trabajadores.SelectedItem.ToString());
+            TrabajadorEN trabajador = new TrabajadorEN();
+            t.ObtenerTrabajador(Trabajadores.SelectedItem.ToString());
 
             try
             {
-                string mes = BuscarMes(Mes_Box.Text);
-                float fijo = ComprobarFloat(Fija_Box.Text);
-                float variable = ComprobarFloat(Variable_Box.Text);
-                float horas = ComprobarFloat(Horas_Box.Text);
-                float total = ComprobarFloat(Total_Box.Text);
-                int anyo, int_mes;
-                Int32.TryParse(Anyo_Box.Text, out anyo);
-                Int32.TryParse(mes, out int_mes);
-                DateTime fecha = new DateTime(anyo, int_mes, 1, 0, 0, 0);
-
-                if (nomina.ObtenerNomina(trabajador.Nif + "_" + mes + "_" + Anyo_Box.Text) == null)
+                float variable=0;
+                if (trabajador.Tipo.ToString().Equals("Cooperativista"))
                 {
-                    nomina.Crear(trabajador.Nif + "_" + mes + "_" + Anyo_Box.Text, fijo, variable,
-                        horas, total, fecha, trabajador.Nif);
-                    this.Close();
+                    if (Variable_Box.Text.Length != 0)
+                    {
+                        variable = ComprobarFloat(Variable_Box.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show(Constantes._ERRORCAMPOSVACIOS);
+                    }
+                }
+                if (Mes_Box.Text.Length != 0 && Fija_Box.Text.Length != 0 && Horas_Box.Text.Length != 0 
+                    && Total_Box.Text.Length!=0 && Anyo_Box.Text.Length!=0)
+                {
+                    string mes = BuscarMes(Mes_Box.Text);
+                    float fijo = ComprobarFloat(Fija_Box.Text);
+                    float horas = ComprobarFloat(Horas_Box.Text);
+                    float total = ComprobarFloat(Total_Box.Text);
+                    int anyo, int_mes;
+                    Int32.TryParse(Anyo_Box.Text, out anyo);
+                    Int32.TryParse(mes, out int_mes);
+                    DateTime fecha = new DateTime(anyo, int_mes, 1, 0, 0, 0);
+                    if (nomina.ObtenerNomina(trabajador.Nif + "_" + mes + "_" + Anyo_Box.Text) == null)
+                    {
+                        nomina.Crear(trabajador.Nif + "_" + mes + "_" + Anyo_Box.Text, fijo, variable,
+                            horas, total, fecha, trabajador.Nif);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(Constantes._ERRORNOMINAEXISTE);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("La nomina ya existe");
-                }
+                    MessageBox.Show(Constantes._ERRORCAMPOSVACIOS);
+                }    
             }
             catch (Exception exp)
             {
-                MessageBox.Show("La nomina no se pudo crear" + exp.Message);
+                MessageBox.Show(Constantes._ERRORNOMINA + exp.Message);
             }
         }
 
@@ -157,7 +178,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             bool convertido= float.TryParse(entrada, out solucion);
 
             if(convertido==false){
-                MessageBox.Show("La nomina no se ha podido crear");
+                MessageBox.Show(Constantes._ERRORNOMINA);
             }
 
             return solucion;

@@ -179,19 +179,13 @@ namespace LimpiezasPalmeralForms
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            if (Mostrar.SelectedRows == null)
-            {
-                MessageBox.Show("Seleccion el trabajador que desee modificar");
-            }
-            else
-            {
-                TrabajadorCEN trabajador = new TrabajadorCEN();
-                TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
-                ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, true);
-                consulta.Owner = this;
-                consulta.Deactivate += new EventHandler(Grid_Load);
-                consulta.Show();
-            }
+            
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+            ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, true);
+            consulta.Owner = this;
+            consulta.Deactivate += new EventHandler(Grid_Load);
+            consulta.Show();
         }
     }
 

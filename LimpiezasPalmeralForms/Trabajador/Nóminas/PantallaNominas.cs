@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
+using LimpiezasPalmeralForms.Trabajador;
+using LimpiezasPalmeralForms.Trabajador.Nóminas;
 
 namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 {

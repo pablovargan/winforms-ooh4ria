@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using LimpiezasPalmeralForms.Proveedor.Pedidos;
 using LimpiezasPalmeralForms.Trabajador.Nóminas;
 using LimpiezasPalmeralForms.Backup;
+using LimpiezasPalmeralForms.Instalacion.Facturas;
 
 namespace LimpiezasPalmeralForms
 {
@@ -33,6 +34,11 @@ namespace LimpiezasPalmeralForms
             productoToolStripMenuItem.ForeColor = Color.Black;
             proveedorToolStripMenuItem.ForeColor = Color.Black;
             trabajadorToolStripMenuItem.ForeColor = Color.Black;
+            nóminasToolStripMenuItem.ForeColor = Color.Black;
+            backupsToolStripMenuItem.ForeColor = Color.Black;
+            facturasToolStripMenuItem.ForeColor = Color.Black;
+            pedidosToolStripMenuItem1.ForeColor = Color.Black;
+
         }
 
 
@@ -160,6 +166,9 @@ namespace LimpiezasPalmeralForms
 
         private void pedidos_Click(object sender, EventArgs e)
         {
+            colorearMenu();
+            pedidosToolStripMenuItem1.ForeColor = Color.Blue;
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form is PantallaPedidos)
@@ -174,11 +183,37 @@ namespace LimpiezasPalmeralForms
             prov.WindowState = FormWindowState.Maximized;
         }
 
-        private void nóminasToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void backupsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             colorearMenu();
-            trabajadorToolStripMenuItem.ForeColor = Color.Blue;
-            nóminasToolStripMenuItem1.ForeColor = Color.Blue;
+            backupsToolStripMenuItem.ForeColor = Color.Blue;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is PantallaBackup)
+                {
+                    form.Activate();
+                    form.WindowState = FormWindowState.Maximized;
+                    return;
+                }
+            }
+
+            PantallaBackup back = new PantallaBackup() { MdiParent = this };
+            back.Show();
+            back.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void PantallaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nóminasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorearMenu();
+            nóminasToolStripMenuItem.ForeColor = Color.Blue;
+
 
             foreach (Form form in Application.OpenForms)
             {
@@ -192,18 +227,19 @@ namespace LimpiezasPalmeralForms
 
             PantallaNominas nomi = new PantallaNominas() { MdiParent = this };
             nomi.Show();
-            nomi.WindowState = FormWindowState.Maximized;
+            nomi.WindowState = FormWindowState.Maximized;            
         }
 
-        private void backupsToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void facturasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             colorearMenu();
-            trabajadorToolStripMenuItem.ForeColor = Color.Blue;
-            nóminasToolStripMenuItem1.ForeColor = Color.Blue;
+            facturasToolStripMenuItem.ForeColor = Color.Blue;
+
 
             foreach (Form form in Application.OpenForms)
             {
-                if (form is PantallaBackup)
+                if (form is PantallaFacturas)
                 {
                     form.Activate();
                     form.WindowState = FormWindowState.Maximized;
@@ -211,10 +247,9 @@ namespace LimpiezasPalmeralForms
                 }
             }
 
-            PantallaBackup nomi = new PantallaBackup() { MdiParent = this };
-            nomi.Show();
-            nomi.WindowState = FormWindowState.Maximized;
-
+            PantallaFacturas fac = new PantallaFacturas() { MdiParent = this };
+            fac.Show();
+            fac.WindowState = FormWindowState.Maximized; 
         }   
     }
 }

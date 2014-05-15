@@ -87,7 +87,7 @@ namespace LimpiezasPalmeralForms.Trabajador
             }
             else
             {
-                MessageBox.Show("Existen campos vacios");
+                MessageBox.Show(Constantes._ERRORCAMPOSVACIOS);
             }
         }
 

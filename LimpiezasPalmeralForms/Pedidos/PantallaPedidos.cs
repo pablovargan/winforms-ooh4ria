@@ -33,9 +33,9 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
             {
                 pedidoGrid.DataSource = null;
                 _pedGV.Clear();
-                //var lped = _pedido.ObtenerTodos(0, 0);
-                //System.Diagnostics.Debug.WriteLine(lped.Count);
 
+                var todosPedidos = _pedido.ObtenerTodos(0, 0);
+                //foreach (PedidoEN p in todosPedidos)
                 foreach (PedidoEN p in _pedido.ObtenerTodos(0, 0))
                 {
                     _pedGV.Add(new PedidoGV()
@@ -44,7 +44,7 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
                         Fecha = p.Fecha,
                         Estado = p.Estado,
                         TipoPago = p.TipoPago,
-                        Proveedor = p.Proveedor
+                        Proveedor = p.Proveedor.Id
                     });
                 }
                 if (_pedGV.Count == 0)
@@ -81,6 +81,6 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
         public DateTime? Fecha { get; set; }
         public PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum Estado { get; set; }
         public PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum TipoPago { get; set; }
-        public ProveedorEN Proveedor { get; set; }
+        public string Proveedor { get; set; }
     }
 }

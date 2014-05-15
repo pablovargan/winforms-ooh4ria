@@ -125,6 +125,18 @@
     <Compile Include="Instalacion\ConsultaTrabajador.Designer.cs">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\EditarInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\EditarInstalacion.Designer.cs">
+      <DependentUpon>EditarInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\PantallaFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\PantallaFacturas.Designer.cs">
+      <DependentUpon>PantallaFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instalacion\PantallaInstalacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,11 +145,12 @@
     </Compile>
     <Compile Include="Pedidos\CrearPedido.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Pedidos\CrearPedido.Designer.cs">
       <DependentUpon>CrearPedido.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Pedidos\PedidoGV.cs" />
     <Compile Include="Principal\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,11 +298,15 @@
     <EmbeddedResource Include="Instalacion\ConsultaTrabajador.resx">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\EditarInstalacion.resx">
+      <DependentUpon>EditarInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\CrearPedido.resx">
       <DependentUpon>CrearPedido.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -350,6 +367,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Trabajador\Nóminas\CrearNomina.resx">
       <DependentUpon>CrearNomina.cs</DependentUpon>
@@ -398,6 +416,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Proveedor\Pedidos\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

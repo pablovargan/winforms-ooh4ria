@@ -135,6 +135,8 @@ public static void InitializeData ()
                 lineas.Add (new LineaPedidoEN (1, 5, productoCEN.get_IProductoCAD ().ReadOIDDefault ("1"), null));
                 lineas.Add (new LineaPedidoEN (2, 4, productoCEN.get_IProductoCAD ().ReadOIDDefault ("2"), null));
 
+
+
                 IList<PedidoEN> pedidos = new List<PedidoEN>();
                 pedidos.Add (new PedidoEN ("1", DateTime.Today, PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum.Enviado, PalmeralGenNHibernate.Enumerated.Default_.TipoPagoEnum.Contado, lineas, proveedorCEN.get_IProveedorCAD ().ReadOIDDefault ("1")));
 
@@ -145,13 +147,14 @@ public static void InitializeData ()
                 instalacionCEN.Crear("1","Colegio 1","Colegio 1","Elche","Alicante","España","Calle 1","03200","666778899",405,"11111111A");
                 instalacionCEN.Crear("2", "Colegio 2", "Colegio 2", "Alicante", "Alicante", "España", "Calle 2", "03202", "666778899", 612, "11111111A");
                 instalacionCEN.Crear("3", "Colegio 3", "Colegio 3", "Elda", "Alicante", "España", "Calle 3", "03203", "666778899", 234, "11111111A");
-                
+                instalacionCEN.Crear("4", "Colegio 3", "Colegio 3", "Elda", "Alicante", "España", "Calle 3", "03203", "666778899", 234, "22222222B");
+
                 IList<string> listaTrabajadores = new List<string>();
                 listaTrabajadores.Add("11111111A");
                 InstalacionEN _ins = instalacionCEN.ObtenerInstalacion("1");
                 
                 UsuarioCEN usuarioCEN = new UsuarioCEN();
-                usuarioCEN.Crear("Secretaria", "secretaria", "00000001R", "Trabajador 1", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "España", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                usuarioCEN.Crear("Secretaria", "secretaria", "00000001R", "Secretaria", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "España", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
             /*PROTECTED REGION END*/
         }
         catch (Exception ex)
