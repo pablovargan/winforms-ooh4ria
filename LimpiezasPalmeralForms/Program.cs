@@ -35,11 +35,9 @@ namespace LimpiezasPalmeralForms
                 Application.SetCompatibleTextRenderingDefault(false);
                 try
                 {
-<<<<<<< HEAD
                     // Application.Run(new Login());
-=======
                     //Application.Run(new Login());
->>>>>>> 47edba0b71ac5009157d76ed0854fc570fd6c5fc
+
                     Application.Run(new PantallaPrincipal());
                 }
                 catch (Exception ex)
