@@ -53,24 +53,24 @@ namespace LimpiezasPalmeralForms
                         }
                         catch (Exception exp)
                         {
-                            MessageBox.Show("El trabajador no se pudo crear");
+                            MessageBox.Show(Constantes._ERRORTRABAJADOR);
                             throw exp;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("DNI Incorrecto");
+                        MessageBox.Show(Constantes._ERRORNIFFORMATO);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("DNI Incorrecto");
+                    MessageBox.Show(Constantes._ERRORNIFFORMATO);
                 }
             }
             else
             {
                 //alert hay campos sin rellenar
-                MessageBox.Show("Existen campos vacios");
+                MessageBox.Show(Constantes._ERRORCAMPOSVACIOS);
             }
         
         }

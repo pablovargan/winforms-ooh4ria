@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
 using LimpiezasPalmeralForms.Trabajador;
+using LimpiezasPalmeralForms.Servicios;
 
 namespace LimpiezasPalmeralForms
 {
@@ -179,19 +180,22 @@ namespace LimpiezasPalmeralForms
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            if (Mostrar.SelectedRows == null)
-            {
-                MessageBox.Show("Seleccion el trabajador que desee modificar");
-            }
-            else
-            {
-                TrabajadorCEN trabajador = new TrabajadorCEN();
-                TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
-                ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, true);
-                consulta.Owner = this;
-                consulta.Deactivate += new EventHandler(Grid_Load);
-                consulta.Show();
-            }
+            
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+            ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, true);
+            consulta.Owner = this;
+            consulta.Deactivate += new EventHandler(Grid_Load);
+            consulta.Show();
+        }
+
+        private void GenerarInforme_Click(object sender, EventArgs e)
+        {
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorGV t = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+            TrabajadorEN generartrabajador = trabajador.ObtenerTrabajador(t.Nif);
+            GeneradorPDF pdf = new GeneradorPDF();
+            pdf.pdfTrabajador(generartrabajador);
         }
     }
 

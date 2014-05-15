@@ -87,7 +87,7 @@ namespace LimpiezasPalmeralForms.Trabajador
             }
             else
             {
-                MessageBox.Show("Existen campos vacios");
+                MessageBox.Show(Constantes._ERRORCAMPOSVACIOS);
             }
         }
 
@@ -112,13 +112,39 @@ namespace LimpiezasPalmeralForms.Trabajador
             if (t.Nominas.Count != 0)
             {
                 lista = t.Nominas;
-                nominas.DataSource = lista;
+                nominas.DataSource = Convertir_NominaGW(lista);
             } 
+        }
+
+        private List<NominaGV> Convertir_NominaGW(IList<NominaEN> lista)
+        {
+            List<NominaGV> l = new List<NominaGV>();
+
+            foreach (NominaEN t in lista)
+            {
+                l.Add(new NominaGV()
+                {
+                    ParteFija = t.ParteFija,
+                    ParteVariable = t.ParteVariable,
+                    fecha = t.Fecha.ToString(),
+                    Horas = t.Horas,
+                    Total = t.Total
+                });
+            }
+            return l;
         }
 
         private void Editar_Click(object sender, EventArgs e)
         {
             activarCampos();
         }     
+    }
+    public class NominaGV
+    {
+        public float ParteFija { set; get; }
+        public float ParteVariable { set; get; }
+        public float Horas { set; get; }
+        public string fecha { set; get; }
+        public float Total { set; get; }
     }
 }
