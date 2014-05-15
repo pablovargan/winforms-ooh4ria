@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
 using LimpiezasPalmeralForms.Trabajador;
+using LimpiezasPalmeralForms.Servicios;
 
 namespace LimpiezasPalmeralForms
 {
@@ -186,6 +187,15 @@ namespace LimpiezasPalmeralForms
             consulta.Owner = this;
             consulta.Deactivate += new EventHandler(Grid_Load);
             consulta.Show();
+        }
+
+        private void GenerarInforme_Click(object sender, EventArgs e)
+        {
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorGV t = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+            TrabajadorEN generartrabajador = trabajador.ObtenerTrabajador(t.Nif);
+            GeneradorPDF pdf = new GeneradorPDF();
+            pdf.pdfTrabajador(generartrabajador);
         }
     }
 

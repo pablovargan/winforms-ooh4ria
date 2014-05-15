@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BusquedaTipo = new System.Windows.Forms.ComboBox();
             this.Premisa = new System.Windows.Forms.ComboBox();
             this.Mostrar = new System.Windows.Forms.DataGridView();
             this.Buscador = new System.Windows.Forms.TextBox();
@@ -37,7 +38,7 @@
             this.Consultar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Crear = new System.Windows.Forms.Button();
-            this.BusquedaTipo = new System.Windows.Forms.ComboBox();
+            this.GenerarInforme = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -58,6 +59,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajadores";
+            // 
+            // BusquedaTipo
+            // 
+            this.BusquedaTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BusquedaTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BusquedaTipo.FormattingEnabled = true;
+            this.BusquedaTipo.Items.AddRange(new object[] {
+            "Cooperativista",
+            "Empleado",
+            "Todos"});
+            this.BusquedaTipo.Location = new System.Drawing.Point(134, 17);
+            this.BusquedaTipo.Name = "BusquedaTipo";
+            this.BusquedaTipo.Size = new System.Drawing.Size(419, 21);
+            this.BusquedaTipo.TabIndex = 4;
+            this.BusquedaTipo.Visible = false;
             // 
             // Premisa
             // 
@@ -102,6 +119,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.GenerarInforme);
             this.groupBox2.Controls.Add(this.Editar);
             this.groupBox2.Controls.Add(this.Consultar);
             this.groupBox2.Controls.Add(this.Eliminar);
@@ -159,21 +177,17 @@
             this.Crear.UseVisualStyleBackColor = true;
             this.Crear.Click += new System.EventHandler(this.Crear_Click);
             // 
-            // BusquedaTipo
+            // GenerarInforme
             // 
-            this.BusquedaTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.GenerarInforme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BusquedaTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BusquedaTipo.FormattingEnabled = true;
-            this.BusquedaTipo.Items.AddRange(new object[] {
-            "Cooperativista",
-            "Empleado",
-            "Todos"});
-            this.BusquedaTipo.Location = new System.Drawing.Point(134, 17);
-            this.BusquedaTipo.Name = "BusquedaTipo";
-            this.BusquedaTipo.Size = new System.Drawing.Size(419, 21);
-            this.BusquedaTipo.TabIndex = 4;
-            this.BusquedaTipo.Visible = false;
+            this.GenerarInforme.Location = new System.Drawing.Point(6, 217);
+            this.GenerarInforme.Name = "GenerarInforme";
+            this.GenerarInforme.Size = new System.Drawing.Size(121, 44);
+            this.GenerarInforme.TabIndex = 4;
+            this.GenerarInforme.Text = "Generar Informe";
+            this.GenerarInforme.UseVisualStyleBackColor = true;
+            this.GenerarInforme.Click += new System.EventHandler(this.GenerarInforme_Click);
             // 
             // PantallaTrabajador
             // 
@@ -205,5 +219,6 @@
         private System.Windows.Forms.ComboBox Premisa;
         private System.Windows.Forms.Button Editar;
         private System.Windows.Forms.ComboBox BusquedaTipo;
+        private System.Windows.Forms.Button GenerarInforme;
     }
 }
