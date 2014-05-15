@@ -30,22 +30,28 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                 IList<NominaEN> lista;
                 lista = nomina.ObtenerTodas(0, 0);
                 Mostrar.DataSource = Convertir_NominaGW(lista);
-                if (lista.Count == 0)
-                {
-                    Consultar.Enabled = false;
-                    Editar.Enabled = false;
-                }
-                else
-                {
-                    Consultar.Enabled = true;
-                    Editar.Enabled = true;
-                }
+                ComprobarLista(lista);
             }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
             }  
         }
+
+        private void ComprobarLista(IList<NominaEN> lista)
+        {
+            if (lista.Count == 0)
+            {
+                Consultar.Enabled = false;
+                Editar.Enabled = false;
+            }
+            else
+            {
+                Consultar.Enabled = true;
+                Editar.Enabled = true;
+            }
+        }
+
         private List<NominaGV> Convertir_NominaGW(IList<NominaEN> lista)
         {
             List<NominaGV> l = new List<NominaGV>();
@@ -64,6 +70,45 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                 });
             }
             return l;
+        }
+
+        private void BuscarNominas(object sender, EventArgs e)
+        {
+            NominaCEN nomina = new NominaCEN();
+            IList<NominaEN> lista = new List<NominaEN>();
+
+            if (Premisa.Text.Equals("Trabajador"))
+            {
+
+            }
+            else if (Premisa.Text.Equals("Fecha"))
+            {
+
+            }
+            else if (Premisa.Text.Equals("Parte Fija"))
+            {
+                try
+                {
+                    float solucion;
+                    bool convertido = float.TryParse(Buscador.Text, out solucion);
+
+                    if (convertido == false)
+                    {
+                        MessageBox.Show(Constantes._ERRORNOMINA);
+                    }
+                    else
+                    {
+                        lista = nomina.BuscarPorParteFija(solucion);
+                        Mostrar.DataSource = Convertir_NominaGW(lista);
+                        ComprobarLista(lista);
+                    }
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+
+            }
         }
 
         private void Crear_Click(object sender, EventArgs e)
