@@ -94,7 +94,7 @@ namespace LimpiezasPalmeralForms
             /*else
             {
                 MessageBox.Show("Ya existe una instalación con ese ID");
-            }*/
-        }
+            }
+        }*/
     }
 }
