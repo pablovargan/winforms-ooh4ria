@@ -14,8 +14,11 @@ namespace LimpiezasPalmeralForms
 {
     public partial class EditarInstalacion : Form
     {
+        // string id_gen;
+
         public EditarInstalacion(string id, bool editar)
         {
+            // id_gen = id;
             InitializeComponent();
             MostrarCampos(id);
         }
@@ -49,24 +52,49 @@ namespace LimpiezasPalmeralForms
 
         }
 
+        /*
+        private Boolean existeID(string id)
+        {
+            InstalacionCEN _inst = new InstalacionCEN();
+            IList<InstalacionEN> inst = _inst.ObtenerTodas(0, 0);
+
+            foreach (InstalacionEN i in inst)
+            {
+                if (id == i.Id)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }*/
+
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if(nombre_box.Text.Length != 0 && desc_box.Text.Length != 0 && dir_box.Text.Length != 0 && loc_box.Text.Length != 0 && prov_box.Text.Length != 0
-                && pais_box.Text.Length != 0 && cp_box.Text.Length != 0 && tlfno_box.Text.Length != 0 && m2_box.Text.Length != 0)
-            {
-                InstalacionCEN editada = new InstalacionCEN();
-                ClienteCEN cliente = new ClienteCEN();
-                float m2_b = (float)Convert.ToDouble(m2_box.Text); // Cast.
-                editada.Editar(id_box.Text, nombre_box.Text, desc_box.Text, loc_box.Text, prov_box.Text, pais_box.Text, dir_box.Text, cp_box.Text, 
-                    tlfno_box.Text, m2_b);
+            /*if (id_gen.Equals(id_box.Text) || !existeID(id_box.Text))
+            {*/
+                if (nombre_box.Text.Length != 0 && desc_box.Text.Length != 0 && dir_box.Text.Length != 0 && loc_box.Text.Length != 0 && prov_box.Text.Length != 0
+                    && pais_box.Text.Length != 0 && cp_box.Text.Length != 0 && tlfno_box.Text.Length != 0 && m2_box.Text.Length != 0)
+                {
+                    InstalacionCEN editada = new InstalacionCEN();
+                    ClienteCEN cliente = new ClienteCEN();
+                    float m2_b = (float)Convert.ToDouble(m2_box.Text); // Cast.
+                    editada.Editar(id_box.Text, nombre_box.Text, desc_box.Text, loc_box.Text, prov_box.Text, pais_box.Text, dir_box.Text, cp_box.Text,
+                        tlfno_box.Text, m2_b);
 
-                this.Close();
+                    this.Close();
+                }
+
+                else
+                {
+                    MessageBox.Show("Existen campos vacíos");
+                }
             }
 
-            else
+            /*else
             {
-                MessageBox.Show("Existen campos vacíos");
-            }
+                MessageBox.Show("Ya existe una instalación con ese ID");
+            }*/
         }
     }
 }
