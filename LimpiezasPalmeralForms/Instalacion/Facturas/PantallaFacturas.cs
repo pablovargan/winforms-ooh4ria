@@ -22,7 +22,7 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
             InitializeComponent();
             _factura = new FacturaCEN();
             _factGV = new List<FacturaGV>();
-            this.Load += PantallaFacturas_Load;
+            this.Load += facturaGrid_Load;
         }
 
         private void PantallaFacturas_Load(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
 
                 foreach (InstalacionEN instalacion in instalaciones)
                 {
-                    select.Add(instalacion.Nombre);
+                    select.Add(instalacion.Id);
                 }
             }
 
@@ -82,19 +82,76 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
             {
                 facturaGrid.DataSource = null;
                 _factGV.Clear();
-                //IList<FacturaEN> facturas = _factura.
+                
+                // Todas las facturas.
+                if(comboBox1.Text == "Todas las facturas") {
+                    IList<FacturaEN> facturas = _factura.ObtenterTodas(0, 0);
+
+                    foreach (FacturaEN f in facturas)
+                    {
+                        _factGV.Add(new FacturaGV()
+                        {
+                            id = f.Id,
+                            horas = f.Horas,
+                            precio_hora = f.PrecioHora,
+                            fecha = f.Fecha,
+                            total = f.Total,
+                            instalacion = f.Instalacion.Id
+                        });
+                    }
+                }
+                
+                // Facturas por instalación.
+                else if (comboBox1.Text == "Facturas por instalación")
+                {
+                    IList<FacturaEN> facturas = _factura.ObtenerFacturasInstalacion(comboBox2.Text);
+
+                    foreach (FacturaEN f in facturas)
+                    {
+                        _factGV.Add(new FacturaGV()
+                        {
+                            id = f.Id,
+                            horas = f.Horas,
+                            precio_hora = f.PrecioHora,
+                            fecha = f.Fecha,
+                            total = f.Total,
+                            instalacion = f.Instalacion.Id
+                        });
+                    }
+                }
+
+                // Facturas por año.
+                else if (comboBox1.Text == "Facturas por año")
+                {
+                    IList<FacturaEN> facturas = _factura.ObtenerPorAnyo(comboBox2.Text);
+
+                    foreach (FacturaEN f in facturas)
+                    {
+                        _factGV.Add(new FacturaGV()
+                        {
+                            id = f.Id,
+                            horas = f.Horas,
+                            precio_hora = f.PrecioHora,
+                            fecha = f.Fecha,
+                            total = f.Total,
+                            instalacion = f.Instalacion.Id
+                        });
+                    }
+                }
             }
 
+            facturaGrid.DataSource = _factGV;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            facturaGrid_Load(sender,e);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadSeleccion(comboBox1.Text);
+            facturaGrid_Load(sender, e);
         }
 
     }
