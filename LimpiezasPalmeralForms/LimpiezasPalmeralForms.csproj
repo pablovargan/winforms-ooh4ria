@@ -131,6 +131,12 @@
     <Compile Include="Instalacion\EditarInstalacion.Designer.cs">
       <DependentUpon>EditarInstalacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\Facturas\CrearFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\CrearFactura.Designer.cs">
+      <DependentUpon>CrearFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instalacion\Facturas\PantallaFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\EditarInstalacion.resx">
       <DependentUpon>EditarInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\Facturas\CrearFactura.resx">
+      <DependentUpon>CrearFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\Facturas\PantallaFacturas.resx">
       <DependentUpon>PantallaFacturas.cs</DependentUpon>

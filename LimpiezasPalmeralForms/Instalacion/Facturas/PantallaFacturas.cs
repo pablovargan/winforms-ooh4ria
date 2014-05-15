@@ -154,6 +154,14 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
             facturaGrid_Load(sender, e);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CrearFactura crear = new CrearFactura() { Owner = this };
+            crear.Owner = this;
+            crear.Deactivate += new EventHandler(facturaGrid_Load);
+            crear.Show();
+        }
+
     }
 
     public class FacturaGV
