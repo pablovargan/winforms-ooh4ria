@@ -27,7 +27,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                 NominaCEN nomina = new NominaCEN();
                 IList<NominaEN> lista;
                 lista = nomina.ObtenerTodas(0, 0);
-                Mostrar.DataSource = lista;
+                Mostrar.DataSource = Convertir_NominaGW(lista);
                 if (lista.Count == 0)
                 {
                     Consultar.Enabled = false;
@@ -44,6 +44,25 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                 MessageBox.Show(exc.Message);
             }  
         }
+        private List<NominaGV> Convertir_NominaGW(IList<NominaEN> lista)
+        {
+            List<NominaGV> l = new List<NominaGV>();
+
+            foreach (NominaEN t in lista)
+            {
+                l.Add(new NominaGV()
+                {
+                    Id = t.Id,
+                    ParteFija = t.ParteFija,
+                    ParteVariable = t.ParteVariable,
+                    fecha = t.Fecha.ToString(),
+                    Horas = t.Horas,
+                    NombreTrabajador = t.Trabajador.Nombre,
+                    Total = t.Total
+                });
+            }
+            return l;
+        }
 
         private void Crear_Click(object sender, EventArgs e)
         {
@@ -52,5 +71,15 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             pantalla_nomina.Deactivate += new EventHandler(Grid_Load);
             pantalla_nomina.Show();
         }
+    }
+    public class NominaGV
+    {
+        public string Id { set; get; }
+        public float ParteFija { set; get; }
+        public float ParteVariable { set; get; }
+        public float Horas { set; get; }
+        public string fecha { set; get; }
+        public float Total { set; get; }
+        public string NombreTrabajador { set; get; }
     }
 }

@@ -147,7 +147,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             }
             catch (Exception exp)
             {
-                MessageBox.Show("La nomina no se pudo crear");
+                MessageBox.Show("La nomina no se pudo crear" + exp.Message);
             }
         }
 
