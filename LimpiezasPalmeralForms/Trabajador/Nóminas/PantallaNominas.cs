@@ -118,6 +118,28 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             pantalla_nomina.Deactivate += new EventHandler(Grid_Load);
             pantalla_nomina.Show();
         }
+
+        private void Consultar_Click(object sender, EventArgs e)
+        {
+            NominaCEN nomina = new NominaCEN();
+            NominaGV n = (NominaGV)Mostrar.CurrentRow.DataBoundItem;
+
+            ConsultarEditarNominas pantalla_nomina = new ConsultarEditarNominas(n.Id, false);
+            pantalla_nomina.Owner = this;
+            pantalla_nomina.Deactivate += new EventHandler(Grid_Load);
+            pantalla_nomina.Show();
+        }
+
+        private void Editar_Click(object sender, EventArgs e)
+        {
+            NominaCEN nomina = new NominaCEN();
+            NominaGV n = (NominaGV)Mostrar.CurrentRow.DataBoundItem;
+
+            ConsultarEditarNominas pantalla_nomina = new ConsultarEditarNominas(n.Id, true);
+            pantalla_nomina.Owner = this;
+            pantalla_nomina.Deactivate += new EventHandler(Grid_Load);
+            pantalla_nomina.Show();
+        }
     }
     public class NominaGV
     {

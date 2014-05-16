@@ -115,6 +115,7 @@
             this.Editar.TabIndex = 3;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Consultar
             // 
@@ -126,6 +127,7 @@
             this.Consultar.TabIndex = 2;
             this.Consultar.Text = "Consultar";
             this.Consultar.UseVisualStyleBackColor = true;
+            this.Consultar.Click += new System.EventHandler(this.Consultar_Click);
             // 
             // Crear
             // 
