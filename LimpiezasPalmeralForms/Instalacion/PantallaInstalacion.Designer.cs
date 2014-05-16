@@ -33,6 +33,7 @@
             this.instalacionGrid = new System.Windows.Forms.DataGridView();
             this.textBox_buscar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button_inst = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.button_consulta = new System.Windows.Forms.Button();
@@ -96,6 +97,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button_inst);
             this.groupBox2.Controls.Add(this.buttonEliminar);
             this.groupBox2.Controls.Add(this.buttonEditar);
             this.groupBox2.Controls.Add(this.button_consulta);
@@ -108,9 +110,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
+            // button_inst
+            // 
+            this.button_inst.Location = new System.Drawing.Point(7, 67);
+            this.button_inst.Name = "button_inst";
+            this.button_inst.Size = new System.Drawing.Size(121, 44);
+            this.button_inst.TabIndex = 4;
+            this.button_inst.Text = "Consultar instalación";
+            this.button_inst.UseVisualStyleBackColor = true;
+            this.button_inst.Click += new System.EventHandler(this.button_inst_Click);
+            // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(7, 117);
+            this.buttonEliminar.Location = new System.Drawing.Point(6, 167);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(121, 44);
             this.buttonEliminar.TabIndex = 2;
@@ -120,7 +132,7 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(6, 67);
+            this.buttonEditar.Location = new System.Drawing.Point(5, 117);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(121, 44);
             this.buttonEditar.TabIndex = 1;
@@ -130,7 +142,7 @@
             // 
             // button_consulta
             // 
-            this.button_consulta.Location = new System.Drawing.Point(7, 167);
+            this.button_consulta.Location = new System.Drawing.Point(6, 217);
             this.button_consulta.Name = "button_consulta";
             this.button_consulta.Size = new System.Drawing.Size(121, 44);
             this.button_consulta.TabIndex = 3;
@@ -157,7 +169,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Instalación);
             this.Name = "PantallaInstalacion";
-            this.Text = "PantallaInstalacion";
+            this.Text = "Instalaciones";
             this.Load += new System.EventHandler(this.PantallaInstalacion_Load);
             this.Instalación.ResumeLayout(false);
             this.Instalación.PerformLayout();
@@ -178,5 +190,6 @@
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button_inst;
     }
 }

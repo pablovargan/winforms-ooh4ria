@@ -283,6 +283,23 @@ namespace LimpiezasPalmeralForms
         {
 
         }
+
+        private void button_inst_Click(object sender, EventArgs e)
+        {
+            if (instalacionGrid.SelectedRows == null)
+            {
+                MessageBox.Show("Seleccione la instalación que desee modificar");
+            }
+
+            else
+            {
+                InstalacionCEN instalacion = new InstalacionCEN();
+                InstalacionGV inst = (InstalacionGV)instalacionGrid.CurrentRow.DataBoundItem;
+                ConsultarInstalacion consultar = new ConsultarInstalacion(inst.ID);
+                consultar.Owner = this;
+                consultar.Show();
+            }
+        }
     }
 
     public class InstalacionGV {

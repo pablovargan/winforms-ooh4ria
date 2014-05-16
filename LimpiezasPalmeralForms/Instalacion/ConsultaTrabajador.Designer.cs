@@ -138,7 +138,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultaTrabajador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consultar Trabajadores";
+            this.Text = "Consultar trabajadores";
             this.Load += new System.EventHandler(this.ConsultaTrabajador_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
