@@ -227,7 +227,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ModificarFactura";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarFactura";
             this.Load += new System.EventHandler(this.ModificarFactura_Load);
             this.groupBox2.ResumeLayout(false);

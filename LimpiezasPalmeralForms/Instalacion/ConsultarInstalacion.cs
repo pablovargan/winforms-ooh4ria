@@ -42,6 +42,10 @@ namespace LimpiezasPalmeralForms
             m2Box.Enabled = false;
             clienteBox.Enabled = false;
             descripcionBox.Enabled = false;
+
+            TrabajadorCEN _trab = new TrabajadorCEN();
+            IList<TrabajadorEN> trab = _trab.ObtenerTodos(0, 0);
+            gridTrabajadores.DataSource = trab;
         }
 
         private void ConsultarInstalacion_Load(object sender, EventArgs e)

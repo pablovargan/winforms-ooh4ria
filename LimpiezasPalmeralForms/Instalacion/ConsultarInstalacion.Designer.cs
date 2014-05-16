@@ -53,14 +53,18 @@
             this.nombreLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.idBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gridTrabajadores = new System.Windows.Forms.DataGridView();
             this.accionesGB.SuspendLayout();
             this.proveedorGB.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTrabajadores)).BeginInit();
             this.SuspendLayout();
             // 
             // accionesGB
             // 
             this.accionesGB.Controls.Add(this.aceptarButton);
-            this.accionesGB.Location = new System.Drawing.Point(12, 274);
+            this.accionesGB.Location = new System.Drawing.Point(12, 457);
             this.accionesGB.Name = "accionesGB";
             this.accionesGB.Size = new System.Drawing.Size(449, 74);
             this.accionesGB.TabIndex = 4;
@@ -320,12 +324,31 @@
             this.idBox.TabIndex = 6;
             this.idBox.TextChanged += new System.EventHandler(this.nifBox_TextChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.gridTrabajadores);
+            this.groupBox1.Location = new System.Drawing.Point(12, 274);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(449, 177);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Trabajadores";
+            // 
+            // gridTrabajadores
+            // 
+            this.gridTrabajadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTrabajadores.Location = new System.Drawing.Point(6, 19);
+            this.gridTrabajadores.Name = "gridTrabajadores";
+            this.gridTrabajadores.Size = new System.Drawing.Size(437, 144);
+            this.gridTrabajadores.TabIndex = 0;
+            // 
             // ConsultarInstalacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 357);
+            this.ClientSize = new System.Drawing.Size(470, 539);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.accionesGB);
             this.Controls.Add(this.proveedorGB);
             this.MaximizeBox = false;
@@ -337,6 +360,8 @@
             this.accionesGB.ResumeLayout(false);
             this.proveedorGB.ResumeLayout(false);
             this.proveedorGB.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTrabajadores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,5 +393,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox clienteBox;
         private System.Windows.Forms.TextBox m2Box;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView gridTrabajadores;
     }
 }
