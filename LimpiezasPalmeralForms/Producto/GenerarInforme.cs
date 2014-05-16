@@ -60,8 +60,6 @@ namespace LimpiezasPalmeralForms.Producto
 
         private void buttonGenerarPDF_Click(object sender, EventArgs e)
         {
-            //ClienteCEN clienteCEN = new ClienteCEN();
-            //ClienteEN clienteEnvio = clienteCEN.ObtenerCliente(cliente.Nif);
             GeneradorPDF pdf = new GeneradorPDF();
             pdf.pdfProducto(producto);
             MessageBox.Show("Se ha generado un informe en pdf en la ruta ....");

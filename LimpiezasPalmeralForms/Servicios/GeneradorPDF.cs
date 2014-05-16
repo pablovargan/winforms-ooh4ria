@@ -40,8 +40,6 @@ namespace LimpiezasPalmeralForms.Servicios
             tableTitulo.AddCell(cell);
             document.Add(tableTitulo);
 
-
-
             PdfPTable tableCabecera = new PdfPTable(2);
 
             //Tabla sin bordes
@@ -67,14 +65,37 @@ namespace LimpiezasPalmeralForms.Servicios
             document.Add(salto);
 
             //Añadimos una tabla
-            PdfPTable table = new PdfPTable(2);
-            table.AddCell("ID: " + producto.Id + "\nNombre: " + producto.Nombre + "\nDescripción: " + producto.Descripcion + "\nStock Actual: " + producto.Stock);
+            //PdfPTable table = new PdfPTable(2);
+            //table.AddCell("ID: " + producto.Id + "\nNombre: " + producto.Nombre + "\nDescripción: " + producto.Descripcion + "\nStock Actual: " + producto.Stock);
             //Cargamos la imagen de resources.
+            //iTextSharp.text.Image foto = iTextSharp.text.Image.GetInstance(producto.Foto);
+            //foto.ScaleAbsolute(100f, 100f);
+            //PdfPCell cellFoto = new PdfPCell(foto);
+            //cellFoto.HorizontalAlignment = 1;
+            //table.AddCell(cellFoto);
+            //document.Add(table);
+
+            PdfPTable table = new PdfPTable(2);
+            PdfPCell header = new PdfPCell(new Phrase("Datos del producto"));
+            header.Colspan = 2;
+            table.TotalWidth = 400f;
+            table.LockedWidth = true;
+            header.HorizontalAlignment = 1;
+            table.AddCell(header);
+            PdfPTable nested = new PdfPTable(1);
+            nested.AddCell("ID: " + producto.Id);
+            nested.AddCell("Nombre: " + producto.Nombre);
+            nested.AddCell("Descripción: " + producto.Descripcion);
+            nested.AddCell("Stock Actual: " + producto.Stock);
+            PdfPCell nesthousing = new PdfPCell(nested);
+            nesthousing.Padding = 0f;
+            table.AddCell(nesthousing);
             iTextSharp.text.Image foto = iTextSharp.text.Image.GetInstance(producto.Foto);
             foto.ScaleAbsolute(100f, 100f);
-            PdfPCell cellFoto = new PdfPCell(foto);
-            cellFoto.HorizontalAlignment = 1;
-            table.AddCell(cellFoto);
+            PdfPCell cellfoto = new PdfPCell(foto);
+            cellfoto.HorizontalAlignment = 1;
+            //bottom.Colspan = 1;
+            table.AddCell(cellfoto);
             document.Add(table);
 
             //Cerramos todo
