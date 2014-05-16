@@ -5,6 +5,8 @@ using iTextSharp.text.pdf;
 using System.IO;
 using PalmeralGenNHibernate.EN.Default_;
 using System.Collections.Generic;
+using PalmeralGenNHibernate.CEN.Default_;
+using System.Windows.Forms;
 
 namespace LimpiezasPalmeralForms.Servicios
 {
@@ -65,16 +67,6 @@ namespace LimpiezasPalmeralForms.Servicios
             document.Add(salto);
 
             //Añadimos una tabla
-            //PdfPTable table = new PdfPTable(2);
-            //table.AddCell("ID: " + producto.Id + "\nNombre: " + producto.Nombre + "\nDescripción: " + producto.Descripcion + "\nStock Actual: " + producto.Stock);
-            //Cargamos la imagen de resources.
-            //iTextSharp.text.Image foto = iTextSharp.text.Image.GetInstance(producto.Foto);
-            //foto.ScaleAbsolute(100f, 100f);
-            //PdfPCell cellFoto = new PdfPCell(foto);
-            //cellFoto.HorizontalAlignment = 1;
-            //table.AddCell(cellFoto);
-            //document.Add(table);
-
             PdfPTable table = new PdfPTable(2);
             PdfPCell header = new PdfPCell(new Phrase("Datos del producto"));
             header.Colspan = 2;
@@ -102,6 +94,7 @@ namespace LimpiezasPalmeralForms.Servicios
             document.Close();
             writer.Close();
             fs.Close();
+            MessageBox.Show("Se ha generado un informe en PDF con el nombre \"" + path + "\"");
         }
 
 
@@ -121,9 +114,17 @@ namespace LimpiezasPalmeralForms.Servicios
             document.Open();
 
             // Creo cabecera del informe
-            PdfPTable tableCabecera = new PdfPTable(2);
+            PdfPTable tableTitulo = new PdfPTable(2);
+            tableTitulo.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            PdfPCell cell = new PdfPCell(new Phrase("Informe de Cliente"));
+            cell.BorderWidth = 0;
+            cell.Colspan = 3;
+            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableTitulo.AddCell(cell);
+            document.Add(tableTitulo);
 
             //Tabla sin bordes
+            PdfPTable tableCabecera = new PdfPTable(2);
             tableCabecera.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
 
 
@@ -136,7 +137,7 @@ namespace LimpiezasPalmeralForms.Servicios
             PdfPCell cellLogo = new PdfPCell(logo);
             cellLogo.BorderWidth = 0;
             tableCabecera.AddCell(cellLogo);
-            tableCabecera.AddCell("Fecha: " + DateTime.Now.ToString());
+            tableCabecera.AddCell("\n\n\n\n\nEmpresa: " + Constantes._NOMBREEMPRESA + "\nLocalidad: " + Constantes._CIUDADEMPRESA + "\nFecha: " + DateTime.Now.ToString() + "\n");
 
             //Inserto tabla de cabecera
             document.Add(tableCabecera);
@@ -145,22 +146,74 @@ namespace LimpiezasPalmeralForms.Servicios
             document.Add(salto);
             document.Add(salto);
 
-            //Añadimos una tabla
-            PdfPTable table = new PdfPTable(2);
-            PdfPCell cell = new PdfPCell(new Phrase("Informe de Cliente"));
-            cell.Colspan = 3;
-            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
-            table.AddCell(cell);
-            table.AddCell("Nif: " + cliente.Nif);
-            table.AddCell("Nombre: " + cliente.Nombre);
-            table.AddCell("Col 1 Row 2");
-            table.AddCell("Col 2 Row 2");
-            document.Add(table);
+            //Añadimos una tabla con los datos del cliente
+            PdfPTable tableCliente = new PdfPTable(2);
+            PdfPCell cell2 = new PdfPCell(new Phrase("Datos del Cliente"));
+            cell2.Colspan = 2;
+            cell2.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableCliente.AddCell(cell2);
+            tableCliente.AddCell("NIF");
+            tableCliente.AddCell(cliente.Nif);
+            tableCliente.AddCell("Nombre");
+            tableCliente.AddCell(cliente.Nombre);
+            tableCliente.AddCell("Email");
+            tableCliente.AddCell(cliente.Email);
+            tableCliente.AddCell("Dirección");
+            tableCliente.AddCell(cliente.Direccion);
+            tableCliente.AddCell("Localidad");
+            tableCliente.AddCell(cliente.Localidad);
+            tableCliente.AddCell("Provincia");
+            tableCliente.AddCell(cliente.Provincia);
+            tableCliente.AddCell("CP");
+            tableCliente.AddCell(cliente.CodigoPostal);
+            tableCliente.AddCell("País");
+            tableCliente.AddCell(cliente.Pais);
+            tableCliente.AddCell("Teléfono");
+            tableCliente.AddCell(cliente.Telefono);
+            tableCliente.AddCell("Descripción");
+            tableCliente.AddCell(cliente.Descripcion);
+            document.Add(tableCliente);
+         
+            document.Add(salto);
+            document.Add(salto);
+
+            //Añadimos una tabla con los datos del cliente
+            PdfPTable tableInstalaciones = new PdfPTable(7);
+            tableInstalaciones.TotalWidth = 500f;
+            tableInstalaciones.LockedWidth = true;
+            PdfPCell cell3 = new PdfPCell(new Phrase("Instalaciones del Cliente"));
+            cell3.Colspan = 7;
+            cell3.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableInstalaciones.AddCell(cell3);
+            tableInstalaciones.AddCell("Nombre");
+            tableInstalaciones.AddCell("Dirección");
+            tableInstalaciones.AddCell("Localidad");
+            tableInstalaciones.AddCell("Provincia");
+            tableInstalaciones.AddCell("CP");
+            tableInstalaciones.AddCell("País");
+            tableInstalaciones.AddCell("Teléfono");
+            InstalacionCEN instalacionCEN = new InstalacionCEN();
+            IList<InstalacionEN> instalacionesCliente = new List<InstalacionEN>();
+            instalacionesCliente = instalacionCEN.BuscarInstalacionesCliente(cliente.Nif);
+
+            foreach (InstalacionEN ins in instalacionesCliente)
+            {
+                tableInstalaciones.AddCell(ins.Nombre);
+                tableInstalaciones.AddCell(ins.Direccion);
+                tableInstalaciones.AddCell(ins.Localidad);
+                tableInstalaciones.AddCell(ins.Provincia);
+                tableInstalaciones.AddCell(ins.CodigoPostal);
+                tableInstalaciones.AddCell(ins.Pais);
+                tableInstalaciones.AddCell(ins.Telefono);
+            }
+            document.Add(tableInstalaciones);
 
             //Cerramos todo
             document.Close();
             writer.Close();
             fs.Close();
+
+            MessageBox.Show("Se ha generado un informe en PDF con el nombre \"" + path + "\"" );
         }
 
         public void pdfTrabajador(TrabajadorEN trabajador)

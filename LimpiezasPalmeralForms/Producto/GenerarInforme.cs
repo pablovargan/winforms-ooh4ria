@@ -62,7 +62,6 @@ namespace LimpiezasPalmeralForms.Producto
         {
             GeneradorPDF pdf = new GeneradorPDF();
             pdf.pdfProducto(producto);
-            MessageBox.Show("Se ha generado un informe en pdf en la ruta ....");
             this.Close();
         }
     }

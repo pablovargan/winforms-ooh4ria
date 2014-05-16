@@ -30,6 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.labelCiudadInforme = new System.Windows.Forms.Label();
+            this.labelFechaInforme = new System.Windows.Forms.Label();
+            this.labelNombreEmpresa = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridViewInstalaciones = new System.Windows.Forms.DataGridView();
@@ -57,10 +60,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.labelNombreEmpresa = new System.Windows.Forms.Label();
-            this.labelFechaInforme = new System.Windows.Forms.Label();
-            this.labelCiudadInforme = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,6 +93,33 @@
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Empresa";
+            // 
+            // labelCiudadInforme
+            // 
+            this.labelCiudadInforme.AutoSize = true;
+            this.labelCiudadInforme.Location = new System.Drawing.Point(104, 66);
+            this.labelCiudadInforme.Name = "labelCiudadInforme";
+            this.labelCiudadInforme.Size = new System.Drawing.Size(41, 13);
+            this.labelCiudadInforme.TabIndex = 5;
+            this.labelCiudadInforme.Text = "label11";
+            // 
+            // labelFechaInforme
+            // 
+            this.labelFechaInforme.AutoSize = true;
+            this.labelFechaInforme.Location = new System.Drawing.Point(104, 43);
+            this.labelFechaInforme.Name = "labelFechaInforme";
+            this.labelFechaInforme.Size = new System.Drawing.Size(94, 13);
+            this.labelFechaInforme.TabIndex = 4;
+            this.labelFechaInforme.Text = "labelFechaInforme";
+            // 
+            // labelNombreEmpresa
+            // 
+            this.labelNombreEmpresa.AutoSize = true;
+            this.labelNombreEmpresa.Location = new System.Drawing.Point(104, 19);
+            this.labelNombreEmpresa.Name = "labelNombreEmpresa";
+            this.labelNombreEmpresa.Size = new System.Drawing.Size(107, 13);
+            this.labelNombreEmpresa.TabIndex = 3;
+            this.labelNombreEmpresa.Text = "labelNombreEmpresa";
             // 
             // pictureBox1
             // 
@@ -339,7 +365,7 @@
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 662);
+            this.groupBox2.Location = new System.Drawing.Point(13, 548);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(473, 71);
             this.groupBox2.TabIndex = 2;
@@ -348,9 +374,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(152, 21);
+            this.button2.Location = new System.Drawing.Point(264, 21);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 44);
+            this.button2.Size = new System.Drawing.Size(197, 44);
             this.button2.TabIndex = 1;
             this.button2.Text = "Generar PDF";
             this.button2.UseVisualStyleBackColor = true;
@@ -358,56 +384,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 21);
+            this.button1.Location = new System.Drawing.Point(12, 21);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 44);
+            this.button1.Size = new System.Drawing.Size(198, 44);
             this.button1.TabIndex = 0;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // labelNombreEmpresa
-            // 
-            this.labelNombreEmpresa.AutoSize = true;
-            this.labelNombreEmpresa.Location = new System.Drawing.Point(104, 19);
-            this.labelNombreEmpresa.Name = "labelNombreEmpresa";
-            this.labelNombreEmpresa.Size = new System.Drawing.Size(107, 13);
-            this.labelNombreEmpresa.TabIndex = 3;
-            this.labelNombreEmpresa.Text = "labelNombreEmpresa";
-            // 
-            // labelFechaInforme
-            // 
-            this.labelFechaInforme.AutoSize = true;
-            this.labelFechaInforme.Location = new System.Drawing.Point(104, 43);
-            this.labelFechaInforme.Name = "labelFechaInforme";
-            this.labelFechaInforme.Size = new System.Drawing.Size(94, 13);
-            this.labelFechaInforme.TabIndex = 4;
-            this.labelFechaInforme.Text = "labelFechaInforme";
-            // 
-            // labelCiudadInforme
-            // 
-            this.labelCiudadInforme.AutoSize = true;
-            this.labelCiudadInforme.Location = new System.Drawing.Point(104, 66);
-            this.labelCiudadInforme.Name = "labelCiudadInforme";
-            this.labelCiudadInforme.Size = new System.Drawing.Size(41, 13);
-            this.labelCiudadInforme.TabIndex = 5;
-            this.labelCiudadInforme.Text = "label11";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Location = new System.Drawing.Point(13, 548);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(473, 108);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Facturas";
-            // 
             // GenerarInforme
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 749);
-            this.Controls.Add(this.groupBox6);
+            this.ClientSize = new System.Drawing.Size(500, 631);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GenerarInforme";
@@ -462,6 +452,5 @@
         private System.Windows.Forms.Label labelFechaInforme;
         private System.Windows.Forms.Label labelNombreEmpresa;
         private System.Windows.Forms.Label labelCiudadInforme;
-        private System.Windows.Forms.GroupBox groupBox6;
     }
 }

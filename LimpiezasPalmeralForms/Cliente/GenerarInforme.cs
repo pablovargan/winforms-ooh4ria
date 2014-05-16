@@ -45,7 +45,7 @@ namespace LimpiezasPalmeralForms.Cliente
             ClienteEN clienteEnvio = clienteCEN.ObtenerCliente(cliente.Nif);
             GeneradorPDF pdf = new GeneradorPDF();
             pdf.pdfCliente(clienteEnvio);
-
+            this.Close();
         }
 
 
