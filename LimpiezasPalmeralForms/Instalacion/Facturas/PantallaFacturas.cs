@@ -162,6 +162,21 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
             crear.Show();
         }
 
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            if (facturaGrid.SelectedRows == null)
+            {
+                MessageBox.Show("Seleccione la instalación que desee modificar");
+            }
+
+            FacturaCEN factcen = new FacturaCEN();
+            FacturaGV fact = (FacturaGV)facturaGrid.CurrentRow.DataBoundItem;
+            ModificarFactura mod = new ModificarFactura(fact.id) { Owner = this };
+            mod.Owner = this;
+            mod.Deactivate += new EventHandler(facturaGrid_Load);
+            mod.Show();
+        }
+
     }
 
     public class FacturaGV

@@ -64,6 +64,7 @@
             this.buttonEditar.TabIndex = 1;
             this.buttonEditar.Text = "Modificar factura";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // button1
             // 
