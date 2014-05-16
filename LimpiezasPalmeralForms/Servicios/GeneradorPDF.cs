@@ -30,6 +30,17 @@ namespace LimpiezasPalmeralForms.Servicios
             document.Open();
 
             // Creo cabecera del informe
+            PdfPTable tableTitulo = new PdfPTable(2);
+            tableTitulo.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            PdfPCell cell = new PdfPCell(new Phrase("Informe de Producto"));
+            cell.BorderWidth = 0;
+            cell.Colspan = 3;
+            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableTitulo.AddCell(cell);
+            document.Add(tableTitulo);
+
+
+
             PdfPTable tableCabecera = new PdfPTable(2);
 
             //Tabla sin bordes
@@ -45,7 +56,7 @@ namespace LimpiezasPalmeralForms.Servicios
             PdfPCell cellLogo = new PdfPCell(logo);
             cellLogo.BorderWidth = 0;
             tableCabecera.AddCell(cellLogo);
-            tableCabecera.AddCell("Fecha: " + DateTime.Now.ToString());
+            tableCabecera.AddCell("\n\n\n\n\nEmpresa: " + Constantes._NOMBREEMPRESA + "\nLocalidad: " + Constantes._CIUDADEMPRESA + "\nFecha: " + DateTime.Now.ToString() + "\n");
 
             //Inserto tabla de cabecera
             document.Add(tableCabecera);
@@ -56,14 +67,13 @@ namespace LimpiezasPalmeralForms.Servicios
 
             //Añadimos una tabla
             PdfPTable table = new PdfPTable(2);
-            PdfPCell cell = new PdfPCell(new Phrase("Informe de Producto"));
-            cell.Colspan = 3;
-            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
-            table.AddCell(cell);
-            table.AddCell("ID: " + producto.Id);
-            table.AddCell("Nombre: " + producto.Nombre);
-            table.AddCell("Col 1 Row 2");
-            table.AddCell("Col 2 Row 2");
+            table.AddCell("ID: " + producto.Id + "\nNombre: " + producto.Nombre + "\nDescripción: " + producto.Descripcion + "\nStock Actual: " + producto.Stock);
+            //Cargamos la imagen de resources.
+            iTextSharp.text.Image foto = iTextSharp.text.Image.GetInstance(producto.Foto);
+            foto.ScaleAbsolute(100f, 100f);
+            PdfPCell cellFoto = new PdfPCell(foto);
+            cellFoto.HorizontalAlignment = 1;
+            table.AddCell(cellFoto);
             document.Add(table);
 
             //Cerramos todo

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxProductosAcciones = new System.Windows.Forms.GroupBox();
+            this.buttonGenerarInforme = new System.Windows.Forms.Button();
             this.buttonIncrementarStock = new System.Windows.Forms.Button();
             this.buttonReducirStock = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.dataGridViewProducto = new System.Windows.Forms.DataGridView();
-            this.buttonGenerarInforme = new System.Windows.Forms.Button();
             this.groupBoxProductosAcciones.SuspendLayout();
             this.groupBoxProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducto)).BeginInit();
@@ -62,6 +62,16 @@
             this.groupBoxProductosAcciones.TabIndex = 3;
             this.groupBoxProductosAcciones.TabStop = false;
             this.groupBoxProductosAcciones.Text = "Acciones";
+            // 
+            // buttonGenerarInforme
+            // 
+            this.buttonGenerarInforme.Location = new System.Drawing.Point(6, 317);
+            this.buttonGenerarInforme.Name = "buttonGenerarInforme";
+            this.buttonGenerarInforme.Size = new System.Drawing.Size(121, 44);
+            this.buttonGenerarInforme.TabIndex = 9;
+            this.buttonGenerarInforme.Text = "Generar Informe";
+            this.buttonGenerarInforme.UseVisualStyleBackColor = true;
+            this.buttonGenerarInforme.Click += new System.EventHandler(this.buttonGenerarInforme_Click);
             // 
             // buttonIncrementarStock
             // 
@@ -179,15 +189,6 @@
             this.dataGridViewProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducto.Size = new System.Drawing.Size(563, 303);
             this.dataGridViewProducto.TabIndex = 0;
-            // 
-            // buttonGenerarInforme
-            // 
-            this.buttonGenerarInforme.Location = new System.Drawing.Point(6, 317);
-            this.buttonGenerarInforme.Name = "buttonGenerarInforme";
-            this.buttonGenerarInforme.Size = new System.Drawing.Size(121, 44);
-            this.buttonGenerarInforme.TabIndex = 9;
-            this.buttonGenerarInforme.Text = "Generar Informe";
-            this.buttonGenerarInforme.UseVisualStyleBackColor = true;
             // 
             // PantallaProducto
             // 

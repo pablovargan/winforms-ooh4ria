@@ -15,12 +15,13 @@ namespace LimpiezasPalmeralForms.Producto
 {
     public partial class ConsultarProducto : Form
     {
+        DataGridView grid;
         public ConsultarProducto(DataGridView productoSelected)
         {
             InitializeComponent();
             desactivarCampos();
-         
-           
+
+            grid = productoSelected;
             obtenerDatosProducto(productoSelected);
         }
         public void desactivarCampos()
@@ -30,7 +31,7 @@ namespace LimpiezasPalmeralForms.Producto
             textBoxDescripcion.Enabled = false;
             numericStock.Enabled = false;
             pictureBoxImagen.Enabled = false;
-            buttonEscogerImagen.Enabled = false;
+            //buttonEscogerImagen.Enabled = false;
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
@@ -52,7 +53,11 @@ namespace LimpiezasPalmeralForms.Producto
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            EditarProducto ac = new EditarProducto(grid) { Owner = this };
+            ac.Owner = this;
+            ac.StartPosition = FormStartPosition.CenterParent;
+            ac.ShowDialog(); 
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)

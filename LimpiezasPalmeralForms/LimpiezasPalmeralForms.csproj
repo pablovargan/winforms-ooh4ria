@@ -181,6 +181,12 @@
     <Compile Include="Producto\EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\GenerarInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\GenerarInforme.Designer.cs">
+      <DependentUpon>GenerarInforme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\IncrementarStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\GenerarInforme.resx">
+      <DependentUpon>GenerarInforme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\IncrementarStock.resx">
       <DependentUpon>IncrementarStock.cs</DependentUpon>
