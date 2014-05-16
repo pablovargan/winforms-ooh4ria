@@ -83,6 +83,23 @@ namespace LimpiezasPalmeralForms
                 });
             }
             dataGridViewProducto.DataSource = productoGV;
+            if (productoGV.Count == 0) //desactivamos los botones
+            {
+                EnableDisableButtons(false);
+            }
+            else
+            {
+                EnableDisableButtons(true);
+            }
+        }
+        public void EnableDisableButtons(Boolean estate)
+        {
+            buttonConsultar.Enabled = estate;
+            buttonEditar.Enabled = estate;
+            buttonEliminar.Enabled = estate;
+            buttonIncrementarStock.Enabled = estate;
+            buttonReducirStock.Enabled = estate;
+            buttonGenerarInforme.Enabled = estate;
         }
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
@@ -157,6 +174,15 @@ namespace LimpiezasPalmeralForms
             incrementar.Deactivate += new EventHandler(recargarGrid);
             incrementar.StartPosition = FormStartPosition.CenterParent;
             incrementar.ShowDialog();
+        }
+
+        private void buttonGenerarInforme_Click(object sender, EventArgs e)
+        {
+            GenerarInforme informe = new GenerarInforme(dataGridViewProducto.SelectedRows[0].Cells[0].Value.ToString());
+            informe.Owner = this;
+            informe.Deactivate += new EventHandler(Grid_Load);
+            informe.StartPosition = FormStartPosition.CenterParent;
+            informe.ShowDialog();
         }
     }
     public class ProductoGV
