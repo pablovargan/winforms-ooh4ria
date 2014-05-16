@@ -118,6 +118,10 @@
 	<Compile Include="CEN\Default_\ProveedorCEN.cs" />
 	<Compile Include="CAD\Default_\IProveedorCAD.cs" />
 	<Compile Include="CAD\Default_\ProveedorCAD.cs" />
+	<Compile Include="EN\Default_\CopiaSeguridadEN.cs" />
+	<Compile Include="CEN\Default_\CopiaSeguridadCEN.cs" />
+	<Compile Include="CAD\Default_\ICopiaSeguridadCAD.cs" />
+	<Compile Include="CAD\Default_\CopiaSeguridadCAD.cs" />
 	<Compile Include="EN\Default_\TrabajadorEN.cs" />
 	<Compile Include="CEN\Default_\TrabajadorCEN.cs" />
 	<Compile Include="CAD\Default_\ITrabajadorCAD.cs" />
@@ -168,6 +172,7 @@
 	<EmbeddedResource Include="Mappings\Default_\lineapedido.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\pedido.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\proveedor.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\copiaseguridad.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\trabajador.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\nomina.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\cliente.hbm.xml" />

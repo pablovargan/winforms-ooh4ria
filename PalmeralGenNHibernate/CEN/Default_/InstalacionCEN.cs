@@ -152,6 +152,5 @@ public void Unrelationer_jornadas (string p_instalacion, System.Collections.Gene
 
         _IInstalacionCAD.Unrelationer_jornadas (p_instalacion, p_jornadafecha);
 }
-
 }
 }
