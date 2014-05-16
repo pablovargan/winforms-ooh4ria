@@ -4,6 +4,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using PalmeralGenNHibernate.EN.Default_;
+using System.Collections.Generic;
 
 namespace LimpiezasPalmeralForms.Servicios
 {
@@ -189,8 +190,10 @@ namespace LimpiezasPalmeralForms.Servicios
             fs.Close();
         }
 
+        public void pdfTrabajadorListado(IList<TrabajadorEN> trabajadores)
+        {
 
-
+        }
 
         private Document pdfProveedor(Document document)
         {
