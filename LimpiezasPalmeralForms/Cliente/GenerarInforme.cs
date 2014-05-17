@@ -9,14 +9,15 @@ namespace LimpiezasPalmeralForms.Cliente
 {
     public partial class GenerarInforme : Form
     {
-        ClienteEN cliente = new ClienteEN();   
+        ClienteEN cliente = new ClienteEN();
+        String nifcliente;
    
         public GenerarInforme(string nif)
         {
             InitializeComponent();
-
             ClienteCEN clienteCEN = new ClienteCEN();
             cliente = clienteCEN.ObtenerCliente(nif);
+            nifcliente = nif;
             pintarCabeceraEmpresa();
             pintarDatosCliente();
             pintarInstalaciones();
@@ -25,7 +26,7 @@ namespace LimpiezasPalmeralForms.Cliente
         public GenerarInforme(ClienteEN cliente2)
         {
             InitializeComponent();
-
+            nifcliente = cliente2.Nif;
             pintarCabeceraEmpresa();
             pintarDatosCliente(cliente2);
             pintarInstalaciones();
@@ -42,7 +43,7 @@ namespace LimpiezasPalmeralForms.Cliente
         private void button2_Click(object sender, EventArgs e)
         {
             ClienteCEN clienteCEN = new ClienteCEN();
-            ClienteEN clienteEnvio = clienteCEN.ObtenerCliente(cliente.Nif);
+            ClienteEN clienteEnvio = clienteCEN.ObtenerCliente(nifcliente);
             GeneradorPDF pdf = new GeneradorPDF();
             pdf.pdfCliente(clienteEnvio);
             this.Close();
