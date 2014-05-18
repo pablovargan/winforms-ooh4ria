@@ -14,5 +14,11 @@ void Editar (CopiaSeguridadEN copiaSeguridad);
 
 
 void Eliminar (string id);
+
+
+System.Collections.Generic.IList<CopiaSeguridadEN> ObtenerTodas (int first, int size);
+
+
+CopiaSeguridadEN ObtenerPorOID (string id);
 }
 }
