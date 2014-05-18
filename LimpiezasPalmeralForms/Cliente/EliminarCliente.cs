@@ -65,7 +65,7 @@ namespace LimpiezasPalmeralForms.Cliente
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             string mensaje = "¿Estás seguro que deseas eliminar el cliente con NIF: " +
-            textBoxNIF.Text + " y nombre: " + textBoxNombre.Text + " y todas sus instalaciones ?";
+            textBoxNIF.Text + " y nombre: " + textBoxNombre.Text + ", todas sus instalaciones y las facturas asociadas a este?";
             string titulo = "Eliminando Cliente";
             MessageBoxButtons botones = MessageBoxButtons.YesNo;
             DialogResult resultado;
@@ -91,8 +91,20 @@ namespace LimpiezasPalmeralForms.Cliente
             {
                 if (i.Cliente.Nif == nif)
                 {
+                    eliminarFacturasInstalacion(i.Id);
                     instalacion.Eliminar(i.Id);
                 }
+            }
+        }
+
+        private void eliminarFacturasInstalacion(string instalacion)
+        {
+            IList<FacturaEN> lista = new List<FacturaEN>();
+            FacturaCEN factura = new FacturaCEN();
+            lista = factura.ObtenerFacturasInstalacion(instalacion);
+            foreach (FacturaEN f in lista)
+            {
+                factura.Eliminar(f.Id);
             }
         }
 
