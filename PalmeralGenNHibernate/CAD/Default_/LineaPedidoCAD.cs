@@ -159,7 +159,6 @@ public LineaPedidoEN ObtenerLinea (int id)
         return lineaPedidoEN;
 }
 
-
 public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> ObtenerLineasDePedido (string p_pedido)
 {
         System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> result;
@@ -190,7 +189,6 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaP
 
         return result;
 }
-
 public void Relationer_pedido (int p_lineapedido, string p_pedido)
 {
         PalmeralGenNHibernate.EN.Default_.LineaPedidoEN lineaPedidoEN = null;

@@ -51,6 +51,19 @@ namespace LimpiezasPalmeralForms.Pedidos
                     estadoCB.SelectedIndex = i;
             }
             // Obtengo el pedido para mostrarlo entero 
+            LineaPedidoCEN lineaPedidoCEN = new LineaPedidoCEN();
+            var l = new List<LineasGV>();
+            foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(pedido.Id))
+            {
+                l.Add(new LineasGV()
+                {
+                    Id = linea.Id,
+                    Cantidad = linea.Cantidad,
+                    Producto = new ProductoCEN().ObtenerProducto(linea.Productos.Id).Nombre
+                });
+            }
+
+            lineasPedidoGV.DataSource = l;
         }
 
 
@@ -78,5 +91,7 @@ namespace LimpiezasPalmeralForms.Pedidos
     class LineasGV
     {
         public int Id { get; set; }
+        public int Cantidad { get; set; }
+        public string Producto { get; set; }
     }
 }

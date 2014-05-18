@@ -37,11 +37,11 @@
             this.fechaLabel = new System.Windows.Forms.Label();
             this.estadoLabel = new System.Windows.Forms.Label();
             this.accionesGB = new System.Windows.Forms.GroupBox();
+            this.eliminarButton = new System.Windows.Forms.Button();
             this.aceptarButton = new System.Windows.Forms.Button();
             this.actualizarButton = new System.Windows.Forms.Button();
             this.pedidoBox = new System.Windows.Forms.GroupBox();
             this.lineasPedidoGV = new System.Windows.Forms.DataGridView();
-            this.eliminarButton = new System.Windows.Forms.Button();
             this.proveedorGB.SuspendLayout();
             this.accionesGB.SuspendLayout();
             this.pedidoBox.SuspendLayout();
@@ -57,40 +57,38 @@
             this.proveedorGB.Controls.Add(this.fechaBox);
             this.proveedorGB.Controls.Add(this.fechaLabel);
             this.proveedorGB.Controls.Add(this.estadoLabel);
-            this.proveedorGB.Location = new System.Drawing.Point(13, 13);
-            this.proveedorGB.Margin = new System.Windows.Forms.Padding(4);
+            this.proveedorGB.Location = new System.Drawing.Point(10, 11);
             this.proveedorGB.Name = "proveedorGB";
-            this.proveedorGB.Padding = new System.Windows.Forms.Padding(4);
-            this.proveedorGB.Size = new System.Drawing.Size(599, 141);
+            this.proveedorGB.Size = new System.Drawing.Size(449, 115);
             this.proveedorGB.TabIndex = 4;
             this.proveedorGB.TabStop = false;
             this.proveedorGB.Text = "Proveedor";
             // 
             // pagoBox
             // 
-            this.pagoBox.Location = new System.Drawing.Point(428, 66);
-            this.pagoBox.Margin = new System.Windows.Forms.Padding(4);
+            this.pagoBox.Location = new System.Drawing.Point(321, 54);
             this.pagoBox.Name = "pagoBox";
             this.pagoBox.ReadOnly = true;
-            this.pagoBox.Size = new System.Drawing.Size(130, 22);
+            this.pagoBox.Size = new System.Drawing.Size(98, 20);
             this.pagoBox.TabIndex = 21;
             // 
             // pagoLabel
             // 
             this.pagoLabel.AutoSize = true;
-            this.pagoLabel.Location = new System.Drawing.Point(299, 69);
+            this.pagoLabel.Location = new System.Drawing.Point(224, 56);
+            this.pagoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pagoLabel.Name = "pagoLabel";
-            this.pagoLabel.Size = new System.Drawing.Size(92, 17);
+            this.pagoLabel.Size = new System.Drawing.Size(70, 13);
             this.pagoLabel.TabIndex = 20;
             this.pagoLabel.Text = "Tipo de pago";
             // 
             // datosLabel
             // 
             this.datosLabel.AutoSize = true;
-            this.datosLabel.Location = new System.Drawing.Point(27, 32);
-            this.datosLabel.Margin = new System.Windows.Forms.Padding(4);
+            this.datosLabel.Location = new System.Drawing.Point(20, 26);
+            this.datosLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.datosLabel.Name = "datosLabel";
-            this.datosLabel.Size = new System.Drawing.Size(79, 17);
+            this.datosLabel.Size = new System.Drawing.Size(60, 13);
             this.datosLabel.TabIndex = 19;
             this.datosLabel.Text = "datos_prov";
             // 
@@ -104,37 +102,37 @@
             "Enviado",
             "Recibido",
             "Cancelado"});
-            this.estadoCB.Location = new System.Drawing.Point(428, 100);
-            this.estadoCB.Margin = new System.Windows.Forms.Padding(4);
+            this.estadoCB.Location = new System.Drawing.Point(321, 81);
             this.estadoCB.Name = "estadoCB";
             this.estadoCB.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.estadoCB.Size = new System.Drawing.Size(130, 24);
+            this.estadoCB.Size = new System.Drawing.Size(98, 21);
             this.estadoCB.TabIndex = 6;
             // 
             // fechaBox
             // 
-            this.fechaBox.Location = new System.Drawing.Point(428, 31);
-            this.fechaBox.Margin = new System.Windows.Forms.Padding(4);
+            this.fechaBox.Location = new System.Drawing.Point(321, 25);
             this.fechaBox.Name = "fechaBox";
             this.fechaBox.ReadOnly = true;
-            this.fechaBox.Size = new System.Drawing.Size(130, 22);
+            this.fechaBox.Size = new System.Drawing.Size(98, 20);
             this.fechaBox.TabIndex = 14;
             // 
             // fechaLabel
             // 
             this.fechaLabel.AutoSize = true;
-            this.fechaLabel.Location = new System.Drawing.Point(299, 32);
+            this.fechaLabel.Location = new System.Drawing.Point(224, 26);
+            this.fechaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fechaLabel.Name = "fechaLabel";
-            this.fechaLabel.Size = new System.Drawing.Size(47, 17);
+            this.fechaLabel.Size = new System.Drawing.Size(37, 13);
             this.fechaLabel.TabIndex = 18;
             this.fechaLabel.Text = "Fecha";
             // 
             // estadoLabel
             // 
             this.estadoLabel.AutoSize = true;
-            this.estadoLabel.Location = new System.Drawing.Point(299, 103);
+            this.estadoLabel.Location = new System.Drawing.Point(224, 84);
+            this.estadoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.estadoLabel.Name = "estadoLabel";
-            this.estadoLabel.Size = new System.Drawing.Size(122, 17);
+            this.estadoLabel.Size = new System.Drawing.Size(92, 13);
             this.estadoLabel.TabIndex = 0;
             this.estadoLabel.Text = "Estado del pedido";
             // 
@@ -143,21 +141,28 @@
             this.accionesGB.Controls.Add(this.eliminarButton);
             this.accionesGB.Controls.Add(this.aceptarButton);
             this.accionesGB.Controls.Add(this.actualizarButton);
-            this.accionesGB.Location = new System.Drawing.Point(13, 515);
-            this.accionesGB.Margin = new System.Windows.Forms.Padding(4);
+            this.accionesGB.Location = new System.Drawing.Point(10, 418);
             this.accionesGB.Name = "accionesGB";
-            this.accionesGB.Padding = new System.Windows.Forms.Padding(4);
-            this.accionesGB.Size = new System.Drawing.Size(599, 91);
+            this.accionesGB.Size = new System.Drawing.Size(449, 74);
             this.accionesGB.TabIndex = 5;
             this.accionesGB.TabStop = false;
             this.accionesGB.Text = "Acciones";
             // 
+            // eliminarButton
+            // 
+            this.eliminarButton.Location = new System.Drawing.Point(304, 19);
+            this.eliminarButton.Name = "eliminarButton";
+            this.eliminarButton.Size = new System.Drawing.Size(140, 44);
+            this.eliminarButton.TabIndex = 2;
+            this.eliminarButton.Text = "Eliminar";
+            this.eliminarButton.UseVisualStyleBackColor = true;
+            this.eliminarButton.Click += new System.EventHandler(this.Eliminar_Click);
+            // 
             // aceptarButton
             // 
-            this.aceptarButton.Location = new System.Drawing.Point(8, 23);
-            this.aceptarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.aceptarButton.Location = new System.Drawing.Point(6, 19);
             this.aceptarButton.Name = "aceptarButton";
-            this.aceptarButton.Size = new System.Drawing.Size(187, 54);
+            this.aceptarButton.Size = new System.Drawing.Size(140, 44);
             this.aceptarButton.TabIndex = 0;
             this.aceptarButton.Text = "Aceptar";
             this.aceptarButton.UseVisualStyleBackColor = true;
@@ -165,10 +170,9 @@
             // 
             // actualizarButton
             // 
-            this.actualizarButton.Location = new System.Drawing.Point(206, 23);
-            this.actualizarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.actualizarButton.Location = new System.Drawing.Point(154, 19);
             this.actualizarButton.Name = "actualizarButton";
-            this.actualizarButton.Size = new System.Drawing.Size(187, 54);
+            this.actualizarButton.Size = new System.Drawing.Size(140, 44);
             this.actualizarButton.TabIndex = 1;
             this.actualizarButton.Text = "Actualizar Estado";
             this.actualizarButton.UseVisualStyleBackColor = true;
@@ -177,42 +181,36 @@
             // pedidoBox
             // 
             this.pedidoBox.Controls.Add(this.lineasPedidoGV);
-            this.pedidoBox.Location = new System.Drawing.Point(13, 161);
+            this.pedidoBox.Location = new System.Drawing.Point(10, 131);
+            this.pedidoBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pedidoBox.Name = "pedidoBox";
-            this.pedidoBox.Size = new System.Drawing.Size(599, 347);
+            this.pedidoBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pedidoBox.Size = new System.Drawing.Size(449, 282);
             this.pedidoBox.TabIndex = 22;
             this.pedidoBox.TabStop = false;
             this.pedidoBox.Text = "Pedido";
             // 
             // lineasPedidoGV
             // 
+            this.lineasPedidoGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.lineasPedidoGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lineasPedidoGV.Location = new System.Drawing.Point(6, 21);
+            this.lineasPedidoGV.Location = new System.Drawing.Point(4, 17);
+            this.lineasPedidoGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lineasPedidoGV.Name = "lineasPedidoGV";
             this.lineasPedidoGV.RowTemplate.Height = 24;
-            this.lineasPedidoGV.Size = new System.Drawing.Size(587, 320);
+            this.lineasPedidoGV.Size = new System.Drawing.Size(440, 260);
             this.lineasPedidoGV.TabIndex = 0;
-            // 
-            // eliminarButton
-            // 
-            this.eliminarButton.Location = new System.Drawing.Point(405, 23);
-            this.eliminarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.eliminarButton.Name = "eliminarButton";
-            this.eliminarButton.Size = new System.Drawing.Size(187, 54);
-            this.eliminarButton.TabIndex = 2;
-            this.eliminarButton.Text = "Eliminar";
-            this.eliminarButton.UseVisualStyleBackColor = true;
-            this.eliminarButton.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // ConsultarPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 619);
+            this.ClientSize = new System.Drawing.Size(468, 503);
             this.ControlBox = false;
             this.Controls.Add(this.pedidoBox);
             this.Controls.Add(this.accionesGB);
             this.Controls.Add(this.proveedorGB);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConsultarPedido";
