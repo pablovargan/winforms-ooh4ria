@@ -86,6 +86,7 @@
             this.consultarButton.TabIndex = 4;
             this.consultarButton.Text = "Consultar";
             this.consultarButton.UseVisualStyleBackColor = true;
+            this.consultarButton.Click += new System.EventHandler(this.Consultar_Click);
             // 
             // crearButton
             // 

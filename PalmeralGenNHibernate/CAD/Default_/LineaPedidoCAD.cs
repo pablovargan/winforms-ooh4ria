@@ -159,6 +159,36 @@ public LineaPedidoEN ObtenerLinea (int id)
         return lineaPedidoEN;
 }
 
+public System.Collections.Generic.IList<LineaPedidoEN> ObtenerTodasLineas (int first, int size)
+{
+        System.Collections.Generic.IList<LineaPedidoEN> result = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                if (size > 0)
+                        result = session.CreateCriteria (typeof(LineaPedidoEN)).
+                                 SetFirstResult (first).SetMaxResults (size).List<LineaPedidoEN>();
+                else
+                        result = session.CreateCriteria (typeof(LineaPedidoEN)).List<LineaPedidoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in LineaPedidoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+
 public void Relationer_pedido (int p_lineapedido, string p_pedido)
 {
         PalmeralGenNHibernate.EN.Default_.LineaPedidoEN lineaPedidoEN = null;

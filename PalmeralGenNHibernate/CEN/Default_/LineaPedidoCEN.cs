@@ -79,6 +79,13 @@ public LineaPedidoEN ObtenerLinea (int id)
         return lineaPedidoEN;
 }
 
+public System.Collections.Generic.IList<LineaPedidoEN> ObtenerTodasLineas (int first, int size)
+{
+        System.Collections.Generic.IList<LineaPedidoEN> list = null;
+
+        list = _ILineaPedidoCAD.ObtenerTodasLineas (first, size);
+        return list;
+}
 public void Relationer_pedido (int p_lineapedido, string p_pedido)
 {
         //Call to LineaPedidoCAD
