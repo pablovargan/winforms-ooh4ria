@@ -34,8 +34,6 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
                 pedidoGrid.DataSource = null;
                 _pedGV.Clear();
 
-                var todosPedidos = _pedido.ObtenerTodos(0, 0);
-                //foreach (PedidoEN p in todosPedidos)
                 foreach (PedidoEN p in _pedido.ObtenerTodos(0, 0))
                 {
                     _pedGV.Add(new PedidoGV()
@@ -59,6 +57,19 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
         private void Crear_Click(object sender, EventArgs e)
         {
             CrearPedido cp = new CrearPedido() { Owner = this };
+            cp.Show();
+            cp.Deactivate += GridPedido_Load;
+        }
+
+        private void Consultar_Click(object sender, EventArgs e)
+        {
+            var columnaSeleccionada = pedidoGrid.SelectedRows[0];
+            ConsultarPedido cp = new ConsultarPedido()
+            {
+                Owner = this,
+                IdPedido = columnaSeleccionada.Cells["Id"].Value.ToString(),
+                IdProveedor = columnaSeleccionada.Cells["Proveedor"].Value.ToString()
+            };
             cp.Show();
             cp.Deactivate += GridPedido_Load;
         }

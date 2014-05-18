@@ -139,17 +139,24 @@ namespace LimpiezasPalmeralForms.Pedidos
             int idPedido = pedidoCEN.ObtenerTodos(0, 0).Count + 1;
             // Linea de Pedido a insertar
             IList<LineaPedidoEN> lineaPedido = new List<LineaPedidoEN>();
+            // Lista para relacionar las lineas con el pedido
+            IList<int> idLineas = new List<int>();
             // Cojo la cantidad y el id de los productos del grid del pedido
+
+            
             foreach (PedidoGV p in _lproductosPedido)
             {
                 // Añado a la lista
-                lineaPedido.Add(new LineaPedidoEN(Convert.ToInt32(p.Id), Convert.ToInt32(p.Cantidad), _productoCEN.get_IProductoCAD().ReadOIDDefault(p.Id), null));    
+                lineaPedido.Add(new LineaPedidoEN(Convert.ToInt32(p.Id), Convert.ToInt32(p.Cantidad), 
+                    _productoCEN.get_IProductoCAD().ReadOIDDefault(p.Id), null));
+                idLineas.Add(Convert.ToInt32(p.Id));
             }
             // Instancio y Creo el pedido
             var pFinal = new PedidoEN(idPedido.ToString(), DateTime.Today, EstadoPedidoEnum.Enviado, enumSeleccionado, lineaPedido, _proveedorCEN.get_IProveedorCAD().ReadOIDDefault(_proveedor.Id));
             pedidoCEN.Crear(pFinal.Id, pFinal.Fecha, pFinal.Estado, pFinal.TipoPago, pFinal.Lineas, pFinal.Proveedor.Id);
-            // Re-asigno el proveedor a las lineas
-            // TODO
+            // Relaciono las lineas con el pedido
+            pedidoCEN.Relationer_lineas(idPedido.ToString(), idLineas);
+            
             this.Close();
         }
 
