@@ -19,6 +19,9 @@ void Eliminar (int id);
 LineaPedidoEN ObtenerLinea (int id);
 
 
+System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> ObtenerLineasDePedido (string p_pedido);
+
+
 void Relationer_pedido (int p_lineapedido, string p_pedido);
 
 void Relationer_productos (int p_lineapedido, string p_producto);
