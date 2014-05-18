@@ -295,14 +295,15 @@ namespace LimpiezasPalmeralForms.Servicios
             document.Add(salto);
             document.Add(salto);
 
-            //Añadimos una tabla con los datos del cliente
-            PdfPTable tableNominas = new PdfPTable(7);
-            tableNominas.TotalWidth = 500f;
-            tableNominas.LockedWidth = true;
-            PdfPCell cell3 = new PdfPCell(new Phrase("Nominas del Trabajador"));
+         
 
             if (trabajador.Tipo.ToString().Equals("Cooperativista"))
             {
+                //Añadimos una tabla con los datos del cliente
+                PdfPTable tableNominas = new PdfPTable(5);
+                tableNominas.TotalWidth = 500f;
+                tableNominas.LockedWidth = true;
+                PdfPCell cell3 = new PdfPCell(new Phrase("Nominas del Trabajador"));
                 cell3.Colspan = 5;
                 cell3.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                 tableNominas.AddCell(cell3);
@@ -312,20 +313,29 @@ namespace LimpiezasPalmeralForms.Servicios
                 tableNominas.AddCell("Total");
                 tableNominas.AddCell("Fecha");
                 NominaCEN nomina = new NominaCEN();
-                IList<NominaEN> nominastrabajador = new List<NominaEN>();
-                nominastrabajador = nomina.ObtenerTodasNominasTrabajador(trabajador.Nif);
-
-                foreach (NominaEN nom in nominastrabajador)
+                IList<NominaEN> lista = new List<NominaEN>();
+                lista = nomina.ObtenerTodas(0, 0);
+                IList<NominaEN> listabuena = new List<NominaEN>();
+                foreach (NominaEN n in lista)
                 {
-                    tableNominas.AddCell(nom.Horas.ToString());
-                    tableNominas.AddCell(nom.ParteFija.ToString());
-                    tableNominas.AddCell(nom.ParteVariable.ToString());
-                    tableNominas.AddCell(nom.Total.ToString());
-                    tableNominas.AddCell(nom.Fecha.ToString());
+                    if (n.Trabajador.Nif.Equals(trabajador.Nif))
+                    {
+                        tableNominas.AddCell(n.Horas.ToString());
+                        tableNominas.AddCell(n.ParteFija.ToString());
+                        tableNominas.AddCell(n.ParteVariable.ToString());
+                        tableNominas.AddCell(n.Total.ToString());
+                        tableNominas.AddCell(n.Fecha.ToString());
+                    }
                 }
+                document.Add(tableNominas);
             }
             else
             {
+                //Añadimos una tabla con los datos del cliente
+                PdfPTable tableNominas = new PdfPTable(4);
+                tableNominas.TotalWidth = 500f;
+                tableNominas.LockedWidth = true;
+                PdfPCell cell3 = new PdfPCell(new Phrase("Nominas del Trabajador"));
                 cell3.Colspan = 4;
                 cell3.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                 tableNominas.AddCell(cell3);
@@ -334,19 +344,21 @@ namespace LimpiezasPalmeralForms.Servicios
                 tableNominas.AddCell("Total");
                 tableNominas.AddCell("Fecha");
                 NominaCEN nomina = new NominaCEN();
-                IList<NominaEN> nominastrabajador = new List<NominaEN>();
-                nominastrabajador = nomina.ObtenerTodasNominasTrabajador(trabajador.Nif);
-
-                foreach (NominaEN nom in nominastrabajador)
+                IList<NominaEN> lista = new List<NominaEN>();
+                lista = nomina.ObtenerTodas(0, 0);
+                IList<NominaEN> listabuena = new List<NominaEN>();
+                foreach (NominaEN n in lista)
                 {
-                    tableNominas.AddCell(nom.Horas.ToString());
-                    tableNominas.AddCell(nom.ParteFija.ToString());
-                    tableNominas.AddCell(nom.Total.ToString());
-                    tableNominas.AddCell(nom.Fecha.ToString());
+                    if (n.Trabajador.Nif.Equals(trabajador.Nif))
+                    {
+                        tableNominas.AddCell(n.Horas.ToString());
+                        tableNominas.AddCell(n.ParteFija.ToString());
+                        tableNominas.AddCell(n.Total.ToString());
+                        tableNominas.AddCell(n.Fecha.ToString());
+                    }
                 }
+                document.Add(tableNominas);
             }
-
-            document.Add(tableNominas);
 
             //Cerramos todo
             document.Close();
