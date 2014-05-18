@@ -20,6 +20,9 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
         {
             InitializeComponent();
             this.Load += new EventHandler(Grid_Load);
+            Buscador.KeyUp += new KeyEventHandler(BuscarNominas);
+            Premisa.TextChanged += new EventHandler(BuscarNominas);
+            Premisa.SelectedIndex = 0;
         }
 
         private void Grid_Load(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                     ParteVariable = t.ParteVariable,
                     fecha = t.Fecha.ToString(),
                     Horas = t.Horas,
-                    NombreTrabajador = trab.ObtenerTrabajador(t.Trabajador.Nif).Nombre,
+                    DNI = trab.ObtenerTrabajador(t.Trabajador.Nif).Nif,
                     Total = t.Total
                 });
             }
@@ -81,7 +84,36 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 
             if (Premisa.Text.Equals("Trabajador"))
             {
-
+                if (Buscador.Text.Length == 9)
+                {
+                    try
+                    {
+                        TrabajadorCEN trabajador = new TrabajadorCEN();
+                        TrabajadorEN t = new TrabajadorEN();
+                        t = trabajador.ObtenerTrabajador(Buscador.Text);
+                        lista = nomina.ObtenerTodas(0, 0);
+                        IList<NominaEN> listabuena = new List<NominaEN>();
+                        foreach (NominaEN n in lista)
+                        {
+                            if (n.Trabajador.Nif.Equals(t.Nif))
+                            {
+                                listabuena.Add(n);
+                            }
+                        }
+                        Mostrar.DataSource = Convertir_NominaGW(listabuena);
+                        ComprobarLista(lista);
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message);
+                    }
+                }
+                else
+                {
+                    lista = nomina.ObtenerTodas(0, 0);
+                    Mostrar.DataSource = Convertir_NominaGW(lista);
+                    ComprobarLista(lista);
+                } 
             }
             else if (Premisa.Text.Equals("Fecha"))
             {
@@ -94,9 +126,15 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                     float solucion;
                     bool convertido = float.TryParse(Buscador.Text, out solucion);
 
-                    if (convertido == false)
+                    if (convertido == false && Buscador.Text.Length!=0)
                     {
-                        MessageBox.Show(Constantes._ERRORNOMINA);
+                        MessageBox.Show("Porfavor inserte un sueldo númerico");
+                    }
+                    else if(Buscador.Text.Length==0)
+                    {
+                        lista = nomina.ObtenerTodas(0, 0);
+                        Mostrar.DataSource = Convertir_NominaGW(lista);
+                        ComprobarLista(lista);
                     }
                     else
                     {
@@ -123,13 +161,19 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 
         private void Consultar_Click(object sender, EventArgs e)
         {
-            NominaCEN nomina = new NominaCEN();
-            NominaGV n = (NominaGV)Mostrar.CurrentRow.DataBoundItem;
-
-            ConsultarEditarNominas pantalla_nomina = new ConsultarEditarNominas(n.Id, false);
-            pantalla_nomina.Owner = this;
-            pantalla_nomina.Deactivate += new EventHandler(Grid_Load);
-            pantalla_nomina.Show();
+            try
+            {
+                NominaGV Nomina = new NominaGV();
+                Nomina = (NominaGV)Mostrar.CurrentRow.DataBoundItem;
+                ConsultarEditarNominas consulta = new ConsultarEditarNominas(Nomina.Id, Nomina.DNI, false);
+                consulta.Owner = this;
+                consulta.Deactivate += new EventHandler(Grid_Load);
+                consulta.Show();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
         }
 
         private void Editar_Click(object sender, EventArgs e)
@@ -137,7 +181,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             NominaCEN nomina = new NominaCEN();
             NominaGV n = (NominaGV)Mostrar.CurrentRow.DataBoundItem;
 
-            ConsultarEditarNominas pantalla_nomina = new ConsultarEditarNominas(n.Id, true);
+            ConsultarEditarNominas pantalla_nomina = new ConsultarEditarNominas(n.Id, n.DNI, true);
             pantalla_nomina.Owner = this;
             pantalla_nomina.Deactivate += new EventHandler(Grid_Load);
             pantalla_nomina.Show();
@@ -151,6 +195,6 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
         public float Horas { set; get; }
         public string fecha { set; get; }
         public float Total { set; get; }
-        public string NombreTrabajador { set; get; }
+        public string DNI { set; get; }
     }
 }

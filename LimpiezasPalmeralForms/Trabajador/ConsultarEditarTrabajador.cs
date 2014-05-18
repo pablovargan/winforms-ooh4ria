@@ -28,7 +28,8 @@ namespace LimpiezasPalmeralForms.Trabajador
         private void MostrarCampos(string id){
 
             TrabajadorCEN trabajador = new TrabajadorCEN();
-            TrabajadorEN mostrar= trabajador.ObtenerTrabajador(id);
+            TrabajadorEN mostrar = new TrabajadorEN();
+            mostrar=trabajador.ObtenerTrabajador(id);
             NifBox.Text = mostrar.Nif;
             NombreBox.Text = mostrar.Nombre;
             ApellidosBox.Text = mostrar.Apellidos;
