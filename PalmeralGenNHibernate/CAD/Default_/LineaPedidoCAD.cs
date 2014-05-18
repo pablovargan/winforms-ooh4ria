@@ -159,17 +159,19 @@ public LineaPedidoEN ObtenerLinea (int id)
         return lineaPedidoEN;
 }
 
-public System.Collections.Generic.IList<LineaPedidoEN> ObtenerTodasLineas (int first, int size)
+
+public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> ObtenerLineasDePedido (string p_pedido)
 {
-        System.Collections.Generic.IList<LineaPedidoEN> result = null;
+        System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> result;
         try
         {
                 SessionInitializeTransaction ();
-                if (size > 0)
-                        result = session.CreateCriteria (typeof(LineaPedidoEN)).
-                                 SetFirstResult (first).SetMaxResults (size).List<LineaPedidoEN>();
-                else
-                        result = session.CreateCriteria (typeof(LineaPedidoEN)).List<LineaPedidoEN>();
+                //String sql = @"FROM LineaPedidoEN self where FROM LineaPedidoEN AS l WHERE l.Pedido LIKE CONCAT('%', :p_pedido , '%')";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("LineaPedidoENobtenerLineasDePedidoHQL");
+                query.SetParameter ("p_pedido", p_pedido);
+
+                result = query.List<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN>();
                 SessionCommit ();
         }
 

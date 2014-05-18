@@ -146,15 +146,37 @@ public static void InitializeData ()
                 InstalacionCEN instalacionCEN = new InstalacionCEN();
                 instalacionCEN.Crear("1","Colegio 1","Colegio 1","Elche","Alicante","España","Calle 1","03200","666778899",405,"11111111A");
                 instalacionCEN.Crear("2", "Colegio 2", "Colegio 2", "Alicante", "Alicante", "España", "Calle 2", "03202", "666778899", 612, "11111111A");
-                instalacionCEN.Crear("3", "Colegio 3", "Colegio 3", "Elda", "Alicante", "España", "Calle 3", "03203", "666778899", 234, "11111111A");
-                instalacionCEN.Crear("4", "Colegio 3", "Colegio 3", "Elda", "Alicante", "España", "Calle 3", "03203", "666778899", 234, "22222222B");
+                instalacionCEN.Crear("3", "Colegio 3", "Colegio 3", "Manises", "Valencia", "España", "Calle 3", "03203", "666778899", 234, "22222222B");
+                instalacionCEN.Crear("4", "Colegio 4", "Colegio 4", "Alcora", "Castellón", "España", "Calle 4", "03204", "666554422", 754, "33333333C");
 
                 IList<string> listaTrabajadores = new List<string>();
                 listaTrabajadores.Add("11111111A");
                 InstalacionEN _ins = instalacionCEN.ObtenerInstalacion("1");
                 
                 UsuarioCEN usuarioCEN = new UsuarioCEN();
-                usuarioCEN.Crear("Secretaria", "secretaria", "00000001R", "Trabajador 1", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "España", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+                usuarioCEN.Crear("Secretaria", "secretaria", "00000001R", "Secretaria", "Apellidos trabajador", "Calle del trabajador", "123456789", "00440", "España", "Asspen", "Alicante", PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista);
+
+                FacturaCEN facturaCEN = new FacturaCEN();
+                facturaCEN.Crear("1", 200, 8, DateTime.Today, 1600, "1");
+                facturaCEN.Crear("2", 220, 8, DateTime.Today, 1760, "2");
+                facturaCEN.Crear("3", 310, 8, DateTime.Today, 2480, "3");
+                facturaCEN.Crear("4", 300, 8, DateTime.Today, 2400, "1");
+                facturaCEN.Crear("5", 100, 8, DateTime.Today, 800, "2");
+                facturaCEN.Crear("6", 120, 8, DateTime.Today, 960, "2");
+                facturaCEN.Crear("7", 230, 8, DateTime.Today, 1840, "1");
+                facturaCEN.Crear("8", 240, 8, DateTime.Today, 1920, "3");
+                facturaCEN.Crear("9", 170, 8, DateTime.Today, 2160, "1");
+
+                NominaCEN nominaCEN = new NominaCEN();
+                DateTime fecha = new DateTime(2008, 5, 1, 2, 2, 2);
+            
+                
+                nominaCEN.Crear("1", 5, 5, 5, 5, fecha, "77777777C");
+                 NominaEN nomina = nominaCEN.ObtenerNomina("1");
+
+
+            
+
             /*PROTECTED REGION END*/
         }
         catch (Exception ex)

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace LimpiezasPalmeralForms.Producto
 {
@@ -55,6 +56,37 @@ namespace LimpiezasPalmeralForms.Producto
                 MessageBox.Show("El producto " + id + " ha sido eliminado");
             }
             this.Close();
+        }
+
+        private void buttonEscogerImagen_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "Image files (*.jpg)|*.jpg|Image files (*.png)|*.png";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                    {
+                        using (myStream)
+                        {
+                            string imagen;
+                            imagen = openFileDialog1.FileName;
+                            pictureBoxImagen.ImageLocation = imagen;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
         }
     }
 }

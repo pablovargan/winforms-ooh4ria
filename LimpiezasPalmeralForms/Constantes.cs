@@ -19,6 +19,14 @@ namespace LimpiezasPalmeralForms
         public static string _ERRORREDUCIRSTOCKNEGATIVO = "El dato introducido es incorrecto";
         public static string _ERRORLOGINPASS = "La contraseña es incorrecta";
         public static string _ERRORLOGINUSER = "El usuario no existe";
+        public static string _ERRORCAMPOSVACIOS = "Existen campos sin rellenar";
+        public static string _ERRORTRABAJADOR = "El trabajador no se pudo crear";
+        public static string _ERRORNOMINAEXISTE = "La nomina ya existe";
+        public static string _ERRORNOMINA = "La nomina no se pudo crear";
+
+        public static string _CIUDADEMPRESA = "Elche";
+        public static string _NOMBREEMPRESA = "Limpiezas el Palmeral";
+
         
 
         public static string _ERRORID { get; set; }

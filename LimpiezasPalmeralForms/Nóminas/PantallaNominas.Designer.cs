@@ -62,7 +62,8 @@
             this.Premisa.FormattingEnabled = true;
             this.Premisa.Items.AddRange(new object[] {
             "Trabajador",
-            "Fecha"});
+            "Fecha",
+            "Parte Fija"});
             this.Premisa.Location = new System.Drawing.Point(7, 17);
             this.Premisa.Name = "Premisa";
             this.Premisa.Size = new System.Drawing.Size(121, 21);
@@ -114,6 +115,7 @@
             this.Editar.TabIndex = 3;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Consultar
             // 
@@ -125,6 +127,7 @@
             this.Consultar.TabIndex = 2;
             this.Consultar.Text = "Consultar";
             this.Consultar.UseVisualStyleBackColor = true;
+            this.Consultar.Click += new System.EventHandler(this.Consultar_Click);
             // 
             // Crear
             // 

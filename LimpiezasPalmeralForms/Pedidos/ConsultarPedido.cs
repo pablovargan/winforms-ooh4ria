@@ -63,7 +63,7 @@ namespace LimpiezasPalmeralForms.Pedidos
         {
             if (estadoCB.Enabled)
             {
-                var estado = (EstadoPedidoEnum) Enum.Parse(estadoCB.SelectedValue, EstadoPedidoEnum);
+                //var estado = (EstadoPedidoEnum) Enum.Parse(estadoCB.SelectedValue, EstadoPedidoEnum);
 
             }
         

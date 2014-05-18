@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+			<class name="CopiaSeguridadEN" table="[CopiaSeguridad]">
+						<id name="Id" column="[id]"/>
+					<property name="Fecha" type="string"> 
+						<column name="[fecha]"  not-null="true"/>
+					</property>
+					<property name="Ruta" type="string"> 
+						<column name="[ruta]"  not-null="true"/>
+					</property>
+			
+			
+			
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="CopiaSeguridadENReadAllHQL">from CopiaSeguridadEN</query>
+		</hibernate-mapping>
+	

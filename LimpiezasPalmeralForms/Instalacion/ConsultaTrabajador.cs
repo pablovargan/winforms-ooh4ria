@@ -99,7 +99,7 @@ namespace LimpiezasPalmeralForms
             {
                 GridConsulta.DataSource = null;
                 _trabGV.Clear();
-                IList<TrabajadorEN> lista = _trabajador.ObtenerTodos(0, 0);
+                IList<TrabajadorEN> lista = _trabajador.BuscarPorProvincia(comboBox_provincia.Text);
 
                 foreach (TrabajadorEN i in lista)
                 {

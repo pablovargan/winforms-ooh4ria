@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonEscogerImagen = new System.Windows.Forms.Button();
             this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
             this.numericStock = new System.Windows.Forms.NumericUpDown();
             this.labelStock = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonEscogerImagen);
             this.groupBox1.Controls.Add(this.pictureBoxImagen);
             this.groupBox1.Controls.Add(this.numericStock);
             this.groupBox1.Controls.Add(this.labelStock);
@@ -68,21 +66,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
             // 
-            // buttonEscogerImagen
-            // 
-            this.buttonEscogerImagen.Location = new System.Drawing.Point(230, 189);
-            this.buttonEscogerImagen.Name = "buttonEscogerImagen";
-            this.buttonEscogerImagen.Size = new System.Drawing.Size(213, 23);
-            this.buttonEscogerImagen.TabIndex = 5;
-            this.buttonEscogerImagen.Text = "Escoger imagen";
-            this.buttonEscogerImagen.UseVisualStyleBackColor = true;
-            // 
             // pictureBoxImagen
             // 
             this.pictureBoxImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxImagen.Location = new System.Drawing.Point(230, 21);
             this.pictureBoxImagen.Name = "pictureBoxImagen";
-            this.pictureBoxImagen.Size = new System.Drawing.Size(213, 158);
+            this.pictureBoxImagen.Size = new System.Drawing.Size(213, 186);
             this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImagen.TabIndex = 12;
             this.pictureBoxImagen.TabStop = false;
@@ -171,7 +160,7 @@
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(140, 44);
             this.buttonEditar.TabIndex = 7;
-            this.buttonEditar.Text = "Cancelar";
+            this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
@@ -218,7 +207,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonEscogerImagen;
         private System.Windows.Forms.PictureBox pictureBoxImagen;
         private System.Windows.Forms.NumericUpDown numericStock;
         private System.Windows.Forms.Label labelStock;

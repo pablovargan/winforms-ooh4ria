@@ -32,5 +32,6 @@
 		  </class>
 		  
 		  <query name="LineaPedidoENReadAllHQL">from LineaPedidoEN</query>
+		  <query name="LineaPedidoENobtenerLineasDePedidoHQL"><![CDATA[FROM LineaPedidoEN AS l WHERE l.Pedido LIKE CONCAT('%', :p_pedido , '%')]]></query>
 		</hibernate-mapping>
 	

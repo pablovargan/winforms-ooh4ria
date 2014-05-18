@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
 using LimpiezasPalmeralForms.Trabajador;
+using LimpiezasPalmeralForms.Servicios;
 
 namespace LimpiezasPalmeralForms
 {
@@ -56,7 +57,11 @@ namespace LimpiezasPalmeralForms
             IList<TrabajadorEN> lista;
             lista=trabajador.ObtenerTodos(0, 0);
             Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+            ComprobarLista(lista);
+        }
 
+        private void ComprobarLista(IList<TrabajadorEN> lista)
+        {
             if (lista.Count == 0)
             {
                 Consultar.Enabled = false;
@@ -69,7 +74,6 @@ namespace LimpiezasPalmeralForms
                 Editar.Enabled = true;
                 Eliminar.Enabled = true;
             }
-
         }
 
         private void Buscar_Trabajadores(object sender, EventArgs e)
@@ -82,6 +86,7 @@ namespace LimpiezasPalmeralForms
                 BusquedaTipo.Visible = false;
                 lista = trabajador.ObtenerTodos(0, 0);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                ComprobarLista(lista);
             }
             if (Premisa.Text.Equals("Provincia"))
             {
@@ -89,6 +94,7 @@ namespace LimpiezasPalmeralForms
                 BusquedaTipo.Visible = false;
                 lista=trabajador.BuscarPorProvincia(Buscador.Text);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                ComprobarLista(lista);
             }
             else if (Premisa.Text.Equals("Localidad"))
             {
@@ -96,13 +102,15 @@ namespace LimpiezasPalmeralForms
                 BusquedaTipo.Visible = false;
                 lista = trabajador.BuscarPorLocalidad(Buscador.Text);
                 Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                ComprobarLista(lista);
             }
             else if (Premisa.Text.Equals("Nombre"))
             {
                 Buscador.Visible = true;
                 BusquedaTipo.Visible = false;
                 lista = trabajador.BuscarPorNombre(Buscador.Text);
-                Mostrar.DataSource = Convertir_TrabajadorGW(lista);   
+                Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                ComprobarLista(lista);
             }
             else if (Premisa.Text.Equals("Tipo"))
             {
@@ -120,16 +128,19 @@ namespace LimpiezasPalmeralForms
                     }
                     
                     Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                    ComprobarLista(lista);
                 }
                 else if (BusquedaTipo.SelectedIndex == 1)
                 {
                     lista = trabajador.BuscarPorTipo(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Empleado);
                     Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                    ComprobarLista(lista);
                 }
                 else
                 {
                     lista = trabajador.ObtenerTodos(0, 0);
                     Mostrar.DataSource = Convertir_TrabajadorGW(lista);
+                    ComprobarLista(lista);
                 }
             }
         }
@@ -179,19 +190,30 @@ namespace LimpiezasPalmeralForms
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            if (Mostrar.SelectedRows == null)
-            {
-                MessageBox.Show("Seleccion el trabajador que desee modificar");
-            }
-            else
-            {
-                TrabajadorCEN trabajador = new TrabajadorCEN();
-                TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
-                ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, true);
-                consulta.Owner = this;
-                consulta.Deactivate += new EventHandler(Grid_Load);
-                consulta.Show();
-            }
+            
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorGV trabajador_modificar = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+            ConsultarEditarTrabajador consulta = new ConsultarEditarTrabajador(trabajador_modificar.Nif, true);
+            consulta.Owner = this;
+            consulta.Deactivate += new EventHandler(Grid_Load);
+            consulta.Show();
+        }
+
+        private void GenerarInforme_Click(object sender, EventArgs e)
+        {
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorGV t = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
+            TrabajadorEN generartrabajador = trabajador.ObtenerTrabajador(t.Nif);
+            GeneradorPDF pdf = new GeneradorPDF();
+            pdf.pdfTrabajador(generartrabajador);
+        }
+
+        private void GenerarListado_Click(object sender, EventArgs e)
+        {
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            IList<TrabajadorEN> generartrabajador = trabajador.ObtenerTodos(0,0);
+            GeneradorPDF pdf = new GeneradorPDF();
+            pdf.pdfTrabajadorListado(generartrabajador);
         }
     }
 

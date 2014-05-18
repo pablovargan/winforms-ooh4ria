@@ -119,17 +119,47 @@
     <Compile Include="Instalacion\AltaInstalacion.Designer.cs">
       <DependentUpon>AltaInstalacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\ConsultarInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\ConsultarInstalacion.Designer.cs">
+      <DependentUpon>ConsultarInstalacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instalacion\ConsultaTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Instalacion\ConsultaTrabajador.Designer.cs">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instalacion\EditarInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\EditarInstalacion.Designer.cs">
+      <DependentUpon>EditarInstalacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\CrearFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\CrearFactura.Designer.cs">
+      <DependentUpon>CrearFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\ModificarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\Facturas\ModificarFactura.Designer.cs">
+      <DependentUpon>ModificarFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instalacion\Facturas\PantallaFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Instalacion\Facturas\PantallaFacturas.Designer.cs">
       <DependentUpon>PantallaFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instalacion\InformeInstalacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instalacion\InformeInstalacion.Designer.cs">
+      <DependentUpon>InformeInstalacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Instalacion\PantallaInstalacion.cs">
       <SubType>Form</SubType>
@@ -174,6 +204,12 @@
     </Compile>
     <Compile Include="Producto\EditarProducto.Designer.cs">
       <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\GenerarInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\GenerarInforme.Designer.cs">
+      <DependentUpon>GenerarInforme.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto\IncrementarStock.cs">
       <SubType>Form</SubType>
@@ -258,16 +294,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trabajador\Nóminas\CrearNomina.cs">
+    <Compile Include="Nóminas\ConsultarEditarNominas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Trabajador\Nóminas\CrearNomina.Designer.cs">
+    <Compile Include="Nóminas\ConsultarEditarNominas.Designer.cs">
+      <DependentUpon>ConsultarEditarNominas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nóminas\CrearNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nóminas\CrearNomina.Designer.cs">
       <DependentUpon>CrearNomina.cs</DependentUpon>
     </Compile>
-    <Compile Include="Trabajador\Nóminas\PantallaNominas.cs">
+    <Compile Include="Nóminas\PantallaNominas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Trabajador\Nóminas\PantallaNominas.Designer.cs">
+    <Compile Include="Nóminas\PantallaNominas.Designer.cs">
       <DependentUpon>PantallaNominas.cs</DependentUpon>
     </Compile>
     <Compile Include="Trabajador\PantallaTrabajador.cs">
@@ -295,8 +337,26 @@
     <EmbeddedResource Include="Instalacion\AltaInstalacion.resx">
       <DependentUpon>AltaInstalacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\ConsultarInstalacion.resx">
+      <DependentUpon>ConsultarInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\ConsultaTrabajador.resx">
       <DependentUpon>ConsultaTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\EditarInstalacion.resx">
+      <DependentUpon>EditarInstalacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\Facturas\CrearFactura.resx">
+      <DependentUpon>CrearFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\Facturas\ModificarFactura.resx">
+      <DependentUpon>ModificarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\Facturas\PantallaFacturas.resx">
+      <DependentUpon>PantallaFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacion\InformeInstalacion.resx">
+      <DependentUpon>InformeInstalacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instalacion\PantallaInstalacion.resx">
       <DependentUpon>PantallaInstalacion.cs</DependentUpon>
@@ -319,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\EditarProducto.resx">
       <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\GenerarInforme.resx">
+      <DependentUpon>GenerarInforme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\IncrementarStock.resx">
       <DependentUpon>IncrementarStock.cs</DependentUpon>
@@ -369,10 +432,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Trabajador\Nóminas\CrearNomina.resx">
+    <EmbeddedResource Include="Nóminas\ConsultarEditarNominas.resx">
+      <DependentUpon>ConsultarEditarNominas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nóminas\CrearNomina.resx">
       <DependentUpon>CrearNomina.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Trabajador\Nóminas\PantallaNominas.resx">
+    <EmbeddedResource Include="Nóminas\PantallaNominas.resx">
       <DependentUpon>PantallaNominas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trabajador\PantallaTrabajador.resx">
@@ -415,6 +481,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Proveedor\Pedidos\" />
+  </ItemGroup>
   <ItemGroup />
   <ItemGroup />
   <ItemGroup>

@@ -56,6 +56,7 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridViewInstalaciones = new System.Windows.Forms.DataGridView();
+            this.buttonGenerarInforme = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -88,7 +89,8 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(600, 274);
+
+            this.groupBox1.Size = new System.Drawing.Size(592, 223);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
@@ -96,18 +98,17 @@
             // textBoxPais
             // 
             this.textBoxPais.Enabled = false;
-            this.textBoxPais.Location = new System.Drawing.Point(447, 26);
-            this.textBoxPais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
+            this.textBoxPais.Location = new System.Drawing.Point(452, 21);
             this.textBoxPais.Name = "textBoxPais";
-            this.textBoxPais.Size = new System.Drawing.Size(132, 22);
+            this.textBoxPais.Size = new System.Drawing.Size(134, 20);
             this.textBoxPais.TabIndex = 8;
             this.textBoxPais.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(332, 30);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(366, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 17);
             this.label7.TabIndex = 23;
@@ -117,10 +118,10 @@
             // textBoxTelefono
             // 
             this.textBoxTelefono.Enabled = false;
-            this.textBoxTelefono.Location = new System.Drawing.Point(447, 60);
-            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
+            this.textBoxTelefono.Location = new System.Drawing.Point(452, 49);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(132, 22);
+            this.textBoxTelefono.Size = new System.Drawing.Size(134, 20);
             this.textBoxTelefono.TabIndex = 9;
             // 
             // textBoxCP
@@ -129,7 +130,7 @@
             this.textBoxCP.Location = new System.Drawing.Point(135, 233);
             this.textBoxCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCP.Name = "textBoxCP";
-            this.textBoxCP.Size = new System.Drawing.Size(132, 22);
+            this.textBoxCP.Size = new System.Drawing.Size(132, 20);
             this.textBoxCP.TabIndex = 7;
             // 
             // textBoxDireccion
@@ -138,7 +139,7 @@
             this.textBoxDireccion.Location = new System.Drawing.Point(135, 129);
             this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(132, 22);
+            this.textBoxDireccion.Size = new System.Drawing.Size(132, 20);
             this.textBoxDireccion.TabIndex = 4;
             // 
             // textBoxProvincia
@@ -147,14 +148,13 @@
             this.textBoxProvincia.Location = new System.Drawing.Point(135, 198);
             this.textBoxProvincia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxProvincia.Name = "textBoxProvincia";
-            this.textBoxProvincia.Size = new System.Drawing.Size(132, 22);
+            this.textBoxProvincia.Size = new System.Drawing.Size(132, 20);
             this.textBoxProvincia.TabIndex = 6;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(332, 64);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(366, 52);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 17);
             this.label10.TabIndex = 14;
@@ -196,7 +196,7 @@
             this.textBoxLocalidad.Location = new System.Drawing.Point(135, 164);
             this.textBoxLocalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLocalidad.Name = "textBoxLocalidad";
-            this.textBoxLocalidad.Size = new System.Drawing.Size(132, 22);
+            this.textBoxLocalidad.Size = new System.Drawing.Size(132, 20);
             this.textBoxLocalidad.TabIndex = 5;
             // 
             // textBoxEmail
@@ -205,18 +205,18 @@
             this.textBoxEmail.Location = new System.Drawing.Point(135, 95);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(132, 22);
+            this.textBoxEmail.Size = new System.Drawing.Size(132, 20);
             this.textBoxEmail.TabIndex = 3;
             // 
             // textBoxDescripcion
             // 
             this.textBoxDescripcion.Enabled = false;
-            this.textBoxDescripcion.Location = new System.Drawing.Point(336, 118);
-            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDescripcion.Location = new System.Drawing.Point(369, 96);
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDescripcion.Size = new System.Drawing.Size(243, 138);
+            this.textBoxDescripcion.Size = new System.Drawing.Size(217, 113);
+
             this.textBoxDescripcion.TabIndex = 10;
             // 
             // textBoxNombre
@@ -225,7 +225,8 @@
             this.textBoxNombre.Location = new System.Drawing.Point(135, 60);
             this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(132, 22);
+            this.textBoxNombre.Size = new System.Drawing.Size(132, 20);
+
             this.textBoxNombre.TabIndex = 2;
             // 
             // textBoxNIF
@@ -234,7 +235,8 @@
             this.textBoxNIF.Location = new System.Drawing.Point(135, 26);
             this.textBoxNIF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNIF.Name = "textBoxNIF";
-            this.textBoxNIF.Size = new System.Drawing.Size(132, 22);
+            this.textBoxNIF.Size = new System.Drawing.Size(132, 20);
+
             this.textBoxNIF.TabIndex = 1;
             // 
             // label5
@@ -260,8 +262,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(332, 97);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(366, 79);
+
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 17);
             this.label3.TabIndex = 2;
@@ -311,8 +313,7 @@
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(403, 23);
-            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEliminar.Location = new System.Drawing.Point(446, 19);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(187, 54);
             this.buttonEliminar.TabIndex = 14;
@@ -322,23 +323,22 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonGenerarInforme);
             this.groupBox2.Controls.Add(this.buttonCancelar);
             this.groupBox2.Controls.Add(this.buttonAceptar);
             this.groupBox2.Controls.Add(this.buttonEliminar);
             this.groupBox2.Controls.Add(this.buttonEditar);
-            this.groupBox2.Location = new System.Drawing.Point(16, 516);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(13, 410);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(601, 91);
+            this.groupBox2.Size = new System.Drawing.Size(593, 83);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(204, 23);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancelar.Location = new System.Drawing.Point(154, 19);
+
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(187, 54);
             this.buttonCancelar.TabIndex = 13;
@@ -352,8 +352,8 @@
             this.groupBox3.Location = new System.Drawing.Point(17, 299);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(600, 198);
+            this.groupBox3.Size = new System.Drawing.Size(592, 161);
+
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Instalaciones";
@@ -374,16 +374,26 @@
             this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
             this.dataGridViewInstalaciones.ReadOnly = true;
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(579, 166);
+            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(579, 135);
             this.dataGridViewInstalaciones.TabIndex = 11;
             this.dataGridViewInstalaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellContentClick);
+            // 
+            // buttonGenerarInforme
+            // 
+            this.buttonGenerarInforme.Location = new System.Drawing.Point(300, 19);
+            this.buttonGenerarInforme.Name = "buttonGenerarInforme";
+            this.buttonGenerarInforme.Size = new System.Drawing.Size(140, 44);
+            this.buttonGenerarInforme.TabIndex = 15;
+            this.buttonGenerarInforme.Text = "Informe";
+            this.buttonGenerarInforme.UseVisualStyleBackColor = true;
+            this.buttonGenerarInforme.Click += new System.EventHandler(this.buttonGenerarInforme_Click);
             // 
             // ConsultarEditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(632, 619);
+            this.ClientSize = new System.Drawing.Size(618, 504);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -394,6 +404,7 @@
             this.Name = "ConsultarEditarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Cliente";
+            this.Load += new System.EventHandler(this.ConsultarEditarCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -433,5 +444,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridViewInstalaciones;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button buttonGenerarInforme;
     }
 }

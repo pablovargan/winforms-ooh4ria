@@ -49,5 +49,10 @@ namespace LimpiezasPalmeralForms
 
             cliente_comboBox.DataSource = nifs;
         }
+
+        private void cliente_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
