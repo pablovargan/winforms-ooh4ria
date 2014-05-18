@@ -25,7 +25,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             Premisa.SelectedIndex = 0;
         }
 
-        private void Grid_Load(object sender, EventArgs e)
+        public void Grid_Load(object sender, EventArgs e)
         {
             try
             {

@@ -280,6 +280,8 @@
             this.nominas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.nominas.Location = new System.Drawing.Point(6, 19);
             this.nominas.Name = "nominas";
+            this.nominas.ReadOnly = true;
+            this.nominas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.nominas.Size = new System.Drawing.Size(438, 133);
             this.nominas.TabIndex = 0;
             // 
