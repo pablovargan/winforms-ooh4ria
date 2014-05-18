@@ -166,6 +166,17 @@ public static void InitializeData ()
                 facturaCEN.Crear("7", 230, 8, DateTime.Today, 1840, "1");
                 facturaCEN.Crear("8", 240, 8, DateTime.Today, 1920, "3");
                 facturaCEN.Crear("9", 170, 8, DateTime.Today, 2160, "1");
+
+                NominaCEN nominaCEN = new NominaCEN();
+                DateTime fecha = new DateTime(2008, 5, 1, 2, 2, 2);
+            
+                
+                nominaCEN.Crear("1", 5, 5, 5, 5, fecha, "77777777C");
+                 NominaEN nomina = nominaCEN.ObtenerNomina("1");
+
+
+            
+
             /*PROTECTED REGION END*/
         }
         catch (Exception ex)

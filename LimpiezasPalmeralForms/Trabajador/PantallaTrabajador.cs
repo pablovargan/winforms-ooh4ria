@@ -211,7 +211,6 @@ namespace LimpiezasPalmeralForms
         private void GenerarListado_Click(object sender, EventArgs e)
         {
             TrabajadorCEN trabajador = new TrabajadorCEN();
-            TrabajadorGV t = (TrabajadorGV)Mostrar.CurrentRow.DataBoundItem;
             IList<TrabajadorEN> generartrabajador = trabajador.ObtenerTodos(0,0);
             GeneradorPDF pdf = new GeneradorPDF();
             pdf.pdfTrabajadorListado(generartrabajador);

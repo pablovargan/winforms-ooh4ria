@@ -27,7 +27,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             try
             {
                 NominaCEN nomina = new NominaCEN();
-                IList<NominaEN> lista;
+                IList<NominaEN> lista = new List<NominaEN>();
                 lista = nomina.ObtenerTodas(0, 0);
                 Mostrar.DataSource = Convertir_NominaGW(lista);
                 ComprobarLista(lista);
@@ -58,6 +58,8 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 
             foreach (NominaEN t in lista)
             {
+                TrabajadorCEN trab = new TrabajadorCEN();
+
                 l.Add(new NominaGV()
                 {
                     Id = t.Id,
@@ -65,7 +67,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                     ParteVariable = t.ParteVariable,
                     fecha = t.Fecha.ToString(),
                     Horas = t.Horas,
-                    NombreTrabajador = t.Trabajador.Nombre,
+                    NombreTrabajador = trab.ObtenerTrabajador(t.Trabajador.Nif).Nombre,
                     Total = t.Total
                 });
             }
