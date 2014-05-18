@@ -169,10 +169,14 @@ public static void InitializeData ()
 
                 NominaCEN nominaCEN = new NominaCEN();
                 DateTime fecha = new DateTime(2008, 5, 1, 2, 2, 2);
+            
+                
                 nominaCEN.Crear("1", 5, 5, 5, 5, fecha, "77777777C");
+                 NominaEN nomina = nominaCEN.ObtenerNomina("1");
 
-                IList<NominaEN> lista = nominaCEN.ObtenerTodas(0, 0);
-                System.Console.WriteLine (lista.Count);
+
+            
+
             /*PROTECTED REGION END*/
         }
         catch (Exception ex)
