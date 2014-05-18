@@ -34,12 +34,9 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             ParteVariableBox.Text = n.ParteVariable.ToString();
             HorasBox.Text = n.Horas.ToString();
             TotalBox.Text = n.Total.ToString();
-            DateTime f = new DateTime();
-            //f = n.Fecha;
-            //Mes_Box.Text = n.Fecha.Month;
-            Anyo_Box.Enabled = true;
+            Mes_Box.Text = n.Fecha.ToString();
+            //Anyo_Box.Enabled = true;
             TrabajadorBox.Text = n.Trabajador.Nombre;
-
         }
 
         public void ActivarCampos()

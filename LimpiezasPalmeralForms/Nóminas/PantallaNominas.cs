@@ -27,8 +27,8 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             try
             {
                 NominaCEN nomina = new NominaCEN();
-                IList<NominaEN> lista;
-                lista = nomina.ObtenerTodas(0, 0);
+                IList<NominaEN> lista = new List<NominaEN>();
+                lista = nomina.ObtenerTodasNominasTrabajador("Alberto");
                 Mostrar.DataSource = Convertir_NominaGW(lista);
                 ComprobarLista(lista);
             }
