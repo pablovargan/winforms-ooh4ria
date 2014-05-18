@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_pdf = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.proveedorGB = new System.Windows.Forms.GroupBox();
@@ -95,7 +95,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button_pdf);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(14, 529);
             this.groupBox2.Name = "groupBox2";
@@ -104,14 +104,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
-            // button2
+            // button_pdf
             // 
-            this.button2.Location = new System.Drawing.Point(241, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 44);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Generar PDF";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_pdf.Location = new System.Drawing.Point(241, 21);
+            this.button_pdf.Name = "button_pdf";
+            this.button_pdf.Size = new System.Drawing.Size(221, 44);
+            this.button_pdf.TabIndex = 1;
+            this.button_pdf.Text = "Generar PDF";
+            this.button_pdf.UseVisualStyleBackColor = true;
+            this.button_pdf.Click += new System.EventHandler(this.button_pdf_Click);
             // 
             // button1
             // 
@@ -691,7 +692,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_pdf;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox5;

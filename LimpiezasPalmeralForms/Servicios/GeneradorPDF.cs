@@ -279,6 +279,126 @@ namespace LimpiezasPalmeralForms.Servicios
 
         }
 
+        public void pdfInstalacion(InstalacionEN instalacion)
+        {
+            Document document;
+            document = new Document(PageSize.A4, 25, 25, 30, 30);
+            string path = @"" + "Instalación " + instalacion.Id + ".pdf";
+            FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
+
+
+            // Create an instance to the PDF file by creating an instance of the PDF 
+            // Writer class using the document and the filestrem in the constructor.
+            PdfWriter writer = PdfWriter.GetInstance(document, fs);
+
+            // Open the document to enable you to write to the document
+            document.Open();
+
+            // Creo cabecera del informe
+            PdfPTable tableTitulo = new PdfPTable(2);
+            tableTitulo.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            PdfPCell cell = new PdfPCell(new Phrase("Informe de Instalación"));
+            cell.BorderWidth = 0;
+            cell.Colspan = 3;
+            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableTitulo.AddCell(cell);
+            document.Add(tableTitulo);
+
+            //Tabla sin bordes
+            PdfPTable tableCabecera = new PdfPTable(2);
+            tableCabecera.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+            //Cargamos la imagen de resources.
+            System.Drawing.Image logores = Properties.Resources.logo;
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(logores, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+            //Añado imagen a la cabecera y fecha.
+            logo.ScaleAbsolute(100f, 100f);
+            PdfPCell cellLogo = new PdfPCell(logo);
+            cellLogo.BorderWidth = 0;
+            tableCabecera.AddCell(cellLogo);
+            tableCabecera.AddCell("\n\n\n\n\nEmpresa: " + Constantes._NOMBREEMPRESA + "\nLocalidad: " 
+                + Constantes._CIUDADEMPRESA + "\nFecha: " + DateTime.Now.ToString() + "\n");
+
+            //Inserto tabla de cabecera
+            document.Add(tableCabecera);
+
+            Paragraph salto = new Paragraph(" ");
+            document.Add(salto);
+            document.Add(salto);
+
+            //Añadimos una tabla con los datos de la instalacion
+            PdfPTable tableInstalacion = new PdfPTable(2);
+            PdfPCell cell2 = new PdfPCell(new Phrase("Datos de la instalación"));
+            cell2.Colspan = 2;
+            cell2.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableInstalacion.AddCell(cell2);
+            tableInstalacion.AddCell("ID");
+            tableInstalacion.AddCell(instalacion.Id);
+            tableInstalacion.AddCell("Nombre");
+            tableInstalacion.AddCell(instalacion.Nombre);
+            tableInstalacion.AddCell("Descripción");
+            tableInstalacion.AddCell(instalacion.Descripcion);
+            tableInstalacion.AddCell("Dirección");
+            tableInstalacion.AddCell(instalacion.Direccion);
+            tableInstalacion.AddCell("Localidad");
+            tableInstalacion.AddCell(instalacion.Localidad);
+            tableInstalacion.AddCell("Provincia");
+            tableInstalacion.AddCell(instalacion.Provincia);
+            tableInstalacion.AddCell("País");
+            tableInstalacion.AddCell(instalacion.Pais);
+            tableInstalacion.AddCell("CP");
+            tableInstalacion.AddCell(instalacion.CodigoPostal);
+            tableInstalacion.AddCell("Teléfono");
+            tableInstalacion.AddCell(instalacion.Telefono);
+            tableInstalacion.AddCell("Metros cuadrados");
+            tableInstalacion.AddCell(instalacion.MetrosCuadrados.ToString());
+            tableInstalacion.AddCell("NIF Cliente");
+            tableInstalacion.AddCell(instalacion.Cliente.Nif);
+            document.Add(tableInstalacion);
+
+            document.Add(salto);
+            document.Add(salto);
+
+            //Añadimos una tabla con los datos delos trabajadores
+            PdfPTable tableTrabajadores = new PdfPTable(7);
+            tableTrabajadores.TotalWidth = 500f;
+            tableTrabajadores.LockedWidth = true;
+            PdfPCell cell3 = new PdfPCell(new Phrase("Trabajadores de la instalación"));
+            cell3.Colspan = 9;
+            cell3.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableTrabajadores.AddCell(cell3);
+            tableTrabajadores.AddCell("NIF");
+            tableTrabajadores.AddCell("Nombre");
+            tableTrabajadores.AddCell("Apellidos");
+            tableTrabajadores.AddCell("Dirección");
+            tableTrabajadores.AddCell("Localidad");
+            tableTrabajadores.AddCell("Teléfono");
+            tableTrabajadores.AddCell("Tipo");
+            TrabajadorCEN trabajadorCEN = new TrabajadorCEN();
+            IList<TrabajadorEN> trabajadoresInst = trabajadorCEN.ObtenerTodos(0, 0);
+
+            foreach (TrabajadorEN trab in trabajadoresInst)
+            {
+                tableTrabajadores.AddCell(trab.Nif);
+                tableTrabajadores.AddCell(trab.Nombre);
+                tableTrabajadores.AddCell(trab.Apellidos);
+                tableTrabajadores.AddCell(trab.Direccion);
+                tableTrabajadores.AddCell(trab.Localidad);
+                tableTrabajadores.AddCell(trab.Telefono);
+                tableTrabajadores.AddCell(trab.Tipo.ToString());
+            }
+
+            document.Add(tableTrabajadores);
+
+            //Cerramos todo
+            document.Close();
+            writer.Close();
+            fs.Close();
+
+            MessageBox.Show("Se ha generado un informe en PDF con el nombre \"" + path + "\"");
+        }
+
         private Document pdfProveedor(Document document)
         {
 
