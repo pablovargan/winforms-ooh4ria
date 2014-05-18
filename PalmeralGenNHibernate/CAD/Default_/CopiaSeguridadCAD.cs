@@ -129,5 +129,62 @@ public void Eliminar (string id)
                 SessionClose ();
         }
 }
+
+public System.Collections.Generic.IList<CopiaSeguridadEN> ObtenerTodas (int first, int size)
+{
+        System.Collections.Generic.IList<CopiaSeguridadEN> result = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                if (size > 0)
+                        result = session.CreateCriteria (typeof(CopiaSeguridadEN)).
+                                 SetFirstResult (first).SetMaxResults (size).List<CopiaSeguridadEN>();
+                else
+                        result = session.CreateCriteria (typeof(CopiaSeguridadEN)).List<CopiaSeguridadEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in CopiaSeguridadCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+
+public CopiaSeguridadEN ObtenerPorOID (string id)
+{
+        CopiaSeguridadEN copiaSeguridadEN = null;
+
+        try
+        {
+                SessionInitializeTransaction ();
+                copiaSeguridadEN = (CopiaSeguridadEN)session.Get (typeof(CopiaSeguridadEN), id);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in CopiaSeguridadCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return copiaSeguridadEN;
+}
 }
 }

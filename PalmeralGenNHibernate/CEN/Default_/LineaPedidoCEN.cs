@@ -79,6 +79,10 @@ public LineaPedidoEN ObtenerLinea (int id)
         return lineaPedidoEN;
 }
 
+public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> ObtenerLineasDePedido (string p_pedido)
+{
+        return _ILineaPedidoCAD.ObtenerLineasDePedido (p_pedido);
+}
 public void Relationer_pedido (int p_lineapedido, string p_pedido)
 {
         //Call to LineaPedidoCAD

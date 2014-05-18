@@ -69,5 +69,20 @@ public void Eliminar (string id)
 {
         _ICopiaSeguridadCAD.Eliminar (id);
 }
+
+public System.Collections.Generic.IList<CopiaSeguridadEN> ObtenerTodas (int first, int size)
+{
+        System.Collections.Generic.IList<CopiaSeguridadEN> list = null;
+
+        list = _ICopiaSeguridadCAD.ObtenerTodas (first, size);
+        return list;
+}
+public CopiaSeguridadEN ObtenerPorOID (string id)
+{
+        CopiaSeguridadEN copiaSeguridadEN = null;
+
+        copiaSeguridadEN = _ICopiaSeguridadCAD.ObtenerPorOID (id);
+        return copiaSeguridadEN;
+}
 }
 }

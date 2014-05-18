@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using PalmeralGenNHibernate.CEN.Default_;
+using PalmeralGenNHibernate.EN.Default_;
+
 
 
 
@@ -23,7 +26,20 @@ namespace LimpiezasPalmeralForms.Backup
         public PantallaBackup()
         {
             InitializeComponent();
+            this.Load += new EventHandler(Grid_Load);
         }
+
+        private void Grid_Load(object sender, EventArgs e)
+        {
+
+            CopiaSeguridadCEN cs = new CopiaSeguridadCEN();
+            IList<CopiaSeguridadEN> lista = new List<CopiaSeguridadEN>();
+            lista = cs.ObtenerTodas(0,0);
+
+            dataGridViewCopiasSeguridad.DataSource = lista;
+
+        }
+
 
         private string comprobarNombre(string nombre){
             if(File.Exists(@"d:\" + nombre + "-" + contador +".bak")){
@@ -38,6 +54,9 @@ namespace LimpiezasPalmeralForms.Backup
         {
             //poner cursor de relojito mientras respalda
             Cursor.Current = Cursors.WaitCursor;
+
+            CopiaSeguridadCEN cs = new CopiaSeguridadCEN();
+
 
 
             //esto puede ser un método aparte de conexion a la base de datos-----------
@@ -60,14 +79,9 @@ namespace LimpiezasPalmeralForms.Backup
 
 
             //Añade la copia al datagrid
-            DataGridViewRow row = (DataGridViewRow)dataGridViewCopiasSeguridad.Rows[0].Clone();
-            row.Cells[0].Value = DateTime.Now.ToString();
-            row.Cells[1].Value = nombre;
-            dataGridViewCopiasSeguridad.Rows.Add(row);
-
-
+            cs.Crear(nombre, DateTime.Now.ToString(), "D:\\" + nombre + ".bak");
             MessageBox.Show("El Respaldo de la base de datos fue realizada satisfactoriamente", "Respaldo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-   
+            Grid_Load(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -76,13 +90,13 @@ namespace LimpiezasPalmeralForms.Backup
             //poner cursor de relojito
             Cursor.Current = Cursors.WaitCursor;
 
-            string fichero = dataGridViewCopiasSeguridad.SelectedRows[0].Cells[1].Value.ToString();
+            string fichero = dataGridViewCopiasSeguridad.SelectedRows[0].Cells[0].Value.ToString();
 
               
 
             try
             {
-                if (File.Exists(@"d:\" + fichero))
+                if (File.Exists(@"D:\" + fichero + ".bak"))
                 {
                     if (MessageBox.Show("¿Está seguro de restaurar?", "Respaldo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -96,7 +110,7 @@ namespace LimpiezasPalmeralForms.Backup
                         SqlCommand command;
 		                command = new SqlCommand("use master", connect);
   		                command.ExecuteNonQuery();
-                        command = new SqlCommand(@"restore database PalmeralGenNHibernate from disk = 'd:\" + fichero +"'", connect);
+                        command = new SqlCommand(@"restore database PalmeralGenNHibernate from disk = 'd:\" + fichero +".bak'", connect);
                         command.ExecuteNonQuery();
                         //--------------------------------------------------------------------------
                         connect.Close();

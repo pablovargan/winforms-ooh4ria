@@ -16,6 +16,7 @@ namespace LimpiezasPalmeralForms
     public partial class InformeInstalacion : Form
     {
         InstalacionEN instalacion = new InstalacionEN();
+        String id_instalacion;
 
         public InformeInstalacion(string id)
         {
@@ -27,6 +28,7 @@ namespace LimpiezasPalmeralForms
 
             InstalacionCEN _inst = new InstalacionCEN();
             InstalacionEN inst = _inst.ObtenerInstalacion(id);
+            id_instalacion = inst.Id;
             idBox.Text = inst.Id;
             nombreBox.Text = inst.Nombre;
             direccionBox.Text = inst.Direccion;
@@ -74,6 +76,15 @@ namespace LimpiezasPalmeralForms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void button_pdf_Click(object sender, EventArgs e)
+        {
+            InstalacionCEN _inst = new InstalacionCEN();
+            InstalacionEN envio = _inst.ObtenerInstalacion(id_instalacion);
+            GeneradorPDF pdf = new GeneradorPDF();
+            pdf.pdfInstalacion(envio);
             this.Close();
         }
 
