@@ -14,57 +14,143 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 {
     public partial class ConsultarEditarNominas : Form
     {
-        public ConsultarEditarNominas(string id, bool editar)
+        public ConsultarEditarNominas(string id, string traId, bool editar)
         {
-            RellenarCampos(id);
-            if (editar)
-            {
-                ActivarCampos();
-            }
             InitializeComponent();
+            ParteFijaBox.TextChanged += new EventHandler(CalcularTotal);
+            ParteVariableBox.TextChanged += new EventHandler(CalcularTotal);
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            IList<TrabajadorEN> lista = new List<TrabajadorEN>();
+            lista = trabajador.ObtenerTodos(0, 0);
+            if (lista.Contains(trabajador.ObtenerTrabajador(traId)))
+            {
+                if (trabajador.ObtenerTrabajador(traId).Tipo.Equals(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista))
+                {
+                    RellenarCampos(id, true);
+                    if (editar)
+                    {
+                        ActivarCampos(true);
+                    }
+                }
+                else
+                {
+                    RellenarCampos(id, false);
+                    if (editar)
+                    {
+                        ActivarCampos(false);
+                    }
+                }
+            }
         }
 
-        public void RellenarCampos(string id)
+        private void CalcularTotal(object sender, EventArgs e)
+        {
+            float d1, d2;
+            if (ParteFijaBox.Text.Length != 0)
+            {
+                d1 = ComprobarFloat(ParteFijaBox.Text);
+            }
+            else
+            {
+                d1 = 0;
+            }
+            if (ParteVariableBox.Text.Length != 0)
+            {
+                d2 = ComprobarFloat(ParteVariableBox.Text);
+            }
+            else
+            {
+                d2 = 0;
+            }
+            TotalBox.Text = (d1 + d2).ToString();
+        }
+        public void RellenarCampos(string id, bool cope)
         {
             NominaCEN nomina = new NominaCEN();
+            TrabajadorCEN t = new TrabajadorCEN();
             NominaEN n = new NominaEN();
             n = nomina.ObtenerNomina(id);
-            IDBox.Text = n.Id;
+            IDBox.Text = id;
             ParteFijaBox.Text = n.ParteFija.ToString();
-            ParteVariableBox.Text = n.ParteVariable.ToString();
+            if (cope)
+            {
+                ParteVariable.Visible = true;
+                ParteVariableBox.Visible = true;
+                ParteVariableBox.Text = n.ParteVariable.ToString();
+            }
             HorasBox.Text = n.Horas.ToString();
             TotalBox.Text = n.Total.ToString();
-            Mes_Box.Text = n.Fecha.ToString();
-            //Anyo_Box.Enabled = true;
-            TrabajadorBox.Text = n.Trabajador.Nombre;
+            Mes_Box.Visible = false;
+            Anyo_Box.Visible = false;
+            //DateTime? f = new DateTime();
+            //f = n.Fecha;
+            //Mes_Box.SelectedIndex = fecha.
+            Fecha1.Visible = false;
+            Fecha2.Visible = false;
+            fecha.Visible = true;
+            fechaBox.Visible = true;
+            fechaBox.Text = n.Fecha.ToString();
+            TrabajadorBox.Text = t.ObtenerTrabajador(n.Trabajador.Nif).Nif;
         }
 
-        public void ActivarCampos()
+        public void ActivarCampos(bool cope)
         {
             ParteFijaBox.Enabled = true;
-            ParteVariableBox.Enabled = true;
+            if (cope)
+            {
+                ParteVariableBox.Enabled = true;
+            }
             HorasBox.Enabled = true;
-            TotalBox.Enabled = true;
             Mes_Box.Enabled = true;
             Anyo_Box.Enabled = true;
+            Mes_Box.Visible = true;
+            Anyo_Box.Visible = true;
+            Fecha1.Visible = true;
+            Fecha2.Visible = true;
+            fecha.Visible = false;
+            fechaBox.Visible = false;
+            Editar.Visible = false;
         }
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
             NominaCEN nomina = new NominaCEN();
 
-            if(ParteFijaBox.Text.Length!=0 && ParteVariableBox.Text.Length!=0 && 
-                HorasBox.Text.Length!=0 && TotalBox.Text.Length!=0 && Mes_Box.Text.Length!=0 && Anyo_Box.Text.Length!=0)
+            if(HorasBox.Text.Length!=0 && TotalBox.Text.Length!=0 && Mes_Box.Text.Length!=0 && Anyo_Box.Text.Length!=0)
             {
-                float f = ComprobarFloat(ParteFijaBox.Text);
-                float v = ComprobarFloat(ParteVariable.Text);
-                float h = ComprobarFloat(HorasBox.Text);
-                float t = ComprobarFloat(TotalBox.Text);
-                int anyo, mes;
-                Int32.TryParse(Anyo_Box.Text, out anyo);
-                Int32.TryParse(Mes_Box.Text, out mes);
-                DateTime fecha = new DateTime(anyo, mes, 1, 0, 0, 0);
-                nomina.Editar(IDBox.Text, f, v, h, t, fecha);
+                try
+                {
+                    float f, v;
+                    if (ParteFijaBox.Text.Length != 0)
+                    {
+                        f = ComprobarFloat(ParteFijaBox.Text);
+                    }
+                    else
+                    {
+                        f = 0;
+                    }
+                    if (ParteVariableBox.Text.Length != 0)
+                    {
+                        v = ComprobarFloat(ParteVariableBox.Text);
+                    }
+                    else
+                    {
+                        v = 0;
+                    }
+                    
+                    float h = ComprobarFloat(HorasBox.Text);
+                    float t = ComprobarFloat(TotalBox.Text);
+                    int anyo, mes;
+                    Int32.TryParse(Anyo_Box.Text, out anyo);
+                    string smes = BuscarMes(Mes_Box.Text);
+                    Int32.TryParse(smes, out mes);
+                    DateTime fecha = new DateTime(anyo, mes, 1, 0, 0, 0);
+                    nomina.Editar(IDBox.Text, f, v, h, t, fecha);
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
             }
             this.Close();
         }
@@ -76,7 +162,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 
             if (convertido == false)
             {
-                MessageBox.Show(Constantes._ERRORNOMINA);
+                MessageBox.Show("Porfavor introduce un dato numérico");
             }
 
             return solucion;
@@ -84,7 +170,21 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            ActivarCampos();
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            IList<TrabajadorEN> lista = new List<TrabajadorEN>();
+            lista = trabajador.ObtenerTodos(0, 0);
+            if (lista.Contains(trabajador.ObtenerTrabajador(TrabajadorBox.Text)))
+            {
+                if (trabajador.ObtenerTrabajador(TrabajadorBox.Text).Tipo.Equals(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista))
+                {
+                    ActivarCampos(true);
+                }
+                else
+                {
+                    ActivarCampos(false);
+                }
+            }
+
         }
 
         private void Cancelar_Click(object sender, EventArgs e)

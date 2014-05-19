@@ -18,7 +18,7 @@ namespace LimpiezasPalmeralForms.Trabajador
         {
             InitializeComponent();
             MostrarCampos(id);
-            //CargarNominas(id);
+            CargarNominas(id);
             if (editar)
             {
                 activarCampos();
@@ -28,7 +28,8 @@ namespace LimpiezasPalmeralForms.Trabajador
         private void MostrarCampos(string id){
 
             TrabajadorCEN trabajador = new TrabajadorCEN();
-            TrabajadorEN mostrar= trabajador.ObtenerTrabajador(id);
+            TrabajadorEN mostrar = new TrabajadorEN();
+            mostrar=trabajador.ObtenerTrabajador(id);
             NifBox.Text = mostrar.Nif;
             NombreBox.Text = mostrar.Nombre;
             ApellidosBox.Text = mostrar.Apellidos;
@@ -107,13 +108,20 @@ namespace LimpiezasPalmeralForms.Trabajador
         private void CargarNominas(string id)
         {
             TrabajadorCEN trabajador = new TrabajadorCEN();
-            IList<NominaEN> lista;
             TrabajadorEN t = trabajador.ObtenerTrabajador(id);
-            if (t.Nominas.Count != 0)
+            NominaCEN nomina = new NominaCEN();
+            IList<NominaEN> lista = new List<NominaEN>();
+            t = trabajador.ObtenerTrabajador(id);
+            lista = nomina.ObtenerTodas(0, 0);
+            IList<NominaEN> listabuena = new List<NominaEN>();
+            foreach (NominaEN n in lista)
             {
-                lista = t.Nominas;
-                nominas.DataSource = Convertir_NominaGW(lista);
-            } 
+                if (n.Trabajador.Nif.Equals(t.Nif))
+                {
+                    listabuena.Add(n);
+                }
+            }
+            nominas.DataSource = listabuena;
         }
 
         private List<NominaGV> Convertir_NominaGW(IList<NominaEN> lista)
