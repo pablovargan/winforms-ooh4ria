@@ -4,8 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,10 +31,12 @@ namespace LimpiezasPalmeralForms.Principal
         {
             UsuarioCEN usuario = new UsuarioCEN();
             UsuarioEN usuarioEN = usuario.ObtenerPorUsuario(textBoxUsuario.Text);
+            //UsuarioEN usuarioEN2 = usuario.ObtenerPorPass(textBoxPass.);
+            //MessageBox.Show(usuarioEN2.User);
 
-            if (usuarioEN != null && usuarioEN.Password != null)
+            if (usuarioEN != null && usuarioEN.Contrasenya != null)
             {
-                if (usuarioEN.Password == textBoxPass.Text)
+                if (usuarioEN.Contrasenya == textBoxPass.Text)
                 {
                     PantallaPrincipal p = new PantallaPrincipal() { Owner = this };
                     p.ShowDialog();

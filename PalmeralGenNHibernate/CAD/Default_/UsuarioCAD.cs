@@ -84,10 +84,10 @@ public void Editar (UsuarioEN usuario)
                 SessionInitializeTransaction ();
                 UsuarioEN usuarioEN = (UsuarioEN)session.Load (typeof(UsuarioEN), usuario.Nif);
 
-                usuarioEN.User = usuario.User;
+                usuarioEN.Usuario = usuario.Usuario;
 
 
-                usuarioEN.Password = usuario.Password;
+                usuarioEN.Contrasenya = usuario.Contrasenya;
 
 
                 usuarioEN.Nombre = usuario.Nombre;
@@ -184,13 +184,44 @@ public UsuarioEN ObtenerUsuario (string nif)
         return usuarioEN;
 }
 
+public PalmeralGenNHibernate.EN.Default_.UsuarioEN ObtenerPorPass (string p_pass)
+{
+        PalmeralGenNHibernate.EN.Default_.UsuarioEN result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN AS us where us.Contrasenya = :p_pass";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENobtenerPorPassHQL");
+                query.SetParameter ("p_pass", p_pass);
+
+
+                result = query.UniqueResult<PalmeralGenNHibernate.EN.Default_.UsuarioEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in UsuarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 public PalmeralGenNHibernate.EN.Default_.UsuarioEN ObtenerPorUsuario (string p_user)
 {
         PalmeralGenNHibernate.EN.Default_.UsuarioEN result;
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN AS us where us.User = :p_user";
+                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN AS us where us.Usuario = :p_user";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENobtenerPorUsuarioHQL");
                 query.SetParameter ("p_user", p_user);
