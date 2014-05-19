@@ -108,6 +108,20 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
             var response = MessageBox.Show(message, titulo, mButtons);
             if (response.Equals(System.Windows.Forms.DialogResult.Yes))
             {
+                // 1-Las des-relaciono
+                LineaPedidoCEN lineaPedidoCEN = new LineaPedidoCEN();
+                IList<int> l = new List<int>();
+                foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(id))
+                {
+                    l.Add(linea.Id);
+                }
+                _pedido.Unrelationer_lineas(id, l);
+                // 2-Borro las lineas
+                foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(id))
+                {
+                    lineaPedidoCEN.Eliminar(linea.Id);
+                }
+                // 3-Borro el pedido
                 _pedido.Eliminar(id);
                 GridPedido_Load(sender, e);
             }   
