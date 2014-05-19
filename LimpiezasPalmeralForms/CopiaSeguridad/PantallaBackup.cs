@@ -53,35 +53,47 @@ namespace LimpiezasPalmeralForms.Backup
         private void button1_Click_1(object sender, EventArgs e)
         {
             //poner cursor de relojito mientras respalda
-            Cursor.Current = Cursors.WaitCursor;
 
-            CopiaSeguridadCEN cs = new CopiaSeguridadCEN();
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
 
-
-
-            //esto puede ser un método aparte de conexion a la base de datos-----------
-
-            SqlConnection connect = new SqlConnection(@"Server=(local)\SQLEXPRESS; database=PalmeralGenNHibernate; integrated security=yes");
-            connect.Open();
-            //-------------------------------------------------------------------------
-
-            //esto puede ser un método aparte para ejecutar comandos SQL---------------
-            string nombre = "resp" + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
-
-            nombre = comprobarNombre(nombre) + "-" + contador;
-
-            SqlCommand command;
-            command = new SqlCommand(@"backup database PalmeralGenNHibernate to disk ='d:\" + nombre + ".bak' with init,stats=10", connect);
-            command.ExecuteNonQuery();
-            //-------------------------------------------------------------------------
-
-            connect.Close();
+                CopiaSeguridadCEN cs = new CopiaSeguridadCEN();
 
 
-            //Añade la copia al datagrid
-            cs.Crear(nombre, DateTime.Now.ToString(), "D:\\" + nombre + ".bak");
-            MessageBox.Show("El Respaldo de la base de datos fue realizada satisfactoriamente", "Respaldo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Grid_Load(sender, e);
+
+                //esto puede ser un método aparte de conexion a la base de datos-----------
+
+                SqlConnection connect = new SqlConnection(@"Server=(local)\SQLEXPRESS; database=PalmeralGenNHibernate; integrated security=yes");
+                connect.Open();
+                //-------------------------------------------------------------------------
+
+                //esto puede ser un método aparte para ejecutar comandos SQL---------------
+                string nombre = "resp" + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
+
+                nombre = comprobarNombre(nombre) + "-" + contador;
+
+                SqlCommand command;
+                command = new SqlCommand(@"backup database PalmeralGenNHibernate to disk ='d:\" + nombre + ".bak' with init,stats=10", connect);
+                command.ExecuteNonQuery();
+                //-------------------------------------------------------------------------
+
+                connect.Close();
+
+
+
+
+                //Añade la copia al datagrid
+                cs.Crear(nombre, DateTime.Now.ToString(), "D:\\" + nombre + ".bak");
+                MessageBox.Show("El Respaldo de la base de datos fue realizada satisfactoriamente", "Respaldo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Grid_Load(sender, e);
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Debe existir un disco D:\\ secundario para realizar los respaldos");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
