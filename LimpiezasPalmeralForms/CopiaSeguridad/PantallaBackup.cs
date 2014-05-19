@@ -38,6 +38,11 @@ namespace LimpiezasPalmeralForms.Backup
 
             dataGridViewCopiasSeguridad.DataSource = lista;
 
+            if (dataGridViewCopiasSeguridad.RowCount == 0)
+                restaurarButton.Enabled = false;
+            else
+                restaurarButton.Enabled = true;
+
         }
 
 
