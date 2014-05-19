@@ -272,6 +272,12 @@
     <Compile Include="Proveedor\EditarProveedor.Designer.cs">
       <DependentUpon>EditarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedor\GenerarInformeProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor\GenerarInformeProveedor.Designer.cs">
+      <DependentUpon>GenerarInformeProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor\PantallaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,6 +419,9 @@
     <EmbeddedResource Include="Pedidos\PantallaPedidos.resx">
       <DependentUpon>PantallaPedidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor\GenerarInformeProveedor.resx">
+      <DependentUpon>GenerarInformeProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trabajador\ConsultarEditarTrabajador.resx">
       <DependentUpon>ConsultarEditarTrabajador.cs</DependentUpon>
     </EmbeddedResource>
@@ -453,7 +462,6 @@
     <EmbeddedResource Include="Trabajador\PantallaTrabajador.resx">
       <DependentUpon>PantallaTrabajador.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Proveedor\PalmeralGenNHibernate.CEN.Default_.ClienteCEN.datasource" />
     <None Include="PalmeralGenNHibernate.CEN.Default_.ProveedorCEN.datasource" />
     <None Include="PalmeralGenNHibernateDataSet.xsc">
       <DependentUpon>PalmeralGenNHibernateDataSet.xsd</DependentUpon>

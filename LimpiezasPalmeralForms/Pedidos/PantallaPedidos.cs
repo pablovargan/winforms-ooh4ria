@@ -126,7 +126,6 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
                 GridPedido_Load(sender, e);
             }   
         }
-
     }
 
     public class PedidoGV
