@@ -31,10 +31,6 @@
             this.Trabajador = new System.Windows.Forms.GroupBox();
             this.fechaBox = new System.Windows.Forms.TextBox();
             this.fecha = new System.Windows.Forms.Label();
-            this.Anyo_Box = new System.Windows.Forms.ComboBox();
-            this.Mes_Box = new System.Windows.Forms.ComboBox();
-            this.Fecha2 = new System.Windows.Forms.Label();
-            this.Fecha1 = new System.Windows.Forms.Label();
             this.TrabajadorBox = new System.Windows.Forms.TextBox();
             this.TotalBox = new System.Windows.Forms.TextBox();
             this.NombreTrabajador = new System.Windows.Forms.Label();
@@ -59,10 +55,6 @@
             // 
             this.Trabajador.Controls.Add(this.fechaBox);
             this.Trabajador.Controls.Add(this.fecha);
-            this.Trabajador.Controls.Add(this.Anyo_Box);
-            this.Trabajador.Controls.Add(this.Mes_Box);
-            this.Trabajador.Controls.Add(this.Fecha2);
-            this.Trabajador.Controls.Add(this.Fecha1);
             this.Trabajador.Controls.Add(this.TrabajadorBox);
             this.Trabajador.Controls.Add(this.TotalBox);
             this.Trabajador.Controls.Add(this.NombreTrabajador);
@@ -85,7 +77,7 @@
             // fechaBox
             // 
             this.fechaBox.Enabled = false;
-            this.fechaBox.Location = new System.Drawing.Point(289, 62);
+            this.fechaBox.Location = new System.Drawing.Point(289, 75);
             this.fechaBox.Name = "fechaBox";
             this.fechaBox.Size = new System.Drawing.Size(121, 20);
             this.fechaBox.TabIndex = 22;
@@ -94,66 +86,12 @@
             // fecha
             // 
             this.fecha.AutoSize = true;
-            this.fecha.Location = new System.Drawing.Point(215, 65);
+            this.fecha.Location = new System.Drawing.Point(215, 78);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(37, 13);
             this.fecha.TabIndex = 21;
             this.fecha.Text = "Fecha";
             this.fecha.Visible = false;
-            // 
-            // Anyo_Box
-            // 
-            this.Anyo_Box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Anyo_Box.FormattingEnabled = true;
-            this.Anyo_Box.Items.AddRange(new object[] {
-            "2012",
-            "2013",
-            "2014",
-            "2015"});
-            this.Anyo_Box.Location = new System.Drawing.Point(289, 78);
-            this.Anyo_Box.Name = "Anyo_Box";
-            this.Anyo_Box.Size = new System.Drawing.Size(121, 21);
-            this.Anyo_Box.TabIndex = 20;
-            // 
-            // Mes_Box
-            // 
-            this.Mes_Box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Mes_Box.FormattingEnabled = true;
-            this.Mes_Box.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.Mes_Box.Location = new System.Drawing.Point(289, 48);
-            this.Mes_Box.Name = "Mes_Box";
-            this.Mes_Box.Size = new System.Drawing.Size(121, 21);
-            this.Mes_Box.TabIndex = 18;
-            // 
-            // Fecha2
-            // 
-            this.Fecha2.AutoSize = true;
-            this.Fecha2.Location = new System.Drawing.Point(215, 78);
-            this.Fecha2.Name = "Fecha2";
-            this.Fecha2.Size = new System.Drawing.Size(26, 13);
-            this.Fecha2.TabIndex = 19;
-            this.Fecha2.Text = "Año";
-            // 
-            // Fecha1
-            // 
-            this.Fecha1.AutoSize = true;
-            this.Fecha1.Location = new System.Drawing.Point(215, 52);
-            this.Fecha1.Name = "Fecha1";
-            this.Fecha1.Size = new System.Drawing.Size(27, 13);
-            this.Fecha1.TabIndex = 17;
-            this.Fecha1.Text = "Mes";
             // 
             // TrabajadorBox
             // 
@@ -306,9 +244,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 283);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Trabajador);
             this.Name = "ConsultarEditarNominas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarEditarNominas";
             this.Trabajador.ResumeLayout(false);
             this.Trabajador.PerformLayout();
@@ -336,10 +276,6 @@
         private System.Windows.Forms.Button Editar;
         private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Button Aceptar;
-        private System.Windows.Forms.ComboBox Anyo_Box;
-        private System.Windows.Forms.ComboBox Mes_Box;
-        private System.Windows.Forms.Label Fecha2;
-        private System.Windows.Forms.Label Fecha1;
         private System.Windows.Forms.TextBox fechaBox;
         private System.Windows.Forms.Label fecha;
     }

@@ -237,6 +237,14 @@ namespace LimpiezasPalmeralForms
             GeneradorPDF pdf = new GeneradorPDF();
             pdf.pdfTrabajadorListado(generartrabajador);
         }
+
+        private void Asignar_Click(object sender, EventArgs e)
+        {
+            CrearJornada pantalla = new CrearJornada();
+            pantalla.Owner = this;
+            pantalla.Deactivate += new EventHandler(Grid_Load);
+            pantalla.Show();
+        }
     }
 
     public class TrabajadorGV

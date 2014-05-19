@@ -34,12 +34,13 @@
             this.Mostrar = new System.Windows.Forms.DataGridView();
             this.Buscador = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GenerarListado = new System.Windows.Forms.Button();
             this.GenerarInforme = new System.Windows.Forms.Button();
             this.Editar = new System.Windows.Forms.Button();
             this.Consultar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Crear = new System.Windows.Forms.Button();
-            this.GenerarListado = new System.Windows.Forms.Button();
+            this.Asignar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -56,7 +57,7 @@
             this.groupBox1.Controls.Add(this.Buscador);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(563, 354);
+            this.groupBox1.Size = new System.Drawing.Size(563, 380);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajadores";
@@ -103,7 +104,7 @@
             this.Mostrar.Name = "Mostrar";
             this.Mostrar.ReadOnly = true;
             this.Mostrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Mostrar.Size = new System.Drawing.Size(551, 303);
+            this.Mostrar.Size = new System.Drawing.Size(551, 329);
             this.Mostrar.TabIndex = 2;
             // 
             // Buscador
@@ -120,6 +121,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.Asignar);
             this.groupBox2.Controls.Add(this.GenerarListado);
             this.groupBox2.Controls.Add(this.GenerarInforme);
             this.groupBox2.Controls.Add(this.Editar);
@@ -128,10 +130,22 @@
             this.groupBox2.Controls.Add(this.Crear);
             this.groupBox2.Location = new System.Drawing.Point(581, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(133, 354);
+            this.groupBox2.Size = new System.Drawing.Size(133, 380);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
+            // 
+            // GenerarListado
+            // 
+            this.GenerarListado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GenerarListado.Location = new System.Drawing.Point(6, 267);
+            this.GenerarListado.Name = "GenerarListado";
+            this.GenerarListado.Size = new System.Drawing.Size(121, 44);
+            this.GenerarListado.TabIndex = 5;
+            this.GenerarListado.Text = "Generar Listado";
+            this.GenerarListado.UseVisualStyleBackColor = true;
+            this.GenerarListado.Click += new System.EventHandler(this.GenerarListado_Click);
             // 
             // GenerarInforme
             // 
@@ -191,23 +205,23 @@
             this.Crear.UseVisualStyleBackColor = true;
             this.Crear.Click += new System.EventHandler(this.Crear_Click);
             // 
-            // GenerarListado
+            // Asignar
             // 
-            this.GenerarListado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Asignar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GenerarListado.Location = new System.Drawing.Point(6, 267);
-            this.GenerarListado.Name = "GenerarListado";
-            this.GenerarListado.Size = new System.Drawing.Size(121, 44);
-            this.GenerarListado.TabIndex = 5;
-            this.GenerarListado.Text = "Generar Listado";
-            this.GenerarListado.UseVisualStyleBackColor = true;
-            this.GenerarListado.Click += new System.EventHandler(this.GenerarListado_Click);
+            this.Asignar.Location = new System.Drawing.Point(6, 317);
+            this.Asignar.Name = "Asignar";
+            this.Asignar.Size = new System.Drawing.Size(121, 44);
+            this.Asignar.TabIndex = 6;
+            this.Asignar.Text = "Crear Jornada";
+            this.Asignar.UseVisualStyleBackColor = true;
+            this.Asignar.Click += new System.EventHandler(this.Asignar_Click);
             // 
             // PantallaTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 378);
+            this.ClientSize = new System.Drawing.Size(726, 404);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -235,5 +249,6 @@
         private System.Windows.Forms.ComboBox BusquedaTipo;
         private System.Windows.Forms.Button GenerarInforme;
         private System.Windows.Forms.Button GenerarListado;
+        private System.Windows.Forms.Button Asignar;
     }
 }
