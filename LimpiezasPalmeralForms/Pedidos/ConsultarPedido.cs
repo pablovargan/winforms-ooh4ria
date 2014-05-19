@@ -89,7 +89,22 @@ namespace LimpiezasPalmeralForms.Pedidos
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            // TODO
+            // 1-Las des-relaciono
+            LineaPedidoCEN lineaPedidoCEN = new LineaPedidoCEN();
+            IList<int> l = new List<int>();
+            foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(IdPedido))
+            {
+                l.Add(linea.Id);
+            }
+            PedidoCEN pedidoCEN = new PedidoCEN();
+            pedidoCEN.Unrelationer_lineas(IdPedido, l);
+            // 2-Borro las lineas
+            foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(IdPedido))
+            {
+                lineaPedidoCEN.Eliminar(linea.Id);
+            }
+            // 3-Borro el pedido
+            pedidoCEN.Eliminar(IdPedido);
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
