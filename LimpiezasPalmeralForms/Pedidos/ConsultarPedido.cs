@@ -89,22 +89,31 @@ namespace LimpiezasPalmeralForms.Pedidos
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            // 1-Las des-relaciono
-            LineaPedidoCEN lineaPedidoCEN = new LineaPedidoCEN();
-            IList<int> l = new List<int>();
-            foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(IdPedido))
+            MessageBoxButtons mButtons = MessageBoxButtons.YesNo;
+            string message = String.Format("¿Estás seguro que deseas eliminar el pedido con Id: {0}?", IdPedido);
+            string titulo = "Eliminando Pedido";
+
+            var response = MessageBox.Show(message, titulo, mButtons);
+            if (response.Equals(System.Windows.Forms.DialogResult.Yes))
             {
-                l.Add(linea.Id);
+                // 1-Las des-relaciono
+                LineaPedidoCEN lineaPedidoCEN = new LineaPedidoCEN();
+                IList<int> l = new List<int>();
+                foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(IdPedido))
+                {
+                    l.Add(linea.Id);
+                }
+                PedidoCEN pedidoCEN = new PedidoCEN();
+                pedidoCEN.Unrelationer_lineas(IdPedido, l);
+                // 2-Borro las lineas
+                foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(IdPedido))
+                {
+                    lineaPedidoCEN.Eliminar(linea.Id);
+                }
+                // 3-Borro el pedido
+                pedidoCEN.Eliminar(IdPedido);
             }
-            PedidoCEN pedidoCEN = new PedidoCEN();
-            pedidoCEN.Unrelationer_lineas(IdPedido, l);
-            // 2-Borro las lineas
-            foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(IdPedido))
-            {
-                lineaPedidoCEN.Eliminar(linea.Id);
-            }
-            // 3-Borro el pedido
-            pedidoCEN.Eliminar(IdPedido);
+            this.Close();
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
