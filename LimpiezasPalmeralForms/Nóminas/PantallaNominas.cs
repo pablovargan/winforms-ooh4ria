@@ -68,9 +68,9 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                     Id = t.Id,
                     ParteFija = t.ParteFija,
                     ParteVariable = t.ParteVariable,
-                    fecha = t.Fecha.ToString(),
+                    Fecha = t.Fecha.ToString(),
                     Horas = t.Horas,
-                    DNI = trab.ObtenerTrabajador(t.Trabajador.Nif).Nif,
+                    DNI_Trabajador = trab.ObtenerTrabajador(t.Trabajador.Nif).Nif,
                     Total = t.Total
                 });
             }
@@ -165,7 +165,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             {
                 NominaGV Nomina = new NominaGV();
                 Nomina = (NominaGV)Mostrar.CurrentRow.DataBoundItem;
-                ConsultarEditarNominas consulta = new ConsultarEditarNominas(Nomina.Id, Nomina.DNI, false);
+                ConsultarEditarNominas consulta = new ConsultarEditarNominas(Nomina.Id, Nomina.DNI_Trabajador, false);
                 consulta.Owner = this;
                 consulta.Deactivate += new EventHandler(Grid_Load);
                 consulta.Show();
@@ -181,7 +181,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             NominaCEN nomina = new NominaCEN();
             NominaGV n = (NominaGV)Mostrar.CurrentRow.DataBoundItem;
 
-            ConsultarEditarNominas pantalla_nomina = new ConsultarEditarNominas(n.Id, n.DNI, true);
+            ConsultarEditarNominas pantalla_nomina = new ConsultarEditarNominas(n.Id, n.DNI_Trabajador, true);
             pantalla_nomina.Owner = this;
             pantalla_nomina.Deactivate += new EventHandler(Grid_Load);
             pantalla_nomina.Show();
@@ -191,10 +191,10 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
     {
         public string Id { set; get; }
         public float ParteFija { set; get; }
-        public float ParteVariable { set; get; }
         public float Horas { set; get; }
-        public string fecha { set; get; }
+        public float ParteVariable { set; get; }
+        public string Fecha { set; get; }
         public float Total { set; get; }
-        public string DNI { set; get; }
+        public string DNI_Trabajador { set; get; }
     }
 }

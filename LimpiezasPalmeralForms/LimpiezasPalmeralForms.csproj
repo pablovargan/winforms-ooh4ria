@@ -292,6 +292,12 @@
     <Compile Include="Trabajador\ConsultarEditarTrabajador.Designer.cs">
       <DependentUpon>ConsultarEditarTrabajador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trabajador\CrearJornada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trabajador\CrearJornada.Designer.cs">
+      <DependentUpon>CrearJornada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trabajador\CrearTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trabajador\ConsultarEditarTrabajador.resx">
       <DependentUpon>ConsultarEditarTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trabajador\CrearJornada.resx">
+      <DependentUpon>CrearJornada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trabajador\CrearTrabajador.resx">
       <DependentUpon>CrearTrabajador.cs</DependentUpon>

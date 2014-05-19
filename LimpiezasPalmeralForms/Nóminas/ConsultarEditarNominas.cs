@@ -80,13 +80,6 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             }
             HorasBox.Text = n.Horas.ToString();
             TotalBox.Text = n.Total.ToString();
-            Mes_Box.Visible = false;
-            Anyo_Box.Visible = false;
-            //DateTime? f = new DateTime();
-            //f = n.Fecha;
-            //Mes_Box.SelectedIndex = fecha.
-            Fecha1.Visible = false;
-            Fecha2.Visible = false;
             fecha.Visible = true;
             fechaBox.Visible = true;
             fechaBox.Text = n.Fecha.ToString();
@@ -101,14 +94,6 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                 ParteVariableBox.Enabled = true;
             }
             HorasBox.Enabled = true;
-            Mes_Box.Enabled = true;
-            Anyo_Box.Enabled = true;
-            Mes_Box.Visible = true;
-            Anyo_Box.Visible = true;
-            Fecha1.Visible = true;
-            Fecha2.Visible = true;
-            fecha.Visible = false;
-            fechaBox.Visible = false;
             Editar.Visible = false;
         }
 
@@ -116,7 +101,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
         {
             NominaCEN nomina = new NominaCEN();
 
-            if(HorasBox.Text.Length!=0 && TotalBox.Text.Length!=0 && Mes_Box.Text.Length!=0 && Anyo_Box.Text.Length!=0)
+            if(HorasBox.Text.Length!=0)
             {
                 try
                 {
@@ -140,12 +125,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                     
                     float h = ComprobarFloat(HorasBox.Text);
                     float t = ComprobarFloat(TotalBox.Text);
-                    int anyo, mes;
-                    Int32.TryParse(Anyo_Box.Text, out anyo);
-                    string smes = BuscarMes(Mes_Box.Text);
-                    Int32.TryParse(smes, out mes);
-                    DateTime fecha = new DateTime(anyo, mes, 1, 0, 0, 0);
-                    nomina.Editar(IDBox.Text, f, v, h, t, fecha);
+                    nomina.Editar(IDBox.Text, f, v, h, t, DateTime.Parse(fechaBox.Text));
                 }
                 catch (Exception exp)
                 {
@@ -221,6 +201,41 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                 case "Noviembre": solucion = "11";
                     break;
                 case "Diciembre": solucion = "12";
+                    break;
+
+            }
+            return solucion;
+        }
+
+        private string BuscarNombreMes(int mes)
+        {
+            string solucion = "";
+
+            switch (mes)
+            {
+                case 1: solucion = "Enero";
+                    break;
+                case 2: solucion = "Febrero";
+                    break;
+                case 3: solucion = "Marzo";
+                    break;
+                case 4: solucion = "Abril";
+                    break;
+                case 5: solucion = "Mayo";
+                    break;
+                case 6: solucion = "Junio";
+                    break;
+                case 7: solucion = "Julio";
+                    break;
+                case 8: solucion = "Agosto";
+                    break;
+                case 9: solucion = "Septiembre";
+                    break;
+                case 10: solucion = "Octubre";
+                    break;
+                case 11: solucion = "Noviembre";
+                    break;
+                case 12: solucion = "Diciembre";
                     break;
 
             }
