@@ -74,6 +74,19 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
             cp.Deactivate += GridPedido_Load;
         }
 
+        private void Actualizar_Click(object sender, EventArgs e)
+        {
+            var columnaSeleccionada = pedidoGrid.SelectedRows[0];
+            ActualizarEstadoPedido ae = new ActualizarEstadoPedido() 
+            { 
+                Owner = this, 
+                IdPedido = columnaSeleccionada.Cells["Id"].Value.ToString(),
+                IdProveedor = columnaSeleccionada.Cells["Proveedor"].Value.ToString()
+            };
+            ae.Show();
+            ae.Deactivate += GridPedido_Load;
+        }
+
         private void EnableDisableBT(Control container, bool mode)
         {
             foreach (Control c in container.Controls)
@@ -84,6 +97,22 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
                     EnableDisableBT(c, mode);
             }
         }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+            string id = pedidoGrid.SelectedRows[0].Cells["Id"].Value.ToString();
+            MessageBoxButtons mButtons = MessageBoxButtons.YesNo;
+            string message = String.Format("¿Estás seguro que deseas eliminar el pedido con Id: {0}?", id);
+            string titulo = "Eliminando Pedido";
+
+            var response = MessageBox.Show(message, titulo, mButtons);
+            if (response.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                _pedido.Eliminar(id);
+                GridPedido_Load(sender, e);
+            }   
+        }
+
     }
 
     public class PedidoGV

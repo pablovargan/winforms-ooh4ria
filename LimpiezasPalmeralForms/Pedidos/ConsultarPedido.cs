@@ -55,11 +55,12 @@ namespace LimpiezasPalmeralForms.Pedidos
             var l = new List<LineasGV>();
             foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(pedido.Id))
             {
+                var producto = new ProductoCEN().ObtenerProducto(linea.Productos.Id);
                 l.Add(new LineasGV()
                 {
-                    Id = linea.Id,
-                    Cantidad = linea.Cantidad,
-                    Producto = new ProductoCEN().ObtenerProducto(linea.Productos.Id).Nombre
+                    Id = producto.Id,
+                    Producto = producto.Nombre,
+                    Cantidad = linea.Cantidad
                 });
             }
 
@@ -69,6 +70,8 @@ namespace LimpiezasPalmeralForms.Pedidos
 
         private void Actualizar_Click(object sender, EventArgs e)
         {
+            actualizarButton.Visible = false;
+            cancelarButton.Visible = true;
             estadoCB.Enabled = true;
         }
 
@@ -76,8 +79,9 @@ namespace LimpiezasPalmeralForms.Pedidos
         {
             if (estadoCB.Enabled)
             {
-                //var estado = (EstadoPedidoEnum) Enum.Parse(estadoCB.SelectedValue, EstadoPedidoEnum);
-
+                var enumSelected = (EstadoPedidoEnum) Enum.Parse(typeof(EstadoPedidoEnum),estadoCB.SelectedValue.ToString());
+                var pedido = new PedidoCEN().ObtenerPedido(IdPedido);
+                new PedidoCEN().Editar(IdPedido, pedido.Fecha, enumSelected, pedido.TipoPago);
             }
         
             this.Close();
@@ -85,13 +89,18 @@ namespace LimpiezasPalmeralForms.Pedidos
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
+            // TODO
+        }
 
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     class LineasGV
     {
-        public int Id { get; set; }
-        public int Cantidad { get; set; }
+        public string Id { get; set; }
         public string Producto { get; set; }
+        public int Cantidad { get; set; }
     }
 }

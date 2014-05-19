@@ -1,6 +1,6 @@
 ﻿namespace LimpiezasPalmeralForms.Pedidos
 {
-    partial class ConsultarPedido
+    partial class ActualizarEstadoPedido
     {
         /// <summary>
         /// Required designer variable.
@@ -36,17 +36,11 @@
             this.fechaBox = new System.Windows.Forms.TextBox();
             this.fechaLabel = new System.Windows.Forms.Label();
             this.estadoLabel = new System.Windows.Forms.Label();
-            this.accionesGB = new System.Windows.Forms.GroupBox();
             this.cancelarButton = new System.Windows.Forms.Button();
-            this.eliminarButton = new System.Windows.Forms.Button();
-            this.aceptarButton = new System.Windows.Forms.Button();
             this.actualizarButton = new System.Windows.Forms.Button();
-            this.pedidoBox = new System.Windows.Forms.GroupBox();
-            this.lineasPedidoGV = new System.Windows.Forms.DataGridView();
+            this.accionesGB = new System.Windows.Forms.GroupBox();
             this.proveedorGB.SuspendLayout();
             this.accionesGB.SuspendLayout();
-            this.pedidoBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lineasPedidoGV)).BeginInit();
             this.SuspendLayout();
             // 
             // proveedorGB
@@ -58,12 +52,12 @@
             this.proveedorGB.Controls.Add(this.fechaBox);
             this.proveedorGB.Controls.Add(this.fechaLabel);
             this.proveedorGB.Controls.Add(this.estadoLabel);
-            this.proveedorGB.Location = new System.Drawing.Point(13, 14);
+            this.proveedorGB.Location = new System.Drawing.Point(12, 13);
             this.proveedorGB.Margin = new System.Windows.Forms.Padding(4);
             this.proveedorGB.Name = "proveedorGB";
             this.proveedorGB.Padding = new System.Windows.Forms.Padding(4);
             this.proveedorGB.Size = new System.Drawing.Size(599, 142);
-            this.proveedorGB.TabIndex = 4;
+            this.proveedorGB.TabIndex = 5;
             this.proveedorGB.TabStop = false;
             this.proveedorGB.Text = "Proveedor";
             // 
@@ -98,7 +92,6 @@
             // estadoCB
             // 
             this.estadoCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.estadoCB.Enabled = false;
             this.estadoCB.FormattingEnabled = true;
             this.estadoCB.Items.AddRange(new object[] {
             "Pendiente",
@@ -139,110 +132,55 @@
             this.estadoLabel.TabIndex = 0;
             this.estadoLabel.Text = "Estado del pedido";
             // 
-            // accionesGB
-            // 
-            this.accionesGB.Controls.Add(this.cancelarButton);
-            this.accionesGB.Controls.Add(this.eliminarButton);
-            this.accionesGB.Controls.Add(this.aceptarButton);
-            this.accionesGB.Controls.Add(this.actualizarButton);
-            this.accionesGB.Location = new System.Drawing.Point(13, 514);
-            this.accionesGB.Margin = new System.Windows.Forms.Padding(4);
-            this.accionesGB.Name = "accionesGB";
-            this.accionesGB.Padding = new System.Windows.Forms.Padding(4);
-            this.accionesGB.Size = new System.Drawing.Size(599, 91);
-            this.accionesGB.TabIndex = 5;
-            this.accionesGB.TabStop = false;
-            this.accionesGB.Text = "Acciones";
-            // 
             // cancelarButton
             // 
-            this.cancelarButton.Location = new System.Drawing.Point(205, 23);
+            this.cancelarButton.Location = new System.Drawing.Point(312, 23);
             this.cancelarButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(187, 54);
             this.cancelarButton.TabIndex = 3;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
-            this.cancelarButton.Visible = false;
             this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
-            // eliminarButton
-            // 
-            this.eliminarButton.Location = new System.Drawing.Point(405, 23);
-            this.eliminarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.eliminarButton.Name = "eliminarButton";
-            this.eliminarButton.Size = new System.Drawing.Size(187, 54);
-            this.eliminarButton.TabIndex = 2;
-            this.eliminarButton.Text = "Eliminar";
-            this.eliminarButton.UseVisualStyleBackColor = true;
-            this.eliminarButton.Click += new System.EventHandler(this.Eliminar_Click);
-            // 
-            // aceptarButton
-            // 
-            this.aceptarButton.Location = new System.Drawing.Point(8, 23);
-            this.aceptarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.aceptarButton.Name = "aceptarButton";
-            this.aceptarButton.Size = new System.Drawing.Size(187, 54);
-            this.aceptarButton.TabIndex = 0;
-            this.aceptarButton.Text = "Aceptar";
-            this.aceptarButton.UseVisualStyleBackColor = true;
-            this.aceptarButton.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // actualizarButton
             // 
-            this.actualizarButton.Location = new System.Drawing.Point(205, 23);
+            this.actualizarButton.Location = new System.Drawing.Point(117, 23);
             this.actualizarButton.Margin = new System.Windows.Forms.Padding(4);
             this.actualizarButton.Name = "actualizarButton";
             this.actualizarButton.Size = new System.Drawing.Size(187, 54);
-            this.actualizarButton.TabIndex = 1;
-            this.actualizarButton.Text = "Actualizar Estado";
+            this.actualizarButton.TabIndex = 0;
+            this.actualizarButton.Text = "Actualizar";
             this.actualizarButton.UseVisualStyleBackColor = true;
             this.actualizarButton.Click += new System.EventHandler(this.Actualizar_Click);
             // 
-            // pedidoBox
+            // accionesGB
             // 
-            this.pedidoBox.Controls.Add(this.lineasPedidoGV);
-            this.pedidoBox.Location = new System.Drawing.Point(13, 161);
-            this.pedidoBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pedidoBox.Name = "pedidoBox";
-            this.pedidoBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pedidoBox.Size = new System.Drawing.Size(599, 347);
-            this.pedidoBox.TabIndex = 22;
-            this.pedidoBox.TabStop = false;
-            this.pedidoBox.Text = "Pedido";
+            this.accionesGB.Controls.Add(this.cancelarButton);
+            this.accionesGB.Controls.Add(this.actualizarButton);
+            this.accionesGB.Location = new System.Drawing.Point(12, 163);
+            this.accionesGB.Margin = new System.Windows.Forms.Padding(4);
+            this.accionesGB.Name = "accionesGB";
+            this.accionesGB.Padding = new System.Windows.Forms.Padding(4);
+            this.accionesGB.Size = new System.Drawing.Size(599, 91);
+            this.accionesGB.TabIndex = 6;
+            this.accionesGB.TabStop = false;
+            this.accionesGB.Text = "Acciones";
             // 
-            // lineasPedidoGV
-            // 
-            this.lineasPedidoGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.lineasPedidoGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lineasPedidoGV.Location = new System.Drawing.Point(5, 21);
-            this.lineasPedidoGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lineasPedidoGV.Name = "lineasPedidoGV";
-            this.lineasPedidoGV.RowTemplate.Height = 24;
-            this.lineasPedidoGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.lineasPedidoGV.Size = new System.Drawing.Size(587, 320);
-            this.lineasPedidoGV.TabIndex = 0;
-            // 
-            // ConsultarPedido
+            // ActualizarEstadoPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 619);
+            this.ClientSize = new System.Drawing.Size(624, 266);
             this.ControlBox = false;
-            this.Controls.Add(this.pedidoBox);
             this.Controls.Add(this.accionesGB);
             this.Controls.Add(this.proveedorGB);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ConsultarPedido";
+            this.Name = "ActualizarEstadoPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consultar Pedido";
+            this.Text = "Actualizar Estado";
             this.proveedorGB.ResumeLayout(false);
             this.proveedorGB.PerformLayout();
             this.accionesGB.ResumeLayout(false);
-            this.pedidoBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lineasPedidoGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,20 +188,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox proveedorGB;
+        private System.Windows.Forms.TextBox pagoBox;
+        private System.Windows.Forms.Label pagoLabel;
         private System.Windows.Forms.Label datosLabel;
         private System.Windows.Forms.ComboBox estadoCB;
         private System.Windows.Forms.TextBox fechaBox;
         private System.Windows.Forms.Label fechaLabel;
         private System.Windows.Forms.Label estadoLabel;
-        private System.Windows.Forms.GroupBox accionesGB;
-        private System.Windows.Forms.Button aceptarButton;
-        private System.Windows.Forms.Button actualizarButton;
-        private System.Windows.Forms.TextBox pagoBox;
-        private System.Windows.Forms.Label pagoLabel;
-        private System.Windows.Forms.GroupBox pedidoBox;
-        private System.Windows.Forms.DataGridView lineasPedidoGV;
-        private System.Windows.Forms.Button eliminarButton;
         private System.Windows.Forms.Button cancelarButton;
-
+        private System.Windows.Forms.Button actualizarButton;
+        private System.Windows.Forms.GroupBox accionesGB;
     }
 }
