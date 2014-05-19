@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.Jornadas = new System.Windows.Forms.GroupBox();
+            this.Jornada = new System.Windows.Forms.DataGridView();
+            this.FechaBox = new System.Windows.Forms.DateTimePicker();
             this.Instalaciones = new System.Windows.Forms.DataGridView();
             this.Trabajadores = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Crear = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
-            this.FechaBox = new System.Windows.Forms.DateTimePicker();
-            this.Jornada = new System.Windows.Forms.DataGridView();
             this.Jornadas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Jornada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Instalaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Trabajadores)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Jornada)).BeginInit();
             this.SuspendLayout();
             // 
             // Jornadas
@@ -58,6 +58,28 @@
             this.Jornadas.TabIndex = 0;
             this.Jornadas.TabStop = false;
             this.Jornadas.Text = "Jornadas";
+            // 
+            // Jornada
+            // 
+            this.Jornada.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Jornada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Jornada.Location = new System.Drawing.Point(585, 45);
+            this.Jornada.MultiSelect = false;
+            this.Jornada.Name = "Jornada";
+            this.Jornada.ReadOnly = true;
+            this.Jornada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Jornada.Size = new System.Drawing.Size(279, 247);
+            this.Jornada.TabIndex = 3;
+            this.Jornada.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Jornada_CellContentClick);
+            // 
+            // FechaBox
+            // 
+            this.FechaBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FechaBox.Location = new System.Drawing.Point(585, 19);
+            this.FechaBox.Name = "FechaBox";
+            this.FechaBox.Size = new System.Drawing.Size(279, 20);
+            this.FechaBox.TabIndex = 2;
             // 
             // Instalaciones
             // 
@@ -121,27 +143,6 @@
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
-            // FechaBox
-            // 
-            this.FechaBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FechaBox.Location = new System.Drawing.Point(585, 19);
-            this.FechaBox.Name = "FechaBox";
-            this.FechaBox.Size = new System.Drawing.Size(279, 20);
-            this.FechaBox.TabIndex = 2;
-            // 
-            // Jornada
-            // 
-            this.Jornada.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Jornada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Jornada.Location = new System.Drawing.Point(585, 45);
-            this.Jornada.MultiSelect = false;
-            this.Jornada.Name = "Jornada";
-            this.Jornada.ReadOnly = true;
-            this.Jornada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Jornada.Size = new System.Drawing.Size(279, 247);
-            this.Jornada.TabIndex = 3;
-            // 
             // CrearJornada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,10 +155,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Jornada";
             this.Jornadas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Jornada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Instalaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Trabajadores)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Jornada)).EndInit();
             this.ResumeLayout(false);
 
         }
