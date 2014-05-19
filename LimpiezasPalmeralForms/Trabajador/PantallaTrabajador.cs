@@ -11,6 +11,7 @@ using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
 using LimpiezasPalmeralForms.Trabajador;
 using LimpiezasPalmeralForms.Servicios;
+using LimpiezasPalmeralForms.Trabajador.Nóminas;
 
 namespace LimpiezasPalmeralForms
 {
@@ -162,7 +163,28 @@ namespace LimpiezasPalmeralForms
 
             if (dr == DialogResult.Yes)
             {
+                EliminarNominas(trabajador_eliminar.Nif);
                 trabajador.Eliminar(trabajador_eliminar.Nif);
+            }
+            PantallaNominas pn = new PantallaNominas();
+            pn.Grid_Load(sender, e);
+        }
+
+        private void EliminarNominas(string id)
+        {
+            TrabajadorCEN trabajador = new TrabajadorCEN();
+            TrabajadorEN t = new TrabajadorEN();
+            NominaCEN nomina = new NominaCEN();
+            IList<NominaEN> lista = new List<NominaEN>();
+            t = trabajador.ObtenerTrabajador(id);
+            lista = nomina.ObtenerTodas(0, 0);
+            IList<NominaEN> listabuena = new List<NominaEN>();
+            foreach (NominaEN n in lista)
+            {
+                if (n.Trabajador.Nif.Equals(t.Nif))
+                {
+                    nomina.Eliminar(n.Id);
+                }
             }
         }
 

@@ -75,6 +75,7 @@
             // 
             // Total_Box
             // 
+            this.Total_Box.Enabled = false;
             this.Total_Box.Location = new System.Drawing.Point(128, 131);
             this.Total_Box.Name = "Total_Box";
             this.Total_Box.Size = new System.Drawing.Size(100, 20);

@@ -21,6 +21,30 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             InitializeComponent();
             this.Load += new EventHandler(CrearNomina_Load);
             Trabajadores.TextChanged += new EventHandler(Trabajadores_Changed);
+            Fija_Box.TextChanged += new EventHandler(CalcularTotal);
+            Variable_Box.TextChanged += new EventHandler(CalcularTotal);
+        }
+
+        private void CalcularTotal(object sender, EventArgs e)
+        {
+            float d1, d2;
+            if (Fija_Box.Text.Length != 0)
+            {
+                d1 = ComprobarFloat(Fija_Box.Text);
+            }
+            else
+            {
+                d1 = 0;
+            }
+            if (Variable_Box.Text.Length != 0)
+            {
+                d2 = ComprobarFloat(Variable_Box.Text);
+            }
+            else
+            {
+                d2 = 0;
+            }
+            Total_Box.Text = (d1 + d2).ToString();
         }
 
         private void Trabajadores_Changed(object sender, EventArgs e)
@@ -31,6 +55,11 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 
             if(trabajador.Contains(tra.ObtenerTrabajador(Trabajadores.SelectedItem.ToString())))
             {
+                Variable_Box.Text = "";
+                Fija_Box.Text = "";
+                Horas_Box.Text = "";
+                Total_Box.Text = "";
+
                 if (tra.ObtenerTrabajador(Trabajadores.SelectedItem.ToString()).Tipo.Equals(PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum.Cooperativista))
                 {
                     Variable.Visible = true;
@@ -120,13 +149,13 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
 
         private void Crear_Click(object sender, EventArgs e)
         {
-            NominaCEN nomina = new NominaCEN();
-            TrabajadorCEN t = new TrabajadorCEN();
-            TrabajadorEN trabajador = new TrabajadorEN();
-            t.ObtenerTrabajador(Trabajadores.SelectedItem.ToString());
-
             try
             {
+                NominaCEN nomina = new NominaCEN();
+                TrabajadorCEN t = new TrabajadorCEN();
+                TrabajadorEN trabajador = new TrabajadorEN();
+                trabajador= t.ObtenerTrabajador(Trabajadores.SelectedItem.ToString());
+
                 float variable=0;
                 if (trabajador.Tipo.ToString().Equals("Cooperativista"))
                 {
@@ -154,6 +183,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
                     {
                         nomina.Crear(trabajador.Nif + "_" + mes + "_" + Anyo_Box.Text, fijo, variable,
                             horas, total, fecha, trabajador.Nif);
+
                         this.Close();
                     }
                     else
@@ -178,7 +208,7 @@ namespace LimpiezasPalmeralForms.Trabajador.Nóminas
             bool convertido= float.TryParse(entrada, out solucion);
 
             if(convertido==false){
-                MessageBox.Show(Constantes._ERRORNOMINA);
+                MessageBox.Show("Porfavor introduzca un dato numérico");
             }
 
             return solucion;
