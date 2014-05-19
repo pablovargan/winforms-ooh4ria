@@ -1,6 +1,6 @@
-﻿namespace LimpiezasPalmeralForms.Cliente
+﻿namespace LimpiezasPalmeralForms.Proveedor
 {
-    partial class GenerarInforme
+    partial class GenerarInformeProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -35,23 +35,23 @@
             this.labelNombreEmpresa = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewInstalaciones = new System.Windows.Forms.DataGridView();
+            this.instalacionesGridView = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBoxPais = new System.Windows.Forms.TextBox();
+            this.paisBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxTelefono = new System.Windows.Forms.TextBox();
-            this.textBoxCP = new System.Windows.Forms.TextBox();
-            this.textBoxDireccion = new System.Windows.Forms.TextBox();
-            this.textBoxProvincia = new System.Windows.Forms.TextBox();
+            this.telefonoBox = new System.Windows.Forms.TextBox();
+            this.codigoPostalBox = new System.Windows.Forms.TextBox();
+            this.direccionBox = new System.Windows.Forms.TextBox();
+            this.provinciaBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxLocalidad = new System.Windows.Forms.TextBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBoxNIF = new System.Windows.Forms.TextBox();
+            this.localidadBox = new System.Windows.Forms.TextBox();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.descripcionBox = new System.Windows.Forms.TextBox();
+            this.nombreBox = new System.Windows.Forms.TextBox();
+            this.nifBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instalacionesGridView)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -75,11 +75,11 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Location = new System.Drawing.Point(17, 16);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(631, 651);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informe";
             // 
@@ -90,9 +90,9 @@
             this.groupBox5.Controls.Add(this.labelNombreEmpresa);
             this.groupBox5.Controls.Add(this.pictureBox1);
             this.groupBox5.Location = new System.Drawing.Point(16, 25);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(599, 127);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
@@ -132,7 +132,7 @@
             // 
             this.pictureBox1.Image = global::LimpiezasPalmeralForms.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(9, 23);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -141,75 +141,75 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridViewInstalaciones);
+            this.groupBox3.Controls.Add(this.instalacionesGridView);
             this.groupBox3.Location = new System.Drawing.Point(16, 442);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(600, 198);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Instalaciones";
+            this.groupBox3.Text = "Pedidos";
             // 
-            // dataGridViewInstalaciones
+            // instalacionesGridView
             // 
-            this.dataGridViewInstalaciones.AllowUserToAddRows = false;
-            this.dataGridViewInstalaciones.AllowUserToDeleteRows = false;
-            this.dataGridViewInstalaciones.AllowUserToResizeColumns = false;
-            this.dataGridViewInstalaciones.AllowUserToResizeRows = false;
-            this.dataGridViewInstalaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.instalacionesGridView.AllowUserToAddRows = false;
+            this.instalacionesGridView.AllowUserToDeleteRows = false;
+            this.instalacionesGridView.AllowUserToResizeColumns = false;
+            this.instalacionesGridView.AllowUserToResizeRows = false;
+            this.instalacionesGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewInstalaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewInstalaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInstalaciones.Enabled = false;
-            this.dataGridViewInstalaciones.Location = new System.Drawing.Point(9, 25);
-            this.dataGridViewInstalaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
-            this.dataGridViewInstalaciones.ReadOnly = true;
-            this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(579, 166);
-            this.dataGridViewInstalaciones.TabIndex = 11;
+            this.instalacionesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.instalacionesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.instalacionesGridView.Enabled = false;
+            this.instalacionesGridView.Location = new System.Drawing.Point(9, 25);
+            this.instalacionesGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.instalacionesGridView.Name = "instalacionesGridView";
+            this.instalacionesGridView.ReadOnly = true;
+            this.instalacionesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.instalacionesGridView.Size = new System.Drawing.Size(579, 166);
+            this.instalacionesGridView.TabIndex = 11;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBoxPais);
+            this.groupBox4.Controls.Add(this.paisBox);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.textBoxTelefono);
-            this.groupBox4.Controls.Add(this.textBoxCP);
-            this.groupBox4.Controls.Add(this.textBoxDireccion);
-            this.groupBox4.Controls.Add(this.textBoxProvincia);
+            this.groupBox4.Controls.Add(this.telefonoBox);
+            this.groupBox4.Controls.Add(this.codigoPostalBox);
+            this.groupBox4.Controls.Add(this.direccionBox);
+            this.groupBox4.Controls.Add(this.provinciaBox);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.textBoxLocalidad);
-            this.groupBox4.Controls.Add(this.textBoxEmail);
-            this.groupBox4.Controls.Add(this.textBoxDescripcion);
-            this.groupBox4.Controls.Add(this.textBoxNombre);
-            this.groupBox4.Controls.Add(this.textBoxNIF);
+            this.groupBox4.Controls.Add(this.localidadBox);
+            this.groupBox4.Controls.Add(this.emailBox);
+            this.groupBox4.Controls.Add(this.descripcionBox);
+            this.groupBox4.Controls.Add(this.nombreBox);
+            this.groupBox4.Controls.Add(this.nifBox);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Location = new System.Drawing.Point(16, 159);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(600, 274);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Cliente";
+            this.groupBox4.Text = "Proveedor";
             // 
-            // textBoxPais
+            // paisBox
             // 
-            this.textBoxPais.Enabled = false;
-            this.textBoxPais.Location = new System.Drawing.Point(447, 26);
-            this.textBoxPais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxPais.Name = "textBoxPais";
-            this.textBoxPais.Size = new System.Drawing.Size(132, 22);
-            this.textBoxPais.TabIndex = 8;
+            this.paisBox.Enabled = false;
+            this.paisBox.Location = new System.Drawing.Point(447, 26);
+            this.paisBox.Margin = new System.Windows.Forms.Padding(4);
+            this.paisBox.Name = "paisBox";
+            this.paisBox.Size = new System.Drawing.Size(132, 22);
+            this.paisBox.TabIndex = 8;
             // 
             // label7
             // 
@@ -221,41 +221,41 @@
             this.label7.TabIndex = 23;
             this.label7.Text = "País";
             // 
-            // textBoxTelefono
+            // telefonoBox
             // 
-            this.textBoxTelefono.Enabled = false;
-            this.textBoxTelefono.Location = new System.Drawing.Point(447, 60);
-            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(132, 22);
-            this.textBoxTelefono.TabIndex = 9;
+            this.telefonoBox.Enabled = false;
+            this.telefonoBox.Location = new System.Drawing.Point(447, 60);
+            this.telefonoBox.Margin = new System.Windows.Forms.Padding(4);
+            this.telefonoBox.Name = "telefonoBox";
+            this.telefonoBox.Size = new System.Drawing.Size(132, 22);
+            this.telefonoBox.TabIndex = 9;
             // 
-            // textBoxCP
+            // codigoPostalBox
             // 
-            this.textBoxCP.Enabled = false;
-            this.textBoxCP.Location = new System.Drawing.Point(135, 233);
-            this.textBoxCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxCP.Name = "textBoxCP";
-            this.textBoxCP.Size = new System.Drawing.Size(132, 22);
-            this.textBoxCP.TabIndex = 7;
+            this.codigoPostalBox.Enabled = false;
+            this.codigoPostalBox.Location = new System.Drawing.Point(135, 233);
+            this.codigoPostalBox.Margin = new System.Windows.Forms.Padding(4);
+            this.codigoPostalBox.Name = "codigoPostalBox";
+            this.codigoPostalBox.Size = new System.Drawing.Size(132, 22);
+            this.codigoPostalBox.TabIndex = 7;
             // 
-            // textBoxDireccion
+            // direccionBox
             // 
-            this.textBoxDireccion.Enabled = false;
-            this.textBoxDireccion.Location = new System.Drawing.Point(135, 129);
-            this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(132, 22);
-            this.textBoxDireccion.TabIndex = 4;
+            this.direccionBox.Enabled = false;
+            this.direccionBox.Location = new System.Drawing.Point(135, 129);
+            this.direccionBox.Margin = new System.Windows.Forms.Padding(4);
+            this.direccionBox.Name = "direccionBox";
+            this.direccionBox.Size = new System.Drawing.Size(132, 22);
+            this.direccionBox.TabIndex = 4;
             // 
-            // textBoxProvincia
+            // provinciaBox
             // 
-            this.textBoxProvincia.Enabled = false;
-            this.textBoxProvincia.Location = new System.Drawing.Point(135, 198);
-            this.textBoxProvincia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxProvincia.Name = "textBoxProvincia";
-            this.textBoxProvincia.Size = new System.Drawing.Size(132, 22);
-            this.textBoxProvincia.TabIndex = 6;
+            this.provinciaBox.Enabled = false;
+            this.provinciaBox.Location = new System.Drawing.Point(135, 198);
+            this.provinciaBox.Margin = new System.Windows.Forms.Padding(4);
+            this.provinciaBox.Name = "provinciaBox";
+            this.provinciaBox.Size = new System.Drawing.Size(132, 22);
+            this.provinciaBox.TabIndex = 6;
             // 
             // label10
             // 
@@ -297,52 +297,52 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Provincia";
             // 
-            // textBoxLocalidad
+            // localidadBox
             // 
-            this.textBoxLocalidad.Enabled = false;
-            this.textBoxLocalidad.Location = new System.Drawing.Point(135, 164);
-            this.textBoxLocalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxLocalidad.Name = "textBoxLocalidad";
-            this.textBoxLocalidad.Size = new System.Drawing.Size(132, 22);
-            this.textBoxLocalidad.TabIndex = 5;
+            this.localidadBox.Enabled = false;
+            this.localidadBox.Location = new System.Drawing.Point(135, 164);
+            this.localidadBox.Margin = new System.Windows.Forms.Padding(4);
+            this.localidadBox.Name = "localidadBox";
+            this.localidadBox.Size = new System.Drawing.Size(132, 22);
+            this.localidadBox.TabIndex = 5;
             // 
-            // textBoxEmail
+            // emailBox
             // 
-            this.textBoxEmail.Enabled = false;
-            this.textBoxEmail.Location = new System.Drawing.Point(135, 95);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(132, 22);
-            this.textBoxEmail.TabIndex = 3;
+            this.emailBox.Enabled = false;
+            this.emailBox.Location = new System.Drawing.Point(135, 95);
+            this.emailBox.Margin = new System.Windows.Forms.Padding(4);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(132, 22);
+            this.emailBox.TabIndex = 3;
             // 
-            // textBoxDescripcion
+            // descripcionBox
             // 
-            this.textBoxDescripcion.Enabled = false;
-            this.textBoxDescripcion.Location = new System.Drawing.Point(336, 118);
-            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxDescripcion.Multiline = true;
-            this.textBoxDescripcion.Name = "textBoxDescripcion";
-            this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDescripcion.Size = new System.Drawing.Size(243, 138);
-            this.textBoxDescripcion.TabIndex = 10;
+            this.descripcionBox.Enabled = false;
+            this.descripcionBox.Location = new System.Drawing.Point(336, 118);
+            this.descripcionBox.Margin = new System.Windows.Forms.Padding(4);
+            this.descripcionBox.Multiline = true;
+            this.descripcionBox.Name = "descripcionBox";
+            this.descripcionBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descripcionBox.Size = new System.Drawing.Size(243, 138);
+            this.descripcionBox.TabIndex = 10;
             // 
-            // textBoxNombre
+            // nombreBox
             // 
-            this.textBoxNombre.Enabled = false;
-            this.textBoxNombre.Location = new System.Drawing.Point(135, 60);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(132, 22);
-            this.textBoxNombre.TabIndex = 2;
+            this.nombreBox.Enabled = false;
+            this.nombreBox.Location = new System.Drawing.Point(135, 60);
+            this.nombreBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nombreBox.Name = "nombreBox";
+            this.nombreBox.Size = new System.Drawing.Size(132, 22);
+            this.nombreBox.TabIndex = 2;
             // 
-            // textBoxNIF
+            // nifBox
             // 
-            this.textBoxNIF.Enabled = false;
-            this.textBoxNIF.Location = new System.Drawing.Point(135, 26);
-            this.textBoxNIF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxNIF.Name = "textBoxNIF";
-            this.textBoxNIF.Size = new System.Drawing.Size(132, 22);
-            this.textBoxNIF.TabIndex = 1;
+            this.nifBox.Enabled = false;
+            this.nifBox.Location = new System.Drawing.Point(135, 26);
+            this.nifBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nifBox.Name = "nifBox";
+            this.nifBox.Size = new System.Drawing.Size(132, 22);
+            this.nifBox.TabIndex = 1;
             // 
             // label5
             // 
@@ -398,57 +398,55 @@
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(17, 674);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(17, 677);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(631, 87);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(352, 26);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(263, 54);
             this.button2.TabIndex = 1;
             this.button2.Text = "Generar PDF";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.GenerarInforme_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(16, 26);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(264, 54);
             this.button1.TabIndex = 0;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Aceptar_Click);
             // 
-            // GenerarInforme
+            // GenerarInformeProveedor
             // 
-            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 777);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "GenerarInforme";
+            this.Name = "GenerarInformeProveedor";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Informe Cliente";
-            this.Load += new System.EventHandler(this.GenerarInforme_Load);
+            this.Text = "Informe Proveedor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstalaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.instalacionesGridView)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -459,36 +457,36 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label labelCiudadInforme;
+        private System.Windows.Forms.Label labelFechaInforme;
+        private System.Windows.Forms.Label labelNombreEmpresa;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridViewInstalaciones;
+        private System.Windows.Forms.DataGridView instalacionesGridView;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBoxPais;
+        private System.Windows.Forms.TextBox paisBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxTelefono;
-        private System.Windows.Forms.TextBox textBoxCP;
-        private System.Windows.Forms.TextBox textBoxDireccion;
-        private System.Windows.Forms.TextBox textBoxProvincia;
+        private System.Windows.Forms.TextBox telefonoBox;
+        private System.Windows.Forms.TextBox codigoPostalBox;
+        private System.Windows.Forms.TextBox direccionBox;
+        private System.Windows.Forms.TextBox provinciaBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxLocalidad;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.TextBox textBoxDescripcion;
-        private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.TextBox textBoxNIF;
+        private System.Windows.Forms.TextBox localidadBox;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.TextBox descripcionBox;
+        private System.Windows.Forms.TextBox nombreBox;
+        private System.Windows.Forms.TextBox nifBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelFechaInforme;
-        private System.Windows.Forms.Label labelNombreEmpresa;
-        private System.Windows.Forms.Label labelCiudadInforme;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

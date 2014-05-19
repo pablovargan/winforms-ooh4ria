@@ -63,7 +63,6 @@ namespace LimpiezasPalmeralForms.Pedidos
                     Cantidad = linea.Cantidad
                 });
             }
-
             lineasPedidoGV.DataSource = l;
         }
 

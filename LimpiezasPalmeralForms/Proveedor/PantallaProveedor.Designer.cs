@@ -37,6 +37,7 @@
             this.editarButton = new System.Windows.Forms.Button();
             this.consultarButton = new System.Windows.Forms.Button();
             this.altaButton = new System.Windows.Forms.Button();
+            this.informeButton = new System.Windows.Forms.Button();
             this.proveedoresGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorGrid)).BeginInit();
             this.accionesGB.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             this.accionesGB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.accionesGB.Controls.Add(this.informeButton);
             this.accionesGB.Controls.Add(this.eliminarButton);
             this.accionesGB.Controls.Add(this.editarButton);
             this.accionesGB.Controls.Add(this.consultarButton);
@@ -122,7 +124,7 @@
             // 
             // eliminarButton
             // 
-            this.eliminarButton.Location = new System.Drawing.Point(8, 206);
+            this.eliminarButton.Location = new System.Drawing.Point(9, 265);
             this.eliminarButton.Name = "eliminarButton";
             this.eliminarButton.Size = new System.Drawing.Size(161, 54);
             this.eliminarButton.TabIndex = 6;
@@ -132,7 +134,7 @@
             // 
             // editarButton
             // 
-            this.editarButton.Location = new System.Drawing.Point(8, 144);
+            this.editarButton.Location = new System.Drawing.Point(9, 203);
             this.editarButton.Name = "editarButton";
             this.editarButton.Size = new System.Drawing.Size(161, 54);
             this.editarButton.TabIndex = 5;
@@ -161,6 +163,16 @@
             this.altaButton.Text = "Dar de Alta";
             this.altaButton.UseVisualStyleBackColor = true;
             this.altaButton.Click += new System.EventHandler(this.AltaProveedor_Click);
+            // 
+            // informeButton
+            // 
+            this.informeButton.Location = new System.Drawing.Point(9, 143);
+            this.informeButton.Name = "informeButton";
+            this.informeButton.Size = new System.Drawing.Size(161, 54);
+            this.informeButton.TabIndex = 7;
+            this.informeButton.Text = "Generar Informe";
+            this.informeButton.UseVisualStyleBackColor = true;
+            this.informeButton.Click += new System.EventHandler(this.GenerarInforme_Click);
             // 
             // PantallaProveedor
             // 
@@ -194,5 +206,6 @@
         private System.Windows.Forms.Button consultarButton;
         private System.Windows.Forms.Button editarButton;
         private System.Windows.Forms.Button eliminarButton;
+        private System.Windows.Forms.Button informeButton;
     }
 }

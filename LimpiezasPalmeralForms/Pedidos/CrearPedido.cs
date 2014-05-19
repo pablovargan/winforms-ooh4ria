@@ -22,6 +22,7 @@ namespace LimpiezasPalmeralForms.Pedidos
         
         private ProductoCEN _productoCEN;
         private List<ProductoGV> _lproductos;
+        // Lineas del pedido
         private List<PedidoGV> _lproductosPedido;
 
         public CrearPedido()
