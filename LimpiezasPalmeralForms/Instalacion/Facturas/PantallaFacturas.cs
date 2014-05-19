@@ -87,17 +87,20 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
                 if(comboBox1.Text == "Todas las facturas") {
                     IList<FacturaEN> facturas = _factura.ObtenterTodas(0, 0);
 
-                    foreach (FacturaEN f in facturas)
+                    if (facturas.Count != 0)
                     {
-                        _factGV.Add(new FacturaGV()
+                        foreach (FacturaEN f in facturas)
                         {
-                            id = f.Id,
-                            horas = f.Horas,
-                            precio_hora = f.PrecioHora,
-                            fecha = f.Fecha,
-                            total = f.Total,
-                            instalacion = f.Instalacion.Id
-                        });
+                            _factGV.Add(new FacturaGV()
+                            {
+                                id = f.Id,
+                                horas = f.Horas,
+                                precio_hora = f.PrecioHora,
+                                fecha = f.Fecha,
+                                total = f.Total,
+                                instalacion = f.Instalacion.Id
+                            });
+                        }
                     }
                 }
                 
@@ -106,17 +109,20 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
                 {
                     IList<FacturaEN> facturas = _factura.ObtenerFacturasInstalacion(comboBox2.Text);
 
-                    foreach (FacturaEN f in facturas)
+                    if (facturas.Count != 0)
                     {
-                        _factGV.Add(new FacturaGV()
+                        foreach (FacturaEN f in facturas)
                         {
-                            id = f.Id,
-                            horas = f.Horas,
-                            precio_hora = f.PrecioHora,
-                            fecha = f.Fecha,
-                            total = f.Total,
-                            instalacion = f.Instalacion.Id
-                        });
+                            _factGV.Add(new FacturaGV()
+                            {
+                                id = f.Id,
+                                horas = f.Horas,
+                                precio_hora = f.PrecioHora,
+                                fecha = f.Fecha,
+                                total = f.Total,
+                                instalacion = f.Instalacion.Id
+                            });
+                        }
                     }
                 }
 
@@ -125,17 +131,20 @@ namespace LimpiezasPalmeralForms.Instalacion.Facturas
                 {
                     IList<FacturaEN> facturas = _factura.ObtenerPorAnyo(comboBox2.Text);
 
-                    foreach (FacturaEN f in facturas)
+                    if (facturas.Count != 0)
                     {
-                        _factGV.Add(new FacturaGV()
+                        foreach (FacturaEN f in facturas)
                         {
-                            id = f.Id,
-                            horas = f.Horas,
-                            precio_hora = f.PrecioHora,
-                            fecha = f.Fecha,
-                            total = f.Total,
-                            instalacion = f.Instalacion.Id
-                        });
+                            _factGV.Add(new FacturaGV()
+                            {
+                                id = f.Id,
+                                horas = f.Horas,
+                                precio_hora = f.PrecioHora,
+                                fecha = f.Fecha,
+                                total = f.Total,
+                                instalacion = f.Instalacion.Id
+                            });
+                        }
                     }
                 }
             }
