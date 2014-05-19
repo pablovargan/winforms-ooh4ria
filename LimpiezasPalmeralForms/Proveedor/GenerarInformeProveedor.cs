@@ -1,4 +1,5 @@
-﻿using PalmeralGenNHibernate.CEN.Default_;
+﻿using LimpiezasPalmeralForms.Servicios;
+using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
 using System;
 using System.Collections.Generic;
@@ -71,7 +72,10 @@ namespace LimpiezasPalmeralForms.Proveedor
 
         private void GenerarInforme_Click(object sender, EventArgs e)
         {
-            // TODO
+            ProveedorEN proveedor = new ProveedorCEN().ObtenerProveedor(Nif);
+            GeneradorPDF pdf = new GeneradorPDF();
+            pdf.pdfProveedor(proveedor);
+            this.Close();
         }
     }
 

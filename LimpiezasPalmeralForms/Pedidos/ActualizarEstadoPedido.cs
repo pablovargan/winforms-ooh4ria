@@ -1,4 +1,5 @@
 ﻿using PalmeralGenNHibernate.CEN.Default_;
+using PalmeralGenNHibernate.EN.Default_;
 using PalmeralGenNHibernate.Enumerated.Default_;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,19 @@ namespace LimpiezasPalmeralForms.Pedidos
         private void Actualizar_Click(object sender, EventArgs e)
         {
             var enumSelected = (EstadoPedidoEnum)Enum.Parse(typeof(EstadoPedidoEnum), estadoCB.SelectedValue.ToString());
+            if (enumSelected.Equals(EstadoPedidoEnum.Recibido))
+            {
+                // Aumentamos el stock de todos los productos del pedido
+                LineaPedidoCEN lineaPedidoCEN = new LineaPedidoCEN();
+                ProductoCEN productoCEN = new ProductoCEN();
+                var l = new List<LineasGV>();
+                foreach (LineaPedidoEN linea in lineaPedidoCEN.ObtenerLineasDePedido(IdPedido))
+                {
+                    var producto = new ProductoCEN().ObtenerProducto(linea.Productos.Id);
+                    productoCEN.Editar(producto.Id, producto.Nombre, producto.Descripcion,
+                        producto.Stock + linea.Cantidad, producto.Foto);
+                }
+            }
             var pedido = new PedidoCEN().ObtenerPedido(IdPedido);
             new PedidoCEN().Editar(IdPedido, pedido.Fecha, enumSelected, pedido.TipoPago);
 

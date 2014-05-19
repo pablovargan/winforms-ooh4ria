@@ -572,10 +572,118 @@ namespace LimpiezasPalmeralForms.Servicios
             MessageBox.Show("Se ha generado un informe en PDF con el nombre \"" + path + "\"");
         }
 
-        private Document pdfProveedor(Document document)
+        public void pdfProveedor(ProveedorEN proveedor)
         {
+            Document document;
+            document = new Document(PageSize.A4, 25, 25, 30, 30);
+            string path = @"" + "Proveedor " + proveedor.Id + ".pdf";
+            FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
 
-            return document;
+
+            // Create an instance to the PDF file by creating an instance of the PDF 
+            // Writer class using the document and the filestrem in the constructor.
+            PdfWriter writer = PdfWriter.GetInstance(document, fs);
+
+            // Open the document to enable you to write to the document
+            document.Open();
+
+            // Creo cabecera del informe
+            PdfPTable tableTitulo = new PdfPTable(2);
+            tableTitulo.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            PdfPCell cell = new PdfPCell(new Phrase("Informe de Proveedor"));
+            cell.BorderWidth = 0;
+            cell.Colspan = 3;
+            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableTitulo.AddCell(cell);
+            document.Add(tableTitulo);
+
+            //Tabla sin bordes
+            PdfPTable tableCabecera = new PdfPTable(2);
+            tableCabecera.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+
+            //Cargamos la imagen de resources.
+            System.Drawing.Image logores = Properties.Resources.logo;
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(logores, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+            //Añado imagen a la cabecera y fecha.
+            logo.ScaleAbsolute(100f, 100f);
+            PdfPCell cellLogo = new PdfPCell(logo);
+            cellLogo.BorderWidth = 0;
+            tableCabecera.AddCell(cellLogo);
+            tableCabecera.AddCell("\n\n\n\n\nEmpresa: " + Constantes._NOMBREEMPRESA + "\nLocalidad: " + Constantes._CIUDADEMPRESA + "\nFecha: " + DateTime.Now.ToString() + "\n");
+
+            //Inserto tabla de cabecera
+            document.Add(tableCabecera);
+
+            Paragraph salto = new Paragraph(" ");
+            document.Add(salto);
+            document.Add(salto);
+
+            //Añadimos una tabla con los datos del Proveedor
+            PdfPTable tableProveedor = new PdfPTable(2);
+            PdfPCell cell2 = new PdfPCell(new Phrase("Datos del Proveedor"));
+            cell2.Colspan = 2;
+            cell2.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tableProveedor.AddCell(cell2);
+            tableProveedor.AddCell("Id");
+            tableProveedor.AddCell(proveedor.Id);
+            tableProveedor.AddCell("Nombre");
+            tableProveedor.AddCell(proveedor.Nombre);
+            tableProveedor.AddCell("Email");
+            tableProveedor.AddCell(proveedor.Email);
+            tableProveedor.AddCell("Dirección");
+            tableProveedor.AddCell(proveedor.Direccion);
+            tableProveedor.AddCell("Localidad");
+            tableProveedor.AddCell(proveedor.Localidad);
+            tableProveedor.AddCell("Provincia");
+            tableProveedor.AddCell(proveedor.Provincia);
+            tableProveedor.AddCell("CP");
+            tableProveedor.AddCell(proveedor.CodigoPostal);
+            tableProveedor.AddCell("País");
+            tableProveedor.AddCell(proveedor.Pais);
+            tableProveedor.AddCell("Teléfono");
+            tableProveedor.AddCell(proveedor.Telefono);
+            tableProveedor.AddCell("Descripción");
+            tableProveedor.AddCell(proveedor.Descripcion);
+            document.Add(tableProveedor);
+
+            document.Add(salto);
+            document.Add(salto);
+
+            // Añadimos una tabla con los datos de los pedidos
+            PdfPTable tablePedidos = new PdfPTable(4);
+            tablePedidos.TotalWidth = 500f;
+            tablePedidos.LockedWidth = true;
+            PdfPCell cell3 = new PdfPCell(new Phrase("Pedidos al Proveedor"));
+            cell3.Colspan = 4;
+            cell3.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            tablePedidos.AddCell(cell3);
+            tablePedidos.AddCell("Id");
+            tablePedidos.AddCell("Fecha");
+            tablePedidos.AddCell("Estado");
+            tablePedidos.AddCell("Tipo de pago");
+
+            PedidoCEN pedidoCEN = new PedidoCEN();
+            ProveedorCEN proveedorCEN = new ProveedorCEN();
+            foreach (var pedido in pedidoCEN.ObtenerTodos(0, 0))
+            {
+                if (proveedor.Equals(pedido.Proveedor))
+                {
+                    tablePedidos.AddCell(pedido.Id);
+                    tablePedidos.AddCell(pedido.Fecha.ToString());
+                    tablePedidos.AddCell(pedido.Estado.ToString());
+                    tablePedidos.AddCell(pedido.TipoPago.ToString());
+                }
+            }
+            document.Add(tablePedidos);
+
+            //Cerramos todo
+            document.Close();
+            writer.Close();
+            fs.Close();
+
+            MessageBox.Show("Se ha generado un informe en PDF con el nombre \"" + path + "\"");
         }
 
 
