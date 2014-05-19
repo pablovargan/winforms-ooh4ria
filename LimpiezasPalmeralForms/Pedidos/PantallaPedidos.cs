@@ -98,6 +98,21 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
             }
         }
 
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+            string id = pedidoGrid.SelectedRows[0].Cells["Id"].Value.ToString();
+            MessageBoxButtons mButtons = MessageBoxButtons.YesNo;
+            string message = String.Format("¿Estás seguro que deseas eliminar el pedido con Id: {0}?", id);
+            string titulo = "Eliminando Pedido";
+
+            var response = MessageBox.Show(message, titulo, mButtons);
+            if (response.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                _pedido.Eliminar(id);
+                GridPedido_Load(sender, e);
+            }   
+        }
+
     }
 
     public class PedidoGV
