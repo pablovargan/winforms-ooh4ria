@@ -89,7 +89,17 @@ namespace LimpiezasPalmeralForms.Pedidos
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            // TODO
+            MessageBoxButtons mButtons = MessageBoxButtons.YesNo;
+            string message = String.Format("¿Estás seguro que deseas eliminar el pedido con Id: {0}?", IdPedido);
+            string titulo = "Eliminando Pedido";
+
+            var response = MessageBox.Show(message, titulo, mButtons);
+            if (response.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                new PedidoCEN().Eliminar(IdPedido);
+            }
+
+            this.Close();
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
