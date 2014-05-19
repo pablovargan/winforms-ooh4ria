@@ -250,8 +250,23 @@ namespace LimpiezasPalmeralForms
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            FacturaCEN _fact = new FacturaCEN();
             InstalacionCEN instalacion = new InstalacionCEN();
             InstalacionGV instgv = (InstalacionGV)instalacionGrid.CurrentRow.DataBoundItem;
+            IList<FacturaEN> facturas = _fact.ObtenerFacturasInstalacion(instgv.ID); //new List<string>();
+            IList<string> id_facturas = new List<string>();
+
+            foreach (FacturaEN f in facturas)
+            {
+                id_facturas.Add(f.Id);
+            }
+
+            instalacion.Unrelationer_facturas(instgv.ID,id_facturas);
+
+            foreach (string s in id_facturas)
+            {
+                _fact.Eliminar(s);
+            }       
 
             DialogResult dr = MessageBox.Show("¿Desea eliminar la instalación ID " + instgv.ID + ": " + instgv.Nombre + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
