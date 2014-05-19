@@ -76,6 +76,7 @@
             this.editarButton.TabIndex = 5;
             this.editarButton.Text = "Actualizar Estado";
             this.editarButton.UseVisualStyleBackColor = true;
+            this.editarButton.Click += new System.EventHandler(this.Actualizar_Click);
             // 
             // consultarButton
             // 

@@ -74,6 +74,19 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
             cp.Deactivate += GridPedido_Load;
         }
 
+        private void Actualizar_Click(object sender, EventArgs e)
+        {
+            var columnaSeleccionada = pedidoGrid.SelectedRows[0];
+            ActualizarEstadoPedido ae = new ActualizarEstadoPedido() 
+            { 
+                Owner = this, 
+                IdPedido = columnaSeleccionada.Cells["Id"].Value.ToString(),
+                IdProveedor = columnaSeleccionada.Cells["Proveedor"].Value.ToString()
+            };
+            ae.Show();
+            ae.Deactivate += GridPedido_Load;
+        }
+
         private void EnableDisableBT(Control container, bool mode)
         {
             foreach (Control c in container.Controls)
@@ -84,6 +97,7 @@ namespace LimpiezasPalmeralForms.Proveedor.Pedidos
                     EnableDisableBT(c, mode);
             }
         }
+
     }
 
     public class PedidoGV
