@@ -36,8 +36,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.buttonEntrar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -46,16 +48,16 @@
             this.groupBox1.Controls.Add(this.textBoxUsuario);
             this.groupBox1.Controls.Add(this.labelNombre);
             this.groupBox1.Controls.Add(this.labelId);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(208, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 85);
+            this.groupBox1.Size = new System.Drawing.Size(234, 139);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acceso";
             // 
             // textBoxPass
             // 
-            this.textBoxPass.Location = new System.Drawing.Point(101, 49);
+            this.textBoxPass.Location = new System.Drawing.Point(18, 96);
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(202, 20);
             this.textBoxPass.TabIndex = 2;
@@ -63,7 +65,7 @@
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(101, 21);
+            this.textBoxUsuario.Location = new System.Drawing.Point(18, 57);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(202, 20);
             this.textBoxUsuario.TabIndex = 1;
@@ -71,7 +73,7 @@
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(15, 52);
+            this.labelNombre.Location = new System.Drawing.Point(15, 80);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(61, 13);
             this.labelNombre.TabIndex = 1;
@@ -80,7 +82,7 @@
             // labelId
             // 
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(15, 24);
+            this.labelId.Location = new System.Drawing.Point(15, 41);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(43, 13);
             this.labelId.TabIndex = 0;
@@ -90,16 +92,16 @@
             // 
             this.groupBox2.Controls.Add(this.buttonSalir);
             this.groupBox2.Controls.Add(this.buttonEntrar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 116);
+            this.groupBox2.Location = new System.Drawing.Point(12, 157);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 77);
+            this.groupBox2.Size = new System.Drawing.Size(430, 77);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
             // buttonSalir
             // 
-            this.buttonSalir.Location = new System.Drawing.Point(168, 19);
+            this.buttonSalir.Location = new System.Drawing.Point(224, 19);
             this.buttonSalir.Name = "buttonSalir";
             this.buttonSalir.Size = new System.Drawing.Size(135, 44);
             this.buttonSalir.TabIndex = 7;
@@ -109,7 +111,7 @@
             // 
             // buttonEntrar
             // 
-            this.buttonEntrar.Location = new System.Drawing.Point(18, 19);
+            this.buttonEntrar.Location = new System.Drawing.Point(74, 19);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(135, 44);
             this.buttonEntrar.TabIndex = 6;
@@ -117,13 +119,24 @@
             this.buttonEntrar.UseVisualStyleBackColor = true;
             this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LimpiezasPalmeralForms.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(178, 139);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AcceptButton = this.buttonEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 210);
+            this.ClientSize = new System.Drawing.Size(454, 244);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Login";
@@ -132,6 +145,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,6 +160,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonSalir;
         private System.Windows.Forms.Button buttonEntrar;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

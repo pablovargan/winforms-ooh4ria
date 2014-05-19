@@ -19,6 +19,9 @@ void Eliminar (string nif);
 UsuarioEN ObtenerUsuario (string nif);
 
 
+PalmeralGenNHibernate.EN.Default_.UsuarioEN ObtenerPorPass (string p_pass);
+
+
 PalmeralGenNHibernate.EN.Default_.UsuarioEN ObtenerPorUsuario (string p_user);
 
 

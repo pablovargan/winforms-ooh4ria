@@ -8,11 +8,11 @@
     		<column name="[nif]"/>
    	</key>
 
-					<property name="User" type="string"> 
-						<column name="[user]"  unique="true" not-null="true"/>
+					<property name="Usuario" type="string"> 
+						<column name="[usuario]"  unique="true" not-null="true"/>
 					</property>
-					<property name="Password" type="string"> 
-						<column name="[password]"  not-null="true"/>
+					<property name="Contrasenya" type="string"> 
+						<column name="[contrasenya]"  not-null="true"/>
 					</property>
 			
 			
@@ -22,6 +22,7 @@
 		  </joined-subclass>	
 		  
 		  <query name="UsuarioENReadAllHQL">from UsuarioEN</query>
-		  <query name="UsuarioENobtenerPorUsuarioHQL"><![CDATA[FROM UsuarioEN AS us where us.User = :p_user]]></query>
+		  <query name="UsuarioENobtenerPorPassHQL"><![CDATA[FROM UsuarioEN AS us where us.Contrasenya = :p_pass]]></query>
+		  <query name="UsuarioENobtenerPorUsuarioHQL"><![CDATA[FROM UsuarioEN AS us where us.Usuario = :p_user]]></query>
 		</hibernate-mapping>
 	

@@ -11,25 +11,25 @@ public partial class UsuarioEN                  :                           Palm
  *
  */
 
-private string user;
+private string usuario;
 
 /**
  *
  */
 
-private String password;
+private string contrasenya;
 
 
 
 
 
-public virtual string User {
-        get { return user; } set { user = value;  }
+public virtual string Usuario {
+        get { return usuario; } set { usuario = value;  }
 }
 
 
-public virtual String Password {
-        get { return password; } set { password = value;  }
+public virtual string Contrasenya {
+        get { return contrasenya; } set { contrasenya = value;  }
 }
 
 
@@ -42,25 +42,25 @@ public UsuarioEN() : base ()
 
 
 
-public UsuarioEN(string nif, string user, String password, string nombre, string apellidos, string direccion, string telefono, string codigoPostal, string pais, string localidad, string provincia, PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum tipo, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> nominas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas)
+public UsuarioEN(string nif, string usuario, string contrasenya, string nombre, string apellidos, string direccion, string telefono, string codigoPostal, string pais, string localidad, string provincia, PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum tipo, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> nominas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas)
 {
-        this.init (nif, user, password, nombre, apellidos, direccion, telefono, codigoPostal, pais, localidad, provincia, tipo, nominas, jornadas);
+        this.init (nif, usuario, contrasenya, nombre, apellidos, direccion, telefono, codigoPostal, pais, localidad, provincia, tipo, nominas, jornadas);
 }
 
 
 public UsuarioEN(UsuarioEN usuario)
 {
-        this.init (usuario.Nif, usuario.User, usuario.Password, usuario.Nombre, usuario.Apellidos, usuario.Direccion, usuario.Telefono, usuario.CodigoPostal, usuario.Pais, usuario.Localidad, usuario.Provincia, usuario.Tipo, usuario.Nominas, usuario.Jornadas);
+        this.init (usuario.Nif, usuario.Usuario, usuario.Contrasenya, usuario.Nombre, usuario.Apellidos, usuario.Direccion, usuario.Telefono, usuario.CodigoPostal, usuario.Pais, usuario.Localidad, usuario.Provincia, usuario.Tipo, usuario.Nominas, usuario.Jornadas);
 }
 
-private void init (string nif, string user, String password, string nombre, string apellidos, string direccion, string telefono, string codigoPostal, string pais, string localidad, string provincia, PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum tipo, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> nominas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas)
+private void init (string nif, string usuario, string contrasenya, string nombre, string apellidos, string direccion, string telefono, string codigoPostal, string pais, string localidad, string provincia, PalmeralGenNHibernate.Enumerated.Default_.TipoEmpleoEnum tipo, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.NominaEN> nominas, System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.JornadaFechaEN> jornadas)
 {
         this.Nif = nif;
 
 
-        this.User = user;
+        this.Usuario = usuario;
 
-        this.Password = password;
+        this.Contrasenya = contrasenya;
 
         this.Nombre = nombre;
 
