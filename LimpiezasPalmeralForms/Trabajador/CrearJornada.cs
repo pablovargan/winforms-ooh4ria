@@ -37,34 +37,6 @@ namespace LimpiezasPalmeralForms.Trabajador
                 IList<JornadaFechaEN> listaJ = jornada.ObtenerTodas(0, 0);
                 IList<JGV> listajornadas = convertirJornadaGV(listaJ);
                 Jornada.DataSource = listajornadas;
-                //IList<JGVMostrar> listamostrar = new List<JGVMostrar>();
-                /*foreach (JGV j in listajornadas)
-                {
-                    JornadaFechaCEN jor = new JornadaFechaCEN();
-
-                    if (j.NombreT.Count > 1)
-                    {
-                        for (int i = 0; i < j.NombreT.Count ; i++)
-                        {
-                            listamostrar.Add(new JGVMostrar()
-                            {
-                                Id = j.Id,
-                                Fecha = j.Fecha,
-                                NombreI = j.NombreI,
-                                NombreT = j.NombreT.ElementAt(i)
-                            });
-                        }
-                    }
-                    else
-                    {
-                        listamostrar.Add(new JGVMostrar(){
-                            Id = j.Id,
-                            Fecha = j.Fecha,
-                            NombreI = j.NombreI,
-                            NombreT = j.NombreT.ElementAt(0)
-                        });
-                    }
-                }*/
 
             }
             catch (Exception exc)
@@ -82,7 +54,8 @@ namespace LimpiezasPalmeralForms.Trabajador
                 l.Add(new TGV()
                 {
                     Nombre = t.Nombre,
-                    DNI = t.Nif
+                    DNI = t.Nif,
+                    Localidad = t.Localidad
                 });
             }
 
@@ -114,12 +87,15 @@ namespace LimpiezasPalmeralForms.Trabajador
             {
                 InstalacionCEN ins = new InstalacionCEN();
                 TrabajadorCEN tra = new TrabajadorCEN();
+                TrabajadorEN t = new TrabajadorEN();
                 JornadaFechaCEN jor = new JornadaFechaCEN();
                 IList<string> aux = new List<string>();
-                /*for (int i=0; i<jor.ObtenerJornada(j.Id).Trabajadores.Count; i++)
-                {
-                    aux.Add(tra.ObtenerTrabajador(jor.ObtenerJornada(j.Id).Trabajadores.ElementAt(i).Nif).Nombre);
-                }*/
+                //MessageBox.Show("" + jor.ObtenerJornada(j.Id).Trabajadores);
+
+                //for (int i=0; i<jor.ObtenerJornada(j.Id).Trabajadores.Count; i++)
+                //{
+                //    aux.Add(tra.ObtenerTrabajador(jor.ObtenerJornada(j.Id).Trabajadores.ElementAt(i).Nif).Nombre);
+                //}
 
                 l.Add(new JGV()
                 {
@@ -149,7 +125,6 @@ namespace LimpiezasPalmeralForms.Trabajador
             IList<int> lista = new List<int>();
             lista.Add(jornada.Crear(FechaBox.Value, instalacion.Id));
             trabajador.Relationer_jornadas(t.DNI, lista);
-
             Cancelar.Text = "Cerrar";
             Grid_Load(sender, e);
         }
@@ -164,6 +139,7 @@ namespace LimpiezasPalmeralForms.Trabajador
     {
         public string Nombre { set; get; }
         public string DNI { set; get; }
+        public string Localidad { set; get; }
     }
     public class IGV
     {
@@ -176,13 +152,6 @@ namespace LimpiezasPalmeralForms.Trabajador
         public string Id { set; get; }
         public string Fecha { set; get; }
         public IList<string> NombreT { set; get; }
-        public string NombreI { set; get; }
-    }
-    public class JGVMostrar
-    {
-        public string Id { set; get; }
-        public string Fecha { set; get; }
-        public string NombreT { set; get; }
         public string NombreI { set; get; }
     }
 }
