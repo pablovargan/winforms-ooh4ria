@@ -27,20 +27,31 @@ namespace LimpiezasPalmeralForms.Cliente
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
             ClienteCEN cliente = new ClienteCEN();
-
-            if (!string.IsNullOrWhiteSpace(textBoxNIF.Text as string))
+            if (textBoxNIF.Text.Length != 9)
             {
-                try
+                MessageBox.Show(Constantes._ERRORNIFFORMATO);
+            }
+            else if (!string.IsNullOrWhiteSpace(textBoxNIF.Text as string))
+            {
+                NumeroNif nf = new NumeroNif(textBoxNIF.Text);
+                if (nf.EsCorrecto)
                 {
-                    cliente.Crear(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
-                        textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
-                        textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
-                    this.Close();
+                    try
+                    {
+                        cliente.Crear(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
+                            textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
+                            textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
+                        this.Close();
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(Constantes._ERRORCREAR);
+                    }
                 }
-                catch (Exception ex)
+                else 
                 {
-                    MessageBox.Show(Constantes._ERRORCREAR);
+                    MessageBox.Show(Constantes._ERRORNIFFORMATO);
                 }
             }
             else

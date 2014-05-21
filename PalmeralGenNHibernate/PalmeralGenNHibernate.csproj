@@ -118,6 +118,10 @@
 	<Compile Include="CEN\Default_\ProveedorCEN.cs" />
 	<Compile Include="CAD\Default_\IProveedorCAD.cs" />
 	<Compile Include="CAD\Default_\ProveedorCAD.cs" />
+	<Compile Include="EN\Default_\CopiaSeguridadEN.cs" />
+	<Compile Include="CEN\Default_\CopiaSeguridadCEN.cs" />
+	<Compile Include="CAD\Default_\ICopiaSeguridadCAD.cs" />
+	<Compile Include="CAD\Default_\CopiaSeguridadCAD.cs" />
 	<Compile Include="EN\Default_\TrabajadorEN.cs" />
 	<Compile Include="CEN\Default_\TrabajadorCEN.cs" />
 	<Compile Include="CAD\Default_\ITrabajadorCAD.cs" />
@@ -142,6 +146,10 @@
 	<Compile Include="CEN\Default_\FacturaCEN.cs" />
 	<Compile Include="CAD\Default_\IFacturaCAD.cs" />
 	<Compile Include="CAD\Default_\FacturaCAD.cs" />
+	<Compile Include="EN\Default_\UsuarioEN.cs" />
+	<Compile Include="CEN\Default_\UsuarioCEN.cs" />
+	<Compile Include="CAD\Default_\IUsuarioCAD.cs" />
+	<Compile Include="CAD\Default_\UsuarioCAD.cs" />
 	<Compile Include="Enumerated\Default_\EstadoPedidoEnum.cs" />
 	<Compile Include="Enumerated\Default_\TipoPagoEnum.cs" />
 	<Compile Include="Enumerated\Default_\TipoEmpleoEnum.cs" />
@@ -164,12 +172,14 @@
 	<EmbeddedResource Include="Mappings\Default_\lineapedido.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\pedido.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\proveedor.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\copiaseguridad.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\trabajador.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\nomina.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\cliente.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\instalacion.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\jornadafecha.hbm.xml" />
 	<EmbeddedResource Include="Mappings\Default_\factura.hbm.xml" />
+	<EmbeddedResource Include="Mappings\Default_\usuario.hbm.xml" />
 	
 	
 

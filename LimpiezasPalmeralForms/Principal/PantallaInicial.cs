@@ -1,4 +1,5 @@
-﻿using PalmeralGenNHibernate.CEN.Default_;
+﻿using LimpiezasPalmeralForms.Pedidos;
+using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,40 @@ namespace LimpiezasPalmeralForms
                 }
                 dataGridViewStock.DataSource = productoGV;
             }
+
+
+            PedidoCEN pedido = new PedidoCEN();
+            IList<PedidoEN> lista2;
+            List<PedidoFiltrado> pedidoGV = new List<PedidoFiltrado>();
+
+            lista2 =  pedido.ObtenerTodos(0, 0);
+
+            foreach (PedidoEN p in lista2)
+            {
+                pedidoGV.Add(new PedidoFiltrado()
+                {
+                    Id = p.Id,
+                    Fecha = p.Fecha,
+                    Estado = p.Estado,
+                });
+            }
+
+            dataGridViewPedidos.DataSource = pedidoGV;
+
+            CopiaSeguridadCEN copiasseguridad = new CopiaSeguridadCEN();
+            IList<CopiaSeguridadEN> lista3 = copiasseguridad.ObtenerTodas(0, 0);
+            dataGridViewCS.DataSource = lista3;
+            
         }
+
+
+    }
+
+    public class PedidoFiltrado
+    {
+        public string Id { get; set; }
+        public DateTime? Fecha { get; set; }
+        public PalmeralGenNHibernate.Enumerated.Default_.EstadoPedidoEnum Estado { get; set; }
+
     }
 }

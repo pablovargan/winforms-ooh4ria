@@ -207,5 +207,83 @@ public ProveedorEN ObtenerProveedor (string id)
 
         return proveedorEN;
 }
+
+public void Relationer_pedido (string p_proveedor, System.Collections.Generic.IList<string> p_pedido)
+{
+        PalmeralGenNHibernate.EN.Default_.ProveedorEN proveedorEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                proveedorEN = (ProveedorEN)session.Load (typeof(ProveedorEN), p_proveedor);
+                PalmeralGenNHibernate.EN.Default_.PedidoEN pedidoENAux = null;
+                if (proveedorEN.Pedido == null) {
+                        proveedorEN.Pedido = new System.Collections.Generic.List<PalmeralGenNHibernate.EN.Default_.PedidoEN>();
+                }
+
+                foreach (string item in p_pedido) {
+                        pedidoENAux = new PalmeralGenNHibernate.EN.Default_.PedidoEN ();
+                        pedidoENAux = (PalmeralGenNHibernate.EN.Default_.PedidoEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.PedidoEN), item);
+                        pedidoENAux.Proveedor = proveedorEN;
+
+                        proveedorEN.Pedido.Add (pedidoENAux);
+                }
+
+
+                session.Update (proveedorEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in ProveedorCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Unrelationer_pedido (string p_proveedor, System.Collections.Generic.IList<string> p_pedido)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                PalmeralGenNHibernate.EN.Default_.ProveedorEN proveedorEN = null;
+                proveedorEN = (ProveedorEN)session.Load (typeof(ProveedorEN), p_proveedor);
+
+                PalmeralGenNHibernate.EN.Default_.PedidoEN pedidoENAux = null;
+                if (proveedorEN.Pedido != null) {
+                        foreach (string item in p_pedido) {
+                                pedidoENAux = (PalmeralGenNHibernate.EN.Default_.PedidoEN)session.Load (typeof(PalmeralGenNHibernate.EN.Default_.PedidoEN), item);
+                                if (proveedorEN.Pedido.Contains (pedidoENAux) == true) {
+                                        proveedorEN.Pedido.Remove (pedidoENAux);
+                                        pedidoENAux.Proveedor = null;
+                                }
+                                else
+                                        throw new ModelException ("The identifier " + item + " in p_pedido you are trying to unrelationer, doesn't exist in ProveedorEN");
+                        }
+                }
+
+                session.Update (proveedorEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is PalmeralGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new PalmeralGenNHibernate.Exceptions.DataLayerException ("Error in ProveedorCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
 }
 }

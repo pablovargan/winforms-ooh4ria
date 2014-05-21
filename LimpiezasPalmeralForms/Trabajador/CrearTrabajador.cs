@@ -29,32 +29,48 @@ namespace LimpiezasPalmeralForms
                 Telefono.Text.Length != 0 && CP.Text.Length != 0 && Pais.Text.Length != 0 && Localidad.Text.Length != 0 &&
                 Provincia.Text.Length != 0 && Tipo1.Text.Length != 0)
             {
-                try
+                if (NIF.Text.Length == 9)
                 {
-                    if (Tipo1.SelectedItem.ToString().Equals("Cooperativista"))
+                    NumeroNif nf = new NumeroNif(NIF.Text);
+                    if (nf.EsCorrecto)
                     {
-                        trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
-                            CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Cooperativista);
+
+                        try
+                        {
+                            if (Tipo1.SelectedItem.ToString().Equals("Cooperativista"))
+                            {
+                                trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
+                                    CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Cooperativista);
+                            }
+                            else
+                            {
+                                trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
+                                    CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Empleado);
+                            }
+                            //alert Creado correctamente
+                            //MessageBox.Show("Trabajador creado correctamente");
+                            this.Close();
+                        }
+                        catch (Exception exp)
+                        {
+                            MessageBox.Show(Constantes._ERRORTRABAJADOR);
+                            throw exp;
+                        }
                     }
                     else
                     {
-                        trabajador.Crear(NIF.Text, Nombre.Text, Apellidos.Text, Direccion.Text, Telefono.Text,
-                            CP.Text, Pais.Text, Localidad.Text, Provincia.Text, TipoEmpleoEnum.Empleado);
+                        MessageBox.Show(Constantes._ERRORNIFFORMATO);
                     }
-                    //alert Creado correctamente
-                    //MessageBox.Show("Trabajador creado correctamente");
-                    this.Close();
                 }
-                catch (Exception exp)
+                else
                 {
-                    MessageBox.Show("El trabajador no se pudo crear");
-                    throw exp;
+                    MessageBox.Show(Constantes._ERRORNIFFORMATO);
                 }
             }
             else
             {
                 //alert hay campos sin rellenar
-                MessageBox.Show("Existen campos vacios");
+                MessageBox.Show(Constantes._ERRORCAMPOSVACIOS);
             }
         
         }

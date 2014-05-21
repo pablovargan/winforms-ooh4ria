@@ -52,10 +52,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nominas = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Editar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
             this.Aceptar = new System.Windows.Forms.Button();
-            this.Editar = new System.Windows.Forms.Button();
             this.Trabajador.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nominas)).BeginInit();
@@ -280,6 +280,8 @@
             this.nominas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.nominas.Location = new System.Drawing.Point(6, 19);
             this.nominas.Name = "nominas";
+            this.nominas.ReadOnly = true;
+            this.nominas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.nominas.Size = new System.Drawing.Size(438, 133);
             this.nominas.TabIndex = 0;
             // 
@@ -295,6 +297,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
+            // 
+            // Editar
+            // 
+            this.Editar.Location = new System.Drawing.Point(152, 19);
+            this.Editar.Name = "Editar";
+            this.Editar.Size = new System.Drawing.Size(140, 44);
+            this.Editar.TabIndex = 3;
+            this.Editar.Text = "Editar";
+            this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Eliminar
             // 
@@ -325,16 +337,6 @@
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = true;
             this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
-            // 
-            // Editar
-            // 
-            this.Editar.Location = new System.Drawing.Point(152, 19);
-            this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(140, 44);
-            this.Editar.TabIndex = 3;
-            this.Editar.Text = "Editar";
-            this.Editar.UseVisualStyleBackColor = true;
-            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // ConsultarEditarTrabajador
             // 

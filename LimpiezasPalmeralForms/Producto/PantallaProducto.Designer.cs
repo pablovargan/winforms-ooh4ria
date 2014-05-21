@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBoxProductosAcciones = new System.Windows.Forms.GroupBox();
+            this.buttonGenerarInforme = new System.Windows.Forms.Button();
+            this.buttonIncrementarStock = new System.Windows.Forms.Button();
             this.buttonReducirStock = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
@@ -47,6 +49,8 @@
             // 
             this.groupBoxProductosAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxProductosAcciones.Controls.Add(this.buttonGenerarInforme);
+            this.groupBoxProductosAcciones.Controls.Add(this.buttonIncrementarStock);
             this.groupBoxProductosAcciones.Controls.Add(this.buttonReducirStock);
             this.groupBoxProductosAcciones.Controls.Add(this.buttonEliminar);
             this.groupBoxProductosAcciones.Controls.Add(this.buttonEditar);
@@ -59,21 +63,42 @@
             this.groupBoxProductosAcciones.TabStop = false;
             this.groupBoxProductosAcciones.Text = "Acciones";
             // 
+            // buttonGenerarInforme
+            // 
+            this.buttonGenerarInforme.Location = new System.Drawing.Point(6, 317);
+            this.buttonGenerarInforme.Name = "buttonGenerarInforme";
+            this.buttonGenerarInforme.Size = new System.Drawing.Size(121, 44);
+            this.buttonGenerarInforme.TabIndex = 9;
+            this.buttonGenerarInforme.Text = "Generar Informe";
+            this.buttonGenerarInforme.UseVisualStyleBackColor = true;
+            this.buttonGenerarInforme.Click += new System.EventHandler(this.buttonGenerarInforme_Click);
+            // 
+            // buttonIncrementarStock
+            // 
+            this.buttonIncrementarStock.Location = new System.Drawing.Point(6, 217);
+            this.buttonIncrementarStock.Name = "buttonIncrementarStock";
+            this.buttonIncrementarStock.Size = new System.Drawing.Size(121, 44);
+            this.buttonIncrementarStock.TabIndex = 8;
+            this.buttonIncrementarStock.Text = "Incrementar Stock";
+            this.buttonIncrementarStock.UseVisualStyleBackColor = true;
+            this.buttonIncrementarStock.Click += new System.EventHandler(this.button1_Click);
+            // 
             // buttonReducirStock
             // 
-            this.buttonReducirStock.Location = new System.Drawing.Point(6, 217);
+            this.buttonReducirStock.Location = new System.Drawing.Point(6, 267);
             this.buttonReducirStock.Name = "buttonReducirStock";
             this.buttonReducirStock.Size = new System.Drawing.Size(121, 44);
-            this.buttonReducirStock.TabIndex = 4;
+            this.buttonReducirStock.TabIndex = 7;
             this.buttonReducirStock.Text = "Reducir Stock";
             this.buttonReducirStock.UseVisualStyleBackColor = true;
+            this.buttonReducirStock.Click += new System.EventHandler(this.buttonReducirStock_Click);
             // 
             // buttonEliminar
             // 
             this.buttonEliminar.Location = new System.Drawing.Point(6, 167);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(121, 44);
-            this.buttonEliminar.TabIndex = 3;
+            this.buttonEliminar.TabIndex = 6;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
@@ -83,7 +108,7 @@
             this.buttonEditar.Location = new System.Drawing.Point(6, 117);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(121, 44);
-            this.buttonEditar.TabIndex = 2;
+            this.buttonEditar.TabIndex = 5;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
@@ -93,7 +118,7 @@
             this.buttonConsultar.Location = new System.Drawing.Point(6, 67);
             this.buttonConsultar.Name = "buttonConsultar";
             this.buttonConsultar.Size = new System.Drawing.Size(121, 44);
-            this.buttonConsultar.TabIndex = 1;
+            this.buttonConsultar.TabIndex = 4;
             this.buttonConsultar.Text = "Consultar";
             this.buttonConsultar.UseVisualStyleBackColor = true;
             this.buttonConsultar.Click += new System.EventHandler(this.buttonConsultar_Click);
@@ -103,7 +128,7 @@
             this.buttonRegistrar.Location = new System.Drawing.Point(6, 17);
             this.buttonRegistrar.Name = "buttonRegistrar";
             this.buttonRegistrar.Size = new System.Drawing.Size(121, 44);
-            this.buttonRegistrar.TabIndex = 0;
+            this.buttonRegistrar.TabIndex = 3;
             this.buttonRegistrar.Text = "Registrar";
             this.buttonRegistrar.UseVisualStyleBackColor = true;
             this.buttonRegistrar.Click += new System.EventHandler(this.buttonRegistrar_Click);
@@ -133,7 +158,7 @@
             this.comboBoxFiltro.Location = new System.Drawing.Point(7, 17);
             this.comboBoxFiltro.Name = "comboBoxFiltro";
             this.comboBoxFiltro.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxFiltro.TabIndex = 3;
+            this.comboBoxFiltro.TabIndex = 1;
             // 
             // textBoxBuscar
             // 
@@ -174,7 +199,7 @@
             this.Controls.Add(this.groupBoxProductosAcciones);
             this.Controls.Add(this.groupBoxProductos);
             this.Name = "PantallaProducto";
-            this.Text = "PantallaProducto";
+            this.Text = "Pantalla Producto";
             this.groupBoxProductosAcciones.ResumeLayout(false);
             this.groupBoxProductos.ResumeLayout(false);
             this.groupBoxProductos.PerformLayout();
@@ -195,6 +220,8 @@
         private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.DataGridView dataGridViewProducto;
         private System.Windows.Forms.Button buttonReducirStock;
+        private System.Windows.Forms.Button buttonIncrementarStock;
+        private System.Windows.Forms.Button buttonGenerarInforme;
 
     }
 }

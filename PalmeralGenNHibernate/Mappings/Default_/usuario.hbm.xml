@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="PalmeralGenNHibernate"
+		                   namespace="PalmeralGenNHibernate.EN.Default_">
+				
+<joined-subclass name="UsuarioEN" extends="PalmeralGenNHibernate.EN.Default_.TrabajadorEN" table="[Usuario]">
+	<key>
+    		<column name="[nif]"/>
+   	</key>
+
+					<property name="Usuario" type="string"> 
+						<column name="[usuario]"  unique="true" not-null="true"/>
+					</property>
+					<property name="Contrasenya" type="string"> 
+						<column name="[contrasenya]"  not-null="true"/>
+					</property>
+			
+			
+					
+					
+		
+		  </joined-subclass>	
+		  
+		  <query name="UsuarioENReadAllHQL">from UsuarioEN</query>
+		  <query name="UsuarioENobtenerPorPassHQL"><![CDATA[FROM UsuarioEN AS us where us.Contrasenya = :p_pass]]></query>
+		  <query name="UsuarioENobtenerPorUsuarioHQL"><![CDATA[FROM UsuarioEN AS us where us.Usuario = :p_user]]></query>
+		</hibernate-mapping>
+	

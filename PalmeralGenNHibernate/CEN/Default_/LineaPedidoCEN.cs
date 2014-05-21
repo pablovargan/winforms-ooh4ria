@@ -78,5 +78,34 @@ public LineaPedidoEN ObtenerLinea (int id)
         lineaPedidoEN = _ILineaPedidoCAD.ObtenerLinea (id);
         return lineaPedidoEN;
 }
+
+public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.LineaPedidoEN> ObtenerLineasDePedido (string p_pedido)
+{
+        return _ILineaPedidoCAD.ObtenerLineasDePedido (p_pedido);
+}
+public void Relationer_pedido (int p_lineapedido, string p_pedido)
+{
+        //Call to LineaPedidoCAD
+
+        _ILineaPedidoCAD.Relationer_pedido (p_lineapedido, p_pedido);
+}
+public void Relationer_productos (int p_lineapedido, string p_producto)
+{
+        //Call to LineaPedidoCAD
+
+        _ILineaPedidoCAD.Relationer_productos (p_lineapedido, p_producto);
+}
+public void Unrelationer_pedido (int p_lineapedido, string p_pedido)
+{
+        //Call to LineaPedidoCAD
+
+        _ILineaPedidoCAD.Unrelationer_pedido (p_lineapedido, p_pedido);
+}
+public void Unrelationer_productos (int p_lineapedido, string p_producto)
+{
+        //Call to LineaPedidoCAD
+
+        _ILineaPedidoCAD.Unrelationer_productos (p_lineapedido, p_producto);
+}
 }
 }

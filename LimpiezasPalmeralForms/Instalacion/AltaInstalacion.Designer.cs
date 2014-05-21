@@ -92,6 +92,7 @@
             this.cliente_comboBox.Name = "cliente_comboBox";
             this.cliente_comboBox.Size = new System.Drawing.Size(136, 21);
             this.cliente_comboBox.TabIndex = 22;
+            this.cliente_comboBox.SelectedIndexChanged += new System.EventHandler(this.cliente_comboBox_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -287,7 +288,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "AltaInstalacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alta Instalación";
+            this.Text = "Alta instalación";
             this.Load += new System.EventHandler(this.AltaInstalacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

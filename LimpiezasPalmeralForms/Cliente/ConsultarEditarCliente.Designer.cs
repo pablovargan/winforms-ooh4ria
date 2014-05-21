@@ -53,6 +53,7 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonGenerarInforme = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridViewInstalaciones = new System.Windows.Forms.DataGridView();
@@ -86,7 +87,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 223);
+            this.groupBox1.Size = new System.Drawing.Size(594, 224);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
@@ -94,16 +95,18 @@
             // textBoxPais
             // 
             this.textBoxPais.Enabled = false;
-            this.textBoxPais.Location = new System.Drawing.Point(335, 21);
+            this.textBoxPais.Location = new System.Drawing.Point(409, 21);
+            this.textBoxPais.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPais.Name = "textBoxPais";
-            this.textBoxPais.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPais.Size = new System.Drawing.Size(159, 20);
             this.textBoxPais.TabIndex = 8;
             this.textBoxPais.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(249, 24);
+            this.label7.Location = new System.Drawing.Point(344, 24);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 23;
@@ -113,9 +116,10 @@
             // textBoxTelefono
             // 
             this.textBoxTelefono.Enabled = false;
-            this.textBoxTelefono.Location = new System.Drawing.Point(335, 49);
+            this.textBoxTelefono.Location = new System.Drawing.Point(409, 44);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTelefono.Size = new System.Drawing.Size(159, 20);
             this.textBoxTelefono.TabIndex = 9;
             // 
             // textBoxCP
@@ -145,7 +149,8 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(249, 52);
+            this.label10.Location = new System.Drawing.Point(344, 46);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 14;
@@ -197,11 +202,12 @@
             // textBoxDescripcion
             // 
             this.textBoxDescripcion.Enabled = false;
-            this.textBoxDescripcion.Location = new System.Drawing.Point(252, 96);
+            this.textBoxDescripcion.Location = new System.Drawing.Point(347, 82);
+            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDescripcion.Size = new System.Drawing.Size(183, 113);
+            this.textBoxDescripcion.Size = new System.Drawing.Size(221, 93);
             this.textBoxDescripcion.TabIndex = 10;
             // 
             // textBoxNombre
@@ -241,7 +247,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(249, 79);
+            this.label3.Location = new System.Drawing.Point(344, 68);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 2;
@@ -287,7 +294,8 @@
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Location = new System.Drawing.Point(302, 19);
+            this.buttonEliminar.Location = new System.Drawing.Point(443, 19);
+            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(140, 44);
             this.buttonEliminar.TabIndex = 14;
@@ -297,20 +305,35 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonGenerarInforme);
             this.groupBox2.Controls.Add(this.buttonCancelar);
             this.groupBox2.Controls.Add(this.buttonAceptar);
             this.groupBox2.Controls.Add(this.buttonEliminar);
             this.groupBox2.Controls.Add(this.buttonEditar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 419);
+            this.groupBox2.Location = new System.Drawing.Point(13, 379);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(451, 74);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(594, 79);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
+            // buttonGenerarInforme
+            // 
+            this.buttonGenerarInforme.Location = new System.Drawing.Point(299, 19);
+            this.buttonGenerarInforme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGenerarInforme.Name = "buttonGenerarInforme";
+            this.buttonGenerarInforme.Size = new System.Drawing.Size(140, 44);
+            this.buttonGenerarInforme.TabIndex = 15;
+            this.buttonGenerarInforme.Text = "Informe";
+            this.buttonGenerarInforme.UseVisualStyleBackColor = true;
+            this.buttonGenerarInforme.Click += new System.EventHandler(this.buttonGenerarInforme_Click);
+            // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(153, 19);
+            this.buttonCancelar.Location = new System.Drawing.Point(154, 19);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(140, 44);
             this.buttonCancelar.TabIndex = 13;
@@ -323,7 +346,8 @@
             this.groupBox3.Controls.Add(this.dataGridViewInstalaciones);
             this.groupBox3.Location = new System.Drawing.Point(13, 243);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(450, 161);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(594, 131);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Instalaciones";
@@ -339,11 +363,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewInstalaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewInstalaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInstalaciones.Location = new System.Drawing.Point(7, 20);
+            this.dataGridViewInstalaciones.Location = new System.Drawing.Point(8, 16);
             this.dataGridViewInstalaciones.Name = "dataGridViewInstalaciones";
             this.dataGridViewInstalaciones.ReadOnly = true;
             this.dataGridViewInstalaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(434, 135);
+            this.dataGridViewInstalaciones.Size = new System.Drawing.Size(581, 110);
             this.dataGridViewInstalaciones.TabIndex = 11;
             this.dataGridViewInstalaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInstalaciones_CellContentClick);
             // 
@@ -352,7 +376,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(474, 503);
+            this.ClientSize = new System.Drawing.Size(636, 484);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -362,6 +386,7 @@
             this.Name = "ConsultarEditarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Cliente";
+            this.Load += new System.EventHandler(this.ConsultarEditarCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -401,5 +426,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridViewInstalaciones;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button buttonGenerarInforme;
     }
 }

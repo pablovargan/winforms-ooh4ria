@@ -34,8 +34,12 @@ System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN>
 System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.TrabajadorEN> BuscarPorNombre (string p_nombre);
 
 
-void AddInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion);
+void Relationer_jornadas (string p_trabajador, System.Collections.Generic.IList<int> p_jornadafecha);
 
-void DeleteInstalacion (string p_trabajador, System.Collections.Generic.IList<string> p_instalacion);
+void Relationer_nominas (string p_trabajador, System.Collections.Generic.IList<string> p_nomina);
+
+void Unrelationer_jornadas (string p_trabajador, System.Collections.Generic.IList<int> p_jornadafecha);
+
+void Unrelationer_nominas (string p_trabajador, System.Collections.Generic.IList<string> p_nomina);
 }
 }

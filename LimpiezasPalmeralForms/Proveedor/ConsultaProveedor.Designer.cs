@@ -50,9 +50,13 @@
             this.nifLabel = new System.Windows.Forms.Label();
             this.nifBox = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.cancelarButton = new System.Windows.Forms.Button();
+            this.eliminarButton = new System.Windows.Forms.Button();
             this.editarButton = new System.Windows.Forms.Button();
+            this.accionesGB = new System.Windows.Forms.GroupBox();
+            this.cancelarButton = new System.Windows.Forms.Button();
+            this.aceptarButton = new System.Windows.Forms.Button();
             this.proveedorGB.SuspendLayout();
+            this.accionesGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // proveedorGB
@@ -77,16 +81,18 @@
             this.proveedorGB.Controls.Add(this.nombreLabel);
             this.proveedorGB.Controls.Add(this.nifLabel);
             this.proveedorGB.Controls.Add(this.nifBox);
-            this.proveedorGB.Location = new System.Drawing.Point(12, 12);
+            this.proveedorGB.Location = new System.Drawing.Point(16, 15);
+            this.proveedorGB.Margin = new System.Windows.Forms.Padding(4);
             this.proveedorGB.Name = "proveedorGB";
-            this.proveedorGB.Size = new System.Drawing.Size(581, 300);
+            this.proveedorGB.Padding = new System.Windows.Forms.Padding(4);
+            this.proveedorGB.Size = new System.Drawing.Size(599, 274);
             this.proveedorGB.TabIndex = 0;
             this.proveedorGB.TabStop = false;
             this.proveedorGB.Text = "Proveedor";
             // 
             // descripcionBox
             // 
-            this.descripcionBox.Location = new System.Drawing.Point(312, 186);
+            this.descripcionBox.Location = new System.Drawing.Point(318, 176);
             this.descripcionBox.Multiline = true;
             this.descripcionBox.Name = "descripcionBox";
             this.descripcionBox.ReadOnly = true;
@@ -97,7 +103,7 @@
             // descripcionLabel
             // 
             this.descripcionLabel.AutoSize = true;
-            this.descripcionLabel.Location = new System.Drawing.Point(309, 166);
+            this.descripcionLabel.Location = new System.Drawing.Point(316, 157);
             this.descripcionLabel.Name = "descripcionLabel";
             this.descripcionLabel.Size = new System.Drawing.Size(82, 17);
             this.descripcionLabel.TabIndex = 16;
@@ -105,7 +111,7 @@
             // 
             // paisBox
             // 
-            this.paisBox.Location = new System.Drawing.Point(431, 126);
+            this.paisBox.Location = new System.Drawing.Point(437, 116);
             this.paisBox.Name = "paisBox";
             this.paisBox.ReadOnly = true;
             this.paisBox.Size = new System.Drawing.Size(130, 22);
@@ -114,7 +120,7 @@
             // paisLabel
             // 
             this.paisLabel.AutoSize = true;
-            this.paisLabel.Location = new System.Drawing.Point(309, 126);
+            this.paisLabel.Location = new System.Drawing.Point(316, 117);
             this.paisLabel.Name = "paisLabel";
             this.paisLabel.Size = new System.Drawing.Size(35, 17);
             this.paisLabel.TabIndex = 13;
@@ -122,7 +128,7 @@
             // 
             // codigoPostalBox
             // 
-            this.codigoPostalBox.Location = new System.Drawing.Point(431, 86);
+            this.codigoPostalBox.Location = new System.Drawing.Point(437, 76);
             this.codigoPostalBox.Name = "codigoPostalBox";
             this.codigoPostalBox.ReadOnly = true;
             this.codigoPostalBox.Size = new System.Drawing.Size(130, 22);
@@ -131,7 +137,7 @@
             // codigoPostalLabel
             // 
             this.codigoPostalLabel.AutoSize = true;
-            this.codigoPostalLabel.Location = new System.Drawing.Point(309, 86);
+            this.codigoPostalLabel.Location = new System.Drawing.Point(316, 77);
             this.codigoPostalLabel.Name = "codigoPostalLabel";
             this.codigoPostalLabel.Size = new System.Drawing.Size(95, 17);
             this.codigoPostalLabel.TabIndex = 12;
@@ -139,7 +145,7 @@
             // 
             // telefonoBox
             // 
-            this.telefonoBox.Location = new System.Drawing.Point(431, 46);
+            this.telefonoBox.Location = new System.Drawing.Point(437, 36);
             this.telefonoBox.Name = "telefonoBox";
             this.telefonoBox.ReadOnly = true;
             this.telefonoBox.Size = new System.Drawing.Size(130, 22);
@@ -148,7 +154,7 @@
             // telefonoLabel
             // 
             this.telefonoLabel.AutoSize = true;
-            this.telefonoLabel.Location = new System.Drawing.Point(309, 46);
+            this.telefonoLabel.Location = new System.Drawing.Point(316, 37);
             this.telefonoLabel.Name = "telefonoLabel";
             this.telefonoLabel.Size = new System.Drawing.Size(64, 17);
             this.telefonoLabel.TabIndex = 18;
@@ -156,7 +162,7 @@
             // 
             // provinciaBox
             // 
-            this.provinciaBox.Location = new System.Drawing.Point(133, 246);
+            this.provinciaBox.Location = new System.Drawing.Point(139, 236);
             this.provinciaBox.Name = "provinciaBox";
             this.provinciaBox.ReadOnly = true;
             this.provinciaBox.Size = new System.Drawing.Size(130, 22);
@@ -165,7 +171,7 @@
             // provinciaLabel
             // 
             this.provinciaLabel.AutoSize = true;
-            this.provinciaLabel.Location = new System.Drawing.Point(20, 246);
+            this.provinciaLabel.Location = new System.Drawing.Point(27, 237);
             this.provinciaLabel.Name = "provinciaLabel";
             this.provinciaLabel.Size = new System.Drawing.Size(66, 17);
             this.provinciaLabel.TabIndex = 5;
@@ -173,16 +179,16 @@
             // 
             // localidadBox
             // 
-            this.localidadBox.Location = new System.Drawing.Point(133, 206);
+            this.localidadBox.Location = new System.Drawing.Point(139, 196);
             this.localidadBox.Name = "localidadBox";
             this.localidadBox.ReadOnly = true;
             this.localidadBox.Size = new System.Drawing.Size(130, 22);
-            this.localidadBox.TabIndex = 9;
+            this.localidadBox.TabIndex = 10;
             // 
             // localidadLabel
             // 
             this.localidadLabel.AutoSize = true;
-            this.localidadLabel.Location = new System.Drawing.Point(20, 206);
+            this.localidadLabel.Location = new System.Drawing.Point(27, 197);
             this.localidadLabel.Name = "localidadLabel";
             this.localidadLabel.Size = new System.Drawing.Size(69, 17);
             this.localidadLabel.TabIndex = 4;
@@ -190,7 +196,7 @@
             // 
             // direccionBox
             // 
-            this.direccionBox.Location = new System.Drawing.Point(133, 166);
+            this.direccionBox.Location = new System.Drawing.Point(139, 156);
             this.direccionBox.Name = "direccionBox";
             this.direccionBox.ReadOnly = true;
             this.direccionBox.Size = new System.Drawing.Size(130, 22);
@@ -199,7 +205,7 @@
             // direccionLabel
             // 
             this.direccionLabel.AutoSize = true;
-            this.direccionLabel.Location = new System.Drawing.Point(20, 166);
+            this.direccionLabel.Location = new System.Drawing.Point(27, 157);
             this.direccionLabel.Name = "direccionLabel";
             this.direccionLabel.Size = new System.Drawing.Size(67, 17);
             this.direccionLabel.TabIndex = 3;
@@ -207,7 +213,7 @@
             // 
             // emailBox
             // 
-            this.emailBox.Location = new System.Drawing.Point(133, 126);
+            this.emailBox.Location = new System.Drawing.Point(139, 116);
             this.emailBox.Name = "emailBox";
             this.emailBox.ReadOnly = true;
             this.emailBox.Size = new System.Drawing.Size(130, 22);
@@ -216,7 +222,7 @@
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(20, 126);
+            this.emailLabel.Location = new System.Drawing.Point(27, 117);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(42, 17);
             this.emailLabel.TabIndex = 2;
@@ -224,7 +230,7 @@
             // 
             // nombreBox
             // 
-            this.nombreBox.Location = new System.Drawing.Point(133, 86);
+            this.nombreBox.Location = new System.Drawing.Point(139, 76);
             this.nombreBox.Name = "nombreBox";
             this.nombreBox.ReadOnly = true;
             this.nombreBox.Size = new System.Drawing.Size(130, 22);
@@ -233,7 +239,7 @@
             // nombreLabel
             // 
             this.nombreLabel.AutoSize = true;
-            this.nombreLabel.Location = new System.Drawing.Point(20, 86);
+            this.nombreLabel.Location = new System.Drawing.Point(27, 77);
             this.nombreLabel.Name = "nombreLabel";
             this.nombreLabel.Size = new System.Drawing.Size(58, 17);
             this.nombreLabel.TabIndex = 1;
@@ -242,7 +248,7 @@
             // nifLabel
             // 
             this.nifLabel.AutoSize = true;
-            this.nifLabel.Location = new System.Drawing.Point(20, 46);
+            this.nifLabel.Location = new System.Drawing.Point(27, 37);
             this.nifLabel.Name = "nifLabel";
             this.nifLabel.Size = new System.Drawing.Size(29, 17);
             this.nifLabel.TabIndex = 0;
@@ -250,46 +256,86 @@
             // 
             // nifBox
             // 
-            this.nifBox.Location = new System.Drawing.Point(133, 46);
+            this.nifBox.Location = new System.Drawing.Point(139, 36);
             this.nifBox.Name = "nifBox";
             this.nifBox.ReadOnly = true;
             this.nifBox.Size = new System.Drawing.Size(130, 22);
             this.nifBox.TabIndex = 6;
             // 
-            // cancelarButton
+            // eliminarButton
             // 
-            this.cancelarButton.Location = new System.Drawing.Point(390, 318);
-            this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(203, 56);
-            this.cancelarButton.TabIndex = 0;
-            this.cancelarButton.Text = "Cancelar";
-            this.cancelarButton.UseVisualStyleBackColor = true;
-            this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
+            this.eliminarButton.Location = new System.Drawing.Point(403, 23);
+            this.eliminarButton.Name = "eliminarButton";
+            this.eliminarButton.Size = new System.Drawing.Size(187, 54);
+            this.eliminarButton.TabIndex = 4;
+            this.eliminarButton.Text = "Eliminar";
+            this.eliminarButton.UseVisualStyleBackColor = true;
+            this.eliminarButton.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // editarButton
             // 
-            this.editarButton.Location = new System.Drawing.Point(181, 318);
+            this.editarButton.Location = new System.Drawing.Point(204, 23);
+            this.editarButton.Margin = new System.Windows.Forms.Padding(4);
             this.editarButton.Name = "editarButton";
-            this.editarButton.Size = new System.Drawing.Size(203, 56);
-            this.editarButton.TabIndex = 1;
+            this.editarButton.Size = new System.Drawing.Size(187, 54);
+            this.editarButton.TabIndex = 2;
             this.editarButton.Text = "Editar";
             this.editarButton.UseVisualStyleBackColor = true;
             this.editarButton.Click += new System.EventHandler(this.Editar_Click);
+            // 
+            // accionesGB
+            // 
+            this.accionesGB.Controls.Add(this.cancelarButton);
+            this.accionesGB.Controls.Add(this.aceptarButton);
+            this.accionesGB.Controls.Add(this.editarButton);
+            this.accionesGB.Controls.Add(this.eliminarButton);
+            this.accionesGB.Location = new System.Drawing.Point(16, 297);
+            this.accionesGB.Margin = new System.Windows.Forms.Padding(4);
+            this.accionesGB.Name = "accionesGB";
+            this.accionesGB.Padding = new System.Windows.Forms.Padding(4);
+            this.accionesGB.Size = new System.Drawing.Size(599, 91);
+            this.accionesGB.TabIndex = 2;
+            this.accionesGB.TabStop = false;
+            this.accionesGB.Text = "Acciones";
+            // 
+            // cancelarButton
+            // 
+            this.cancelarButton.Location = new System.Drawing.Point(204, 23);
+            this.cancelarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(187, 54);
+            this.cancelarButton.TabIndex = 3;
+            this.cancelarButton.Text = "Cancelar";
+            this.cancelarButton.UseVisualStyleBackColor = true;
+            this.cancelarButton.Visible = false;
+            this.cancelarButton.Click += new System.EventHandler(this.Cancelar_Click);
+            // 
+            // aceptarButton
+            // 
+            this.aceptarButton.Location = new System.Drawing.Point(8, 23);
+            this.aceptarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.aceptarButton.Name = "aceptarButton";
+            this.aceptarButton.Size = new System.Drawing.Size(187, 54);
+            this.aceptarButton.TabIndex = 1;
+            this.aceptarButton.Text = "Aceptar";
+            this.aceptarButton.UseVisualStyleBackColor = true;
+            this.aceptarButton.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // ConsultaProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 386);
+            this.ClientSize = new System.Drawing.Size(631, 395);
             this.ControlBox = false;
-            this.Controls.Add(this.editarButton);
-            this.Controls.Add(this.cancelarButton);
+            this.Controls.Add(this.accionesGB);
             this.Controls.Add(this.proveedorGB);
             this.Name = "ConsultaProveedor";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta Proveedor";
             this.proveedorGB.ResumeLayout(false);
             this.proveedorGB.PerformLayout();
+            this.accionesGB.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -298,7 +344,7 @@
 
         private System.Windows.Forms.GroupBox proveedorGB;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button cancelarButton;
+        private System.Windows.Forms.Button eliminarButton;
         private System.Windows.Forms.Button editarButton;
         private System.Windows.Forms.TextBox nifBox;
         private System.Windows.Forms.Label nifLabel;
@@ -320,5 +366,8 @@
         private System.Windows.Forms.TextBox paisBox;
         private System.Windows.Forms.Label descripcionLabel;
         private System.Windows.Forms.TextBox descripcionBox;
+        private System.Windows.Forms.GroupBox accionesGB;
+        private System.Windows.Forms.Button aceptarButton;
+        private System.Windows.Forms.Button cancelarButton;
     }
 }

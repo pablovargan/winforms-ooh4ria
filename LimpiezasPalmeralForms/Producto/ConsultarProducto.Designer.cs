@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonEscogerImagen = new System.Windows.Forms.Button();
             this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
             this.numericStock = new System.Windows.Forms.NumericUpDown();
             this.labelStock = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonEscogerImagen);
             this.groupBox1.Controls.Add(this.pictureBoxImagen);
             this.groupBox1.Controls.Add(this.numericStock);
             this.groupBox1.Controls.Add(this.labelStock);
@@ -68,21 +66,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
             // 
-            // buttonEscogerImagen
-            // 
-            this.buttonEscogerImagen.Location = new System.Drawing.Point(230, 189);
-            this.buttonEscogerImagen.Name = "buttonEscogerImagen";
-            this.buttonEscogerImagen.Size = new System.Drawing.Size(213, 23);
-            this.buttonEscogerImagen.TabIndex = 14;
-            this.buttonEscogerImagen.Text = "Escoger imagen";
-            this.buttonEscogerImagen.UseVisualStyleBackColor = true;
-            // 
             // pictureBoxImagen
             // 
             this.pictureBoxImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxImagen.Location = new System.Drawing.Point(230, 21);
             this.pictureBoxImagen.Name = "pictureBoxImagen";
-            this.pictureBoxImagen.Size = new System.Drawing.Size(213, 158);
+            this.pictureBoxImagen.Size = new System.Drawing.Size(213, 186);
             this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImagen.TabIndex = 12;
             this.pictureBoxImagen.TabStop = false;
@@ -92,7 +81,7 @@
             this.numericStock.Location = new System.Drawing.Point(101, 82);
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(100, 20);
-            this.numericStock.TabIndex = 11;
+            this.numericStock.TabIndex = 3;
             // 
             // labelStock
             // 
@@ -110,21 +99,21 @@
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxDescripcion.Size = new System.Drawing.Size(183, 82);
-            this.textBoxDescripcion.TabIndex = 7;
+            this.textBoxDescripcion.TabIndex = 4;
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(101, 49);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNombre.TabIndex = 6;
+            this.textBoxNombre.TabIndex = 2;
             // 
             // textBoxId
             // 
             this.textBoxId.Location = new System.Drawing.Point(101, 21);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxId.TabIndex = 5;
+            this.textBoxId.TabIndex = 1;
             // 
             // label3
             // 
@@ -170,31 +159,34 @@
             this.buttonEditar.Location = new System.Drawing.Point(177, 19);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(140, 44);
-            this.buttonEditar.TabIndex = 2;
+            this.buttonEditar.TabIndex = 7;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonEliminar
             // 
             this.buttonEliminar.Location = new System.Drawing.Point(323, 19);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(140, 44);
-            this.buttonEliminar.TabIndex = 3;
+            this.buttonEliminar.TabIndex = 8;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // buttonAceptar
             // 
             this.buttonAceptar.Location = new System.Drawing.Point(18, 19);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(153, 44);
-            this.buttonAceptar.TabIndex = 1;
+            this.buttonAceptar.TabIndex = 6;
             this.buttonAceptar.Text = "Aceptar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // ConsultarProducto
             // 
+            this.AcceptButton = this.buttonAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 331);
@@ -215,7 +207,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonEscogerImagen;
         private System.Windows.Forms.PictureBox pictureBoxImagen;
         private System.Windows.Forms.NumericUpDown numericStock;
         private System.Windows.Forms.Label labelStock;

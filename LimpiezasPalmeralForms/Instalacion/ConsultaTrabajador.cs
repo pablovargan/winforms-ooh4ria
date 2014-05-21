@@ -99,9 +99,19 @@ namespace LimpiezasPalmeralForms
             {
                 GridConsulta.DataSource = null;
                 _trabGV.Clear();
-                IList<TrabajadorEN> lista = _trabajador.ObtenerTodos(0, 0);
+                IList<TrabajadorEN> trabajadores = new List<TrabajadorEN>();
+                JornadaFechaCEN _jornada = new JornadaFechaCEN();
+                IList<JornadaFechaEN> jornadas = _jornada.ObtenerTodas(0, 0);
 
-                foreach (TrabajadorEN i in lista)
+                foreach (JornadaFechaEN j in jornadas)
+                {
+                    if (j.Instalacion.Id == comboBox_instalaciones.Text)
+                    {
+                        trabajadores = j.Trabajadores;
+                    }
+                }
+
+                foreach (TrabajadorEN i in trabajadores)
                 {
                     _trabGV.Add(new TrabajadorGV()
                     {

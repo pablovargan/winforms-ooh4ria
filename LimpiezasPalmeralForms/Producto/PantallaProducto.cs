@@ -83,6 +83,23 @@ namespace LimpiezasPalmeralForms
                 });
             }
             dataGridViewProducto.DataSource = productoGV;
+            if (productoGV.Count == 0) //desactivamos los botones
+            {
+                EnableDisableButtons(false);
+            }
+            else
+            {
+                EnableDisableButtons(true);
+            }
+        }
+        public void EnableDisableButtons(Boolean estate)
+        {
+            buttonConsultar.Enabled = estate;
+            buttonEditar.Enabled = estate;
+            buttonEliminar.Enabled = estate;
+            buttonIncrementarStock.Enabled = estate;
+            buttonReducirStock.Enabled = estate;
+            buttonGenerarInforme.Enabled = estate;
         }
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
@@ -110,12 +127,25 @@ namespace LimpiezasPalmeralForms
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-
+            EditarProducto editar = new EditarProducto(dataGridViewProducto) { Owner = this };
+            editar.Owner = this;
+            editar.Deactivate += new EventHandler(recargarGrid);
+            editar.StartPosition = FormStartPosition.CenterParent;
+            editar.ShowDialog();
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            string id = dataGridViewProducto.SelectedRows[0].Cells[0].Value.ToString();
+            DialogResult confirmar = MessageBox.Show("¿Desea eliminar el producto " + id + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+            if(confirmar == DialogResult.Yes)
+            {
+                producto.Eliminar(id);
+
+                MessageBox.Show("El producto " + id +" ha sido eliminado");
+            }
+            recargarGrid(sender,e);
         }
 
         private void textBoxBuscar_Click(object sender, EventArgs e)
@@ -126,6 +156,33 @@ namespace LimpiezasPalmeralForms
         private void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             Grid_Load(sender, e);
+        }
+
+        private void buttonReducirStock_Click(object sender, EventArgs e)
+        {
+            ReducirStock reducir = new ReducirStock(dataGridViewProducto) { Owner = this };
+            reducir.Owner = this;
+            reducir.Deactivate += new EventHandler(recargarGrid);
+            reducir.StartPosition = FormStartPosition.CenterParent;
+            reducir.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IncrementarStock incrementar = new IncrementarStock(dataGridViewProducto) { Owner = this };
+            incrementar.Owner = this;
+            incrementar.Deactivate += new EventHandler(recargarGrid);
+            incrementar.StartPosition = FormStartPosition.CenterParent;
+            incrementar.ShowDialog();
+        }
+
+        private void buttonGenerarInforme_Click(object sender, EventArgs e)
+        {
+            GenerarInforme informe = new GenerarInforme(dataGridViewProducto.SelectedRows[0].Cells[0].Value.ToString());
+            informe.Owner = this;
+            informe.Deactivate += new EventHandler(Grid_Load);
+            informe.StartPosition = FormStartPosition.CenterParent;
+            informe.ShowDialog();
         }
     }
     public class ProductoGV

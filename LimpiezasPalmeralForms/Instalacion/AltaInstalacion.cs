@@ -28,7 +28,25 @@ namespace LimpiezasPalmeralForms
         {
             var _instalacion = new InstalacionCEN();
             
-            string id = (new InstalacionCEN().ObtenerTodas(0,0).Count + 1).ToString(); // ID = Número de instalaciones + 1.
+            string id = "0";
+            int count = 1;
+            IList<InstalacionEN> lista = (new InstalacionCEN().ObtenerTodas(0, 0));
+
+            foreach (InstalacionEN i in lista)
+            {
+                if (i.Id != (count).ToString())
+                {
+                    id = count.ToString();
+                }
+
+                count++;
+            }
+
+            if (id == "0")
+            {
+                id = (lista.Count + 1).ToString();
+            }
+
             float m2_b = (float)Convert.ToDouble(m2_box.Text); // Cast.
             _instalacion.Crear(id,nombre_box.Text,desc_box.Text,loc_box.Text,prov_box.Text,pais_box.Text,dir_box.Text,
                 cp_box.Text,tlfno_box.Text,m2_b,cliente_comboBox.Text);
@@ -48,6 +66,11 @@ namespace LimpiezasPalmeralForms
             }
 
             cliente_comboBox.DataSource = nifs;
+        }
+
+        private void cliente_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

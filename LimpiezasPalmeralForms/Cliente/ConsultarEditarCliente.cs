@@ -35,14 +35,15 @@ namespace LimpiezasPalmeralForms.Cliente
                     {
                         Nombre = i.Nombre,
                         Direccion = i.Direccion,
-                        Localidad = i.Localidad, 
-                        Provincia = i.Provincia, 
+                        Localidad = i.Localidad,
+                        Provincia = i.Provincia,
                         CP = i.CodigoPostal,
                         Pais = i.Pais,
                         Telefono = i.Telefono
                     });
                 }
             }
+            
 
             return listaFiltrada;
         }
@@ -52,7 +53,7 @@ namespace LimpiezasPalmeralForms.Cliente
             IList<InstalacionClienteGV> listaFiltrada = new List<InstalacionClienteGV>();
             IList<InstalacionEN> lista = new List<InstalacionEN>();
             InstalacionCEN instalacion = new InstalacionCEN();
-            lista = instalacion.ObtenerTodas(0, 0);
+            lista = instalacion.ObtenerTodas(0, 0);          
             listaFiltrada = modificarFV(lista);
             dataGridViewInstalaciones.DataSource = listaFiltrada;
         }
@@ -85,15 +86,20 @@ namespace LimpiezasPalmeralForms.Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ClienteCEN cliente = new ClienteCEN();
+            cliente.ObtenerCliente(textBoxNIF.Text);
+            EliminarCliente ec = new EliminarCliente((ClienteEN)cliente.ObtenerCliente(textBoxNIF.Text)) { Owner = this };
+            ec.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ClienteCEN clienteEditar= new ClienteCEN();
-            clienteEditar.Editar(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
-                textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
-                textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
+            if (clienteEditar.ObtenerCliente(textBoxNIF.Text) != null) { 
+                clienteEditar.Editar(textBoxNIF.Text, textBoxNombre.Text, textBoxDescripcion.Text,
+                    textBoxEmail.Text, textBoxLocalidad.Text, textBoxProvincia.Text, textBoxPais.Text,
+                    textBoxDireccion.Text, textBoxCP.Text, textBoxTelefono.Text);
+            }
             this.Close();
 
         }
@@ -110,6 +116,7 @@ namespace LimpiezasPalmeralForms.Cliente
             textBoxPais.Enabled = true;
             textBoxTelefono.Enabled = true;
             textBoxDescripcion.Enabled = true;
+            
             buttonEditar.Hide();
             buttonCancelar.Show();
             buttonAceptar.Text = "Guardar";
@@ -117,6 +124,7 @@ namespace LimpiezasPalmeralForms.Cliente
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
             activarCampos();
         }
 
@@ -129,6 +137,18 @@ namespace LimpiezasPalmeralForms.Cliente
         {
             PantallaInstalacion pi = new PantallaInstalacion();
             dataGridViewInstalaciones.SelectedRows[0].Cells[0].Value.ToString();
+        }
+
+        private void ConsultarEditarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonGenerarInforme_Click(object sender, EventArgs e)
+        {
+            ClienteCEN cliente = new ClienteCEN();
+            GenerarInforme gi = new GenerarInforme(cliente.ObtenerCliente(textBoxNIF.Text)) { Owner = this };
+            gi.Show();
         }
     }
 

@@ -25,6 +25,7 @@ namespace LimpiezasPalmeralForms
             this.Load += new EventHandler(GridInstalacion_Load);
             textBox_buscar.KeyUp += new KeyEventHandler(buscarInstalaciones);
             textBox_buscar.Click += new EventHandler(GridInstalacion_Load);
+            buttonEliminar.Click += new EventHandler(GridInstalacion_Load);
         }
 
         private void GridInstalacion_Load(object sender, EventArgs e)
@@ -245,6 +246,91 @@ namespace LimpiezasPalmeralForms
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            FacturaCEN _fact = new FacturaCEN();
+            InstalacionCEN instalacion = new InstalacionCEN();
+            InstalacionGV instgv = (InstalacionGV)instalacionGrid.CurrentRow.DataBoundItem;
+            IList<FacturaEN> facturas = _fact.ObtenerFacturasInstalacion(instgv.ID); //new List<string>();
+            IList<string> id_facturas = new List<string>();
+
+            foreach (FacturaEN f in facturas)
+            {
+                id_facturas.Add(f.Id);
+            }
+
+            instalacion.Unrelationer_facturas(instgv.ID,id_facturas);
+
+            foreach (string s in id_facturas)
+            {
+                _fact.Eliminar(s);
+            }       
+
+            DialogResult dr = MessageBox.Show("¿Desea eliminar la instalación ID " + instgv.ID + ": " + instgv.Nombre + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(dr == DialogResult.Yes) 
+            {
+                instalacion.Eliminar(instgv.ID);
+            }
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            if (instalacionGrid.SelectedRows == null)
+            {
+                MessageBox.Show("Seleccione la instalación que desee modificar");
+            }
+
+            else
+            {
+                InstalacionCEN instalacion = new InstalacionCEN();
+                InstalacionGV inst_modificar = (InstalacionGV)instalacionGrid.CurrentRow.DataBoundItem;
+                EditarInstalacion editar = new EditarInstalacion(inst_modificar.ID, true);
+                editar.Owner = this;
+                editar.Deactivate += new EventHandler(GridInstalacion_Load);
+                editar.Show();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_inst_Click(object sender, EventArgs e)
+        {
+            if (instalacionGrid.SelectedRows == null)
+            {
+                MessageBox.Show("Seleccione la instalación que desee modificar");
+            }
+
+            else
+            {
+                InstalacionCEN instalacion = new InstalacionCEN();
+                InstalacionGV inst = (InstalacionGV)instalacionGrid.CurrentRow.DataBoundItem;
+                ConsultarInstalacion consultar = new ConsultarInstalacion(inst.ID);
+                consultar.Owner = this;
+                consultar.Show();
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (instalacionGrid.SelectedRows == null)
+            {
+                MessageBox.Show("Seleccione la instalación que desee modificar");
+            }
+
+            else
+            {
+                InstalacionCEN instalacion = new InstalacionCEN();
+                InstalacionGV inst = (InstalacionGV)instalacionGrid.CurrentRow.DataBoundItem;
+                InformeInstalacion informe = new InformeInstalacion(inst.ID);
+                informe.Owner = this;
+                informe.Show();
+            }
         }
     }
 

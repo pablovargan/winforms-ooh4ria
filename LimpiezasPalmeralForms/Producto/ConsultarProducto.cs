@@ -15,12 +15,13 @@ namespace LimpiezasPalmeralForms.Producto
 {
     public partial class ConsultarProducto : Form
     {
+        DataGridView grid;
         public ConsultarProducto(DataGridView productoSelected)
         {
             InitializeComponent();
             desactivarCampos();
-         
-           
+
+            grid = productoSelected;
             obtenerDatosProducto(productoSelected);
         }
         public void desactivarCampos()
@@ -30,7 +31,7 @@ namespace LimpiezasPalmeralForms.Producto
             textBoxDescripcion.Enabled = false;
             numericStock.Enabled = false;
             pictureBoxImagen.Enabled = false;
-            buttonEscogerImagen.Enabled = false;
+            //buttonEscogerImagen.Enabled = false;
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
@@ -48,6 +49,29 @@ namespace LimpiezasPalmeralForms.Producto
             textBoxDescripcion.Text = p.Descripcion;
             numericStock.Value = p.Stock;
             pictureBoxImagen.ImageLocation = p.Foto;
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditarProducto ac = new EditarProducto(grid) { Owner = this };
+            ac.Owner = this;
+            ac.StartPosition = FormStartPosition.CenterParent;
+            ac.ShowDialog(); 
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            string id = textBoxId.Text;
+            ProductoCEN producto = new ProductoCEN();
+            DialogResult confirmar = MessageBox.Show("¿Desea eliminar el producto " + id + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirmar == DialogResult.Yes)
+            {
+                producto.Eliminar(id);
+                MessageBox.Show("El producto " + id + " ha sido eliminado");
+            }
+            this.Close();
         }
     }
 }

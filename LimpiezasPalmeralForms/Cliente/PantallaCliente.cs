@@ -85,6 +85,24 @@ namespace LimpiezasPalmeralForms
             IList<ClienteEN> lista;
             lista = cliente.ObtenerTodos(0, 0);
             clienteGV = modificarFV(lista);
+
+            if (clienteGV.Count == 0)
+            {
+                buttonConsultar.Enabled = false;
+                buttonEditar.Enabled = false;
+                buttonEliminar.Enabled = false;
+                buttonGenerarInforme.Enabled = false;
+            }
+            else
+            {
+                buttonConsultar.Enabled = true;
+                buttonEditar.Enabled = true;
+                buttonEliminar.Enabled = true;
+                buttonGenerarInforme.Enabled = true;
+
+            }
+
+
             dataGridViewCliente.DataSource = clienteGV;
 
         }
@@ -113,15 +131,12 @@ namespace LimpiezasPalmeralForms
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            /* 
-             
             ClienteCEN cliente = new ClienteCEN();
-            ClienteEN clienteEliminado = (ClienteEN)dataGridViewCliente.CurrentRow.DataBoundItem;
-            MessageBox.Show(clienteEliminado.Nif);
-            cliente.Eliminar(clienteEliminado.Nif);
-            Grid_Load(sender, e);
-             
-             */
+            
+            EliminarCliente ec = new EliminarCliente((ClienteEN)cliente.ObtenerCliente(dataGridViewCliente.SelectedRows[0].Cells[0].Value.ToString())) { Owner = this };
+            ec.Owner = this;
+            ec.Deactivate += new EventHandler(Grid_Load);
+            ec.Show();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -135,6 +150,14 @@ namespace LimpiezasPalmeralForms
         private void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             Grid_Load(sender, e);
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            GenerarInforme gi = new GenerarInforme(dataGridViewCliente.SelectedRows[0].Cells[0].Value.ToString());
+            gi.Owner = this;
+            gi.Deactivate += new EventHandler(Grid_Load);
+            gi.Show();
         }
     }
 

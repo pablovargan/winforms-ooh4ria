@@ -145,5 +145,29 @@ public System.Collections.Generic.IList<PalmeralGenNHibernate.EN.Default_.Pedido
 {
         return _IPedidoCAD.BuscarPorTipoPago (p_tipoPago);
 }
+public void Relationer_lineas (string p_pedido, System.Collections.Generic.IList<int> p_lineapedido)
+{
+        //Call to PedidoCAD
+
+        _IPedidoCAD.Relationer_lineas (p_pedido, p_lineapedido);
+}
+public void Relationer_proveedor (string p_pedido, string p_proveedor)
+{
+        //Call to PedidoCAD
+
+        _IPedidoCAD.Relationer_proveedor (p_pedido, p_proveedor);
+}
+public void Unrelationer_lineas (string p_pedido, System.Collections.Generic.IList<int> p_lineapedido)
+{
+        //Call to PedidoCAD
+
+        _IPedidoCAD.Unrelationer_lineas (p_pedido, p_lineapedido);
+}
+public void Unrelationer_proveedor (string p_pedido, string p_proveedor)
+{
+        //Call to PedidoCAD
+
+        _IPedidoCAD.Unrelationer_proveedor (p_pedido, p_proveedor);
+}
 }
 }

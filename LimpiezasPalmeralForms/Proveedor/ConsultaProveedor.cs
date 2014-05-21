@@ -10,6 +10,7 @@ using System.Windows.Forms;
 // Proveedor
 using PalmeralGenNHibernate.CEN.Default_;
 using PalmeralGenNHibernate.EN.Default_;
+using LimpiezasPalmeralForms.Proveedor;
 
 namespace LimpiezasPalmeralForms.Proveedor
 {
@@ -25,7 +26,7 @@ namespace LimpiezasPalmeralForms.Proveedor
             this.Load += ConsultaProveedor_Load;
         }
 
-        void ConsultaProveedor_Load(object sender, EventArgs e)
+        private void ConsultaProveedor_Load(object sender, EventArgs e)
         {
             ProveedorEN p = _proveedor.ObtenerProveedor(Nif);
             if(p != null)
@@ -45,12 +46,41 @@ namespace LimpiezasPalmeralForms.Proveedor
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            // TODO 
+            editarButton.Visible = false;
+            EnableDisableTB(this, false);
+            cancelarButton.Visible = true;
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Aceptar_Click(object sender, EventArgs e)
+        {
+            if (!editarButton.Visible)
+                _proveedor.Editar(nifBox.Text, nombreBox.Text, telefonoBox.Text, direccionBox.Text, localidadBox.Text,
+                    provinciaBox.Text, codigoPostalBox.Text, emailBox.Text, paisBox.Text, descripcionBox.Text);
+
+            this.Close();
+        }
+
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+            _proveedor.Eliminar(Nif);
+            this.Close();
+        }
+
+        private void EnableDisableTB(Control container, bool mode)
+        {
+            foreach (Control c in container.Controls)
+            {
+                if (!c.Name.ToString().Equals("nifBox") && c is TextBox)
+                    (c as TextBox).ReadOnly = mode;
+                else if (c is GroupBox)
+                    EnableDisableTB(c, mode);
+            }
         }
     }
 }
