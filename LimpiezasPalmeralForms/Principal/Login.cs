@@ -42,6 +42,7 @@ namespace LimpiezasPalmeralForms.Principal
                     p.ShowDialog();
                     textBoxUsuario.Text = "";
                     textBoxPass.Text = "";
+                    this.Close();
                 }
                 else
                 {
