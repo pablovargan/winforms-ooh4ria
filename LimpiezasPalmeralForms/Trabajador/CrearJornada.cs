@@ -89,20 +89,12 @@ namespace LimpiezasPalmeralForms.Trabajador
                 TrabajadorCEN tra = new TrabajadorCEN();
                 TrabajadorEN t = new TrabajadorEN();
                 JornadaFechaCEN jor = new JornadaFechaCEN();
-                IList<string> aux = new List<string>();
-                //MessageBox.Show("" + jor.ObtenerJornada(j.Id).Trabajadores);
-
-                //for (int i=0; i<jor.ObtenerJornada(j.Id).Trabajadores.Count; i++)
-                //{
-                //    aux.Add(tra.ObtenerTrabajador(jor.ObtenerJornada(j.Id).Trabajadores.ElementAt(i).Nif).Nombre);
-                //}
 
                 l.Add(new JGV()
                 {
                     Id = jor.ObtenerJornada(j.Id).Id.ToString(),
                     Fecha = jor.ObtenerJornada(j.Id).Fecha.ToString(),
-                    NombreI = ins.ObtenerInstalacion(j.Instalacion.Id).Nombre,
-                    NombreT = aux
+                    NombreI = ins.ObtenerInstalacion(j.Instalacion.Id).Nombre
                 });
             }
 
@@ -151,7 +143,6 @@ namespace LimpiezasPalmeralForms.Trabajador
     {
         public string Id { set; get; }
         public string Fecha { set; get; }
-        public IList<string> NombreT { set; get; }
         public string NombreI { set; get; }
     }
 }
