@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewCopiasSeguridad = new System.Windows.Forms.DataGridView();
             this.groupBoxClientesAcciones = new System.Windows.Forms.GroupBox();
             this.restaurarButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridViewCopiasSeguridad = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            this.groupBoxClientesAcciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCopiasSeguridad)).BeginInit();
+            this.groupBoxClientesAcciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -50,6 +50,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Copias de Seguridad Realizadas";
+            // 
+            // dataGridViewCopiasSeguridad
+            // 
+            this.dataGridViewCopiasSeguridad.AllowUserToAddRows = false;
+            this.dataGridViewCopiasSeguridad.AllowUserToDeleteRows = false;
+            this.dataGridViewCopiasSeguridad.AllowUserToResizeColumns = false;
+            this.dataGridViewCopiasSeguridad.AllowUserToResizeRows = false;
+            this.dataGridViewCopiasSeguridad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewCopiasSeguridad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCopiasSeguridad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCopiasSeguridad.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewCopiasSeguridad.Name = "dataGridViewCopiasSeguridad";
+            this.dataGridViewCopiasSeguridad.ReadOnly = true;
+            this.dataGridViewCopiasSeguridad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCopiasSeguridad.Size = new System.Drawing.Size(578, 313);
+            this.dataGridViewCopiasSeguridad.TabIndex = 1;
             // 
             // groupBoxClientesAcciones
             // 
@@ -84,36 +102,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // dataGridViewCopiasSeguridad
-            // 
-            this.dataGridViewCopiasSeguridad.AllowUserToAddRows = false;
-            this.dataGridViewCopiasSeguridad.AllowUserToDeleteRows = false;
-            this.dataGridViewCopiasSeguridad.AllowUserToResizeColumns = false;
-            this.dataGridViewCopiasSeguridad.AllowUserToResizeRows = false;
-            this.dataGridViewCopiasSeguridad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewCopiasSeguridad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCopiasSeguridad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCopiasSeguridad.Location = new System.Drawing.Point(6, 19);
-            this.dataGridViewCopiasSeguridad.Name = "dataGridViewCopiasSeguridad";
-            this.dataGridViewCopiasSeguridad.ReadOnly = true;
-            this.dataGridViewCopiasSeguridad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCopiasSeguridad.Size = new System.Drawing.Size(578, 313);
-            this.dataGridViewCopiasSeguridad.TabIndex = 1;
-            // 
             // PantallaBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 362);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBoxClientesAcciones);
             this.Controls.Add(this.groupBox1);
             this.Name = "PantallaBackup";
             this.Text = "s";
             this.groupBox1.ResumeLayout(false);
-            this.groupBoxClientesAcciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCopiasSeguridad)).EndInit();
+            this.groupBoxClientesAcciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
