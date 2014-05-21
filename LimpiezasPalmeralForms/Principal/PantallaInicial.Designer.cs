@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericStock = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewStock = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.numericStock = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -60,6 +60,15 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock Crítico";
+            // 
+            // numericStock
+            // 
+            this.numericStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericStock.Location = new System.Drawing.Point(95, 21);
+            this.numericStock.Name = "numericStock";
+            this.numericStock.Size = new System.Drawing.Size(62, 20);
+            this.numericStock.TabIndex = 12;
             // 
             // label1
             // 
@@ -93,7 +102,7 @@
             this.groupBox3.Size = new System.Drawing.Size(429, 368);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Asignación de Trabajadores";
+            this.groupBox3.Text = "Últimos Pedidos";
             // 
             // dataGridView1
             // 
@@ -117,7 +126,7 @@
             this.groupBox4.Size = new System.Drawing.Size(275, 249);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Pedidos";
+            this.groupBox4.Text = "Copias de Seguridad";
             // 
             // dataGridView2
             // 
@@ -129,16 +138,6 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(263, 225);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // numericStock
-            // 
-            this.numericStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericStock.Location = new System.Drawing.Point(95, 21);
-            this.numericStock.Name = "numericStock";
-            this.numericStock.Size = new System.Drawing.Size(62, 20);
-            this.numericStock.TabIndex = 12;
-           // this.numericStock.ValueChanged += new System.EventHandler(this.numericStock_ValueChanged);
             // 
             // PantallaInicial
             // 
@@ -152,15 +151,14 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "PantallaInicial";
             this.Text = "PantallaInicial";
-           // this.Load += new System.EventHandler(this.PantallaInicial_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).EndInit();
             this.ResumeLayout(false);
 
         }
